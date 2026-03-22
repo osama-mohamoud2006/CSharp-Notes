@@ -47,6 +47,7 @@
             this.label1.Size = new System.Drawing.Size(367, 44);
             this.label1.TabIndex = 0;
             this.label1.Text = "Simple,Cringe Encryptor";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
@@ -59,16 +60,17 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button1.Enter += new System.EventHandler(this.button1_Click);
-            this.button1.MouseEnter += new System.EventHandler(this.button1_Click);
             // 
             // EnteredByUser
             // 
+            this.EnteredByUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.EnteredByUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EnteredByUser.Location = new System.Drawing.Point(108, 193);
             this.EnteredByUser.Name = "EnteredByUser";
             this.EnteredByUser.Size = new System.Drawing.Size(200, 45);
             this.EnteredByUser.TabIndex = 2;
             this.EnteredByUser.HideSelectionChanged += new System.EventHandler(this.Undo_Click);
+            this.EnteredByUser.TextChanged += new System.EventHandler(this.EnteredByUser_TextChanged);
             // 
             // Result
             // 
