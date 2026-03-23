@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.Box1 = new System.Windows.Forms.RichTextBox();
             this.Box2 = new System.Windows.Forms.RichTextBox();
@@ -40,6 +41,7 @@
             this.BoxOneToBRed = new System.Windows.Forms.Button();
             this.TextBoxOneBWhite = new System.Windows.Forms.Button();
             this.RandomColorOfForm = new System.Windows.Forms.Button();
+            this.ChangeTitle = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -140,9 +142,9 @@
             // 
             // BoxOneToBRed
             // 
-            this.BoxOneToBRed.Location = new System.Drawing.Point(163, 392);
+            this.BoxOneToBRed.Location = new System.Drawing.Point(111, 404);
             this.BoxOneToBRed.Name = "BoxOneToBRed";
-            this.BoxOneToBRed.Size = new System.Drawing.Size(224, 55);
+            this.BoxOneToBRed.Size = new System.Drawing.Size(289, 43);
             this.BoxOneToBRed.TabIndex = 9;
             this.BoxOneToBRed.Text = "Text Box 1 To Red";
             this.BoxOneToBRed.UseVisualStyleBackColor = true;
@@ -150,9 +152,9 @@
             // 
             // TextBoxOneBWhite
             // 
-            this.TextBoxOneBWhite.Location = new System.Drawing.Point(163, 464);
+            this.TextBoxOneBWhite.Location = new System.Drawing.Point(111, 459);
             this.TextBoxOneBWhite.Name = "TextBoxOneBWhite";
-            this.TextBoxOneBWhite.Size = new System.Drawing.Size(224, 55);
+            this.TextBoxOneBWhite.Size = new System.Drawing.Size(289, 49);
             this.TextBoxOneBWhite.TabIndex = 10;
             this.TextBoxOneBWhite.Text = "Text Box 1 To White";
             this.TextBoxOneBWhite.UseVisualStyleBackColor = true;
@@ -167,13 +169,26 @@
             this.RandomColorOfForm.TabIndex = 11;
             this.RandomColorOfForm.Text = "Change Form Background Color Randomly";
             this.RandomColorOfForm.UseVisualStyleBackColor = true;
-            this.RandomColorOfForm.Click += new System.EventHandler(this.button3_Click);
+            this.RandomColorOfForm.Click += new System.EventHandler(this.ChangeColorRandomly_Click);
+            // 
+            // ChangeTitle
+            // 
+            this.ChangeTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChangeTitle.Location = new System.Drawing.Point(98, 238);
+            this.ChangeTitle.Name = "ChangeTitle";
+            this.ChangeTitle.Size = new System.Drawing.Size(315, 40);
+            this.ChangeTitle.TabIndex = 12;
+            this.ChangeTitle.Text = "Take The Box1 Content As Form Title";
+            this.ChangeTitle.UseVisualStyleBackColor = true;
+            this.ChangeTitle.Click += new System.EventHandler(this.ChangeTitle_Click);
+            this.ChangeTitle.MouseEnter += new System.EventHandler(this.ChangeTitle_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1111, 565);
+            this.Controls.Add(this.ChangeTitle);
             this.Controls.Add(this.RandomColorOfForm);
             this.Controls.Add(this.TextBoxOneBWhite);
             this.Controls.Add(this.BoxOneToBRed);
@@ -186,8 +201,9 @@
             this.Controls.Add(this.Box2);
             this.Controls.Add(this.Box1);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Simple Copy App BTW";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,6 +223,7 @@
         private System.Windows.Forms.Button BoxOneToBRed;
         private System.Windows.Forms.Button TextBoxOneBWhite;
         private System.Windows.Forms.Button RandomColorOfForm;
+        private System.Windows.Forms.Button ChangeTitle;
     }
 }
 

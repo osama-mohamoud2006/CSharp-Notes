@@ -74,6 +74,7 @@ namespace WindowsFormsApp2
 
         private void HideTextBoxOne_Click(object sender, EventArgs e)
         {
+            this.Text = "Disabled All";
             Box1.Visible = false;
             DisableButton.Enabled = false;
             EnableBox.Enabled = false;
@@ -88,6 +89,9 @@ namespace WindowsFormsApp2
             HideTextBoxOne.Visible = false;
             BoxOneToBRed.Visible = false;
             TextBoxOneBWhite.Visible = false;
+            RandomColorOfForm.Visible = false;
+            ChangeTitle.Visible = false;
+
             MessageBox.Show("As You Disabled Main Text Box , So Every Thing Is Also Disabled");
             System.Media.SystemSounds.Beep.Play();
            
@@ -95,7 +99,8 @@ namespace WindowsFormsApp2
 
         private void EnableAll_Click(object sender, EventArgs e)
         {
-            Box1.Visible = true;
+            this.Text = "Enabled All";
+              Box1.Visible = true;
             DisableButton.Enabled = true;
             EnableBox.Enabled = true;
             button2.Visible = true;
@@ -109,6 +114,9 @@ namespace WindowsFormsApp2
             EnableAll.Visible = false;
             BoxOneToBRed.Visible = true;
             TextBoxOneBWhite.Visible = true;
+            RandomColorOfForm.Visible = true;
+            ChangeTitle.Visible = true; 
+
             MessageBox.Show("As You Enabled Main Text Box , So Every Thing Is Also Enabled");
         
             System.Media.SystemSounds.Beep.Play();
@@ -170,14 +178,19 @@ namespace WindowsFormsApp2
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void ChangeColorRandomly_Click(object sender, EventArgs e)
         {
             string ColorName; 
             ChangeFormBackgroundColorRandomly(selectedColor:(enRandomColors)GetRandomNumber(), ColorName: out ColorName);
+            RandomColorOfForm.ForeColor = Color.Green; 
             MessageBox.Show($"The Form Background Color Has Changed To {ColorName}");
             System.Media.SystemSounds.Beep.Play();
         }
 
-
+        private void ChangeTitle_Click(object sender, EventArgs e)
+        {
+           this.Text =  Box1.Text;
+            MessageBox.Show("The Title Of Form Has Changed!");
+        }
     }
 }
