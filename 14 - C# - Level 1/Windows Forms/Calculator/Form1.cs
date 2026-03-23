@@ -36,6 +36,7 @@ namespace Calculator
         {
 
             if (Screen.Text.Length == 0) Equal.Enabled = false;
+           
 
         }
 
@@ -102,7 +103,7 @@ namespace Calculator
             Add.Enabled = true;
             Sub.Enabled = true;
             Mod.Enabled = true;
-
+           
         }
 
 
@@ -434,12 +435,13 @@ namespace Calculator
 
         private void Ans_Click(object sender, EventArgs e)
         {
-            EnableAllNumsButtons();
+            DisableAllNumsButtons();
             DeleteLast.Visible = false; // enable delete button again 
             AC.Enabled = true;
             RestEq(); // rest the equation list 
 
             EnableAllOperations();
+            
             Ans.Visible = false;
 
             Equal.Enabled = true;
@@ -447,8 +449,7 @@ namespace Calculator
             EqToPush = Convert.ToString(AnsValue);
             Screen.Text = "Ans";
 
-
-            Ans.Visible = false;
+           
         }
 
         private void AC_Click(object sender, EventArgs e)
@@ -487,8 +488,17 @@ namespace Calculator
         }
 
    // Operations Buttons . /
+
+        private void EnableAllButtonsAfterAns()
+        {
+            if(One.Enabled == false) // checking one is enough 
+
+                EnableAllNumsButtons();
+        }
+
         private void Multi_Click(object sender, EventArgs e)
         {
+            EnableAllButtonsAfterAns();
             enCurrentOperation = Core.enOperation.Multi; 
             Screen.Text += "*";
 
@@ -503,6 +513,7 @@ namespace Calculator
 
         private void Div_Click(object sender, EventArgs e)
         {
+            EnableAllButtonsAfterAns();
             enCurrentOperation = Core.enOperation.Div;
             Screen.Text += "/";
 
@@ -516,6 +527,7 @@ namespace Calculator
 
         private void Add_Click(object sender, EventArgs e)
         {
+            EnableAllButtonsAfterAns();
             enCurrentOperation = Core.enOperation.Add;
             Screen.Text += "+";
 
@@ -530,6 +542,7 @@ namespace Calculator
 
         private void Sub_Click(object sender, EventArgs e)
         {
+            EnableAllButtonsAfterAns();
             enCurrentOperation = Core.enOperation.Add;
             Screen.Text += "-";
 
@@ -543,6 +556,7 @@ namespace Calculator
 
         private void Mod_Click(object sender, EventArgs e)
         {
+            EnableAllButtonsAfterAns();
             enCurrentOperation = Core.enOperation.Mod;
             Screen.Text += "%";
 
