@@ -54,16 +54,69 @@ namespace Calculator
         }
 
 
+        // Themes ///
+
         private void Blue_Click(object sender, EventArgs e)
         {
+            Color CBrown = Color.FromArgb(245, 233, 216);
+
             this.BackColor = Color.LightSkyBlue;
+            Multi.BackColor = Color.Beige;
+            Div.BackColor = Color.Beige;
+            Add.BackColor = Color.Beige;
+            Sub.BackColor = Color.Beige;
+            One.BackColor = CBrown;
+            Two.BackColor = CBrown;
+            Three.BackColor = CBrown;
+            Four.BackColor = CBrown;
+            Five.BackColor =CBrown;
+            Six.BackColor = CBrown;
+            Seven.BackColor = CBrown;
+            Eight.BackColor = CBrown;
+            Nine.BackColor = CBrown;
+            Zero.BackColor = CBrown;
+            Ans.BackColor = Color.Orange;
+            Dot.BackColor = CBrown;
+            Equal.BackColor = Color.AliceBlue;
+
             ResultLabel.ForeColor = Color.Black;
         }
 
         private void DeepGreen_Click(object sender, EventArgs e)
         {
-            this.BackColor = Color.DarkGreen;
+        
+            Color SoftBlue = Color.FromArgb(129, 166, 198);
+            Color LightBlue = Color.FromArgb(170, 205, 220);
+            Color Cream = Color.FromArgb(243, 227, 208);
+            Color WarmGray = Color.FromArgb(210, 196, 180);
+
+            this.BackColor = Cream;
             ResultLabel.ForeColor = Color.White;
+
+            // Background
+            this.BackColor = Cream;
+
+            // Numbers
+            Button[] numbers = { One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Zero, Dot };
+            foreach (Button btn in numbers)
+            {
+                btn.BackColor = LightBlue;
+            }
+
+            // Operators
+            Button[] ops = { Add, Sub, Multi, Div };
+            foreach (Button btn in ops)
+            {
+                btn.BackColor = SoftBlue;
+            }
+
+            // Special buttons
+            Equal.BackColor = SoftBlue;
+            Ans.BackColor = WarmGray;
+
+            // Text
+            ResultLabel.ForeColor = Color.Black;
+
         }
 
         private void Bisque_Click(object sender, EventArgs e)
@@ -71,12 +124,73 @@ namespace Calculator
             this.BackColor = Color.Bisque;
             ResultLabel.ForeColor = Color.Olive;
 
+
+            Color LightCream = Color.FromArgb(255, 248, 240);
+            Color LightBrown = Color.FromArgb(192, 133, 82);
+            Color MediumBrown = Color.FromArgb(140, 90, 60);
+            Color DarkBrown = Color.FromArgb(75, 46, 43);
+
+            // Background
+            this.BackColor = LightCream;
+
+            // Operators
+            Multi.BackColor = MediumBrown;
+            Div.BackColor = MediumBrown;
+            Add.BackColor = MediumBrown;
+            Sub.BackColor = MediumBrown;
+
+            // Numbers
+            One.BackColor = LightBrown;
+            Two.BackColor = LightBrown;
+            Three.BackColor = LightBrown;
+            Four.BackColor = LightBrown;
+            Five.BackColor = LightBrown;
+            Six.BackColor = LightBrown;
+            Seven.BackColor = LightBrown;
+            Eight.BackColor = LightBrown;
+            Nine.BackColor = LightBrown;
+            Zero.BackColor = LightBrown;
+            Dot.BackColor = LightBrown;
+            Mod.BackColor = LightBrown;
+
+            // Special buttons
+            Equal.BackColor = Color.Wheat;
+            Ans.BackColor = Color.Wheat;
+
+            // Text color
+            ResultLabel.ForeColor = Color.Wheat;
+
+
         }
 
         private void Black_Click(object sender, EventArgs e)
         {
+
             this.BackColor = Color.Black;
             ResultLabel.ForeColor = Color.White;
+
+
+           
+            Multi.BackColor = Color.Violet;
+            Div.BackColor = Color.Violet;
+            Add.BackColor = Color.Violet;
+            Sub.BackColor = Color.Violet;
+            One.BackColor = Color.Violet;
+            Two.BackColor = Color.Violet;
+            Three.BackColor = Color.Violet;
+            Four.BackColor = Color.Violet;
+            Five.BackColor = Color.Violet;
+            Six.BackColor = Color.Violet;
+            Seven.BackColor = Color.Violet;
+            Eight.BackColor = Color.Violet;
+            Nine.BackColor = Color.Violet;
+            Zero.BackColor = Color.Violet;
+            Ans.BackColor = Color.Violet;
+            Dot.BackColor = Color.Violet;
+            Mod.BackColor = Color.Violet;
+            Equal.BackColor = Color.AliceBlue;
+
+            
         }
 
 
@@ -148,7 +262,8 @@ namespace Calculator
             AppendToScreen(".");
         }
 
-   
+        /// <summary>
+        /// Operations 
 
         private void DeleteLast_Click(object sender, EventArgs e)
         {
@@ -309,6 +424,19 @@ namespace Calculator
             DisableAllOperations(); // to avoid multi operations at the same time 
         }
 
+        private void Mod_Click(object sender, EventArgs e)
+        {
+            enCurrentOperation = Core.enOperation.Mod;
+            Screen.Text += "%";
+
+
+            TheEqList.Add(EqToPush); // add the string number
+
+
+            this.EqToPush = ""; //rest the string for new nums 
+            DisableAllOperations(); // to avoid multi operations at the same time 
+        }
+
         private void Equal_Click(object sender, EventArgs e)
         {
             Equal.Enabled = true;
@@ -348,5 +476,7 @@ namespace Calculator
             
             Ans.Visible = false;
         }
+
+       
     }
 }

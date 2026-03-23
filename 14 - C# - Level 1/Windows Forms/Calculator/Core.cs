@@ -11,7 +11,7 @@ namespace Calculator
     {
         public enum enOperation: byte
         {
-            Add =1 , Sub =2 , Div= 3 , Multi = 4 
+            Add =1 , Sub =2 , Div= 3 , Multi = 4 , Mod =5 
         }
 
         public void SimpleCalc( Decimal N1 , Decimal N2, enOperation Operation , out Decimal Res )
@@ -34,6 +34,10 @@ namespace Calculator
                 case enOperation.Div:
                     Res = (N2==0)?N1/1 : N1/N2;
                     break;
+
+                case enOperation.Mod:
+                    Res = N1 % N2;
+                    break; 
 
             }
         }
