@@ -24,7 +24,8 @@ namespace Calculator
         {
             InitializeComponent();
             Obj = new Core();
-            TheEqList = new List<string>(); 
+            TheEqList = new List<string>();
+            Equal.Enabled = false;
         }
 
       
@@ -32,7 +33,8 @@ namespace Calculator
         {
             Screen.Text += text ;
             AC.Enabled = true;
-            DeleteLast.Enabled = true; 
+            DeleteLast.Enabled = true;
+            Equal.Enabled = true;
         }
         private void PopTheScreen()
         {
@@ -46,6 +48,7 @@ namespace Calculator
             EqToPush= "";
             TheEqList.Clear();
             EnableAllOperations();
+            Equal.Enabled = false;
         }
 
 
@@ -152,19 +155,49 @@ namespace Calculator
             AppendToScreen(".");
         }
 
+        string PopArrString(string str)
+        {
+            string res = "";
+            for(byte i =0; i<str.Length-1;i++)
+            {
+                res += str[i];
+            }
+            return res; 
+        }
+
         private void DeleteLast_Click(object sender, EventArgs e)
         {
            if(!String.IsNullOrEmpty(Screen.Text)) // return true if it is null or empty 
             {
                 PopTheScreen();
+                Equal.Enabled = false;
+
+                Result = 0;
+
+                string[] temp = this.TheEqList.ToArray();
+
+                temp[temp.Length - 1] = PopArrString(temp[temp.Length - 1]); // remove one char form the last element of array element
+
+                TheEqList =temp.ToList();
+
+
                 EqToPush.Remove(EqToPush.Length - 1); // remove the last element (pop) 
+
+                bool IsDigitsOnly = Decimal.TryParse(Screen.Text, out _); // _ discard  --> returns true if the string have nums only
+                if (IsDigitsOnly)
+                {
+                    this.EnableAllOperations();
+                }
+
             }
             else
             {
-                MessageBox.Show("You Cannot Delete More Than This!");
-                System.Media.SystemSounds.Beep.Play();
+                Result = 0;
                 AC.Enabled = false;
                 DeleteLast.Enabled = false; // disable del button 
+                Equal.Enabled = false;
+                MessageBox.Show("You Cannot Delete More Than This!");
+                System.Media.SystemSounds.Beep.Play();
             }
            
         }
@@ -176,6 +209,7 @@ namespace Calculator
             Screen.Text = "";
             AC.Enabled = false;
             EnableAllOperations();
+            Equal.Enabled = true; 
         }
 
 
@@ -185,16 +219,22 @@ namespace Calculator
         private void ImplementTheCalc()
         {
             decimal Num = 0m;
-           
+            if (TheEqList.Count==1)
+            {
+                Result = Convert.ToDecimal(TheEqList[0]);
+
+            }
 
             for (int i=1; i<TheEqList.Count; i++)
             {
-                Obj.SimpleCalc(N1: Convert.ToDecimal(TheEqList[i-1]), N2:Convert.ToDecimal( TheEqList[i]), enCurrentOperation, out Num);
+                if (TheEqList[i] == "") continue; 
+                else Obj.SimpleCalc(N1: Convert.ToDecimal(TheEqList[i-1]), N2:Convert.ToDecimal( TheEqList[i]), enCurrentOperation, out Num);
                
                 Result += Num;
                 Num = 0; 
             }
             TheEqList.Clear();
+            
         }
 
     
@@ -274,15 +314,22 @@ namespace Calculator
 
         private void Equal_Click(object sender, EventArgs e)
         {
+            Equal.Enabled = true;
             DeleteLast.Enabled = false;
             TheEqList.Add(this.EqToPush);
             EqToPush = "";
+           
            ImplementTheCalc();
 
             Screen.Text += "= " + this.Result;
             Result = 0;
+            Equal.Enabled = false;
         }
 
-       
+        private void Screen_TextChanged(object sender, EventArgs e)
+        {
+            if (Screen.Text.Length ==0 ) Equal.Enabled = false; 
+
+        }
     }
 }

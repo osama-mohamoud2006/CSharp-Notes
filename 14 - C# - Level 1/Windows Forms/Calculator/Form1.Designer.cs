@@ -97,6 +97,7 @@
             this.Screen.Size = new System.Drawing.Size(621, 96);
             this.Screen.TabIndex = 10;
             this.Screen.Text = "";
+            this.Screen.TextChanged += new System.EventHandler(this.Screen_TextChanged);
             // 
             // ResultLabel
             // 
