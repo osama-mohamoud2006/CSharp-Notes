@@ -16,7 +16,7 @@ namespace Calculator
         Core.enOperation enCurrentOperation;
 
         private List<string> TheEqList;
-        private string EqToPush =""; // every num is concated with string after pressing op it push it to list
+        private string EqToPush =""; // every num is added to string after pressing op it push it to list
 
         private decimal Result =0m;
 
@@ -489,7 +489,7 @@ namespace Calculator
 
    // Operations Buttons . /
 
-        private void EnableAllButtonsAfterAns()
+        private void EnableAllButtonsAfterAns() // enable all buttons again after ans 
         {
             if(One.Enabled == false) // checking one is enough 
 

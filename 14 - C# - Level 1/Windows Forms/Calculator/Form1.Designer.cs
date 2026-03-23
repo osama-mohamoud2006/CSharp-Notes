@@ -152,9 +152,9 @@
             // Div
             // 
             this.Div.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Div.Location = new System.Drawing.Point(308, 299);
+            this.Div.Location = new System.Drawing.Point(308, 295);
             this.Div.Name = "Div";
-            this.Div.Size = new System.Drawing.Size(77, 46);
+            this.Div.Size = new System.Drawing.Size(77, 44);
             this.Div.TabIndex = 14;
             this.Div.Text = "/";
             this.Div.UseVisualStyleBackColor = true;
