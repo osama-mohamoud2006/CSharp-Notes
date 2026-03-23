@@ -356,6 +356,7 @@ namespace Calculator
             Div.Enabled = false;
             Add.Enabled = false;
             Sub.Enabled = false;
+            Mod.Enabled = false;
 
         }
 
@@ -365,6 +366,7 @@ namespace Calculator
             Div.Enabled =true;
             Add.Enabled =true;
             Sub.Enabled =true;
+            Mod.Enabled = true;
 
         }
 
