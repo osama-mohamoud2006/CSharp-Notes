@@ -261,12 +261,13 @@
             // 
             // Equal
             // 
-            this.Equal.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Equal.Font = new System.Drawing.Font("Lucida Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Equal.Location = new System.Drawing.Point(203, 425);
             this.Equal.Name = "Equal";
             this.Equal.Size = new System.Drawing.Size(178, 42);
             this.Equal.TabIndex = 25;
             this.Equal.Text = "=";
+            this.Equal.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Equal.UseVisualStyleBackColor = true;
             this.Equal.Click += new System.EventHandler(this.Equal_Click);
             // 

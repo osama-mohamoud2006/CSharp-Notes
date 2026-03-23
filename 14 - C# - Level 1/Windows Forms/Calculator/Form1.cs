@@ -237,7 +237,7 @@ namespace Calculator
 
             // Text colors
             ResultLabel.ForeColor = Color.White;
-            Screen.ForeColor = Color.LimeGreen;
+            Screen.ForeColor = Color.MediumVioletRed;
             Screen.BackColor = Color.Black;
         }
 
