@@ -60,7 +60,7 @@
             // DeepGreen
             // 
             this.DeepGreen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.DeepGreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.DeepGreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
             this.DeepGreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.DeepGreen.Location = new System.Drawing.Point(191, 21);
             this.DeepGreen.Name = "DeepGreen";
@@ -68,32 +68,35 @@
             this.DeepGreen.TabIndex = 8;
             this.DeepGreen.UseVisualStyleBackColor = false;
             this.DeepGreen.Click += new System.EventHandler(this.Brown_Click);
+            this.DeepGreen.MouseEnter += new System.EventHandler(this.Brown_Click);
             // 
             // Blue
             // 
             this.Blue.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Blue.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Blue.Location = new System.Drawing.Point(331, 21);
+            this.Blue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(237)))), ((int)(((byte)(247)))));
+            this.Blue.Location = new System.Drawing.Point(331, 23);
             this.Blue.Name = "Blue";
-            this.Blue.Size = new System.Drawing.Size(50, 25);
+            this.Blue.Size = new System.Drawing.Size(50, 23);
             this.Blue.TabIndex = 5;
             this.Blue.UseVisualStyleBackColor = false;
             this.Blue.Click += new System.EventHandler(this.Blue_Click);
+            this.Blue.MouseEnter += new System.EventHandler(this.Blue_Click);
             // 
             // Brown
             // 
             this.Brown.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Brown.BackColor = System.Drawing.Color.Bisque;
+            this.Brown.BackColor = System.Drawing.Color.SeaShell;
             this.Brown.Location = new System.Drawing.Point(266, 23);
             this.Brown.Name = "Brown";
             this.Brown.Size = new System.Drawing.Size(49, 23);
             this.Brown.TabIndex = 9;
             this.Brown.UseVisualStyleBackColor = false;
             this.Brown.Click += new System.EventHandler(this.Bisque_Click);
+            this.Brown.MouseEnter += new System.EventHandler(this.Bisque_Click);
             // 
             // Screen
             // 
-            this.Screen.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Screen.BackColor = System.Drawing.SystemColors.Control;
             this.Screen.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Screen.Enabled = false;
             this.Screen.Font = new System.Drawing.Font("Candara", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -124,6 +127,7 @@
             this.Black.TabIndex = 12;
             this.Black.UseVisualStyleBackColor = false;
             this.Black.Click += new System.EventHandler(this.Black_Click);
+            this.Black.MouseEnter += new System.EventHandler(this.Black_Click);
             // 
             // Multi
             // 
@@ -270,6 +274,7 @@
             this.Equal.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Equal.UseVisualStyleBackColor = true;
             this.Equal.Click += new System.EventHandler(this.Equal_Click);
+            this.Equal.MouseEnter += new System.EventHandler(this.Equal_Click);
             // 
             // DeleteLast
             // 

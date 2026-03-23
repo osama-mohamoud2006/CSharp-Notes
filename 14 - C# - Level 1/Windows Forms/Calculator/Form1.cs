@@ -30,7 +30,15 @@ namespace Calculator
             Equal.Enabled = false;
         }
 
-      
+
+        // Very Imp Operations /// 
+        private void Screen_TextChanged(object sender, EventArgs e)
+        {
+
+            if (Screen.Text.Length == 0) Equal.Enabled = false;
+
+        }
+
         private void AppendToScreen(string text)
         {
             Screen.Text += text ;
@@ -53,14 +61,58 @@ namespace Calculator
             Equal.Enabled = false;
         }
 
+        private void DisableAllNumsButtons()
+        {
+            Control[] Buttons = { One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Zero };
+
+            foreach (Control ctr in Buttons)
+            {
+                ctr.Enabled = false;
+            }
+
+        }
+
+        private void EnableAllNumsButtons()
+        {
+            Control[] Buttons = { One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Zero };
+
+            foreach (Control ctr in Buttons)
+            {
+                ctr.Enabled = true;
+            }
+
+        }
+
+
+        void DisableAllOperations()
+        {
+            Multi.Enabled = false;
+            Div.Enabled = false;
+            Add.Enabled = false;
+            Sub.Enabled = false;
+            Mod.Enabled = false;
+
+        }
+
+        void EnableAllOperations()
+        {
+            Multi.Enabled = true;
+            DeleteLast.Visible = true;
+            Div.Enabled = true;
+            Add.Enabled = true;
+            Sub.Enabled = true;
+            Mod.Enabled = true;
+
+        }
+
 
         // Themes ///
 
-       private void Blue_Click(object sender, EventArgs e)
+      private void Blue_Click(object sender, EventArgs e)
       {
-       Color DarkBlue = Color.FromArgb(25, 77, 130);
-       Color LightBlue = Color.FromArgb(220, 237, 247);
-       Color MediumBlue = Color.FromArgb(100, 150, 200);
+         Color DarkBlue = Color.FromArgb(25, 77, 130);
+         Color LightBlue = Color.FromArgb(220, 237, 247);
+         Color MediumBlue = Color.FromArgb(100, 150, 200);
 
        this.BackColor = Color.LightSkyBlue;
 
@@ -310,12 +362,12 @@ namespace Calculator
             AppendToScreen(".");
         }
 
-        /// <summary>
-        /// Operations 
 
+        
+        // Main Buttons // 
         private void DeleteLast_Click(object sender, EventArgs e)
         {
-           if(!String.IsNullOrEmpty(Screen.Text)) // return true if it is null or empty 
+            if (!String.IsNullOrEmpty(Screen.Text)) // return true if it is null or empty 
             {
                 PopTheScreen();
                 Equal.Enabled = false;
@@ -323,25 +375,25 @@ namespace Calculator
                 Result = 0;
 
 
-                if (!String.IsNullOrEmpty(EqToPush) )
+                if (!String.IsNullOrEmpty(EqToPush))
                 {
-                    EqToPush  = EqToPush.Remove(EqToPush.Length - 1); // remove the last element (pop) 
+                    EqToPush = EqToPush.Remove(EqToPush.Length - 1); // remove the last element (pop) 
                 }
 
-                else if (TheEqList.Count >0)
+                else if (TheEqList.Count > 0)
                 {
                     string Last = TheEqList[TheEqList.Count - 1];
 
                     if (!String.IsNullOrEmpty(Last)) TheEqList[TheEqList.Count - 1] = Last.Remove(Last.Length - 1);
-                    
-                    if(String.IsNullOrEmpty(Last))
+
+                    if (String.IsNullOrEmpty(Last))
                     {
                         TheEqList.RemoveAt(TheEqList.Count - 1);
                     }
 
 
-                 }
-             
+                }
+
 
                 bool IsDigitsOnly = Decimal.TryParse(Screen.Text, out _); // _ discard  --> returns true if the string have nums only
                 if (IsDigitsOnly)
@@ -359,7 +411,44 @@ namespace Calculator
                 MessageBox.Show("You Cannot Delete More Than This!");
                 System.Media.SystemSounds.Beep.Play();
             }
-           
+
+        }
+
+        private void Equal_Click(object sender, EventArgs e)
+        {
+            DisableAllNumsButtons();
+            DeleteLast.Visible = false;
+            Equal.Enabled = true;
+            DeleteLast.Enabled = false;
+            TheEqList.Add(this.EqToPush);
+            EqToPush = "";
+
+            ImplementTheCalc();
+
+            Screen.Text += "= " + this.Result;
+            this.AnsValue = Result;
+            Result = 0;
+            Equal.Enabled = false;
+            Ans.Visible = true;
+        }
+
+        private void Ans_Click(object sender, EventArgs e)
+        {
+            EnableAllNumsButtons();
+            DeleteLast.Visible = false; // enable delete button again 
+            AC.Enabled = true;
+            RestEq(); // rest the equation list 
+
+            EnableAllOperations();
+            Ans.Visible = false;
+
+            Equal.Enabled = true;
+
+            EqToPush = Convert.ToString(AnsValue);
+            Screen.Text = "Ans";
+
+
+            Ans.Visible = false;
         }
 
         private void AC_Click(object sender, EventArgs e)
@@ -369,19 +458,19 @@ namespace Calculator
             Screen.Text = "";
             AC.Enabled = false;
             EnableAllOperations();
-            Equal.Enabled = true; 
+            Equal.Enabled = true;
+            EnableAllNumsButtons(); 
         }
 
 
-        // The Start Of Calc ///
-
-
+   // Main Logic Of Calc 
         private void ImplementTheCalc()
         {
             decimal Num = 0m;
             if (TheEqList.Count==1)
             {
                 Result = Convert.ToDecimal(TheEqList[0]);
+                return;
 
             }
 
@@ -397,29 +486,7 @@ namespace Calculator
             
         }
 
-    
-        void DisableAllOperations()
-        {
-            Multi.Enabled = false;
-            Div.Enabled = false;
-            Add.Enabled = false;
-            Sub.Enabled = false;
-            Mod.Enabled = false;
-
-        }
-
-        void EnableAllOperations()
-        {
-            Multi.Enabled = true;
-            DeleteLast.Visible = true;
-            Div.Enabled =true;
-            Add.Enabled =true;
-            Sub.Enabled =true;
-            Mod.Enabled = true;
-
-        }
-
-
+   // Operations Buttons . /
         private void Multi_Click(object sender, EventArgs e)
         {
             enCurrentOperation = Core.enOperation.Multi; 
@@ -461,7 +528,6 @@ namespace Calculator
 
         }
 
-
         private void Sub_Click(object sender, EventArgs e)
         {
             enCurrentOperation = Core.enOperation.Add;
@@ -488,48 +554,6 @@ namespace Calculator
             DisableAllOperations(); // to avoid multi operations at the same time 
         }
 
-        private void Equal_Click(object sender, EventArgs e)
-        {
-            DeleteLast.Visible = false;
-            Equal.Enabled = true;
-            DeleteLast.Enabled = false;
-            TheEqList.Add(this.EqToPush);
-            EqToPush = "";
-           
-           ImplementTheCalc();
-
-            Screen.Text += "= " + this.Result;
-            this.AnsValue = Result; 
-            Result = 0;
-            Equal.Enabled = false;
-            Ans.Visible = true; 
-        }
-
-        private void Screen_TextChanged(object sender, EventArgs e)
-        {
-          
-            if (Screen.Text.Length ==0 ) Equal.Enabled = false; 
-
-        }
-
-        private void Ans_Click(object sender, EventArgs e)
-        {
-          
-            DeleteLast.Visible = false; // enable delete button again 
-            AC.Enabled = true;
-            RestEq(); // rest the equation list 
-        
-            EnableAllOperations();
-            Ans.Visible = false; 
-
-            Equal.Enabled = true;
-
-            EqToPush = Convert.ToString(AnsValue);
-            Screen.Text = "Ans";
-
-            
-            Ans.Visible = false;
-        }
 
        
     }
