@@ -1,0 +1,153 @@
+﻿namespace WindowsFormsApp2
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.label1 = new System.Windows.Forms.Label();
+            this.Box1 = new System.Windows.Forms.RichTextBox();
+            this.Box2 = new System.Windows.Forms.RichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.DisableButton = new System.Windows.Forms.Button();
+            this.EnableBox = new System.Windows.Forms.Button();
+            this.HideTextBoxOne = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(398, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(369, 69);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Simple Copy";
+            // 
+            // Box1
+            // 
+            this.Box1.Location = new System.Drawing.Point(146, 130);
+            this.Box1.Name = "Box1";
+            this.Box1.Size = new System.Drawing.Size(226, 75);
+            this.Box1.TabIndex = 1;
+            this.Box1.Text = "Box1";
+            this.Box1.TextChanged += new System.EventHandler(this.Box1_TextChanged);
+            // 
+            // Box2
+            // 
+            this.Box2.Enabled = false;
+            this.Box2.Location = new System.Drawing.Point(759, 130);
+            this.Box2.Name = "Box2";
+            this.Box2.Size = new System.Drawing.Size(226, 84);
+            this.Box2.TabIndex = 2;
+            this.Box2.Text = "";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(425, 311);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(261, 60);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Copy !";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(425, 228);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(261, 60);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Press The Button To Copy";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // DisableButton
+            // 
+            this.DisableButton.Enabled = false;
+            this.DisableButton.Location = new System.Drawing.Point(425, 387);
+            this.DisableButton.Name = "DisableButton";
+            this.DisableButton.Size = new System.Drawing.Size(261, 60);
+            this.DisableButton.TabIndex = 5;
+            this.DisableButton.Text = "Disable Text Box 1";
+            this.DisableButton.UseVisualStyleBackColor = true;
+            this.DisableButton.Click += new System.EventHandler(this.DisableButton_Click);
+            // 
+            // EnableBox
+            // 
+            this.EnableBox.Enabled = false;
+            this.EnableBox.Location = new System.Drawing.Point(425, 453);
+            this.EnableBox.Name = "EnableBox";
+            this.EnableBox.Size = new System.Drawing.Size(261, 60);
+            this.EnableBox.TabIndex = 6;
+            this.EnableBox.Text = "Enable Text Box 1";
+            this.EnableBox.UseVisualStyleBackColor = true;
+            this.EnableBox.Click += new System.EventHandler(this.EnableBox_Click);
+            // 
+            // HideTextBoxOne
+            // 
+            this.HideTextBoxOne.Location = new System.Drawing.Point(772, 403);
+            this.HideTextBoxOne.Name = "HideTextBoxOne";
+            this.HideTextBoxOne.Size = new System.Drawing.Size(251, 43);
+            this.HideTextBoxOne.TabIndex = 7;
+            this.HideTextBoxOne.Text = "Hide Text Box 1";
+            this.HideTextBoxOne.UseVisualStyleBackColor = true;
+            this.HideTextBoxOne.Click += new System.EventHandler(this.HideTextBoxOne_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1111, 565);
+            this.Controls.Add(this.HideTextBoxOne);
+            this.Controls.Add(this.EnableBox);
+            this.Controls.Add(this.DisableButton);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Box2);
+            this.Controls.Add(this.Box1);
+            this.Controls.Add(this.label1);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox Box1;
+        private System.Windows.Forms.RichTextBox Box2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button DisableButton;
+        private System.Windows.Forms.Button EnableBox;
+        private System.Windows.Forms.Button HideTextBoxOne;
+    }
+}
+
