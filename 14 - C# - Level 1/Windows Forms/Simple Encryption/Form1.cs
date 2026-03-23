@@ -40,6 +40,7 @@ namespace Simple_Encryption
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Undo.Visible = true;
             Undo.Enabled = true; // turn on the undo again after encrypt the text 
 
             string TextToEncrypt = EnteredByUser.Text;
@@ -49,44 +50,28 @@ namespace Simple_Encryption
 
             Result.Text = res;
 
+         
+
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+    
+
+        private void EnteredByUser_TextChanged(object sender, EventArgs e)
         {
-           // Undo.Enabled = false;
+            button1.Visible = true; 
+            button1.Enabled = true; 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void Undo_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             Undo.Enabled = false; // turn off the button after undoing once 
-            string REnteredText = res; 
+            string REnteredText = res;
 
 
             UnEncryptTextAl1(letter: this.letter, EnteredText: REnteredText, out this.res);
 
-            
+
             Result.Text = res; // undo --> results in text box
-
-           
-           
-        }
-
-        private void EnteredByUser_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
 
         }
     }

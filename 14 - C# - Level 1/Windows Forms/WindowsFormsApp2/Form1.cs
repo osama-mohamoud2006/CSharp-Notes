@@ -40,6 +40,7 @@ namespace WindowsFormsApp2
         {
             System.Media.SystemSounds.Beep.Play();
             Box2.Text = Box1.Text;
+            label1.Text = Box2.Text;
             DisableButton.Enabled = true; // enable this button again 
             EnableBox.Enabled = false; 
         }
@@ -52,7 +53,9 @@ namespace WindowsFormsApp2
             Box1.Enabled = false; // disable the text box 1
             EnableBox.Enabled = true; // enable the button if i pressed this DisableButton
             DisableButton.Enabled = false;
-           
+            button2.Enabled = false;
+            button1.Enabled = false;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -60,6 +63,8 @@ namespace WindowsFormsApp2
             System.Media.SystemSounds.Beep.Play();
             Box2.Text = Box1.Text;
             DisableButton.Enabled = true;
+            button1.Enabled = false;
+            button2.Enabled = false;
             MessageBox.Show("Event: The Action Is Mouse Entering The Button The Response Is Copying The Text");
         }
 
@@ -69,7 +74,9 @@ namespace WindowsFormsApp2
             EnableBox.BackColor = Color.Red; 
             Box1.Enabled = true; // enable the text box 1 again 
             DisableButton.Enabled = true;
-            EnableBox.Enabled = false; 
+            EnableBox.Enabled = false;
+            button2.Enabled = true;
+            button1.Enabled = true;
         }
 
         private void HideTextBoxOne_Click(object sender, EventArgs e)
@@ -202,5 +209,7 @@ namespace WindowsFormsApp2
             label1.Text = Box1.Text;
             ChangeLabel1.ForeColor = Color.Green; 
         }
+
+       
     }
 }
