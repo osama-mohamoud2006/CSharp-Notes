@@ -10,11 +10,41 @@ using System.Windows.Forms;
 
 namespace Calculator
 {
-    public partial class Form1 : Form
+    public partial class Calculator : Form
     {
-        public Form1()
+        public Calculator()
         {
             InitializeComponent();
         }
+
+      
+
+        private void Blue_Click(object sender, EventArgs e)
+        {
+            this.BackColor = Color.LightSkyBlue;
+            ResultLabel.ForeColor = Color.Black;
+        }
+
+        private void DeepGreen_Click(object sender, EventArgs e)
+        {
+            this.BackColor = Color.DarkGreen;
+            ResultLabel.ForeColor = Color.White;
+        }
+
+        private void Bisque_Click(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Bisque;
+            ResultLabel.ForeColor = Color.Olive;
+
+        }
+
+        private void Black_Click(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Black;
+            ResultLabel.ForeColor = Color.White;
+        }
+
+
+
     }
 }
