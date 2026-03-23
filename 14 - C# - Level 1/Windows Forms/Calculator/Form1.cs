@@ -56,141 +56,189 @@ namespace Calculator
 
         // Themes ///
 
-        private void Blue_Click(object sender, EventArgs e)
-        {
-            Color CBrown = Color.FromArgb(245, 233, 216);
+       private void Blue_Click(object sender, EventArgs e)
+      {
+       Color DarkBlue = Color.FromArgb(25, 77, 130);
+       Color LightBlue = Color.FromArgb(220, 237, 247);
+       Color MediumBlue = Color.FromArgb(100, 150, 200);
 
-            this.BackColor = Color.LightSkyBlue;
-            Multi.BackColor = Color.Beige;
-            Div.BackColor = Color.Beige;
-            Add.BackColor = Color.Beige;
-            Sub.BackColor = Color.Beige;
-            One.BackColor = CBrown;
-            Two.BackColor = CBrown;
-            Three.BackColor = CBrown;
-            Four.BackColor = CBrown;
-            Five.BackColor =CBrown;
-            Six.BackColor = CBrown;
-            Seven.BackColor = CBrown;
-            Eight.BackColor = CBrown;
-            Nine.BackColor = CBrown;
-            Zero.BackColor = CBrown;
-            Ans.BackColor = Color.Orange;
-            Dot.BackColor = CBrown;
-            Equal.BackColor = Color.AliceBlue;
+       this.BackColor = Color.LightSkyBlue;
 
-            ResultLabel.ForeColor = Color.Black;
-        }
+    // Operators - Dark Blue
+    Multi.BackColor = DarkBlue;
+    Multi.ForeColor = Color.White;
+    Div.BackColor = DarkBlue;
+    Div.ForeColor = Color.White;
+    Add.BackColor = DarkBlue;
+    Add.ForeColor = Color.White;
+    Sub.BackColor = DarkBlue;
+    Sub.ForeColor = Color.White;
+    Mod.BackColor = DarkBlue;
+    Mod.ForeColor = Color.White;
 
-        private void DeepGreen_Click(object sender, EventArgs e)
+    // Control buttons
+    DeleteLast.BackColor = DarkBlue;
+    DeleteLast.ForeColor = Color.White;
+    AC.BackColor = DarkBlue;
+    AC.ForeColor = Color.White;
+
+    // Number buttons - Light Blue
+    Button[] numberButtons = { One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Zero, Dot };
+    foreach (Button btn in numberButtons)
+    {
+        btn.BackColor = LightBlue;
+        btn.ForeColor = Color.Black;
+    }
+
+    // Special buttons - Medium Blue
+    Equal.BackColor = MediumBlue;
+    Equal.ForeColor = Color.White;
+    Ans.BackColor = MediumBlue;
+    Ans.ForeColor = Color.White;
+
+    // Text colors
+    ResultLabel.ForeColor = Color.Black;
+    Screen.ForeColor = Color.Black;
+    Screen.BackColor = Color.White;
+}
+
+        private void Brown_Click(object sender, EventArgs e)
         {
         
-            Color SoftBlue = Color.FromArgb(129, 166, 198);
-            Color LightBlue = Color.FromArgb(170, 205, 220);
-            Color Cream = Color.FromArgb(243, 227, 208);
-            Color WarmGray = Color.FromArgb(210, 196, 180);
+            Color DarkBrown = Color.FromArgb(101, 67, 33);
+            Color MediumBrown = Color.FromArgb(160, 120, 80);
+            Color LightBrown = Color.FromArgb(210, 180, 150);
+            Color CreamBackground = Color.FromArgb(245, 240, 230);
 
-            this.BackColor = Cream;
-            ResultLabel.ForeColor = Color.White;
+            this.BackColor = CreamBackground;
 
-            // Background
-            this.BackColor = Cream;
+            // Operators - Dark Brown
+            Multi.BackColor = DarkBrown;
+            Multi.ForeColor = Color.White;
+            Div.BackColor = DarkBrown;
+            Div.ForeColor = Color.White;
+            Add.BackColor = DarkBrown;
+            Add.ForeColor = Color.White;
+            Sub.BackColor = DarkBrown;
+            Sub.ForeColor = Color.White;
+            Mod.BackColor = DarkBrown;
+            Mod.ForeColor = Color.White;
 
-            // Numbers
-            Button[] numbers = { One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Zero, Dot };
-            foreach (Button btn in numbers)
+            // Control buttons
+            DeleteLast.BackColor = DarkBrown;
+            DeleteLast.ForeColor = Color.White;
+            AC.BackColor = DarkBrown;
+            AC.ForeColor = Color.White;
+
+            // Number buttons - Light Brown
+            Button[] numberButtons = { One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Zero, Dot };
+            foreach (Button btn in numberButtons)
             {
-                btn.BackColor = LightBlue;
+                btn.BackColor = LightBrown;
+                btn.ForeColor = Color.Black;
             }
 
-            // Operators
-            Button[] ops = { Add, Sub, Multi, Div };
-            foreach (Button btn in ops)
-            {
-                btn.BackColor = SoftBlue;
-            }
+            // Special buttons - Medium Brown
+            Equal.BackColor = MediumBrown;
+            Equal.ForeColor = Color.White;
+            Ans.BackColor = MediumBrown;
+            Ans.ForeColor = Color.White;
 
-            // Special buttons
-            Equal.BackColor = SoftBlue;
-            Ans.BackColor = WarmGray;
-
-            // Text
-            ResultLabel.ForeColor = Color.Black;
-
+            // Text colors
+            ResultLabel.ForeColor = DarkBrown;
+            Screen.ForeColor = DarkBrown;
+            Screen.BackColor = Color.White;
         }
 
         private void Bisque_Click(object sender, EventArgs e)
         {
-            this.BackColor = Color.Bisque;
-            ResultLabel.ForeColor = Color.Olive;
+            Color DarkTerracotta = Color.FromArgb(153, 76, 0);
+            Color MediumTerracotta = Color.FromArgb(204, 119, 34);
+            Color LightPeach = Color.FromArgb(255, 228, 196);
+            Color BisqueBackground = Color.FromArgb(255, 245, 238);
 
+            this.BackColor = BisqueBackground;
 
-            Color LightCream = Color.FromArgb(255, 248, 240);
-            Color LightBrown = Color.FromArgb(192, 133, 82);
-            Color MediumBrown = Color.FromArgb(140, 90, 60);
-            Color DarkBrown = Color.FromArgb(75, 46, 43);
+            // Operators - Dark Terracotta
+            Multi.BackColor = DarkTerracotta;
+            Multi.ForeColor = Color.White;
+            Div.BackColor = DarkTerracotta;
+            Div.ForeColor = Color.White;
+            Add.BackColor = DarkTerracotta;
+            Add.ForeColor = Color.White;
+            Sub.BackColor = DarkTerracotta;
+            Sub.ForeColor = Color.White;
+            Mod.BackColor = DarkTerracotta;
+            Mod.ForeColor = Color.White;
 
-            // Background
-            this.BackColor = LightCream;
+            // Control buttons
+            DeleteLast.BackColor = DarkTerracotta;
+            DeleteLast.ForeColor = Color.White;
+            AC.BackColor = DarkTerracotta;
+            AC.ForeColor = Color.White;
 
-            // Operators
-            Multi.BackColor = MediumBrown;
-            Div.BackColor = MediumBrown;
-            Add.BackColor = MediumBrown;
-            Sub.BackColor = MediumBrown;
+            // Number buttons - Light Peach
+            Button[] numberButtons = { One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Zero, Dot };
+            foreach (Button btn in numberButtons)
+            {
+                btn.BackColor = LightPeach;
+                btn.ForeColor = Color.Black;
+            }
 
-            // Numbers
-            One.BackColor = LightBrown;
-            Two.BackColor = LightBrown;
-            Three.BackColor = LightBrown;
-            Four.BackColor = LightBrown;
-            Five.BackColor = LightBrown;
-            Six.BackColor = LightBrown;
-            Seven.BackColor = LightBrown;
-            Eight.BackColor = LightBrown;
-            Nine.BackColor = LightBrown;
-            Zero.BackColor = LightBrown;
-            Dot.BackColor = LightBrown;
-            Mod.BackColor = LightBrown;
+            // Special buttons - Medium Terracotta
+            Equal.BackColor = MediumTerracotta;
+            Equal.ForeColor = Color.White;
+            Ans.BackColor = MediumTerracotta;
+            Ans.ForeColor = Color.White;
 
-            // Special buttons
-            Equal.BackColor = Color.Wheat;
-            Ans.BackColor = Color.Wheat;
-
-            // Text color
-            ResultLabel.ForeColor = Color.Wheat;
-
-
+            // Text colors
+            ResultLabel.ForeColor = DarkTerracotta;
+            Screen.ForeColor = DarkTerracotta;
+            Screen.BackColor = Color.White;
         }
 
         private void Black_Click(object sender, EventArgs e)
         {
+            Color NeonPurple = Color.FromArgb(138, 43, 226);
+            Color DarkPurple = Color.FromArgb(75, 0, 130);
+            Color LightGray = Color.FromArgb(220, 220, 220);
 
             this.BackColor = Color.Black;
+
+            // Operators - Dark Purple
+            Multi.BackColor = DarkPurple;
+            Multi.ForeColor = Color.White;
+            Div.BackColor = DarkPurple;
+            Div.ForeColor = Color.White;
+            Add.BackColor = DarkPurple;
+            Add.ForeColor = Color.White;
+            Sub.BackColor = DarkPurple;
+            Sub.ForeColor = Color.White;
+            Mod.BackColor = DarkPurple;
+            Mod.ForeColor = Color.White;
+
+            // Control buttons
+            DeleteLast.BackColor = LightGray;
+            DeleteLast.ForeColor = DarkPurple;
+            AC.BackColor = LightGray;
+            AC.ForeColor = DarkPurple;
+
+            // Number buttons - Neon Purple
+            Button[] numberButtons = { One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Zero, Dot, Ans };
+            foreach (Button btn in numberButtons)
+            {
+                btn.BackColor = NeonPurple;
+                btn.ForeColor = Color.White;
+            }
+
+            // Special button
+            Equal.BackColor = LightGray;
+            Equal.ForeColor = DarkPurple;
+
+            // Text colors
             ResultLabel.ForeColor = Color.White;
-
-
-           
-            Multi.BackColor = Color.Violet;
-            Div.BackColor = Color.Violet;
-            Add.BackColor = Color.Violet;
-            Sub.BackColor = Color.Violet;
-            One.BackColor = Color.Violet;
-            Two.BackColor = Color.Violet;
-            Three.BackColor = Color.Violet;
-            Four.BackColor = Color.Violet;
-            Five.BackColor = Color.Violet;
-            Six.BackColor = Color.Violet;
-            Seven.BackColor = Color.Violet;
-            Eight.BackColor = Color.Violet;
-            Nine.BackColor = Color.Violet;
-            Zero.BackColor = Color.Violet;
-            Ans.BackColor = Color.Violet;
-            Dot.BackColor = Color.Violet;
-            Mod.BackColor = Color.Violet;
-            Equal.BackColor = Color.AliceBlue;
-
-            
+            Screen.ForeColor = Color.LimeGreen;
+            Screen.BackColor = Color.Black;
         }
 
 
@@ -363,6 +411,7 @@ namespace Calculator
         void EnableAllOperations()
         {
             Multi.Enabled = true;
+            DeleteLast.Visible = true;
             Div.Enabled =true;
             Add.Enabled =true;
             Sub.Enabled =true;
@@ -441,6 +490,7 @@ namespace Calculator
 
         private void Equal_Click(object sender, EventArgs e)
         {
+            DeleteLast.Visible = false;
             Equal.Enabled = true;
             DeleteLast.Enabled = false;
             TheEqList.Add(this.EqToPush);
@@ -457,6 +507,7 @@ namespace Calculator
 
         private void Screen_TextChanged(object sender, EventArgs e)
         {
+          
             if (Screen.Text.Length ==0 ) Equal.Enabled = false; 
 
         }
@@ -464,11 +515,12 @@ namespace Calculator
         private void Ans_Click(object sender, EventArgs e)
         {
           
-            DeleteLast.Enabled = false; // enable delete button again 
+            DeleteLast.Visible = false; // enable delete button again 
             AC.Enabled = true;
             RestEq(); // rest the equation list 
         
             EnableAllOperations();
+            Ans.Visible = false; 
 
             Equal.Enabled = true;
 
