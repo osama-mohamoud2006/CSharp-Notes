@@ -36,6 +36,10 @@
             this.DisableButton = new System.Windows.Forms.Button();
             this.EnableBox = new System.Windows.Forms.Button();
             this.HideTextBoxOne = new System.Windows.Forms.Button();
+            this.EnableAll = new System.Windows.Forms.Button();
+            this.BoxOneToBRed = new System.Windows.Forms.Button();
+            this.TextBoxOneBWhite = new System.Windows.Forms.Button();
+            this.RandomColorOfForm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -110,19 +114,70 @@
             // 
             // HideTextBoxOne
             // 
-            this.HideTextBoxOne.Location = new System.Drawing.Point(772, 403);
+            this.HideTextBoxOne.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.HideTextBoxOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HideTextBoxOne.Location = new System.Drawing.Point(759, 404);
             this.HideTextBoxOne.Name = "HideTextBoxOne";
             this.HideTextBoxOne.Size = new System.Drawing.Size(251, 43);
             this.HideTextBoxOne.TabIndex = 7;
             this.HideTextBoxOne.Text = "Hide Text Box 1";
-            this.HideTextBoxOne.UseVisualStyleBackColor = true;
+            this.HideTextBoxOne.UseVisualStyleBackColor = false;
+            this.HideTextBoxOne.AutoSizeChanged += new System.EventHandler(this.HideTextBoxOne_Click);
             this.HideTextBoxOne.Click += new System.EventHandler(this.HideTextBoxOne_Click);
+            // 
+            // EnableAll
+            // 
+            this.EnableAll.BackColor = System.Drawing.Color.Lime;
+            this.EnableAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EnableAll.Location = new System.Drawing.Point(759, 470);
+            this.EnableAll.Name = "EnableAll";
+            this.EnableAll.Size = new System.Drawing.Size(251, 43);
+            this.EnableAll.TabIndex = 8;
+            this.EnableAll.Text = "Enable Text Box 1";
+            this.EnableAll.UseVisualStyleBackColor = false;
+            this.EnableAll.Visible = false;
+            this.EnableAll.Click += new System.EventHandler(this.EnableAll_Click);
+            // 
+            // BoxOneToBRed
+            // 
+            this.BoxOneToBRed.Location = new System.Drawing.Point(163, 392);
+            this.BoxOneToBRed.Name = "BoxOneToBRed";
+            this.BoxOneToBRed.Size = new System.Drawing.Size(224, 55);
+            this.BoxOneToBRed.TabIndex = 9;
+            this.BoxOneToBRed.Text = "Text Box 1 To Red";
+            this.BoxOneToBRed.UseVisualStyleBackColor = true;
+            this.BoxOneToBRed.Click += new System.EventHandler(this.BoxOneToBRed_Click);
+            // 
+            // TextBoxOneBWhite
+            // 
+            this.TextBoxOneBWhite.Location = new System.Drawing.Point(163, 464);
+            this.TextBoxOneBWhite.Name = "TextBoxOneBWhite";
+            this.TextBoxOneBWhite.Size = new System.Drawing.Size(224, 55);
+            this.TextBoxOneBWhite.TabIndex = 10;
+            this.TextBoxOneBWhite.Text = "Text Box 1 To White";
+            this.TextBoxOneBWhite.UseVisualStyleBackColor = true;
+            this.TextBoxOneBWhite.Click += new System.EventHandler(this.TextBoxOneBWhite_Click_1);
+            // 
+            // RandomColorOfForm
+            // 
+            this.RandomColorOfForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RandomColorOfForm.Location = new System.Drawing.Point(98, 311);
+            this.RandomColorOfForm.Name = "RandomColorOfForm";
+            this.RandomColorOfForm.Size = new System.Drawing.Size(321, 53);
+            this.RandomColorOfForm.TabIndex = 11;
+            this.RandomColorOfForm.Text = "Change Form Background Color Randomly";
+            this.RandomColorOfForm.UseVisualStyleBackColor = true;
+            this.RandomColorOfForm.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1111, 565);
+            this.Controls.Add(this.RandomColorOfForm);
+            this.Controls.Add(this.TextBoxOneBWhite);
+            this.Controls.Add(this.BoxOneToBRed);
+            this.Controls.Add(this.EnableAll);
             this.Controls.Add(this.HideTextBoxOne);
             this.Controls.Add(this.EnableBox);
             this.Controls.Add(this.DisableButton);
@@ -148,6 +203,10 @@
         private System.Windows.Forms.Button DisableButton;
         private System.Windows.Forms.Button EnableBox;
         private System.Windows.Forms.Button HideTextBoxOne;
+        private System.Windows.Forms.Button EnableAll;
+        private System.Windows.Forms.Button BoxOneToBRed;
+        private System.Windows.Forms.Button TextBoxOneBWhite;
+        private System.Windows.Forms.Button RandomColorOfForm;
     }
 }
 
