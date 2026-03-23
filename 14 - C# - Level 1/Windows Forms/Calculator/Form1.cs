@@ -45,6 +45,7 @@ namespace Calculator
         {
             EqToPush= "";
             TheEqList.Clear();
+            EnableAllOperations();
         }
 
 
@@ -145,6 +146,12 @@ namespace Calculator
             AppendToScreen("0");
         }
 
+        private void Dot_Click(object sender, EventArgs e)
+        {
+            EqToPush += ".";
+            AppendToScreen(".");
+        }
+
         private void DeleteLast_Click(object sender, EventArgs e)
         {
            if(!String.IsNullOrEmpty(Screen.Text)) // return true if it is null or empty 
@@ -167,37 +174,12 @@ namespace Calculator
             DeleteLast.Enabled = true; // enable delete button again 
             RestEq(); // rest the equation list 
             Screen.Text = "";
-            AC.Enabled = false; 
+            AC.Enabled = false;
+            EnableAllOperations();
         }
 
 
         // The Start Of Calc ///
-
-        private char ReturnCharAccordingToOpName() // take the current operation name and convert it to suitable operatore 
-        {
-            switch (enCurrentOperation)
-            {
-                case Core.enOperation.Add:
-                    return '+';
-
-
-                case Core.enOperation.Sub:
-                    return '-';
-
-                case Core.enOperation.Multi:
-                    return '*';
-
-                case Core.enOperation.Div:
-                    return '/';
-
-            }
-            return '+';
-        }
-
-        //void TheNumsOfEq(out string[] eqNums )// convert the string to 2 num between them operation 
-        //{
-        //    eqNums = EqToPush.Split(ReturnCharAccordingToOpName());
-        //}
 
 
         private void ImplementTheCalc()
@@ -215,16 +197,25 @@ namespace Calculator
             TheEqList.Clear();
         }
 
-        //private bool CheckBeforeContinue()
-        //{
-        //    return (TheEqList.Count >1) ?  true: false; 
-        //}
+    
+        void DisableAllOperations()
+        {
+            Multi.Enabled = false;
+            Div.Enabled = false;
+            Add.Enabled = false;
+            Sub.Enabled = false;
 
-        //void GetInitialResultOf2Nums() // take the first 2 nums of list 
-        //{
-        //    if (CheckBeforeContinue())
-        //   Obj.SimpleCalc(N1: Convert.ToDecimal(TheEqList[0]),N2: Convert.ToDecimal(TheEqList[1]),this.enCurrentOperation , out this.Result);
-        //}
+        }
+
+        void EnableAllOperations()
+        {
+            Multi.Enabled = true;
+            Div.Enabled =true;
+            Add.Enabled =true;
+            Sub.Enabled =true;
+
+        }
+
 
         private void Multi_Click(object sender, EventArgs e)
         {
@@ -233,9 +224,52 @@ namespace Calculator
 
             
             TheEqList.Add(EqToPush); // add the string number
-          //  TheEqList.Add( "*");
+          
            
             this.EqToPush = ""; //rest the string for new nums 
+
+            DisableAllOperations(); // to avoid multi operations at the same time 
+        }
+
+        private void Div_Click(object sender, EventArgs e)
+        {
+            enCurrentOperation = Core.enOperation.Div;
+            Screen.Text += "/";
+
+
+            TheEqList.Add(EqToPush); // add the string number
+
+
+            this.EqToPush = ""; //rest the string for new nums 
+            DisableAllOperations(); // to avoid multi operations at the same time 
+        }
+
+        private void Add_Click(object sender, EventArgs e)
+        {
+            enCurrentOperation = Core.enOperation.Add;
+            Screen.Text += "+";
+
+
+            TheEqList.Add(EqToPush); // add the string number
+
+
+            this.EqToPush = ""; //rest the string for new nums 
+            DisableAllOperations(); // to avoid multi operations at the same time 
+
+        }
+
+
+        private void Sub_Click(object sender, EventArgs e)
+        {
+            enCurrentOperation = Core.enOperation.Add;
+            Screen.Text += "-";
+
+
+            TheEqList.Add(EqToPush); // add the string number
+
+
+            this.EqToPush = ""; //rest the string for new nums 
+            DisableAllOperations(); // to avoid multi operations at the same time 
         }
 
         private void Equal_Click(object sender, EventArgs e)
@@ -249,8 +283,6 @@ namespace Calculator
             Result = 0;
         }
 
-
-
-
+       
     }
 }

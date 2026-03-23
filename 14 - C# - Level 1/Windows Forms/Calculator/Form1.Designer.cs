@@ -50,6 +50,9 @@
             this.Equal = new System.Windows.Forms.Button();
             this.DeleteLast = new System.Windows.Forms.Button();
             this.AC = new System.Windows.Forms.Button();
+            this.Add = new System.Windows.Forms.Button();
+            this.Sub = new System.Windows.Forms.Button();
+            this.Dot = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // DeepGreen
@@ -136,6 +139,7 @@
             this.Div.TabIndex = 14;
             this.Div.Text = "/";
             this.Div.UseVisualStyleBackColor = true;
+            this.Div.Click += new System.EventHandler(this.Div_Click);
             // 
             // One
             // 
@@ -250,7 +254,7 @@
             // Equal
             // 
             this.Equal.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Equal.Location = new System.Drawing.Point(153, 598);
+            this.Equal.Location = new System.Drawing.Point(227, 598);
             this.Equal.Name = "Equal";
             this.Equal.Size = new System.Drawing.Size(138, 47);
             this.Equal.TabIndex = 25;
@@ -284,11 +288,48 @@
             this.AC.UseVisualStyleBackColor = false;
             this.AC.Click += new System.EventHandler(this.AC_Click);
             // 
+            // Add
+            // 
+            this.Add.Font = new System.Drawing.Font("Ravie", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Add.Location = new System.Drawing.Point(457, 458);
+            this.Add.Name = "Add";
+            this.Add.Size = new System.Drawing.Size(42, 44);
+            this.Add.TabIndex = 28;
+            this.Add.Text = "+";
+            this.Add.UseVisualStyleBackColor = true;
+            this.Add.Click += new System.EventHandler(this.Add_Click);
+            // 
+            // Sub
+            // 
+            this.Sub.Font = new System.Drawing.Font("Microsoft JhengHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sub.Location = new System.Drawing.Point(559, 458);
+            this.Sub.Name = "Sub";
+            this.Sub.Size = new System.Drawing.Size(42, 44);
+            this.Sub.TabIndex = 29;
+            this.Sub.Text = "---";
+            this.Sub.UseVisualStyleBackColor = true;
+            this.Sub.Click += new System.EventHandler(this.Sub_Click);
+            // 
+            // Dot
+            // 
+            this.Dot.Font = new System.Drawing.Font("Back Button Icons", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dot.Location = new System.Drawing.Point(144, 596);
+            this.Dot.Margin = new System.Windows.Forms.Padding(30);
+            this.Dot.Name = "Dot";
+            this.Dot.Size = new System.Drawing.Size(44, 44);
+            this.Dot.TabIndex = 30;
+            this.Dot.Text = ".";
+            this.Dot.UseVisualStyleBackColor = true;
+            this.Dot.Click += new System.EventHandler(this.Dot_Click);
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(645, 657);
+            this.Controls.Add(this.Dot);
+            this.Controls.Add(this.Sub);
+            this.Controls.Add(this.Add);
             this.Controls.Add(this.AC);
             this.Controls.Add(this.DeleteLast);
             this.Controls.Add(this.Equal);
@@ -340,6 +381,9 @@
         private System.Windows.Forms.Button Equal;
         private System.Windows.Forms.Button DeleteLast;
         private System.Windows.Forms.Button AC;
+        private System.Windows.Forms.Button Add;
+        private System.Windows.Forms.Button Sub;
+        private System.Windows.Forms.Button Dot;
     }
 }
 
