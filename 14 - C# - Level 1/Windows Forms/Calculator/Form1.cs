@@ -174,14 +174,26 @@ namespace Calculator
 
                 Result = 0;
 
-                string[] temp = this.TheEqList.ToArray();
 
-                temp[temp.Length - 1] = PopArrString(temp[temp.Length - 1]); // remove one char form the last element of array element
+                if (!String.IsNullOrEmpty(EqToPush) )
+                {
+                    EqToPush  = EqToPush.Remove(EqToPush.Length - 1); // remove the last element (pop) 
+                }
 
-                TheEqList =temp.ToList();
+                else if (TheEqList.Count >0)
+                {
+                    string Last = TheEqList[TheEqList.Count - 1];
+
+                    if (!String.IsNullOrEmpty(Last)) TheEqList[TheEqList.Count - 1] = Last.Remove(Last.Length - 1);
+                    
+                    if(String.IsNullOrEmpty(Last))
+                    {
+                        TheEqList.RemoveAt(TheEqList.Count - 1);
+                    }
 
 
-                EqToPush.Remove(EqToPush.Length - 1); // remove the last element (pop) 
+                 }
+             
 
                 bool IsDigitsOnly = Decimal.TryParse(Screen.Text, out _); // _ discard  --> returns true if the string have nums only
                 if (IsDigitsOnly)
