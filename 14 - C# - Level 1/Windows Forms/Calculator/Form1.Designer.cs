@@ -53,6 +53,7 @@
             this.Add = new System.Windows.Forms.Button();
             this.Sub = new System.Windows.Forms.Button();
             this.Dot = new System.Windows.Forms.Button();
+            this.Ans = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // DeepGreen
@@ -244,7 +245,7 @@
             // Zero
             // 
             this.Zero.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Zero.Location = new System.Drawing.Point(30, 445);
+            this.Zero.Location = new System.Drawing.Point(30, 457);
             this.Zero.Name = "Zero";
             this.Zero.Size = new System.Drawing.Size(57, 47);
             this.Zero.TabIndex = 24;
@@ -323,11 +324,25 @@
             this.Dot.UseVisualStyleBackColor = true;
             this.Dot.Click += new System.EventHandler(this.Dot_Click);
             // 
+            // Ans
+            // 
+            this.Ans.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Ans.Font = new System.Drawing.Font("Nirmala Text", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ans.Location = new System.Drawing.Point(434, 460);
+            this.Ans.Name = "Ans";
+            this.Ans.Size = new System.Drawing.Size(138, 57);
+            this.Ans.TabIndex = 31;
+            this.Ans.Text = "Ans";
+            this.Ans.UseVisualStyleBackColor = false;
+            this.Ans.Visible = false;
+            this.Ans.Click += new System.EventHandler(this.Ans_Click);
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(645, 529);
+            this.Controls.Add(this.Ans);
             this.Controls.Add(this.Dot);
             this.Controls.Add(this.Sub);
             this.Controls.Add(this.Add);
@@ -385,6 +400,7 @@
         private System.Windows.Forms.Button Add;
         private System.Windows.Forms.Button Sub;
         private System.Windows.Forms.Button Dot;
+        private System.Windows.Forms.Button Ans;
     }
 }
 

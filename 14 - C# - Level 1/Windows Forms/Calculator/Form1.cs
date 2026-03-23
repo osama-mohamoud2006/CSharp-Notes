@@ -18,7 +18,9 @@ namespace Calculator
         private List<string> TheEqList;
         string EqToPush=""; // every num is concated with string after pressing op it push it to list
 
-        decimal Result=0m; 
+        decimal Result=0m;
+
+        decimal AnsValue  ;
 
         public Calculator()
         {
@@ -51,15 +53,6 @@ namespace Calculator
             Equal.Enabled = false;
         }
 
-
-        //private void AddToEq(string num)
-        //{
-           
-        //}
-        //private void DeleteTheLastOfEq()
-        //{
-        //    this.TheEq.RemoveAt(TheEq.Count - 1);
-        //}
 
         private void Blue_Click(object sender, EventArgs e)
         {
@@ -155,15 +148,7 @@ namespace Calculator
             AppendToScreen(".");
         }
 
-        string PopArrString(string str)
-        {
-            string res = "";
-            for(byte i =0; i<str.Length-1;i++)
-            {
-                res += str[i];
-            }
-            return res; 
-        }
+   
 
         private void DeleteLast_Click(object sender, EventArgs e)
         {
@@ -334,14 +319,34 @@ namespace Calculator
            ImplementTheCalc();
 
             Screen.Text += "= " + this.Result;
+            this.AnsValue = Result; 
             Result = 0;
             Equal.Enabled = false;
+            Ans.Visible = true; 
         }
 
         private void Screen_TextChanged(object sender, EventArgs e)
         {
             if (Screen.Text.Length ==0 ) Equal.Enabled = false; 
 
+        }
+
+        private void Ans_Click(object sender, EventArgs e)
+        {
+          
+            DeleteLast.Enabled = false; // enable delete button again 
+            AC.Enabled = true;
+            RestEq(); // rest the equation list 
+        
+            EnableAllOperations();
+
+            Equal.Enabled = true;
+
+            EqToPush = Convert.ToString(AnsValue);
+            Screen.Text = "Ans";
+
+            
+            Ans.Visible = false;
         }
     }
 }
