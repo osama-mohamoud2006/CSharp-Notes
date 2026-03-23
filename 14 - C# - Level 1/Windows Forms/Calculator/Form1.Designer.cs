@@ -63,6 +63,7 @@
             this.DeepGreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
             this.DeepGreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.DeepGreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeepGreen.ForeColor = System.Drawing.Color.White;
             this.DeepGreen.Location = new System.Drawing.Point(191, 21);
             this.DeepGreen.Name = "DeepGreen";
             this.DeepGreen.Size = new System.Drawing.Size(52, 25);
@@ -77,9 +78,9 @@
             this.Blue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(237)))), ((int)(((byte)(247)))));
             this.Blue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Blue.ForeColor = System.Drawing.Color.White;
-            this.Blue.Location = new System.Drawing.Point(331, 23);
+            this.Blue.Location = new System.Drawing.Point(324, 21);
             this.Blue.Name = "Blue";
-            this.Blue.Size = new System.Drawing.Size(50, 23);
+            this.Blue.Size = new System.Drawing.Size(60, 30);
             this.Blue.TabIndex = 5;
             this.Blue.UseVisualStyleBackColor = false;
             this.Blue.Click += new System.EventHandler(this.Blue_Click);
@@ -88,11 +89,12 @@
             // Brown
             // 
             this.Brown.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Brown.BackColor = System.Drawing.Color.SeaShell;
+            this.Brown.BackColor = System.Drawing.Color.Tan;
             this.Brown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Brown.Location = new System.Drawing.Point(266, 23);
+            this.Brown.ForeColor = System.Drawing.Color.White;
+            this.Brown.Location = new System.Drawing.Point(263, 21);
             this.Brown.Name = "Brown";
-            this.Brown.Size = new System.Drawing.Size(49, 23);
+            this.Brown.Size = new System.Drawing.Size(52, 25);
             this.Brown.TabIndex = 9;
             this.Brown.UseVisualStyleBackColor = false;
             this.Brown.Click += new System.EventHandler(this.Bisque_Click);
@@ -126,6 +128,7 @@
             this.Black.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Black.BackColor = System.Drawing.Color.Black;
             this.Black.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Black.ForeColor = System.Drawing.Color.White;
             this.Black.Location = new System.Drawing.Point(120, 21);
             this.Black.Name = "Black";
             this.Black.Size = new System.Drawing.Size(54, 25);
@@ -372,6 +375,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(396, 489);
             this.Controls.Add(this.Mod);
             this.Controls.Add(this.Ans);
@@ -399,7 +403,10 @@
             this.Controls.Add(this.Brown);
             this.Controls.Add(this.DeepGreen);
             this.Controls.Add(this.Blue);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Calculator";
             this.Text = "Calculator";
             this.ResumeLayout(false);
