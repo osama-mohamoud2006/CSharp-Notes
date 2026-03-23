@@ -16,11 +16,11 @@ namespace Calculator
         Core.enOperation enCurrentOperation;
 
         private List<string> TheEqList;
-        string EqToPush=""; // every num is concated with string after pressing op it push it to list
+        private string EqToPush =""; // every num is concated with string after pressing op it push it to list
 
-        decimal Result=0m;
+        private decimal Result =0m;
 
-        decimal AnsValue  ;
+        private decimal AnsValue  ;
 
         public Calculator()
         {

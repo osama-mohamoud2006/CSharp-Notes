@@ -62,6 +62,7 @@
             this.DeepGreen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.DeepGreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
             this.DeepGreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.DeepGreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeepGreen.Location = new System.Drawing.Point(191, 21);
             this.DeepGreen.Name = "DeepGreen";
             this.DeepGreen.Size = new System.Drawing.Size(52, 25);
@@ -74,6 +75,8 @@
             // 
             this.Blue.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Blue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(237)))), ((int)(((byte)(247)))));
+            this.Blue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Blue.ForeColor = System.Drawing.Color.White;
             this.Blue.Location = new System.Drawing.Point(331, 23);
             this.Blue.Name = "Blue";
             this.Blue.Size = new System.Drawing.Size(50, 23);
@@ -86,6 +89,7 @@
             // 
             this.Brown.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Brown.BackColor = System.Drawing.Color.SeaShell;
+            this.Brown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Brown.Location = new System.Drawing.Point(266, 23);
             this.Brown.Name = "Brown";
             this.Brown.Size = new System.Drawing.Size(49, 23);
@@ -121,6 +125,7 @@
             // 
             this.Black.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Black.BackColor = System.Drawing.Color.Black;
+            this.Black.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Black.Location = new System.Drawing.Point(120, 21);
             this.Black.Name = "Black";
             this.Black.Size = new System.Drawing.Size(54, 25);
