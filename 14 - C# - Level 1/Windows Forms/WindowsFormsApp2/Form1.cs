@@ -92,6 +92,9 @@ namespace WindowsFormsApp2
             RandomColorOfForm.Visible = false;
             ChangeTitle.Visible = false;
 
+
+            ChangeLabel1.Visible = false; 
+
             MessageBox.Show("As You Disabled Main Text Box , So Every Thing Is Also Disabled");
             System.Media.SystemSounds.Beep.Play();
            
@@ -115,7 +118,8 @@ namespace WindowsFormsApp2
             BoxOneToBRed.Visible = true;
             TextBoxOneBWhite.Visible = true;
             RandomColorOfForm.Visible = true;
-            ChangeTitle.Visible = true; 
+            ChangeTitle.Visible = true;
+            ChangeLabel1.Visible = true; 
 
             MessageBox.Show("As You Enabled Main Text Box , So Every Thing Is Also Enabled");
         
@@ -191,6 +195,12 @@ namespace WindowsFormsApp2
         {
            this.Text =  Box1.Text;
             MessageBox.Show("The Title Of Form Has Changed!");
+        }
+
+        private void ChangeLabel1_Click(object sender, EventArgs e)
+        {
+            label1.Text = Box1.Text;
+            ChangeLabel1.ForeColor = Color.Green; 
         }
     }
 }

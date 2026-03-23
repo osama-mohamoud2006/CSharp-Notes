@@ -42,6 +42,7 @@
             this.TextBoxOneBWhite = new System.Windows.Forms.Button();
             this.RandomColorOfForm = new System.Windows.Forms.Button();
             this.ChangeTitle = new System.Windows.Forms.Button();
+            this.ChangeLabel1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -183,11 +184,23 @@
             this.ChangeTitle.Click += new System.EventHandler(this.ChangeTitle_Click);
             this.ChangeTitle.MouseEnter += new System.EventHandler(this.ChangeTitle_Click);
             // 
+            // ChangeLabel1
+            // 
+            this.ChangeLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChangeLabel1.Location = new System.Drawing.Point(744, 318);
+            this.ChangeLabel1.Name = "ChangeLabel1";
+            this.ChangeLabel1.Size = new System.Drawing.Size(306, 45);
+            this.ChangeLabel1.TabIndex = 13;
+            this.ChangeLabel1.Text = "Change The Label";
+            this.ChangeLabel1.UseVisualStyleBackColor = true;
+            this.ChangeLabel1.Click += new System.EventHandler(this.ChangeLabel1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1111, 565);
+            this.Controls.Add(this.ChangeLabel1);
             this.Controls.Add(this.ChangeTitle);
             this.Controls.Add(this.RandomColorOfForm);
             this.Controls.Add(this.TextBoxOneBWhite);
@@ -224,6 +237,7 @@
         private System.Windows.Forms.Button TextBoxOneBWhite;
         private System.Windows.Forms.Button RandomColorOfForm;
         private System.Windows.Forms.Button ChangeTitle;
+        private System.Windows.Forms.Button ChangeLabel1;
     }
 }
 
