@@ -15,16 +15,16 @@ namespace Calculator
         private Core Obj ;
         Core.enOperation enCurrentOperation;
 
-        //private List<string> TheEq;
+        private List<string> TheEqList;
         string EqToPush=""; // every num is concated with string after pressing op it push it to list
 
-        decimal Result; 
+        decimal Result=0m; 
 
         public Calculator()
         {
             InitializeComponent();
             Obj = new Core();
-            //TheEq = new List<string>(); 
+            TheEqList = new List<string>(); 
         }
 
       
@@ -43,7 +43,8 @@ namespace Calculator
 
         private void RestEq()
         {
-            EqToPush= EqToPush.Remove(0);
+            EqToPush= "";
+            TheEqList.Clear();
         }
 
 
@@ -81,15 +82,18 @@ namespace Calculator
             ResultLabel.ForeColor = Color.White;
         }
 
+
+        // buttons of nums //
+
         private void One_Click(object sender, EventArgs e)
         {
-            EqToPush.Concat("1");
+            EqToPush += "1";
             AppendToScreen("1");
         }
 
         private void Two_Click(object sender, EventArgs e)
         {
-            EqToPush.Concat("2");
+            EqToPush += "2";
             AppendToScreen("2");
         }
 
@@ -101,43 +105,43 @@ namespace Calculator
 
         private void Four_Click(object sender, EventArgs e)
         {
-            EqToPush.Concat("4");
+            EqToPush += "4"; ;
             AppendToScreen("4");
         }
 
         private void Five_Click(object sender, EventArgs e)
         {
-            EqToPush.Concat("5");
+            EqToPush += "5" ;
             AppendToScreen("5");
         }
 
         private void Six_Click(object sender, EventArgs e)
         {
-            EqToPush.Concat("6");
+            EqToPush += "6";
             AppendToScreen("6");
         }
 
         private void Seven_Click(object sender, EventArgs e)
         {
-            EqToPush.Concat("7");
+            EqToPush += "7";
             AppendToScreen("7");
         }
 
         private void Eight_Click(object sender, EventArgs e)
         {
-            EqToPush.Concat("8");
+            EqToPush += "8";
             AppendToScreen("8");
         }
 
         private void Nine_Click(object sender, EventArgs e)
         {
-            EqToPush.Concat("9");
+            EqToPush += "9";
             AppendToScreen("9");
         }
 
         private void Zero_Click(object sender, EventArgs e)
         {
-            EqToPush.Concat("0");
+            EqToPush += "0";
             AppendToScreen("0");
         }
 
@@ -171,7 +175,7 @@ namespace Calculator
 
         private char ReturnCharAccordingToOpName() // take the current operation name and convert it to suitable operatore 
         {
-            switch(enCurrentOperation)
+            switch (enCurrentOperation)
             {
                 case Core.enOperation.Add:
                     return '+';
@@ -190,33 +194,59 @@ namespace Calculator
             return '+';
         }
 
-        void TheNumsOfEq(out string[] eqNums )// convert the string to 2 num between them operation 
+        //void TheNumsOfEq(out string[] eqNums )// convert the string to 2 num between them operation 
+        //{
+        //    eqNums = EqToPush.Split(ReturnCharAccordingToOpName());
+        //}
+
+
+        private void ImplementTheCalc()
         {
-            eqNums = EqToPush.Split(ReturnCharAccordingToOpName());
+            decimal Num = 0m;
+           
+
+            for (int i=1; i<TheEqList.Count; i++)
+            {
+                Obj.SimpleCalc(N1: Convert.ToDecimal(TheEqList[i-1]), N2:Convert.ToDecimal( TheEqList[i]), enCurrentOperation, out Num);
+               
+                Result += Num;
+                Num = 0; 
+            }
+            TheEqList.Clear();
         }
 
-      
-       private void ImplementTheCalc()
-        {
-            string[] eqNum; 
-          
-            TheNumsOfEq(out eqNum); // split the arr to nums 
+        //private bool CheckBeforeContinue()
+        //{
+        //    return (TheEqList.Count >1) ?  true: false; 
+        //}
 
-            Obj.SimpleCalc(N1: Convert.ToDecimal(eqNum[0]), N2: Convert.ToDecimal(eqNum[2]), enCurrentOperation, out Result);
-
-        }
+        //void GetInitialResultOf2Nums() // take the first 2 nums of list 
+        //{
+        //    if (CheckBeforeContinue())
+        //   Obj.SimpleCalc(N1: Convert.ToDecimal(TheEqList[0]),N2: Convert.ToDecimal(TheEqList[1]),this.enCurrentOperation , out this.Result);
+        //}
 
         private void Multi_Click(object sender, EventArgs e)
         {
             enCurrentOperation = Core.enOperation.Multi; 
             Screen.Text += "*";
-            EqToPush += "*";
+
+            
+            TheEqList.Add(EqToPush); // add the string number
+          //  TheEqList.Add( "*");
+           
+            this.EqToPush = ""; //rest the string for new nums 
         }
 
         private void Equal_Click(object sender, EventArgs e)
         {
-            ImplementTheCalc();
-            Screen.Text += "= " + this.Result; 
+            DeleteLast.Enabled = false;
+            TheEqList.Add(this.EqToPush);
+            EqToPush = "";
+           ImplementTheCalc();
+
+            Screen.Text += "= " + this.Result;
+            Result = 0;
         }
 
 
