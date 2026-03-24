@@ -232,5 +232,49 @@ namespace WindowsFormsApp2
         {
             Pressing.BackColor = Color.Red; 
         }
+
+        private void Down(object sender, MouseEventArgs e)
+        {
+            button5.BackColor = Color.PeachPuff;
+            MessageBox.Show("you have entered pressed the button");
+
+        }
+
+        private void Entered(object sender, EventArgs e)
+        {
+
+            button5.BackColor = Color.GreenYellow;
+            MessageBox.Show("السلام عليكم انت دخلت الزرار");
+        }
+
+        private new void Left(object sender, EventArgs e)
+        {
+
+            button5.BackColor = Color.Purple;
+            MessageBox.Show("The Statement You Have Done Was So Shit Even The Dog Has Left");
+        }
+
+        private void LeftTheTextBox(object sender, EventArgs e)
+        {
+            MessageBox.Show("you have left the text box");
+            this.ForeColor = Color.Red; 
+            HideTextBoxOne_Click(sender, e); // call the event 
+        }
+
+        private void EnableTime(object sender, EventArgs e)
+        {
+            Box1.Enabled = true; // enable the text box when mouse entering it
+        }
+
+        private void LeaveTest(object sender, EventArgs e)
+        {
+
+            _ = (button6.Enabled == false) ? button6.ForeColor = Color.Purple : button6.ForeColor = Color.WhiteSmoke; 
+        }
+
+        private void EnterTest(object sender, DragEventArgs e)
+        {
+
+        }
     }
 }

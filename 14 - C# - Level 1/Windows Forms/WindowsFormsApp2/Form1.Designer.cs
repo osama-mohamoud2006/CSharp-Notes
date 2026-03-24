@@ -47,6 +47,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.Pressing = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -61,12 +64,15 @@
             // 
             // Box1
             // 
-            this.Box1.Location = new System.Drawing.Point(146, 130);
+            this.Box1.Enabled = false;
+            this.Box1.Location = new System.Drawing.Point(111, 130);
             this.Box1.Name = "Box1";
-            this.Box1.Size = new System.Drawing.Size(226, 84);
+            this.Box1.Size = new System.Drawing.Size(261, 84);
             this.Box1.TabIndex = 1;
             this.Box1.Text = "Box1";
             this.Box1.TextChanged += new System.EventHandler(this.Box1_TextChanged);
+            this.Box1.MouseEnter += new System.EventHandler(this.EnableTime);
+            this.Box1.MouseLeave += new System.EventHandler(this.LeftTheTextBox);
             // 
             // Box2
             // 
@@ -154,8 +160,9 @@
             // 
             // ChangeLabel1
             // 
+            this.ChangeLabel1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ChangeLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChangeLabel1.Location = new System.Drawing.Point(1165, 81);
+            this.ChangeLabel1.Location = new System.Drawing.Point(1162, 81);
             this.ChangeLabel1.Name = "ChangeLabel1";
             this.ChangeLabel1.Size = new System.Drawing.Size(261, 58);
             this.ChangeLabel1.TabIndex = 13;
@@ -170,7 +177,7 @@
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RosyBrown;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(418, 311);
+            this.button3.Location = new System.Drawing.Point(418, 346);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(289, 49);
             this.button3.TabIndex = 14;
@@ -217,8 +224,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(508, 153);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 25);
@@ -246,13 +254,52 @@
             this.Pressing.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WhenMousePressingTheButton);
             this.Pressing.MouseLeave += new System.EventHandler(this.MouseLeft);
             // 
+            // button4
+            // 
+            this.button4.FlatAppearance.BorderSize = 10;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(432, 230);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(261, 60);
+            this.button4.TabIndex = 19;
+            this.button4.Text = "Mouse Over";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button5.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button5.Location = new System.Drawing.Point(1499, 200);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(226, 84);
+            this.button5.TabIndex = 20;
+            this.button5.Text = "Works By Event";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Down);
+            this.button5.MouseEnter += new System.EventHandler(this.Entered);
+            this.button5.MouseLeave += new System.EventHandler(this.Left);
+            // 
+            // button6
+            // 
+            this.button6.Enabled = false;
+            this.button6.Location = new System.Drawing.Point(1588, 345);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 112);
+            this.button6.TabIndex = 21;
+            this.button6.Text = "button6";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.DragEnter += new System.Windows.Forms.DragEventHandler(this.EnterTest);
+            this.button6.DragLeave += new System.EventHandler(this.LeaveTest);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1572, 565);
+            this.ClientSize = new System.Drawing.Size(1792, 565);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.Pressing);
-            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.EnableBox);
             this.Controls.Add(this.DisableButton);
@@ -269,6 +316,8 @@
             this.Controls.Add(this.Box2);
             this.Controls.Add(this.Box1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.richTextBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Simple Copy App BTW";
@@ -297,6 +346,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button Pressing;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }
 
