@@ -206,10 +206,31 @@ namespace WindowsFormsApp2
 
         private void ChangeLabel1_Click(object sender, EventArgs e)
         {
-            label1.Text = Box1.Text;
+             label1.Text = Box1.Text;
             ChangeLabel1.ForeColor = Color.Green; 
         }
 
-       
+        private void button3_Click(object sender, EventArgs e)
+        {
+            button3.MouseDown += Button3_MouseDown; 
+        }
+
+        private void Button3_MouseDown(object sender, MouseEventArgs e)
+        {
+            button3.BackColor = Color.PaleVioletRed;
+            MessageBox.Show("the Event Of Changing Thr BackColor Has Happened"); 
+        }
+
+     
+
+        private void WhenMousePressingTheButton(object sender, MouseEventArgs e)
+        {
+            Pressing.BackColor = Color.Aqua; 
+        }
+
+        private void MouseLeft(object sender, EventArgs e)
+        {
+            Pressing.BackColor = Color.Red; 
+        }
     }
 }
