@@ -51,9 +51,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(570, 18);
+            this.label1.Location = new System.Drawing.Point(533, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(450, 113);
+            this.label1.Size = new System.Drawing.Size(487, 113);
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome To Khara Cofe";
             // 
