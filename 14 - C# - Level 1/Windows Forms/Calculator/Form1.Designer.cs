@@ -64,7 +64,7 @@
             this.DeepGreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.DeepGreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeepGreen.ForeColor = System.Drawing.Color.White;
-            this.DeepGreen.Location = new System.Drawing.Point(191, 21);
+            this.DeepGreen.Location = new System.Drawing.Point(188, 21);
             this.DeepGreen.Name = "DeepGreen";
             this.DeepGreen.Size = new System.Drawing.Size(52, 25);
             this.DeepGreen.TabIndex = 8;
@@ -80,7 +80,7 @@
             this.Blue.ForeColor = System.Drawing.Color.White;
             this.Blue.Location = new System.Drawing.Point(324, 21);
             this.Blue.Name = "Blue";
-            this.Blue.Size = new System.Drawing.Size(60, 30);
+            this.Blue.Size = new System.Drawing.Size(52, 25);
             this.Blue.TabIndex = 5;
             this.Blue.UseVisualStyleBackColor = false;
             this.Blue.Click += new System.EventHandler(this.Blue_Click);
@@ -92,7 +92,7 @@
             this.Brown.BackColor = System.Drawing.Color.Tan;
             this.Brown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Brown.ForeColor = System.Drawing.Color.White;
-            this.Brown.Location = new System.Drawing.Point(263, 21);
+            this.Brown.Location = new System.Drawing.Point(256, 21);
             this.Brown.Name = "Brown";
             this.Brown.Size = new System.Drawing.Size(52, 25);
             this.Brown.TabIndex = 9;
@@ -131,7 +131,7 @@
             this.Black.ForeColor = System.Drawing.Color.White;
             this.Black.Location = new System.Drawing.Point(120, 21);
             this.Black.Name = "Black";
-            this.Black.Size = new System.Drawing.Size(54, 25);
+            this.Black.Size = new System.Drawing.Size(52, 25);
             this.Black.TabIndex = 12;
             this.Black.UseVisualStyleBackColor = false;
             this.Black.Click += new System.EventHandler(this.Black_Click);
@@ -143,7 +143,7 @@
             this.Multi.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Multi.Location = new System.Drawing.Point(308, 232);
             this.Multi.Name = "Multi";
-            this.Multi.Size = new System.Drawing.Size(84, 43);
+            this.Multi.Size = new System.Drawing.Size(77, 43);
             this.Multi.TabIndex = 13;
             this.Multi.Text = "X";
             this.Multi.UseVisualStyleBackColor = false;
@@ -154,7 +154,7 @@
             this.Div.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Div.Location = new System.Drawing.Point(308, 295);
             this.Div.Name = "Div";
-            this.Div.Size = new System.Drawing.Size(77, 44);
+            this.Div.Size = new System.Drawing.Size(77, 43);
             this.Div.TabIndex = 14;
             this.Div.Text = "/";
             this.Div.UseVisualStyleBackColor = true;
@@ -177,7 +177,7 @@
             this.Two.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Two.Location = new System.Drawing.Point(120, 232);
             this.Two.Name = "Two";
-            this.Two.Size = new System.Drawing.Size(79, 43);
+            this.Two.Size = new System.Drawing.Size(77, 43);
             this.Two.TabIndex = 16;
             this.Two.Text = "2";
             this.Two.UseVisualStyleBackColor = true;
@@ -188,7 +188,7 @@
             this.Three.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Three.Location = new System.Drawing.Point(216, 232);
             this.Three.Name = "Three";
-            this.Three.Size = new System.Drawing.Size(79, 43);
+            this.Three.Size = new System.Drawing.Size(77, 43);
             this.Three.TabIndex = 17;
             this.Three.Text = "3";
             this.Three.UseVisualStyleBackColor = true;
@@ -199,7 +199,7 @@
             this.Four.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Four.Location = new System.Drawing.Point(22, 299);
             this.Four.Name = "Four";
-            this.Four.Size = new System.Drawing.Size(77, 40);
+            this.Four.Size = new System.Drawing.Size(77, 43);
             this.Four.TabIndex = 18;
             this.Four.Text = "4";
             this.Four.UseVisualStyleBackColor = true;
@@ -210,7 +210,7 @@
             this.Five.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Five.Location = new System.Drawing.Point(120, 295);
             this.Five.Name = "Five";
-            this.Five.Size = new System.Drawing.Size(81, 44);
+            this.Five.Size = new System.Drawing.Size(77, 43);
             this.Five.TabIndex = 19;
             this.Five.Text = "5";
             this.Five.UseVisualStyleBackColor = true;
@@ -221,7 +221,7 @@
             this.Six.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Six.Location = new System.Drawing.Point(216, 295);
             this.Six.Name = "Six";
-            this.Six.Size = new System.Drawing.Size(79, 42);
+            this.Six.Size = new System.Drawing.Size(77, 43);
             this.Six.TabIndex = 20;
             this.Six.Text = "6";
             this.Six.UseVisualStyleBackColor = true;
@@ -232,7 +232,7 @@
             this.Seven.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Seven.Location = new System.Drawing.Point(22, 359);
             this.Seven.Name = "Seven";
-            this.Seven.Size = new System.Drawing.Size(77, 41);
+            this.Seven.Size = new System.Drawing.Size(77, 43);
             this.Seven.TabIndex = 21;
             this.Seven.Text = "7";
             this.Seven.UseVisualStyleBackColor = true;
@@ -243,7 +243,7 @@
             this.Eight.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Eight.Location = new System.Drawing.Point(120, 359);
             this.Eight.Name = "Eight";
-            this.Eight.Size = new System.Drawing.Size(79, 41);
+            this.Eight.Size = new System.Drawing.Size(77, 43);
             this.Eight.TabIndex = 22;
             this.Eight.Text = "8";
             this.Eight.UseVisualStyleBackColor = true;
@@ -254,7 +254,7 @@
             this.Nine.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nine.Location = new System.Drawing.Point(216, 359);
             this.Nine.Name = "Nine";
-            this.Nine.Size = new System.Drawing.Size(79, 41);
+            this.Nine.Size = new System.Drawing.Size(77, 43);
             this.Nine.TabIndex = 23;
             this.Nine.Text = "9";
             this.Nine.UseVisualStyleBackColor = true;
@@ -265,7 +265,7 @@
             this.Zero.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Zero.Location = new System.Drawing.Point(22, 423);
             this.Zero.Name = "Zero";
-            this.Zero.Size = new System.Drawing.Size(77, 42);
+            this.Zero.Size = new System.Drawing.Size(77, 43);
             this.Zero.TabIndex = 24;
             this.Zero.Text = "0";
             this.Zero.UseVisualStyleBackColor = true;
@@ -289,9 +289,9 @@
             this.DeleteLast.BackColor = System.Drawing.SystemColors.Highlight;
             this.DeleteLast.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteLast.ForeColor = System.Drawing.Color.White;
-            this.DeleteLast.Location = new System.Drawing.Point(12, 167);
+            this.DeleteLast.Location = new System.Drawing.Point(22, 167);
             this.DeleteLast.Name = "DeleteLast";
-            this.DeleteLast.Size = new System.Drawing.Size(87, 47);
+            this.DeleteLast.Size = new System.Drawing.Size(77, 43);
             this.DeleteLast.TabIndex = 26;
             this.DeleteLast.Text = "DEL";
             this.DeleteLast.UseVisualStyleBackColor = false;
@@ -304,7 +304,7 @@
             this.AC.ForeColor = System.Drawing.Color.White;
             this.AC.Location = new System.Drawing.Point(120, 167);
             this.AC.Name = "AC";
-            this.AC.Size = new System.Drawing.Size(81, 46);
+            this.AC.Size = new System.Drawing.Size(77, 43);
             this.AC.TabIndex = 27;
             this.AC.Text = "C";
             this.AC.UseVisualStyleBackColor = false;
@@ -315,7 +315,7 @@
             this.Add.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Add.Location = new System.Drawing.Point(216, 168);
             this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(79, 46);
+            this.Add.Size = new System.Drawing.Size(77, 43);
             this.Add.TabIndex = 28;
             this.Add.Text = "+";
             this.Add.UseVisualStyleBackColor = true;
@@ -328,7 +328,7 @@
             this.Sub.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Sub.Location = new System.Drawing.Point(308, 168);
             this.Sub.Name = "Sub";
-            this.Sub.Size = new System.Drawing.Size(84, 46);
+            this.Sub.Size = new System.Drawing.Size(77, 43);
             this.Sub.TabIndex = 29;
             this.Sub.Text = "-";
             this.Sub.UseVisualStyleBackColor = false;
@@ -340,7 +340,7 @@
             this.Dot.Location = new System.Drawing.Point(120, 421);
             this.Dot.Margin = new System.Windows.Forms.Padding(30);
             this.Dot.Name = "Dot";
-            this.Dot.Size = new System.Drawing.Size(73, 44);
+            this.Dot.Size = new System.Drawing.Size(77, 43);
             this.Dot.TabIndex = 30;
             this.Dot.Text = ".";
             this.Dot.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -351,9 +351,9 @@
             // 
             this.Ans.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Ans.Font = new System.Drawing.Font("SF Mono", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Ans.Location = new System.Drawing.Point(12, 168);
+            this.Ans.Location = new System.Drawing.Point(22, 167);
             this.Ans.Name = "Ans";
-            this.Ans.Size = new System.Drawing.Size(94, 45);
+            this.Ans.Size = new System.Drawing.Size(77, 43);
             this.Ans.TabIndex = 31;
             this.Ans.Text = "Ans";
             this.Ans.UseVisualStyleBackColor = false;
@@ -365,7 +365,7 @@
             this.Mod.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Mod.Location = new System.Drawing.Point(308, 359);
             this.Mod.Name = "Mod";
-            this.Mod.Size = new System.Drawing.Size(77, 42);
+            this.Mod.Size = new System.Drawing.Size(77, 43);
             this.Mod.TabIndex = 32;
             this.Mod.Text = "%";
             this.Mod.UseVisualStyleBackColor = true;
@@ -408,6 +408,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Calculator";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
             this.ResumeLayout(false);
             this.PerformLayout();

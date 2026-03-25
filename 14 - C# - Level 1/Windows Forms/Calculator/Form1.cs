@@ -568,7 +568,6 @@ namespace Calculator
             DisableAllOperations(); // to avoid multi operations at the same time 
         }
 
-
        
     }
 }
