@@ -37,10 +37,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.labPrice = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCoffee = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnEsp = new System.Windows.Forms.Button();
+            this.btnMatcha = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -135,18 +135,20 @@
             this.labPrice.TabIndex = 7;
             this.labPrice.Text = "price";
             // 
-            // button1
+            // btnCoffee
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(441, 154);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 36);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnCoffee.BackColor = System.Drawing.Color.Transparent;
+            this.btnCoffee.FlatAppearance.BorderSize = 2;
+            this.btnCoffee.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnCoffee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCoffee.Font = new System.Drawing.Font("Stencil", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCoffee.Location = new System.Drawing.Point(441, 148);
+            this.btnCoffee.Name = "btnCoffee";
+            this.btnCoffee.Size = new System.Drawing.Size(141, 36);
+            this.btnCoffee.TabIndex = 8;
+            this.btnCoffee.Text = "30$";
+            this.btnCoffee.UseVisualStyleBackColor = false;
+
             // 
             // button2
             // 
@@ -161,31 +163,35 @@
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnEsp
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.FlatAppearance.BorderSize = 2;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(441, 283);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(141, 36);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "button2";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnEsp.BackColor = System.Drawing.Color.Transparent;
+            this.btnEsp.FlatAppearance.BorderSize = 2;
+            this.btnEsp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnEsp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEsp.Font = new System.Drawing.Font("Stencil", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEsp.Location = new System.Drawing.Point(441, 270);
+            this.btnEsp.Name = "btnEsp";
+            this.btnEsp.Size = new System.Drawing.Size(141, 36);
+            this.btnEsp.TabIndex = 9;
+            this.btnEsp.Text = "60$";
+            this.btnEsp.UseVisualStyleBackColor = false;
+     
+            this.btnEsp.MouseEnter += new System.EventHandler(this.MouseEnteredEsp);
             // 
-            // button4
+            // btnMatcha
             // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatAppearance.BorderSize = 2;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(441, 412);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(141, 36);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnMatcha.BackColor = System.Drawing.Color.Transparent;
+            this.btnMatcha.FlatAppearance.BorderSize = 2;
+            this.btnMatcha.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnMatcha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMatcha.Font = new System.Drawing.Font("Stencil", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMatcha.Location = new System.Drawing.Point(441, 392);
+            this.btnMatcha.Name = "btnMatcha";
+            this.btnMatcha.Size = new System.Drawing.Size(141, 36);
+            this.btnMatcha.TabIndex = 10;
+            this.btnMatcha.Text = "70$";
+            this.btnMatcha.UseVisualStyleBackColor = false;
             // 
             // button5
             // 
@@ -219,12 +225,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1566, 547);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnMatcha);
+            this.Controls.Add(this.btnEsp);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCoffee);
             this.Controls.Add(this.labPrice);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -252,10 +258,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label labPrice;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCoffee;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnEsp;
+        private System.Windows.Forms.Button btnMatcha;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
     }
