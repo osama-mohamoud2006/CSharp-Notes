@@ -27,7 +27,7 @@ namespace SimpleCafeShop
 
         private void MouseLeftCoffee(object sender, EventArgs e)
         {
-            labCoffe.ForeColor = Color.Transparent;
+            labCoffe.ForeColor = Color.Black;
         }
 
         private void MouseEnteredEsp(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace SimpleCafeShop
 
         private void EspLeft(object sender, EventArgs e)
         {
-            labEspresso.ForeColor = Color.Transparent;
+            labEspresso.ForeColor = Color.Black;
         }
 
         private void MatchaEnter(object sender, EventArgs e)
@@ -49,7 +49,7 @@ namespace SimpleCafeShop
 
         private void MatchLeft(object sender, EventArgs e)
         {
-            labMatcha.ForeColor = Color.Transparent;
+            labMatcha.ForeColor = Color.Black;
 
         }
 
@@ -101,5 +101,7 @@ namespace SimpleCafeShop
 
             btnMatcha.Text = "70$";
         }
+
+      
     }
 }

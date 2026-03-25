@@ -39,8 +39,9 @@ namespace SimpleCafeShop
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            MainScreen main = new MainScreen();
-            main.ShowDialog();
+            //MainScreen main = new MainScreen();
+            //main.ShowDialog();
+            this.Close(); // to close the current form 
         }
     }
 }

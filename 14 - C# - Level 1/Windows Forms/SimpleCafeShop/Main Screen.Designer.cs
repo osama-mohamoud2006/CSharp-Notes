@@ -43,6 +43,7 @@
             this.btnMatcha = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -129,11 +130,11 @@
             // 
             this.labPrice.BackColor = System.Drawing.Color.Transparent;
             this.labPrice.Font = new System.Drawing.Font("Ravie", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labPrice.Location = new System.Drawing.Point(1160, 185);
+            this.labPrice.Location = new System.Drawing.Point(1146, 217);
             this.labPrice.Name = "labPrice";
             this.labPrice.Size = new System.Drawing.Size(245, 218);
             this.labPrice.TabIndex = 7;
-            this.labPrice.Text = "price";
+            this.labPrice.Text = "0";
             // 
             // btnCoffee
             // 
@@ -142,10 +143,10 @@
             this.btnCoffee.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnCoffee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCoffee.Font = new System.Drawing.Font("Stencil", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCoffee.Location = new System.Drawing.Point(441, 148);
+            this.btnCoffee.Location = new System.Drawing.Point(441, 139);
             this.btnCoffee.Name = "btnCoffee";
             this.btnCoffee.Size = new System.Drawing.Size(158, 54);
-            this.btnCoffee.TabIndex = 8;
+            this.btnCoffee.TabIndex = 2;
             this.btnCoffee.Text = "30$";
             this.btnCoffee.UseVisualStyleBackColor = false;
             this.btnCoffee.Click += new System.EventHandler(this.btnCoffee_Click);
@@ -158,9 +159,9 @@
             this.button2.FlatAppearance.BorderSize = 2;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(858, 270);
+            this.button2.Location = new System.Drawing.Point(858, 261);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(141, 36);
+            this.button2.Size = new System.Drawing.Size(158, 54);
             this.button2.TabIndex = 9;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = false;
@@ -172,10 +173,10 @@
             this.btnEsp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnEsp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEsp.Font = new System.Drawing.Font("Stencil", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEsp.Location = new System.Drawing.Point(441, 270);
+            this.btnEsp.Location = new System.Drawing.Point(441, 261);
             this.btnEsp.Name = "btnEsp";
             this.btnEsp.Size = new System.Drawing.Size(158, 54);
-            this.btnEsp.TabIndex = 9;
+            this.btnEsp.TabIndex = 3;
             this.btnEsp.Text = "60$";
             this.btnEsp.UseVisualStyleBackColor = false;
             this.btnEsp.Click += new System.EventHandler(this.btnEsp_Click);
@@ -189,10 +190,10 @@
             this.btnMatcha.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnMatcha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMatcha.Font = new System.Drawing.Font("Stencil", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMatcha.Location = new System.Drawing.Point(441, 392);
+            this.btnMatcha.Location = new System.Drawing.Point(441, 383);
             this.btnMatcha.Name = "btnMatcha";
             this.btnMatcha.Size = new System.Drawing.Size(158, 54);
-            this.btnMatcha.TabIndex = 10;
+            this.btnMatcha.TabIndex = 4;
             this.btnMatcha.Text = "70$";
             this.btnMatcha.UseVisualStyleBackColor = false;
             this.btnMatcha.Click += new System.EventHandler(this.btnMatcha_Click);
@@ -205,9 +206,9 @@
             this.button5.FlatAppearance.BorderSize = 2;
             this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(858, 148);
+            this.button5.Location = new System.Drawing.Point(858, 139);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(141, 36);
+            this.button5.Size = new System.Drawing.Size(158, 54);
             this.button5.TabIndex = 9;
             this.button5.Text = "button2";
             this.button5.UseVisualStyleBackColor = false;
@@ -218,12 +219,22 @@
             this.button6.FlatAppearance.BorderSize = 2;
             this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(858, 392);
+            this.button6.Location = new System.Drawing.Point(858, 383);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(141, 36);
+            this.button6.Size = new System.Drawing.Size(158, 54);
             this.button6.TabIndex = 9;
             this.button6.Text = "button2";
             this.button6.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Ravie", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1109, 114);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(282, 79);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Total Price";
             // 
             // MainScreen
             // 
@@ -231,6 +242,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1566, 547);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnMatcha);
             this.Controls.Add(this.btnEsp);
             this.Controls.Add(this.button5);
@@ -270,5 +282,6 @@
         private System.Windows.Forms.Button btnMatcha;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label2;
     }
 }
