@@ -12,7 +12,7 @@ namespace SimpleCafeShop
 {
     public partial class MainScreen : Form
     {
-        private sbyte SumOfPrices = 0;
+        private short SumOfPrices = 0;
 
         public MainScreen()
         {
@@ -57,24 +57,50 @@ namespace SimpleCafeShop
         private void btnCoffee_Click(object sender, EventArgs e)
         {
             this.SumOfPrices += 30;
-            labPrice.Text = Convert.ToString(SumOfPrices);
+            labPrice.Text = Convert.ToString(SumOfPrices + "$");
         }
 
         private void btnEsp_Click(object sender, EventArgs e)
         {
             this.SumOfPrices += 60;
-            labPrice.Text = Convert.ToString(SumOfPrices);
+            labPrice.Text = Convert.ToString(SumOfPrices + "$");
         }
 
         private void btnMatcha_Click(object sender, EventArgs e)
         {
             this.SumOfPrices += 70;
-            labPrice.Text = Convert.ToString(SumOfPrices);
+            labPrice.Text = Convert.ToString(SumOfPrices+"$");
         }
 
         private void MouseEnteredbtnCoffee(object sender, EventArgs e)
         {
             btnCoffee.Text = "Order Now";
+        }
+
+        private void MouseLeftbtnCoffee(object sender, EventArgs e)
+        {
+            btnCoffee.Text = "30$";
+        }
+
+        private void MouseEnterbtnEsp(object sender, EventArgs e)
+        {
+            btnCoffee.Text = "Order Now";
+        }
+
+        private void MouseLeftEsp(object sender, EventArgs e)
+        {
+            btnCoffee.Text = "60$";
+        }
+
+        private void MouseEnteredbtnMatcha(object sender, EventArgs e)
+        {
+            btnCoffee.Text = "Order Now";
+        }
+
+        private void MouseLeftbtnMatcha(object sender, EventArgs e)
+        {
+
+            btnCoffee.Text = "70$";
         }
     }
 }

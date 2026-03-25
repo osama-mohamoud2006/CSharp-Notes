@@ -128,7 +128,7 @@
             // labPrice
             // 
             this.labPrice.BackColor = System.Drawing.Color.Transparent;
-            this.labPrice.Font = new System.Drawing.Font("Ravie", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labPrice.Font = new System.Drawing.Font("Ravie", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labPrice.Location = new System.Drawing.Point(1160, 185);
             this.labPrice.Name = "labPrice";
             this.labPrice.Size = new System.Drawing.Size(245, 218);
@@ -150,6 +150,7 @@
             this.btnCoffee.UseVisualStyleBackColor = false;
             this.btnCoffee.Click += new System.EventHandler(this.btnCoffee_Click);
             this.btnCoffee.MouseEnter += new System.EventHandler(this.MouseEnteredbtnCoffee);
+            this.btnCoffee.MouseLeave += new System.EventHandler(this.MouseLeftbtnCoffee);
             // 
             // button2
             // 
@@ -178,7 +179,8 @@
             this.btnEsp.Text = "60$";
             this.btnEsp.UseVisualStyleBackColor = false;
             this.btnEsp.Click += new System.EventHandler(this.btnEsp_Click);
-            this.btnEsp.MouseEnter += new System.EventHandler(this.MouseEnteredEsp);
+            this.btnEsp.MouseEnter += new System.EventHandler(this.MouseEnterbtnEsp);
+            this.btnEsp.MouseLeave += new System.EventHandler(this.MouseLeftEsp);
             // 
             // btnMatcha
             // 
@@ -194,6 +196,8 @@
             this.btnMatcha.Text = "70$";
             this.btnMatcha.UseVisualStyleBackColor = false;
             this.btnMatcha.Click += new System.EventHandler(this.btnMatcha_Click);
+            this.btnMatcha.MouseEnter += new System.EventHandler(this.MouseEnteredbtnMatcha);
+            this.btnMatcha.MouseLeave += new System.EventHandler(this.MouseLeftbtnMatcha);
             // 
             // button5
             // 
