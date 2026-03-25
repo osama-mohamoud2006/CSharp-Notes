@@ -148,7 +148,8 @@
             this.btnCoffee.TabIndex = 8;
             this.btnCoffee.Text = "30$";
             this.btnCoffee.UseVisualStyleBackColor = false;
-
+            this.btnCoffee.Click += new System.EventHandler(this.btnCoffee_Click);
+            this.btnCoffee.MouseEnter += new System.EventHandler(this.MouseEnteredbtnCoffee);
             // 
             // button2
             // 
@@ -176,7 +177,7 @@
             this.btnEsp.TabIndex = 9;
             this.btnEsp.Text = "60$";
             this.btnEsp.UseVisualStyleBackColor = false;
-     
+            this.btnEsp.Click += new System.EventHandler(this.btnEsp_Click);
             this.btnEsp.MouseEnter += new System.EventHandler(this.MouseEnteredEsp);
             // 
             // btnMatcha
@@ -192,6 +193,7 @@
             this.btnMatcha.TabIndex = 10;
             this.btnMatcha.Text = "70$";
             this.btnMatcha.UseVisualStyleBackColor = false;
+            this.btnMatcha.Click += new System.EventHandler(this.btnMatcha_Click);
             // 
             // button5
             // 
