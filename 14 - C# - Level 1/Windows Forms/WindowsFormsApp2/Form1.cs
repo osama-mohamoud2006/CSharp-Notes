@@ -274,6 +274,34 @@ namespace WindowsFormsApp2
 
         private void EnterTest(object sender, DragEventArgs e)
         {
+            button6.Enabled = true;
+            button6.ForeColor = Color.Green; 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+         
+        
+            for (System.UInt64 i = 0; i < 5; i++)
+            {
+                Form Form1 = new Form1();
+                Form1.Show();
+            }
+
+        
+       }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hello World!");
+        }
+
+        private void CallMenu_Click(object sender, EventArgs e)
+        {
+            MainForm Main = new MainForm();
+          
+            Main.Show();
+            this.Close();
 
         }
     }

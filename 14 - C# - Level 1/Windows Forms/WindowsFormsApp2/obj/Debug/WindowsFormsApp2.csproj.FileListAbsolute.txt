@@ -8,3 +8,4 @@ E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp2\obj\Debug\Window
 E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
 E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.MainForm.resources

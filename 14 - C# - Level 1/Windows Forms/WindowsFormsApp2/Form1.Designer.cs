@@ -50,6 +50,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.CallMenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -64,11 +66,11 @@
             // 
             // Box1
             // 
-            this.Box1.Enabled = false;
             this.Box1.Location = new System.Drawing.Point(111, 130);
             this.Box1.Name = "Box1";
             this.Box1.Size = new System.Drawing.Size(261, 84);
-            this.Box1.TabIndex = 1;
+            this.Box1.TabIndex = 0;
+            this.Box1.TabStop = false;
             this.Box1.Text = "Box1";
             this.Box1.TextChanged += new System.EventHandler(this.Box1_TextChanged);
             this.Box1.MouseEnter += new System.EventHandler(this.EnableTime);
@@ -81,6 +83,7 @@
             this.Box2.Name = "Box2";
             this.Box2.Size = new System.Drawing.Size(226, 84);
             this.Box2.TabIndex = 2;
+            this.Box2.TabStop = false;
             this.Box2.Text = "";
             // 
             // button1
@@ -88,7 +91,7 @@
             this.button1.Location = new System.Drawing.Point(744, 309);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(261, 60);
-            this.button1.TabIndex = 3;
+            this.button1.TabIndex = 13;
             this.button1.Text = "Copy !";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -99,7 +102,7 @@
             this.DisableButton.Location = new System.Drawing.Point(744, 380);
             this.DisableButton.Name = "DisableButton";
             this.DisableButton.Size = new System.Drawing.Size(261, 60);
-            this.DisableButton.TabIndex = 5;
+            this.DisableButton.TabIndex = 12;
             this.DisableButton.Text = "Disable Text Box 1";
             this.DisableButton.UseVisualStyleBackColor = true;
             this.DisableButton.Click += new System.EventHandler(this.DisableButton_Click);
@@ -110,7 +113,7 @@
             this.EnableBox.Location = new System.Drawing.Point(744, 451);
             this.EnableBox.Name = "EnableBox";
             this.EnableBox.Size = new System.Drawing.Size(261, 60);
-            this.EnableBox.TabIndex = 6;
+            this.EnableBox.TabIndex = 11;
             this.EnableBox.Text = "Enable Text Box 1";
             this.EnableBox.UseVisualStyleBackColor = true;
             this.EnableBox.Click += new System.EventHandler(this.EnableBox_Click);
@@ -120,7 +123,7 @@
             this.BoxOneToBRed.Location = new System.Drawing.Point(111, 384);
             this.BoxOneToBRed.Name = "BoxOneToBRed";
             this.BoxOneToBRed.Size = new System.Drawing.Size(289, 49);
-            this.BoxOneToBRed.TabIndex = 9;
+            this.BoxOneToBRed.TabIndex = 8;
             this.BoxOneToBRed.Text = "Text Box 1 To Red";
             this.BoxOneToBRed.UseVisualStyleBackColor = true;
             this.BoxOneToBRed.Click += new System.EventHandler(this.BoxOneToBRed_Click);
@@ -130,7 +133,7 @@
             this.TextBoxOneBWhite.Location = new System.Drawing.Point(111, 457);
             this.TextBoxOneBWhite.Name = "TextBoxOneBWhite";
             this.TextBoxOneBWhite.Size = new System.Drawing.Size(289, 49);
-            this.TextBoxOneBWhite.TabIndex = 10;
+            this.TextBoxOneBWhite.TabIndex = 9;
             this.TextBoxOneBWhite.Text = "Text Box 1 To White";
             this.TextBoxOneBWhite.UseVisualStyleBackColor = true;
             this.TextBoxOneBWhite.Click += new System.EventHandler(this.TextBoxOneBWhite_Click_1);
@@ -141,7 +144,7 @@
             this.RandomColorOfForm.Location = new System.Drawing.Point(111, 311);
             this.RandomColorOfForm.Name = "RandomColorOfForm";
             this.RandomColorOfForm.Size = new System.Drawing.Size(289, 49);
-            this.RandomColorOfForm.TabIndex = 11;
+            this.RandomColorOfForm.TabIndex = 6;
             this.RandomColorOfForm.Text = "Change Form Background Color Randomly";
             this.RandomColorOfForm.UseVisualStyleBackColor = true;
             this.RandomColorOfForm.Click += new System.EventHandler(this.ChangeColorRandomly_Click);
@@ -152,7 +155,7 @@
             this.ChangeTitle.Location = new System.Drawing.Point(111, 238);
             this.ChangeTitle.Name = "ChangeTitle";
             this.ChangeTitle.Size = new System.Drawing.Size(289, 49);
-            this.ChangeTitle.TabIndex = 12;
+            this.ChangeTitle.TabIndex = 3;
             this.ChangeTitle.Text = "Take The Box1 Content As Form Title";
             this.ChangeTitle.UseVisualStyleBackColor = true;
             this.ChangeTitle.Click += new System.EventHandler(this.ChangeTitle_Click);
@@ -165,7 +168,7 @@
             this.ChangeLabel1.Location = new System.Drawing.Point(1162, 81);
             this.ChangeLabel1.Name = "ChangeLabel1";
             this.ChangeLabel1.Size = new System.Drawing.Size(261, 58);
-            this.ChangeLabel1.TabIndex = 13;
+            this.ChangeLabel1.TabIndex = 18;
             this.ChangeLabel1.Text = "Change The Label";
             this.ChangeLabel1.UseVisualStyleBackColor = true;
             this.ChangeLabel1.Click += new System.EventHandler(this.ChangeLabel1_Click);
@@ -180,7 +183,7 @@
             this.button3.Location = new System.Drawing.Point(418, 346);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(289, 49);
-            this.button3.TabIndex = 14;
+            this.button3.TabIndex = 7;
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -192,7 +195,7 @@
             this.HideTextBoxOne.Location = new System.Drawing.Point(1165, 345);
             this.HideTextBoxOne.Name = "HideTextBoxOne";
             this.HideTextBoxOne.Size = new System.Drawing.Size(261, 58);
-            this.HideTextBoxOne.TabIndex = 7;
+            this.HideTextBoxOne.TabIndex = 16;
             this.HideTextBoxOne.Text = "Hide Text Box 1";
             this.HideTextBoxOne.UseVisualStyleBackColor = false;
             this.HideTextBoxOne.AutoSizeChanged += new System.EventHandler(this.HideTextBoxOne_Click);
@@ -205,7 +208,7 @@
             this.EnableAll.Location = new System.Drawing.Point(1165, 464);
             this.EnableAll.Name = "EnableAll";
             this.EnableAll.Size = new System.Drawing.Size(261, 58);
-            this.EnableAll.TabIndex = 8;
+            this.EnableAll.TabIndex = 17;
             this.EnableAll.Text = "Enable Text Box 1";
             this.EnableAll.UseVisualStyleBackColor = false;
             this.EnableAll.Visible = false;
@@ -216,7 +219,7 @@
             this.button2.Location = new System.Drawing.Point(742, 234);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(261, 60);
-            this.button2.TabIndex = 4;
+            this.button2.TabIndex = 14;
             this.button2.Text = "Press The Button To Copy";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -230,8 +233,9 @@
             this.label2.Location = new System.Drawing.Point(508, 153);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 25);
-            this.label2.TabIndex = 15;
+            this.label2.TabIndex = 1;
             this.label2.Text = "Test Label ";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // richTextBox1
             // 
@@ -240,7 +244,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(1177, 200);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(226, 84);
-            this.richTextBox1.TabIndex = 16;
+            this.richTextBox1.TabIndex = 15;
             this.richTextBox1.Text = "";
             // 
             // Pressing
@@ -248,7 +252,7 @@
             this.Pressing.Location = new System.Drawing.Point(432, 451);
             this.Pressing.Name = "Pressing";
             this.Pressing.Size = new System.Drawing.Size(261, 60);
-            this.Pressing.TabIndex = 18;
+            this.Pressing.TabIndex = 10;
             this.Pressing.Text = "button5";
             this.Pressing.UseVisualStyleBackColor = true;
             this.Pressing.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WhenMousePressingTheButton);
@@ -262,7 +266,8 @@
             this.button4.Location = new System.Drawing.Point(432, 230);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(261, 60);
-            this.button4.TabIndex = 19;
+            this.button4.TabIndex = 4;
+            this.button4.TabStop = false;
             this.button4.Text = "Mouse Over";
             this.button4.UseVisualStyleBackColor = true;
             // 
@@ -273,7 +278,7 @@
             this.button5.Location = new System.Drawing.Point(1499, 200);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(226, 84);
-            this.button5.TabIndex = 20;
+            this.button5.TabIndex = 19;
             this.button5.Text = "Works By Event";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Down);
@@ -282,21 +287,42 @@
             // 
             // button6
             // 
-            this.button6.Enabled = false;
             this.button6.Location = new System.Drawing.Point(1588, 345);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 112);
-            this.button6.TabIndex = 21;
+            this.button6.TabIndex = 20;
             this.button6.Text = "button6";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             this.button6.DragEnter += new System.Windows.Forms.DragEventHandler(this.EnterTest);
             this.button6.DragLeave += new System.EventHandler(this.LeaveTest);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(1073, 148);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(9, 8);
+            this.button7.TabIndex = 22;
+            this.button7.Text = "button7";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // CallMenu
+            // 
+            this.CallMenu.Location = new System.Drawing.Point(1543, 59);
+            this.CallMenu.Name = "CallMenu";
+            this.CallMenu.Size = new System.Drawing.Size(141, 58);
+            this.CallMenu.TabIndex = 23;
+            this.CallMenu.Text = "MainMenu";
+            this.CallMenu.UseVisualStyleBackColor = true;
+            this.CallMenu.Click += new System.EventHandler(this.CallMenu_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1792, 565);
+            this.Controls.Add(this.CallMenu);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.Pressing);
@@ -349,6 +375,8 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button CallMenu;
     }
 }
 
