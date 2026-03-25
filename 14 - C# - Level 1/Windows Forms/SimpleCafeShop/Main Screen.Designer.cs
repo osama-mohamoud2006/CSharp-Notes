@@ -144,7 +144,7 @@
             this.btnCoffee.Font = new System.Drawing.Font("Stencil", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCoffee.Location = new System.Drawing.Point(441, 148);
             this.btnCoffee.Name = "btnCoffee";
-            this.btnCoffee.Size = new System.Drawing.Size(141, 36);
+            this.btnCoffee.Size = new System.Drawing.Size(158, 54);
             this.btnCoffee.TabIndex = 8;
             this.btnCoffee.Text = "30$";
             this.btnCoffee.UseVisualStyleBackColor = false;
@@ -174,7 +174,7 @@
             this.btnEsp.Font = new System.Drawing.Font("Stencil", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEsp.Location = new System.Drawing.Point(441, 270);
             this.btnEsp.Name = "btnEsp";
-            this.btnEsp.Size = new System.Drawing.Size(141, 36);
+            this.btnEsp.Size = new System.Drawing.Size(158, 54);
             this.btnEsp.TabIndex = 9;
             this.btnEsp.Text = "60$";
             this.btnEsp.UseVisualStyleBackColor = false;
@@ -191,7 +191,7 @@
             this.btnMatcha.Font = new System.Drawing.Font("Stencil", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMatcha.Location = new System.Drawing.Point(441, 392);
             this.btnMatcha.Name = "btnMatcha";
-            this.btnMatcha.Size = new System.Drawing.Size(141, 36);
+            this.btnMatcha.Size = new System.Drawing.Size(158, 54);
             this.btnMatcha.TabIndex = 10;
             this.btnMatcha.Text = "70$";
             this.btnMatcha.UseVisualStyleBackColor = false;
