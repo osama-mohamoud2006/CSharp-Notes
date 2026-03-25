@@ -141,7 +141,7 @@
             // 
             this.Multi.BackColor = System.Drawing.Color.White;
             this.Multi.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Multi.Location = new System.Drawing.Point(308, 232);
+            this.Multi.Location = new System.Drawing.Point(308, 231);
             this.Multi.Name = "Multi";
             this.Multi.Size = new System.Drawing.Size(77, 43);
             this.Multi.TabIndex = 13;
@@ -164,7 +164,7 @@
             // 
             this.One.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.One.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.One.Location = new System.Drawing.Point(22, 232);
+            this.One.Location = new System.Drawing.Point(22, 231);
             this.One.Name = "One";
             this.One.Size = new System.Drawing.Size(77, 43);
             this.One.TabIndex = 15;
@@ -175,7 +175,7 @@
             // Two
             // 
             this.Two.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Two.Location = new System.Drawing.Point(120, 232);
+            this.Two.Location = new System.Drawing.Point(120, 231);
             this.Two.Name = "Two";
             this.Two.Size = new System.Drawing.Size(77, 43);
             this.Two.TabIndex = 16;
@@ -186,7 +186,7 @@
             // Three
             // 
             this.Three.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Three.Location = new System.Drawing.Point(216, 232);
+            this.Three.Location = new System.Drawing.Point(216, 231);
             this.Three.Name = "Three";
             this.Three.Size = new System.Drawing.Size(77, 43);
             this.Three.TabIndex = 17;
@@ -197,7 +197,7 @@
             // Four
             // 
             this.Four.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Four.Location = new System.Drawing.Point(22, 299);
+            this.Four.Location = new System.Drawing.Point(22, 295);
             this.Four.Name = "Four";
             this.Four.Size = new System.Drawing.Size(77, 43);
             this.Four.TabIndex = 18;
@@ -274,9 +274,9 @@
             // Equal
             // 
             this.Equal.Font = new System.Drawing.Font("Lucida Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Equal.Location = new System.Drawing.Point(203, 425);
+            this.Equal.Location = new System.Drawing.Point(203, 423);
             this.Equal.Name = "Equal";
-            this.Equal.Size = new System.Drawing.Size(178, 42);
+            this.Equal.Size = new System.Drawing.Size(178, 43);
             this.Equal.TabIndex = 25;
             this.Equal.Text = "=";
             this.Equal.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -302,7 +302,7 @@
             this.AC.BackColor = System.Drawing.SystemColors.Highlight;
             this.AC.Font = new System.Drawing.Font("SF Mono", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AC.ForeColor = System.Drawing.Color.White;
-            this.AC.Location = new System.Drawing.Point(120, 167);
+            this.AC.Location = new System.Drawing.Point(117, 167);
             this.AC.Name = "AC";
             this.AC.Size = new System.Drawing.Size(77, 43);
             this.AC.TabIndex = 27;
@@ -313,7 +313,7 @@
             // Add
             // 
             this.Add.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Add.Location = new System.Drawing.Point(216, 168);
+            this.Add.Location = new System.Drawing.Point(212, 167);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(77, 43);
             this.Add.TabIndex = 28;
@@ -326,7 +326,7 @@
             this.Sub.BackColor = System.Drawing.Color.White;
             this.Sub.Font = new System.Drawing.Font("Microsoft JhengHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Sub.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Sub.Location = new System.Drawing.Point(308, 168);
+            this.Sub.Location = new System.Drawing.Point(307, 167);
             this.Sub.Name = "Sub";
             this.Sub.Size = new System.Drawing.Size(77, 43);
             this.Sub.TabIndex = 29;
@@ -337,7 +337,7 @@
             // Dot
             // 
             this.Dot.Font = new System.Drawing.Font("Back Button Icons", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dot.Location = new System.Drawing.Point(120, 421);
+            this.Dot.Location = new System.Drawing.Point(120, 423);
             this.Dot.Margin = new System.Windows.Forms.Padding(30);
             this.Dot.Name = "Dot";
             this.Dot.Size = new System.Drawing.Size(77, 43);
@@ -376,7 +376,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(396, 489);
+            this.ClientSize = new System.Drawing.Size(396, 477);
             this.Controls.Add(this.Mod);
             this.Controls.Add(this.Ans);
             this.Controls.Add(this.Dot);

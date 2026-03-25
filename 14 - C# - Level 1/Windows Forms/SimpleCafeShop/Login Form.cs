@@ -36,5 +36,11 @@ namespace SimpleCafeShop
         {
             txtAccPass.BackColor = Color.Gainsboro;
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            MainScreen main = new MainScreen();
+            main.ShowDialog();
+        }
     }
 }

@@ -8,3 +8,4 @@ E:\projects\C#\14 - C# - Level 1\Windows Forms\SimpleCafeShop\obj\Debug\SimpleCa
 E:\projects\C#\14 - C# - Level 1\Windows Forms\SimpleCafeShop\obj\Debug\SimpleCafeShop.exe
 E:\projects\C#\14 - C# - Level 1\Windows Forms\SimpleCafeShop\obj\Debug\SimpleCafeShop.pdb
 E:\projects\C#\14 - C# - Level 1\Windows Forms\SimpleCafeShop\obj\Debug\SimpleCafeShop.FormLogin.resources
+E:\projects\C#\14 - C# - Level 1\Windows Forms\SimpleCafeShop\obj\Debug\SimpleCafeShop.MainScreen.resources
