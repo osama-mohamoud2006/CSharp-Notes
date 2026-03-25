@@ -1,0 +1,10 @@
+E:\projects\C#\14 - C# - Level 1\Windows Forms\SimpleCafeShop\bin\Debug\SimpleCafeShop.exe.config
+E:\projects\C#\14 - C# - Level 1\Windows Forms\SimpleCafeShop\bin\Debug\SimpleCafeShop.exe
+E:\projects\C#\14 - C# - Level 1\Windows Forms\SimpleCafeShop\bin\Debug\SimpleCafeShop.pdb
+E:\projects\C#\14 - C# - Level 1\Windows Forms\SimpleCafeShop\obj\Debug\SimpleCafeShop.csproj.AssemblyReference.cache
+E:\projects\C#\14 - C# - Level 1\Windows Forms\SimpleCafeShop\obj\Debug\SimpleCafeShop.Properties.Resources.resources
+E:\projects\C#\14 - C# - Level 1\Windows Forms\SimpleCafeShop\obj\Debug\SimpleCafeShop.csproj.GenerateResource.cache
+E:\projects\C#\14 - C# - Level 1\Windows Forms\SimpleCafeShop\obj\Debug\SimpleCafeShop.csproj.CoreCompileInputs.cache
+E:\projects\C#\14 - C# - Level 1\Windows Forms\SimpleCafeShop\obj\Debug\SimpleCafeShop.exe
+E:\projects\C#\14 - C# - Level 1\Windows Forms\SimpleCafeShop\obj\Debug\SimpleCafeShop.pdb
+E:\projects\C#\14 - C# - Level 1\Windows Forms\SimpleCafeShop\obj\Debug\SimpleCafeShop.FormLogin.resources
