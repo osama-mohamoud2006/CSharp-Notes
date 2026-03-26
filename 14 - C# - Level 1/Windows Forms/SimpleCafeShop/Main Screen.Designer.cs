@@ -45,7 +45,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.labPrice = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnUndo1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -249,19 +249,20 @@
             this.labPrice.TabIndex = 7;
             this.labPrice.Text = "0";
             // 
-            // button1
+            // btnUndo1
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(500, 133);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(63, 52);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Undo";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnUndo1.BackColor = System.Drawing.Color.Transparent;
+            this.btnUndo1.FlatAppearance.BorderSize = 2;
+            this.btnUndo1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnUndo1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUndo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUndo1.Location = new System.Drawing.Point(500, 133);
+            this.btnUndo1.Name = "btnUndo1";
+            this.btnUndo1.Size = new System.Drawing.Size(63, 52);
+            this.btnUndo1.TabIndex = 13;
+            this.btnUndo1.Text = "Undo";
+            this.btnUndo1.UseVisualStyleBackColor = false;
+            this.btnUndo1.Click += new System.EventHandler(this.UndoCoffeeOrder_Click);
             // 
             // button3
             // 
@@ -276,6 +277,7 @@
             this.button3.TabIndex = 14;
             this.button3.Text = "Undo";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -290,6 +292,7 @@
             this.button4.TabIndex = 15;
             this.button4.Text = "Undo";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // MainScreen
             // 
@@ -299,7 +302,7 @@
             this.ClientSize = new System.Drawing.Size(1566, 547);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnUndo1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnMatcha);
@@ -344,7 +347,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label labPrice;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnUndo1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
     }

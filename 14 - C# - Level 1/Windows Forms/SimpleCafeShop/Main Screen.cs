@@ -126,7 +126,32 @@ namespace SimpleCafeShop
             btnMatcha.Text = "70$";
         }
 
-      
+
+        private short[] prices = { 30, 60, 70 };
+
+        private void UndoOrder(byte OrderNum)
+        {
+            this.SumOfPrices -= prices[OrderNum-1]; // take the price of money from array
+        }
+
+        private void UndoCoffeeOrder_Click(object sender, EventArgs e)
+        {
+            UndoOrder(1); 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            UndoOrder(2);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            UndoOrder(3);
+        }
+
+
+
+
         // Implement Message Box With Events
 
     }
