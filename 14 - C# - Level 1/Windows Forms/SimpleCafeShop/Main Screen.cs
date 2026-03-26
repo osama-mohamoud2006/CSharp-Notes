@@ -101,7 +101,8 @@ namespace SimpleCafeShop
 
         enum enOrders: byte { Coffee=1,Espresso=2,Matcha=3}
 
-       
+        private List<string> Lis = new List<string>();
+
         private void AppendToSummary(enOrders OrderName, string Price)
         {
             
@@ -109,14 +110,17 @@ namespace SimpleCafeShop
             {
                 case enOrders.Coffee:
                     txtboxSummary.Text += "\n"+enOrders.Coffee.ToString()+":"+Price;
+                    Lis.Add(enOrders.Coffee.ToString() + ":" + Price);
                     break;
 
                 case enOrders.Espresso:
                     txtboxSummary.Text += "\n"+enOrders.Espresso.ToString() + ":" + Price;
+                    Lis.Add( enOrders.Espresso.ToString() + ":" + Price);
                     break;
 
                 case enOrders.Matcha:
                     txtboxSummary.Text+=( "\n"+enOrders.Matcha.ToString() + ":" + Price);
+                    Lis.Add( enOrders.Matcha.ToString() + ":" + Price);
                     break;
             }
         }
@@ -170,29 +174,36 @@ namespace SimpleCafeShop
 
         private void UndoFromSummary(enOrders WhatToUndo,string Price)
         {
-            var Lis = new List<string>(); /// list to append the current orders to it 
 
-            string[] Orders = txtboxSummary.Text.Split(' '); // split the order contents as each one is separated by space
-
-            Lis = Orders.ToList(); // convert array to list
 
             // "\n"+enOrders.Coffee.ToString()+":"+Price; --> the text to remove is be like
 
             switch (WhatToUndo)
             {
                 case enOrders.Coffee:
-                    Lis.Remove("\n"+enOrders.Coffee.ToString()+ ":" + Price);
+                    Lis.Remove(enOrders.Coffee.ToString()+ ":" + Price);
                     break;
+
+                case enOrders.Espresso:
+                    Lis.Remove( enOrders.Espresso.ToString() + ":" + Price);
+                    break;
+
+
+                case enOrders.Matcha:
+                    Lis.Remove( enOrders.Matcha.ToString() + ":" + Price);
+                    break;
+
             }
 
+            txtboxSummary.Text = ""; 
 
-            if (Lis.Count == 0) txtboxSummary.Text = ""; // all orders were deleted , so delete the summary also 
+            if (Lis.Count == 0) return; // all orders were deleted , so delete the summary also 
             else
             {
 
-                foreach (var items in Lis)
+                foreach (var items in Lis) // write new list to the screen 
                 {
-                    txtboxSummary.Text += "\n" + items;
+                    txtboxSummary.Text +=  items+ "\n";
                 }
 
 
@@ -221,12 +232,15 @@ namespace SimpleCafeShop
 
         private void EspUndoOrder_Click(object sender, EventArgs e)
         {
+            UndoFromSummary(enOrders.Espresso, "60$");
             UndoOrder(2);
             btnEspUndo.Enabled = false;
         }
 
         private void MatchUndoOrder_Click(object sender, EventArgs e)
         {
+            UndoFromSummary(enOrders.Matcha, "70$");
+
             UndoOrder(3);
             btnMatchaUndo.Enabled = false; 
         }
