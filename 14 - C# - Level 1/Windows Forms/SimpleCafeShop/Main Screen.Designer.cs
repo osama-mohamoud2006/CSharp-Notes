@@ -158,13 +158,13 @@
             this.labPrice.AutoSize = true;
             this.labPrice.BackColor = System.Drawing.Color.Transparent;
             this.labPrice.Font = new System.Drawing.Font("Ravie", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labPrice.Location = new System.Drawing.Point(835, 405);
+            this.labPrice.Location = new System.Drawing.Point(836, 377);
             this.labPrice.Name = "labPrice";
             this.labPrice.Size = new System.Drawing.Size(57, 57);
             this.labPrice.TabIndex = 7;
             this.labPrice.Text = "0";
             // 
-            // btnUndo1
+            // btnCoffeeUndo
             // 
             this.btnCoffeeUndo.BackColor = System.Drawing.Color.Transparent;
             this.btnCoffeeUndo.Enabled = false;
@@ -173,7 +173,7 @@
             this.btnCoffeeUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCoffeeUndo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCoffeeUndo.Location = new System.Drawing.Point(500, 133);
-            this.btnCoffeeUndo.Name = "btnUndo1";
+            this.btnCoffeeUndo.Name = "btnCoffeeUndo";
             this.btnCoffeeUndo.Size = new System.Drawing.Size(63, 52);
             this.btnCoffeeUndo.TabIndex = 13;
             this.btnCoffeeUndo.Text = "Undo";
@@ -231,12 +231,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtboxSummary.BackColor = System.Drawing.SystemColors.Info;
             this.txtboxSummary.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtboxSummary.Enabled = false;
             this.txtboxSummary.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtboxSummary.HideSelection = false;
             this.txtboxSummary.Location = new System.Drawing.Point(1281, 92);
             this.txtboxSummary.Name = "txtboxSummary";
+            this.txtboxSummary.ReadOnly = true;
+            this.txtboxSummary.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
             this.txtboxSummary.Size = new System.Drawing.Size(242, 355);
             this.txtboxSummary.TabIndex = 18;
+            this.txtboxSummary.TabStop = false;
             this.txtboxSummary.Text = "";
             // 
             // MainScreen

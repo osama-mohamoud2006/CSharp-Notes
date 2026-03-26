@@ -54,9 +54,9 @@ namespace SimpleCafeShop
 
         }
 
-        private bool ShowOrderConfirmationMessageBox()
+        private bool ShowOrderConfirmationMessageBox(string text = "Are You Sure?" , string title = "Confirmation")
         {
-            var Res = MessageBox.Show("Are You Sure?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question,
+            var Res = MessageBox.Show("Are You Sure?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation,
                 MessageBoxDefaultButton.Button2);
 
             if (Res == DialogResult.OK)
@@ -220,6 +220,7 @@ namespace SimpleCafeShop
             labPrice.Text = Convert.ToString(SumOfPrices);
         }
 
+        
 
         private bool IsInSummary(enOrders OrderName,string Price) // return true if the order in summary 
         {
@@ -229,37 +230,40 @@ namespace SimpleCafeShop
 
         private void UndoCoffeeOrder_Click(object sender, EventArgs e)
         {
-            UndoFromSummary(enOrders.Coffee, "30$");
+            if (ShowOrderConfirmationMessageBox())
+            {
+                UndoFromSummary(enOrders.Coffee, "30$");
 
-            UndoOrder(1);
-            // if the order isn't in summary then disable undo button
-            if (!IsInSummary(enOrders.Coffee, "30$")) btnCoffeeUndo.Enabled = false; 
+                UndoOrder(1);
+                // if the order isn't in summary then disable undo button
+                if (!IsInSummary(enOrders.Coffee, "30$")) btnCoffeeUndo.Enabled = false;
+            }
         }
 
         private void EspUndoOrder_Click(object sender, EventArgs e)
         {
-            UndoFromSummary(enOrders.Espresso, "60$");
-            UndoOrder(2);
-            // if the order isn't in summary then disable undo button
-            if (!IsInSummary(enOrders.Espresso, "60$")) btnEspUndo.Enabled = false;
+            if (ShowOrderConfirmationMessageBox())
+            {
+                UndoFromSummary(enOrders.Espresso, "60$");
+                UndoOrder(2);
+                // if the order isn't in summary then disable undo button
+                if (!IsInSummary(enOrders.Espresso, "60$")) btnEspUndo.Enabled = false;
+            }
         }
 
         private void MatchUndoOrder_Click(object sender, EventArgs e)
         {
-            UndoFromSummary(enOrders.Matcha, "70$");
+            if (ShowOrderConfirmationMessageBox())
+            {
+                UndoFromSummary(enOrders.Matcha, "70$");
 
-            UndoOrder(3);
-            // if the order isn't in summary then disable undo button
-            if (!IsInSummary(enOrders.Matcha, "70$"))  btnMatchaUndo.Enabled = false; 
+                UndoOrder(3);
+                // if the order isn't in summary then disable undo button
+                if (!IsInSummary(enOrders.Matcha, "70$")) btnMatchaUndo.Enabled = false;
+            }
         }
 
          
-        
-
-
-
-
-        // Implement Message Box With Events
 
     }
 }
