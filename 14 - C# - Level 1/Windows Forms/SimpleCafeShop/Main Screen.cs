@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -64,42 +65,6 @@ namespace SimpleCafeShop
 
         }
 
-        // Order Now Button Click 
-
-        private void btnCoffee_Click(object sender, EventArgs e)
-        {
-            if (ShowOrderConfirmationMessageBox())
-            {
-                this.SumOfPrices += 30;
-
-                labPrice.Text = Convert.ToString(SumOfPrices + "$");
-
-                btnUndo1.Enabled = true; 
-            }
-        }
-
-        private void btnEsp_Click(object sender, EventArgs e)
-        {
-            if (ShowOrderConfirmationMessageBox())
-            {
-                this.SumOfPrices += 60;
-                labPrice.Text = Convert.ToString(SumOfPrices + "$");
-
-                btnEspUndo.Enabled = true;
-            }
-        }
-
-        private void btnMatcha_Click(object sender, EventArgs e)
-        {
-            if (ShowOrderConfirmationMessageBox())
-            {
-                this.SumOfPrices += 70;
-                labPrice.Text = Convert.ToString(SumOfPrices + "$");
-
-                btnMatchaUndo.Enabled = true;
-            }
-        }
-
 
         // Mouse Entered-Left 
         private void MouseEnteredbtnCoffee(object sender, EventArgs e)
@@ -134,9 +99,105 @@ namespace SimpleCafeShop
         }
 
 
+        enum enOrders: byte { Coffee=1,Espresso=2,Matcha=3}
+
        
+        private void AppendToSummary(enOrders OrderName, string Price)
+        {
+            
+            switch (OrderName)
+            {
+                case enOrders.Coffee:
+                    txtboxSummary.Text += "\n"+enOrders.Coffee.ToString()+":"+Price;
+                    break;
+
+                case enOrders.Espresso:
+                    txtboxSummary.Text += "\n"+enOrders.Espresso.ToString() + ":" + Price;
+                    break;
+
+                case enOrders.Matcha:
+                    txtboxSummary.Text+=( "\n"+enOrders.Matcha.ToString() + ":" + Price);
+                    break;
+            }
+        }
+
+
+        // Order Now Button Click 
+
+        private void btnCoffee_Click(object sender, EventArgs e)
+        {
+            if (ShowOrderConfirmationMessageBox())
+            {
+                this.SumOfPrices += 30;
+
+                labPrice.Text = Convert.ToString(SumOfPrices + "$");
+
+                AppendToSummary(enOrders.Coffee,"30$");
+
+                btnUndo1.Enabled = true;
+            }
+        }
+
+        private void btnEsp_Click(object sender, EventArgs e)
+        {
+            if (ShowOrderConfirmationMessageBox())
+            {
+                this.SumOfPrices += 60;
+                labPrice.Text = Convert.ToString(SumOfPrices + "$");
+
+                AppendToSummary(enOrders.Espresso, "60$");
+
+                btnEspUndo.Enabled = true;
+            }
+        }
+
+        private void btnMatcha_Click(object sender, EventArgs e)
+        {
+            if (ShowOrderConfirmationMessageBox())
+            {
+                this.SumOfPrices += 70;
+                labPrice.Text = Convert.ToString(SumOfPrices + "$");
+
+                AppendToSummary(enOrders.Matcha, "70$");
+
+                btnMatchaUndo.Enabled = true;
+            }
+        }
+
+
+
         ///  Undo The Order
-        
+
+        private void UndoFromSummary(enOrders WhatToUndo,string Price)
+        {
+            var Lis = new List<string>(); /// list to append the current orders to it 
+
+            string[] Orders = txtboxSummary.Text.Split(' '); // split the order contents as each one is separated by space
+
+            Lis = Orders.ToList(); // convert array to list
+
+            // "\n"+enOrders.Coffee.ToString()+":"+Price; --> the text to remove is be like
+
+            switch (WhatToUndo)
+            {
+                case enOrders.Coffee:
+                    Lis.Remove("\n"+enOrders.Coffee.ToString()+ ":" + Price);
+                    break;
+            }
+
+
+            if (Lis.Count == 0) txtboxSummary.Text = ""; // all orders were deleted , so delete the summary also 
+            else
+            {
+
+                foreach (var items in Lis)
+                {
+                    txtboxSummary.Text += "\n" + items;
+                }
+
+
+            }
+        }
 
         private short[] prices = { 30, 60, 70 };
 
@@ -152,6 +213,8 @@ namespace SimpleCafeShop
 
         private void UndoCoffeeOrder_Click(object sender, EventArgs e)
         {
+            UndoFromSummary(enOrders.Coffee, "30$");
+
             UndoOrder(1);
             btnUndo1.Enabled = false; 
         }
