@@ -68,7 +68,9 @@ namespace WindowsFormsApp2
 
         private void button6_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("Are You Sure About Closing The Form?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            DialogResult res = 
+          MessageBox.Show("Are You Sure About Closing The Form?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation
+          ,MessageBoxDefaultButton.Button2,0,false);
 
             if (res == DialogResult.OK)
                 this.Close();
