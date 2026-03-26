@@ -53,24 +53,48 @@ namespace SimpleCafeShop
 
         }
 
+        private bool ShowOrderConfirmationMessageBox()
+        {
+            var Res = MessageBox.Show("Are You Sure?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+
+            if (Res == DialogResult.OK)
+                return true;
+            else return false; 
+
+        }
+
+        // Order Now Button Click 
         private void btnCoffee_Click(object sender, EventArgs e)
         {
-            this.SumOfPrices += 30;
-            labPrice.Text = Convert.ToString(SumOfPrices + "$");
+            if (ShowOrderConfirmationMessageBox())
+            {
+                this.SumOfPrices += 30;
+
+                labPrice.Text = Convert.ToString(SumOfPrices + "$");
+            }
         }
 
         private void btnEsp_Click(object sender, EventArgs e)
         {
-            this.SumOfPrices += 60;
-            labPrice.Text = Convert.ToString(SumOfPrices + "$");
+            if (ShowOrderConfirmationMessageBox())
+            {
+                this.SumOfPrices += 60;
+                labPrice.Text = Convert.ToString(SumOfPrices + "$");
+            }
         }
 
         private void btnMatcha_Click(object sender, EventArgs e)
         {
-            this.SumOfPrices += 70;
-            labPrice.Text = Convert.ToString(SumOfPrices+"$");
+            if (ShowOrderConfirmationMessageBox())
+            {
+                this.SumOfPrices += 70;
+                labPrice.Text = Convert.ToString(SumOfPrices + "$");
+            }
         }
 
+
+        // Mouse Entered-Left 
         private void MouseEnteredbtnCoffee(object sender, EventArgs e)
         {
             btnCoffee.Text = "Order Now";
@@ -103,5 +127,7 @@ namespace SimpleCafeShop
         }
 
       
+        // Implement Message Box With Events
+
     }
 }
