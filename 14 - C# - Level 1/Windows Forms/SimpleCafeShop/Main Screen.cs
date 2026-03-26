@@ -65,6 +65,7 @@ namespace SimpleCafeShop
         }
 
         // Order Now Button Click 
+
         private void btnCoffee_Click(object sender, EventArgs e)
         {
             if (ShowOrderConfirmationMessageBox())
@@ -72,6 +73,8 @@ namespace SimpleCafeShop
                 this.SumOfPrices += 30;
 
                 labPrice.Text = Convert.ToString(SumOfPrices + "$");
+
+                btnUndo1.Enabled = true; 
             }
         }
 
@@ -81,6 +84,8 @@ namespace SimpleCafeShop
             {
                 this.SumOfPrices += 60;
                 labPrice.Text = Convert.ToString(SumOfPrices + "$");
+
+                btnEspUndo.Enabled = true;
             }
         }
 
@@ -90,6 +95,8 @@ namespace SimpleCafeShop
             {
                 this.SumOfPrices += 70;
                 labPrice.Text = Convert.ToString(SumOfPrices + "$");
+
+                btnMatchaUndo.Enabled = true;
             }
         }
 
@@ -127,27 +134,42 @@ namespace SimpleCafeShop
         }
 
 
+       
+        ///  Undo The Order
+        
+
         private short[] prices = { 30, 60, 70 };
 
         private void UndoOrder(byte OrderNum)
         {
+            if (OrderNum - 1 == -1 || OrderNum - 1 > prices.Length) return;  // to avoid out of range index 
+
             this.SumOfPrices -= prices[OrderNum-1]; // take the price of money from array
+            labPrice.Text = Convert.ToString(SumOfPrices);
         }
+
+     
 
         private void UndoCoffeeOrder_Click(object sender, EventArgs e)
         {
-            UndoOrder(1); 
+            UndoOrder(1);
+            btnUndo1.Enabled = false; 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void EspUndoOrder_Click(object sender, EventArgs e)
         {
             UndoOrder(2);
+            btnEspUndo.Enabled = false;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void MatchUndoOrder_Click(object sender, EventArgs e)
         {
             UndoOrder(3);
+            btnMatchaUndo.Enabled = false; 
         }
+
+         
+        
 
 
 
