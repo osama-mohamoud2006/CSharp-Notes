@@ -38,7 +38,7 @@
             this.btnMatcha = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.labPrice = new System.Windows.Forms.Label();
-            this.btnUndo1 = new System.Windows.Forms.Button();
+            this.btnCoffeeUndo = new System.Windows.Forms.Button();
             this.btnEspUndo = new System.Windows.Forms.Button();
             this.btnMatchaUndo = new System.Windows.Forms.Button();
             this.labSummary = new System.Windows.Forms.Label();
@@ -166,19 +166,19 @@
             // 
             // btnUndo1
             // 
-            this.btnUndo1.BackColor = System.Drawing.Color.Transparent;
-            this.btnUndo1.Enabled = false;
-            this.btnUndo1.FlatAppearance.BorderSize = 2;
-            this.btnUndo1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnUndo1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUndo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUndo1.Location = new System.Drawing.Point(500, 133);
-            this.btnUndo1.Name = "btnUndo1";
-            this.btnUndo1.Size = new System.Drawing.Size(63, 52);
-            this.btnUndo1.TabIndex = 13;
-            this.btnUndo1.Text = "Undo";
-            this.btnUndo1.UseVisualStyleBackColor = false;
-            this.btnUndo1.Click += new System.EventHandler(this.UndoCoffeeOrder_Click);
+            this.btnCoffeeUndo.BackColor = System.Drawing.Color.Transparent;
+            this.btnCoffeeUndo.Enabled = false;
+            this.btnCoffeeUndo.FlatAppearance.BorderSize = 2;
+            this.btnCoffeeUndo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnCoffeeUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCoffeeUndo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCoffeeUndo.Location = new System.Drawing.Point(500, 133);
+            this.btnCoffeeUndo.Name = "btnUndo1";
+            this.btnCoffeeUndo.Size = new System.Drawing.Size(63, 52);
+            this.btnCoffeeUndo.TabIndex = 13;
+            this.btnCoffeeUndo.Text = "Undo";
+            this.btnCoffeeUndo.UseVisualStyleBackColor = false;
+            this.btnCoffeeUndo.Click += new System.EventHandler(this.UndoCoffeeOrder_Click);
             // 
             // btnEspUndo
             // 
@@ -249,7 +249,7 @@
             this.Controls.Add(this.labSummary);
             this.Controls.Add(this.btnMatchaUndo);
             this.Controls.Add(this.btnEspUndo);
-            this.Controls.Add(this.btnUndo1);
+            this.Controls.Add(this.btnCoffeeUndo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnMatcha);
             this.Controls.Add(this.btnEsp);
@@ -280,7 +280,7 @@
         private System.Windows.Forms.Button btnMatcha;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labPrice;
-        private System.Windows.Forms.Button btnUndo1;
+        private System.Windows.Forms.Button btnCoffeeUndo;
         private System.Windows.Forms.Button btnEspUndo;
         private System.Windows.Forms.Button btnMatchaUndo;
         private System.Windows.Forms.Label labSummary;

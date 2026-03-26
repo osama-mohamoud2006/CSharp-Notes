@@ -138,7 +138,7 @@ namespace SimpleCafeShop
 
                 AppendToSummary(enOrders.Coffee,"30$");
 
-                btnUndo1.Enabled = true;
+                btnCoffeeUndo.Enabled = true;
             }
         }
 
@@ -220,21 +220,28 @@ namespace SimpleCafeShop
             labPrice.Text = Convert.ToString(SumOfPrices);
         }
 
-     
+
+        private bool IsInSummary(enOrders OrderName,string Price) // return true if the order in summary 
+        {
+            //Lis.Add(enOrders.Coffee.ToString() + ":" + Price);
+            return Lis.Contains(OrderName.ToString() + ":" + Price);
+        }
 
         private void UndoCoffeeOrder_Click(object sender, EventArgs e)
         {
             UndoFromSummary(enOrders.Coffee, "30$");
 
             UndoOrder(1);
-            btnUndo1.Enabled = false; 
+            // if the order isn't in summary then disable undo button
+            if (!IsInSummary(enOrders.Coffee, "30$")) btnCoffeeUndo.Enabled = false; 
         }
 
         private void EspUndoOrder_Click(object sender, EventArgs e)
         {
             UndoFromSummary(enOrders.Espresso, "60$");
             UndoOrder(2);
-            btnEspUndo.Enabled = false;
+            // if the order isn't in summary then disable undo button
+            if (!IsInSummary(enOrders.Espresso, "60$")) btnEspUndo.Enabled = false;
         }
 
         private void MatchUndoOrder_Click(object sender, EventArgs e)
@@ -242,7 +249,8 @@ namespace SimpleCafeShop
             UndoFromSummary(enOrders.Matcha, "70$");
 
             UndoOrder(3);
-            btnMatchaUndo.Enabled = false; 
+            // if the order isn't in summary then disable undo button
+            if (!IsInSummary(enOrders.Matcha, "70$"))  btnMatchaUndo.Enabled = false; 
         }
 
          
