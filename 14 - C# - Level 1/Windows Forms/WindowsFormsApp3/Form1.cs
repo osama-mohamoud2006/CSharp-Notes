@@ -81,10 +81,15 @@ namespace WindowsFormsApp3
 
         private void button3_Click(object sender, EventArgs e)
         {
-            checkBox3.AutoCheck = true;
+            checkBox3.AutoCheck = true; // enable the ability to change the check box state 
             MessageBox.Show("The Check Box Have Enabled", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            checkBox3.CheckState = CheckState.Unchecked; // change tthe 
-            checkBox3.Text = "Unchecked By CheckState";
+            checkBox3.CheckState = CheckState.Unchecked; // change the check box state to unchecked 
+
+            MessageBox.Show("Checked", "", MessageBoxButtons.OK);
+            checkBox3.CheckState = CheckState.Checked;
+            checkBox3.Text = "Checked By CheckState"; // change the text of check box 
+
+
 
             button3.Visible = checkBox3.Checked; // as it is unchecked , so the button will hide 
         }
