@@ -1,0 +1,92 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp3
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+            checkBox1.ThreeState = true;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            //if (checkBox1.Checked)
+            //{
+            //    MessageBox.Show("Check Box Enabled");
+            //    button1.Enabled = true;
+            //}
+            //else MessageBox.Show("UnChecked");  button1.Enabled = false;
+
+
+            /*
+             * Options :
+             * checked
+             * un checked 
+             * intermediate
+             */
+
+            //if(checkBox1.CheckState == CheckState.Checked)
+            //{
+            //    MessageBox.Show("Checked");
+            //}
+            //else if(checkBox1.CheckState == CheckState.Unchecked)
+            //{
+            //    MessageBox.Show("UnChecked");
+            //}
+            //else if(checkBox1.CheckState == CheckState.Indeterminate) // by default it doesn't do any thing 
+            //{
+            //    button1.Enabled = true;
+            //    MessageBox.Show("Intermediate");
+            //}
+
+            // (to enable intermediate) 
+
+            if (checkBox1.CheckState == CheckState.Checked)
+            {
+                MessageBox.Show("Checked");
+            }
+            else if (checkBox1.CheckState == CheckState.Unchecked)
+            {
+                MessageBox.Show("UnChecked");
+            }
+            else 
+            {
+                button1.Enabled = true;
+                MessageBox.Show("Intermediate");
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox2.CheckState == CheckState.Checked)
+            {
+                MessageBox.Show("Checked");
+                checkBox2.Text = "Checked";
+                checkBox2.ForeColor = Color.Blue;
+
+               
+
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            checkBox3.AutoCheck = true;
+            MessageBox.Show("The Check Box Have Enabled", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            checkBox3.CheckState = CheckState.Unchecked; // change tthe 
+            checkBox3.Text = "Unchecked By CheckState";
+
+            button3.Visible = checkBox3.Checked; // as it is unchecked , so the button will hide 
+        }
+    }
+}
