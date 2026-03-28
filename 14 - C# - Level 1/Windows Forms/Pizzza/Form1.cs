@@ -13,14 +13,15 @@ namespace Pizzza
 {
     public partial class frmMain : Form
     {
-        private float _TotalPrice=0; 
+        private float _TotalPrice=0;
 
         public frmMain()
         {
             InitializeComponent();
-            AssignTagsValuesForRadioButtons(); // for assigning values for radio controls .tag
-        }
+            AssignTagsValuesForRadioButtons(); // for assigning values for radio controls.tag
+            AssignTagsValuesForCheckBoxes(); // for assigning values for check boxes  controls.tag
 
+        }
 
         // to call it after updating price (on screen on the real time) 
         private void UpdatePriceLabel()
@@ -61,7 +62,7 @@ namespace Pizzza
         /// The Section Of grb1,2 for radio buttons (prices for now )
         /// </summary>
         
-        // This Function Is Used To Assign Name,Price For Each Control Tag
+        // This Function Is Used To Assign Name,Price For Each Control Tag (radio buttons) 
         // it runs when form loads 
         private void AssignTagsValuesForRadioButtons()
         {
@@ -83,7 +84,8 @@ namespace Pizzza
         }
 
 
-
+        // This Function Is Used To Assign Name,Price For Each Control Tag (check boxes )
+        // it runs when form loads 
         private void AssignTagsValuesForCheckBoxes()
         {
             // Rectangle 2D array 3*2
@@ -103,16 +105,25 @@ namespace Pizzza
                   
                  };
 
-            //RadioButton[] Rb = { rbSmall, rbMeduim, rbLarge, rbThin, rbThick }; // the radio buttons itself 
+            CheckBox[,] CB = 
+             {
+                { cbExtraCheese , cbOnion},
+                {cbMushrooms,cbOlives },
+                {cbTomatomes,cbGreenPeppers }
+            }; 
 
-            //int i = 0; // to access array 
-            //foreach (RadioButton item in Rb)
-            //{
-            //    DataForEachTag.name = NameOfEachRB[i];
-            //    DataForEachTag.price = PricesForEachRB[i];
-            //    Rb[i].Tag = DataForEachTag; // assign the struct to each  rb tag 
-            //    i += 1; // increment the index 
-            //}
+        
+
+            for(int i=0; i< NameOfEachRB.GetLength(0); i++)
+            {
+                for (int j = 0; j < NameOfEachRB.GetLength(1); j++)
+                {
+                    DataForEachTag.name = NameOfEachRB[i, j];
+                    DataForEachTag.price = PricesForEachRB[i, j];
+                    CB[i, j].Tag = DataForEachTag;
+                }
+
+            }
 
         }
 
@@ -172,6 +183,12 @@ namespace Pizzza
             UpdatePriceLabel();
         }
 
+
+        /// <summary>
+        ///  Check Boxes Logic 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void cbExtraCheese_CheckedChanged(object sender, EventArgs e)
         {

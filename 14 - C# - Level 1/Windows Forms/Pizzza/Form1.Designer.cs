@@ -40,8 +40,8 @@
             this.cbGreenPeppers = new System.Windows.Forms.CheckBox();
             this.cbOlives = new System.Windows.Forms.CheckBox();
             this.cbOnion = new System.Windows.Forms.CheckBox();
-            this.chTomatomes = new System.Windows.Forms.CheckBox();
-            this.chMushrooms = new System.Windows.Forms.CheckBox();
+            this.cbTomatomes = new System.Windows.Forms.CheckBox();
+            this.cbMushrooms = new System.Windows.Forms.CheckBox();
             this.cbExtraCheese = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -164,8 +164,8 @@
             this.grbTopping.Controls.Add(this.cbGreenPeppers);
             this.grbTopping.Controls.Add(this.cbOlives);
             this.grbTopping.Controls.Add(this.cbOnion);
-            this.grbTopping.Controls.Add(this.chTomatomes);
-            this.grbTopping.Controls.Add(this.chMushrooms);
+            this.grbTopping.Controls.Add(this.cbTomatomes);
+            this.grbTopping.Controls.Add(this.cbMushrooms);
             this.grbTopping.Controls.Add(this.cbExtraCheese);
             this.grbTopping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grbTopping.Font = new System.Drawing.Font("Stencil", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -210,27 +210,27 @@
             this.cbOnion.Text = "Onion";
             this.cbOnion.UseVisualStyleBackColor = true;
             // 
-            // chTomatomes
+            // cbTomatomes
             // 
-            this.chTomatomes.AutoSize = true;
-            this.chTomatomes.Font = new System.Drawing.Font("SF Mono", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chTomatomes.Location = new System.Drawing.Point(25, 183);
-            this.chTomatomes.Name = "chTomatomes";
-            this.chTomatomes.Size = new System.Drawing.Size(219, 43);
-            this.chTomatomes.TabIndex = 2;
-            this.chTomatomes.Text = "Tomatomes";
-            this.chTomatomes.UseVisualStyleBackColor = true;
+            this.cbTomatomes.AutoSize = true;
+            this.cbTomatomes.Font = new System.Drawing.Font("SF Mono", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTomatomes.Location = new System.Drawing.Point(25, 183);
+            this.cbTomatomes.Name = "cbTomatomes";
+            this.cbTomatomes.Size = new System.Drawing.Size(219, 43);
+            this.cbTomatomes.TabIndex = 2;
+            this.cbTomatomes.Text = "Tomatomes";
+            this.cbTomatomes.UseVisualStyleBackColor = true;
             // 
-            // chMushrooms
+            // cbMushrooms
             // 
-            this.chMushrooms.AutoSize = true;
-            this.chMushrooms.Font = new System.Drawing.Font("SF Mono", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chMushrooms.Location = new System.Drawing.Point(25, 115);
-            this.chMushrooms.Name = "chMushrooms";
-            this.chMushrooms.Size = new System.Drawing.Size(219, 43);
-            this.chMushrooms.TabIndex = 1;
-            this.chMushrooms.Text = "Mushrooms";
-            this.chMushrooms.UseVisualStyleBackColor = true;
+            this.cbMushrooms.AutoSize = true;
+            this.cbMushrooms.Font = new System.Drawing.Font("SF Mono", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMushrooms.Location = new System.Drawing.Point(25, 115);
+            this.cbMushrooms.Name = "cbMushrooms";
+            this.cbMushrooms.Size = new System.Drawing.Size(219, 43);
+            this.cbMushrooms.TabIndex = 1;
+            this.cbMushrooms.Text = "Mushrooms";
+            this.cbMushrooms.UseVisualStyleBackColor = true;
             // 
             // cbExtraCheese
             // 
@@ -414,8 +414,8 @@
         private System.Windows.Forms.CheckBox cbGreenPeppers;
         private System.Windows.Forms.CheckBox cbOlives;
         private System.Windows.Forms.CheckBox cbOnion;
-        private System.Windows.Forms.CheckBox chTomatomes;
-        private System.Windows.Forms.CheckBox chMushrooms;
+        private System.Windows.Forms.CheckBox cbTomatomes;
+        private System.Windows.Forms.CheckBox cbMushrooms;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RadioButton rbEatin;
         private System.Windows.Forms.RadioButton rbTakeout;
