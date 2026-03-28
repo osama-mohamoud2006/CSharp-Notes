@@ -49,11 +49,13 @@
             this.rbTakeout = new System.Windows.Forms.RadioButton();
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnRest = new System.Windows.Forms.Button();
-            this.grbCenter = new System.Windows.Forms.GroupBox();
+            this.grbSummary = new System.Windows.Forms.GroupBox();
             this.grbWhereToEat = new System.Windows.Forms.GroupBox();
+            this.labPrice = new System.Windows.Forms.Label();
             this.grbOfSizes.SuspendLayout();
             this.grbCrustTypes.SuspendLayout();
             this.grbTopping.SuspendLayout();
+            this.grbSummary.SuspendLayout();
             this.grbWhereToEat.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,6 +85,7 @@
             this.rbLarge.Size = new System.Drawing.Size(88, 28);
             this.rbLarge.TabIndex = 2;
             this.rbLarge.TabStop = true;
+            this.rbLarge.Tag = "";
             this.rbLarge.Text = "Large";
             this.rbLarge.UseVisualStyleBackColor = true;
             // 
@@ -95,6 +98,7 @@
             this.rbMeduim.Size = new System.Drawing.Size(112, 28);
             this.rbMeduim.TabIndex = 1;
             this.rbMeduim.TabStop = true;
+            this.rbMeduim.Tag = "";
             this.rbMeduim.Text = "Meduim";
             this.rbMeduim.UseVisualStyleBackColor = true;
             // 
@@ -107,8 +111,10 @@
             this.rbSmall.Size = new System.Drawing.Size(87, 28);
             this.rbSmall.TabIndex = 0;
             this.rbSmall.TabStop = true;
+            this.rbSmall.Tag = "";
             this.rbSmall.Text = "Small";
             this.rbSmall.UseVisualStyleBackColor = true;
+            this.rbSmall.CheckedChanged += new System.EventHandler(this.rbSmall_CheckedChanged);
             // 
             // grbCrustTypes
             // 
@@ -135,6 +141,7 @@
             this.rbThik.Size = new System.Drawing.Size(74, 28);
             this.rbThik.TabIndex = 2;
             this.rbThik.TabStop = true;
+            this.rbThik.Tag = "";
             this.rbThik.Text = "Thik";
             this.rbThik.UseVisualStyleBackColor = true;
             // 
@@ -147,6 +154,7 @@
             this.rbThin.Size = new System.Drawing.Size(75, 28);
             this.rbThin.TabIndex = 1;
             this.rbThin.TabStop = true;
+            this.rbThin.Tag = "";
             this.rbThin.Text = "Thin";
             this.rbThin.UseVisualStyleBackColor = true;
             // 
@@ -174,7 +182,7 @@
             // 
             this.cbGreenPeppers.AutoSize = true;
             this.cbGreenPeppers.Font = new System.Drawing.Font("SF Mono", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbGreenPeppers.Location = new System.Drawing.Point(488, 183);
+            this.cbGreenPeppers.Location = new System.Drawing.Point(494, 183);
             this.cbGreenPeppers.Name = "cbGreenPeppers";
             this.cbGreenPeppers.Size = new System.Drawing.Size(299, 43);
             this.cbGreenPeppers.TabIndex = 5;
@@ -185,7 +193,7 @@
             // 
             this.cbOlives.AutoSize = true;
             this.cbOlives.Font = new System.Drawing.Font("SF Mono", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbOlives.Location = new System.Drawing.Point(488, 115);
+            this.cbOlives.Location = new System.Drawing.Point(494, 115);
             this.cbOlives.Name = "cbOlives";
             this.cbOlives.Size = new System.Drawing.Size(159, 43);
             this.cbOlives.TabIndex = 4;
@@ -316,20 +324,20 @@
             this.btnRest.TabIndex = 9;
             this.btnRest.Text = "Rest";
             this.btnRest.UseVisualStyleBackColor = false;
-            this.btnRest.Click += new System.EventHandler(this.btnRest_Click);
             // 
-            // grbCenter
+            // grbSummary
             // 
-            this.grbCenter.BackColor = System.Drawing.Color.Black;
-            this.grbCenter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.grbCenter.Font = new System.Drawing.Font("SF Pro Display", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbCenter.ForeColor = System.Drawing.Color.White;
-            this.grbCenter.Location = new System.Drawing.Point(1113, 0);
-            this.grbCenter.Name = "grbCenter";
-            this.grbCenter.Size = new System.Drawing.Size(403, 562);
-            this.grbCenter.TabIndex = 10;
-            this.grbCenter.TabStop = false;
-            this.grbCenter.Text = "           Summary";
+            this.grbSummary.BackColor = System.Drawing.Color.Black;
+            this.grbSummary.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.grbSummary.Controls.Add(this.labPrice);
+            this.grbSummary.Font = new System.Drawing.Font("SF Pro Display", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbSummary.ForeColor = System.Drawing.Color.White;
+            this.grbSummary.Location = new System.Drawing.Point(1113, 0);
+            this.grbSummary.Name = "grbSummary";
+            this.grbSummary.Size = new System.Drawing.Size(403, 562);
+            this.grbSummary.TabIndex = 10;
+            this.grbSummary.TabStop = false;
+            this.grbSummary.Text = "           Summary";
             // 
             // grbWhereToEat
             // 
@@ -343,6 +351,18 @@
             this.grbWhereToEat.TabIndex = 11;
             this.grbWhereToEat.TabStop = false;
             // 
+            // labPrice
+            // 
+            this.labPrice.AutoSize = true;
+            this.labPrice.BackColor = System.Drawing.Color.Transparent;
+            this.labPrice.Font = new System.Drawing.Font("Showcard Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labPrice.ForeColor = System.Drawing.Color.LimeGreen;
+            this.labPrice.Location = new System.Drawing.Point(165, 441);
+            this.labPrice.Name = "labPrice";
+            this.labPrice.Size = new System.Drawing.Size(66, 50);
+            this.labPrice.TabIndex = 0;
+            this.labPrice.Text = "0$";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -350,7 +370,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1507, 562);
             this.Controls.Add(this.grbWhereToEat);
-            this.Controls.Add(this.grbCenter);
+            this.Controls.Add(this.grbSummary);
             this.Controls.Add(this.btnRest);
             this.Controls.Add(this.btnOrder);
             this.Controls.Add(this.label2);
@@ -369,6 +389,8 @@
             this.grbCrustTypes.PerformLayout();
             this.grbTopping.ResumeLayout(false);
             this.grbTopping.PerformLayout();
+            this.grbSummary.ResumeLayout(false);
+            this.grbSummary.PerformLayout();
             this.grbWhereToEat.ResumeLayout(false);
             this.grbWhereToEat.PerformLayout();
             this.ResumeLayout(false);
@@ -398,8 +420,9 @@
         private System.Windows.Forms.RadioButton rbTakeout;
         private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.Button btnRest;
-        private System.Windows.Forms.GroupBox grbCenter;
+        private System.Windows.Forms.GroupBox grbSummary;
         private System.Windows.Forms.GroupBox grbWhereToEat;
+        private System.Windows.Forms.Label labPrice;
     }
 }
 
