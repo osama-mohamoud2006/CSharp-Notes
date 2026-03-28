@@ -47,7 +47,7 @@ namespace Pizzza
             public float price;
         }
 
-        stDataForEachTag DataForEachTag;
+       private stDataForEachTag DataForEachTag;
 
         /// <summary>
         /// This Function Is Used To Assign Name,Price For Each Tag
@@ -59,32 +59,42 @@ namespace Pizzza
             //DataForEachTag.price = 0.50f; 
             //rbSmall.Tag = DataForEachTag;
             string[] NameOfEachRB = {"Small","Medium","Large","Thin","Thick"};
-            RadioButton[] PricesForEachRB= { };
-            
+            float[] PricesForEachRB= {10,20,30,2,5};
 
-                
+            RadioButton[] Rb = { rbSmall ,rbMeduim ,rbLarge ,rbThin , rbThick};
+
+            int i = 0;
+            foreach (RadioButton item in Rb)
+            {
+                DataForEachTag.name = NameOfEachRB[i];
+                DataForEachTag.price = PricesForEachRB[i];
+                Rb[i].Tag = DataForEachTag; 
+                i += 1;
+            }
+
         }
 
 
-     
 
-      
 
-        private void AddToTotalPriceForGrp1(object sender, EventArgs e)
+        private RadioButton TheLastRbOfSize = null; 
+
+        private void UpdatePriceForGrp1(object sender, EventArgs e)
         {
-           
-
+          
             RadioButton[] Group1OfSizes = { rbSmall, rbMeduim, rbLarge };
             foreach (RadioButton RB in Group1OfSizes)
             {
-                if (RB.Checked) // if one of radio buttons was checked 
+                if (RB.Checked) // if one of radio buttons was checked,then add the price to total 
                 {
                     stDataForEachTag DataForRB = (stDataForEachTag)RB.Tag;
                     this._TotalPrice += DataForRB.price;
+                    TheLastRbOfSize = RB; // stores the last operation 
                 }
-
-                labPrice.Text = Convert.ToString(_TotalPrice);
             }
+
+
+            labPrice.Text = Convert.ToString(_TotalPrice);
 
         }
 

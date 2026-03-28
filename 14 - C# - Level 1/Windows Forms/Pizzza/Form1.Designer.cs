@@ -50,8 +50,8 @@
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnRest = new System.Windows.Forms.Button();
             this.grbSummary = new System.Windows.Forms.GroupBox();
-            this.grbWhereToEat = new System.Windows.Forms.GroupBox();
             this.labPrice = new System.Windows.Forms.Label();
+            this.grbWhereToEat = new System.Windows.Forms.GroupBox();
             this.grbOfSizes.SuspendLayout();
             this.grbCrustTypes.SuspendLayout();
             this.grbTopping.SuspendLayout();
@@ -84,7 +84,6 @@
             this.rbLarge.Name = "rbLarge";
             this.rbLarge.Size = new System.Drawing.Size(88, 28);
             this.rbLarge.TabIndex = 2;
-            this.rbLarge.TabStop = true;
             this.rbLarge.Tag = "";
             this.rbLarge.Text = "Large";
             this.rbLarge.UseVisualStyleBackColor = true;
@@ -97,7 +96,6 @@
             this.rbMeduim.Name = "rbMeduim";
             this.rbMeduim.Size = new System.Drawing.Size(112, 28);
             this.rbMeduim.TabIndex = 1;
-            this.rbMeduim.TabStop = true;
             this.rbMeduim.Tag = "";
             this.rbMeduim.Text = "Meduim";
             this.rbMeduim.UseVisualStyleBackColor = true;
@@ -110,11 +108,10 @@
             this.rbSmall.Name = "rbSmall";
             this.rbSmall.Size = new System.Drawing.Size(87, 28);
             this.rbSmall.TabIndex = 0;
-            this.rbSmall.TabStop = true;
             this.rbSmall.Tag = "";
             this.rbSmall.Text = "Small";
             this.rbSmall.UseVisualStyleBackColor = true;
-            this.rbSmall.CheckedChanged += new System.EventHandler(this.AddToTotalPriceForGrp1);
+            this.rbSmall.CheckedChanged += new System.EventHandler(this.UpdatePriceForGrp1);
             // 
             // grbCrustTypes
             // 
@@ -140,7 +137,6 @@
             this.rbThick.Name = "rbThick";
             this.rbThick.Size = new System.Drawing.Size(85, 28);
             this.rbThick.TabIndex = 2;
-            this.rbThick.TabStop = true;
             this.rbThick.Tag = "";
             this.rbThick.Text = "Thick";
             this.rbThick.UseVisualStyleBackColor = true;
@@ -153,7 +149,6 @@
             this.rbThin.Name = "rbThin";
             this.rbThin.Size = new System.Drawing.Size(75, 28);
             this.rbThin.TabIndex = 1;
-            this.rbThin.TabStop = true;
             this.rbThin.Tag = "";
             this.rbThin.Text = "Thin";
             this.rbThin.UseVisualStyleBackColor = true;
@@ -335,21 +330,9 @@
             this.grbSummary.Location = new System.Drawing.Point(1113, 0);
             this.grbSummary.Name = "grbSummary";
             this.grbSummary.Size = new System.Drawing.Size(403, 562);
-            this.grbSummary.TabIndex = 10;
+            this.grbSummary.TabIndex = 0;
             this.grbSummary.TabStop = false;
             this.grbSummary.Text = "           Summary";
-            // 
-            // grbWhereToEat
-            // 
-            this.grbWhereToEat.BackColor = System.Drawing.Color.Black;
-            this.grbWhereToEat.Controls.Add(this.rbTakeout);
-            this.grbWhereToEat.Controls.Add(this.rbEatin);
-            this.grbWhereToEat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.grbWhereToEat.Location = new System.Drawing.Point(301, 408);
-            this.grbWhereToEat.Name = "grbWhereToEat";
-            this.grbWhereToEat.Size = new System.Drawing.Size(234, 134);
-            this.grbWhereToEat.TabIndex = 11;
-            this.grbWhereToEat.TabStop = false;
             // 
             // labPrice
             // 
@@ -362,6 +345,18 @@
             this.labPrice.Size = new System.Drawing.Size(66, 50);
             this.labPrice.TabIndex = 0;
             this.labPrice.Text = "0$";
+            // 
+            // grbWhereToEat
+            // 
+            this.grbWhereToEat.BackColor = System.Drawing.Color.Black;
+            this.grbWhereToEat.Controls.Add(this.rbTakeout);
+            this.grbWhereToEat.Controls.Add(this.rbEatin);
+            this.grbWhereToEat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.grbWhereToEat.Location = new System.Drawing.Point(301, 408);
+            this.grbWhereToEat.Name = "grbWhereToEat";
+            this.grbWhereToEat.Size = new System.Drawing.Size(234, 134);
+            this.grbWhereToEat.TabIndex = 11;
+            this.grbWhereToEat.TabStop = false;
             // 
             // frmMain
             // 
