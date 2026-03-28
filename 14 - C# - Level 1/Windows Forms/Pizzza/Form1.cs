@@ -17,24 +17,7 @@ namespace Pizzza
         public frmMain()
         {
             InitializeComponent();
-        }
-
-
-        private struct stDataForEachTag
-        {
-            public string name ;
-            public float price;
-        }
-
-        stDataForEachTag DataForEachTag;
-        private void AssignTagsValues()
-        {
-            // Group 1
-            DataForEachTag.name = "";
-            DataForEachTag.price = 0.50f; 
-            rbSmall.Tag = DataForEachTag;
-            
-
+            AssignTagsValuesForRadioButtons(); // for assign values for controls.tag
         }
 
 
@@ -54,24 +37,61 @@ namespace Pizzza
             grbTopping.Enabled = false;
 
             grbWhereToEat.BackColor = Color.Transparent;
-            grbWhereToEat.Enabled = false; 
+            grbWhereToEat.Enabled = false;
         }
 
-        private void rbSmall_CheckedChanged(object sender, EventArgs e)
-        {
 
+        private struct stDataForEachTag
+        {
+            public string name ;
+            public float price;
         }
 
-        private void AddToTotalPriceForGrp1()
+        stDataForEachTag DataForEachTag;
+
+        /// <summary>
+        /// This Function Is Used To Assign Name,Price For Each Tag
+        /// </summary>
+        private void AssignTagsValuesForRadioButtons()
         {
-            RadioButton[] Group1OfSizes = {rbSmall , rbMeduim , rbLarge}; 
-            foreach (RadioButton RadioButton in Group1OfSizes)
+            //// Group 1
+            //DataForEachTag.name = "";
+            //DataForEachTag.price = 0.50f; 
+            //rbSmall.Tag = DataForEachTag;
+            string[] NameOfEachRB = {"Small","Medium","Large","Thin","Thick"};
+            RadioButton[] PricesForEachRB= { };
+            
+
+                
+        }
+
+
+     
+
+      
+
+        private void AddToTotalPriceForGrp1(object sender, EventArgs e)
+        {
+           
+
+            RadioButton[] Group1OfSizes = { rbSmall, rbMeduim, rbLarge };
+            foreach (RadioButton RB in Group1OfSizes)
             {
-                if(RadioButton.Checked) // if one of radio buttons was checked 
+                if (RB.Checked) // if one of radio buttons was checked 
                 {
-
+                    stDataForEachTag DataForRB = (stDataForEachTag)RB.Tag;
+                    this._TotalPrice += DataForRB.price;
                 }
+
+                labPrice.Text = Convert.ToString(_TotalPrice);
             }
+
         }
+
+
+
+
+
+
     }
 }

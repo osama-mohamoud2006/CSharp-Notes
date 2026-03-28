@@ -34,7 +34,7 @@
             this.rbMeduim = new System.Windows.Forms.RadioButton();
             this.rbSmall = new System.Windows.Forms.RadioButton();
             this.grbCrustTypes = new System.Windows.Forms.GroupBox();
-            this.rbThik = new System.Windows.Forms.RadioButton();
+            this.rbThick = new System.Windows.Forms.RadioButton();
             this.rbThin = new System.Windows.Forms.RadioButton();
             this.grbTopping = new System.Windows.Forms.GroupBox();
             this.cbGreenPeppers = new System.Windows.Forms.CheckBox();
@@ -114,13 +114,13 @@
             this.rbSmall.Tag = "";
             this.rbSmall.Text = "Small";
             this.rbSmall.UseVisualStyleBackColor = true;
-            this.rbSmall.CheckedChanged += new System.EventHandler(this.rbSmall_CheckedChanged);
+            this.rbSmall.CheckedChanged += new System.EventHandler(this.AddToTotalPriceForGrp1);
             // 
             // grbCrustTypes
             // 
             this.grbCrustTypes.BackColor = System.Drawing.Color.Black;
             this.grbCrustTypes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.grbCrustTypes.Controls.Add(this.rbThik);
+            this.grbCrustTypes.Controls.Add(this.rbThick);
             this.grbCrustTypes.Controls.Add(this.rbThin);
             this.grbCrustTypes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grbCrustTypes.Font = new System.Drawing.Font("Stencil", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -132,18 +132,18 @@
             this.grbCrustTypes.TabStop = false;
             this.grbCrustTypes.Text = "Curst Type";
             // 
-            // rbThik
+            // rbThick
             // 
-            this.rbThik.AutoSize = true;
-            this.rbThik.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbThik.Location = new System.Drawing.Point(15, 115);
-            this.rbThik.Name = "rbThik";
-            this.rbThik.Size = new System.Drawing.Size(74, 28);
-            this.rbThik.TabIndex = 2;
-            this.rbThik.TabStop = true;
-            this.rbThik.Tag = "";
-            this.rbThik.Text = "Thik";
-            this.rbThik.UseVisualStyleBackColor = true;
+            this.rbThick.AutoSize = true;
+            this.rbThick.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbThick.Location = new System.Drawing.Point(15, 115);
+            this.rbThick.Name = "rbThick";
+            this.rbThick.Size = new System.Drawing.Size(85, 28);
+            this.rbThick.TabIndex = 2;
+            this.rbThick.TabStop = true;
+            this.rbThick.Tag = "";
+            this.rbThick.Text = "Thick";
+            this.rbThick.UseVisualStyleBackColor = true;
             // 
             // rbThin
             // 
@@ -252,7 +252,7 @@
             this.label1.Location = new System.Drawing.Point(483, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(374, 72);
-            this.label1.TabIndex = 3;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Pitzzaty";
             // 
             // label2
@@ -408,7 +408,7 @@
         private System.Windows.Forms.RadioButton rbMeduim;
         private System.Windows.Forms.RadioButton rbLarge;
         private System.Windows.Forms.RadioButton rbThin;
-        private System.Windows.Forms.RadioButton rbThik;
+        private System.Windows.Forms.RadioButton rbThick;
         private System.Windows.Forms.CheckBox cbExtraCheese;
         private System.Windows.Forms.CheckBox cbGreenPeppers;
         private System.Windows.Forms.CheckBox cbOlives;
