@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace WindowsFormsApp3
 {
@@ -88,9 +89,7 @@ namespace WindowsFormsApp3
             MessageBox.Show("Checked", "", MessageBoxButtons.OK);
             checkBox3.CheckState = CheckState.Checked;
             checkBox3.Text = "Checked By CheckState"; // change the text of check box 
-
-
-
+            checkBox3.Appearance = Appearance.Button;
             button3.Visible = checkBox3.Checked; // as it is unchecked , so the button will hide 
         }
     }
