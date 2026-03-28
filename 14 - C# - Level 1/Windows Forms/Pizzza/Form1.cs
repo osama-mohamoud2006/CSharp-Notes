@@ -54,7 +54,7 @@ namespace Pizzza
         /// </summary>
         private void AssignTagsValuesForRadioButtons()
         {
-            //// Group 1
+            
             //DataForEachTag.name = "";
             //DataForEachTag.price = 0.50f; 
             //rbSmall.Tag = DataForEachTag;
@@ -77,11 +77,17 @@ namespace Pizzza
 
 
 
-        private RadioButton TheLastRbOfSize = null; 
+        private RadioButton TheLastRbOfSize = null; // to store the last user choice of radio buttons
 
         private void UpdatePriceForGrp1(object sender, EventArgs e)
         {
-          
+            if (TheLastRbOfSize != null) // get rid of the last operation price user did 
+            {
+                stDataForEachTag DataForRB = (stDataForEachTag)TheLastRbOfSize.Tag;
+                this._TotalPrice -= DataForRB.price;
+              
+            }
+
             RadioButton[] Group1OfSizes = { rbSmall, rbMeduim, rbLarge };
             foreach (RadioButton RB in Group1OfSizes)
             {
