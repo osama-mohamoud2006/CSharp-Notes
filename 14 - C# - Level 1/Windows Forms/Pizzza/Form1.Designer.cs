@@ -187,6 +187,8 @@
             this.cbGreenPeppers.TabIndex = 5;
             this.cbGreenPeppers.Text = "Green Peppers";
             this.cbGreenPeppers.UseVisualStyleBackColor = true;
+            this.cbGreenPeppers.CheckedChanged += new System.EventHandler(this.cb_CheckedChanged);
+            this.cbGreenPeppers.CheckStateChanged += new System.EventHandler(this.cb_Unchecked);
             // 
             // cbOlives
             // 
@@ -198,6 +200,8 @@
             this.cbOlives.TabIndex = 4;
             this.cbOlives.Text = "Olives";
             this.cbOlives.UseVisualStyleBackColor = true;
+            this.cbOlives.CheckedChanged += new System.EventHandler(this.cb_CheckedChanged);
+            this.cbOlives.CheckStateChanged += new System.EventHandler(this.cb_Unchecked);
             // 
             // cbOnion
             // 
@@ -209,6 +213,8 @@
             this.cbOnion.TabIndex = 3;
             this.cbOnion.Text = "Onion";
             this.cbOnion.UseVisualStyleBackColor = true;
+            this.cbOnion.CheckedChanged += new System.EventHandler(this.cb_CheckedChanged);
+            this.cbOnion.CheckStateChanged += new System.EventHandler(this.cb_Unchecked);
             // 
             // cbTomatomes
             // 
@@ -220,6 +226,8 @@
             this.cbTomatomes.TabIndex = 2;
             this.cbTomatomes.Text = "Tomatomes";
             this.cbTomatomes.UseVisualStyleBackColor = true;
+            this.cbTomatomes.CheckedChanged += new System.EventHandler(this.cb_CheckedChanged);
+            this.cbTomatomes.CheckStateChanged += new System.EventHandler(this.cb_Unchecked);
             // 
             // cbMushrooms
             // 
@@ -231,6 +239,8 @@
             this.cbMushrooms.TabIndex = 1;
             this.cbMushrooms.Text = "Mushrooms";
             this.cbMushrooms.UseVisualStyleBackColor = true;
+            this.cbMushrooms.CheckedChanged += new System.EventHandler(this.cb_CheckedChanged);
+            this.cbMushrooms.CheckStateChanged += new System.EventHandler(this.cb_Unchecked);
             // 
             // cbExtraCheese
             // 
@@ -242,8 +252,8 @@
             this.cbExtraCheese.TabIndex = 0;
             this.cbExtraCheese.Text = "Extra Cheese";
             this.cbExtraCheese.UseVisualStyleBackColor = true;
-            this.cbExtraCheese.CheckedChanged += new System.EventHandler(this.cbExtraCheese_CheckedChanged);
-            this.cbExtraCheese.CheckStateChanged += new System.EventHandler(this.Unchecked);
+            this.cbExtraCheese.CheckedChanged += new System.EventHandler(this.cb_CheckedChanged);
+            this.cbExtraCheese.CheckStateChanged += new System.EventHandler(this.cb_Unchecked);
             // 
             // label1
             // 

@@ -190,7 +190,7 @@ namespace Pizzza
         /// <param name="sender"></param>
         /// <param name="e"></param>
 
-        private void cbExtraCheese_CheckedChanged(object sender, EventArgs e)
+        private void cb_CheckedChanged(object sender, EventArgs e)
         {
             if (cbExtraCheese.CheckState == CheckState.Checked )
             {
@@ -202,7 +202,7 @@ namespace Pizzza
 
         }
 
-        private void Unchecked(object sender, EventArgs e)
+        private void cb_Unchecked(object sender, EventArgs e)
         {
             if (cbExtraCheese.CheckState == CheckState.Unchecked)
             {
