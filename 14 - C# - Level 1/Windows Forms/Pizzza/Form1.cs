@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Pizzza
 {
-    public partial class Form1 : Form
+    public partial class frmMain : Form
     {
-        public Form1()
+        public frmMain()
         {
             InitializeComponent();
+        }
+
+        // To Disable All Controls 
+        private void btnRest_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
