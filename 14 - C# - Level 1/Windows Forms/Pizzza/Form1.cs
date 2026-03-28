@@ -17,11 +17,18 @@ namespace Pizzza
         public frmMain()
         {
             InitializeComponent();
-            AssignTagsValuesForRadioButtons(); // for assign values for controls.tag
+            AssignTagsValuesForRadioButtons(); // for assigning values for radio controls .tag
         }
 
 
-        // To Disable All Controls 
+        // to call it after updating price 
+        private void UpdatePriceLabel()
+        {
+            labPrice.Text = Convert.ToString(_TotalPrice)+"$";
+        }
+
+
+        // To Disable All Controls (Later with after order)
         private void DisableAllControls()
         {
             grbSummary.BackColor = Color.Transparent;
@@ -50,14 +57,11 @@ namespace Pizzza
        private stDataForEachTag DataForEachTag;
 
         /// <summary>
-        /// This Function Is Used To Assign Name,Price For Each Tag
+        /// This Function Is Used To Assign Name,Price For Each Control Tag
         /// </summary>
         private void AssignTagsValuesForRadioButtons()
         {
             
-            //DataForEachTag.name = "";
-            //DataForEachTag.price = 0.50f; 
-            //rbSmall.Tag = DataForEachTag;
             string[] NameOfEachRB = {"Small","Medium","Large","Thin","Thick"};
             float[] PricesForEachRB= {10,20,30,2,5};
 
@@ -71,7 +75,6 @@ namespace Pizzza
                 Rb[i].Tag = DataForEachTag; 
                 i += 1;
             }
-
         }
 
 
@@ -79,7 +82,7 @@ namespace Pizzza
 
         private RadioButton TheLastRbOfSize = null; // to store the last user choice of radio buttons
 
-        private void UpdatePriceForGrp1(object sender, EventArgs e)
+        private void UpdatePriceForRadioButtons(object sender, EventArgs e)
         {
             if (TheLastRbOfSize != null) // get rid of the last operation price user did 
             {
@@ -88,20 +91,19 @@ namespace Pizzza
               
             }
 
-            RadioButton[] Group1OfSizes = { rbSmall, rbMeduim, rbLarge };
+            RadioButton[] Group1OfSizes = { rbSmall, rbMeduim, rbLarge,rbThin,rbThick };
+
             foreach (RadioButton RB in Group1OfSizes)
             {
                 if (RB.Checked) // if one of radio buttons was checked,then add the price to total 
                 {
-                    stDataForEachTag DataForRB = (stDataForEachTag)RB.Tag;
+                    stDataForEachTag DataForRB = (stDataForEachTag)RB.Tag; // take each tag and cast to to stuct to get its price
                     this._TotalPrice += DataForRB.price;
-                    TheLastRbOfSize = RB; // stores the last operation 
+                    TheLastRbOfSize = RB; // stores the last operation  
                 }
             }
 
-
-            labPrice.Text = Convert.ToString(_TotalPrice);
-
+            UpdatePriceLabel(); 
         }
 
 

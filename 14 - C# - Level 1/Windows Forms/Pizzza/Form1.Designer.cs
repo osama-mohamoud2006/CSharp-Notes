@@ -87,6 +87,7 @@
             this.rbLarge.Tag = "";
             this.rbLarge.Text = "Large";
             this.rbLarge.UseVisualStyleBackColor = true;
+            this.rbLarge.CheckedChanged += new System.EventHandler(this.UpdatePriceForRadioButtons);
             // 
             // rbMeduim
             // 
@@ -99,6 +100,7 @@
             this.rbMeduim.Tag = "";
             this.rbMeduim.Text = "Meduim";
             this.rbMeduim.UseVisualStyleBackColor = true;
+            this.rbMeduim.CheckedChanged += new System.EventHandler(this.UpdatePriceForRadioButtons);
             // 
             // rbSmall
             // 
@@ -111,7 +113,7 @@
             this.rbSmall.Tag = "";
             this.rbSmall.Text = "Small";
             this.rbSmall.UseVisualStyleBackColor = true;
-            this.rbSmall.CheckedChanged += new System.EventHandler(this.UpdatePriceForGrp1);
+            this.rbSmall.CheckedChanged += new System.EventHandler(this.UpdatePriceForRadioButtons);
             // 
             // grbCrustTypes
             // 
@@ -140,6 +142,7 @@
             this.rbThick.Tag = "";
             this.rbThick.Text = "Thick";
             this.rbThick.UseVisualStyleBackColor = true;
+            this.rbThick.CheckedChanged += new System.EventHandler(this.UpdatePriceForRadioButtons);
             // 
             // rbThin
             // 
@@ -152,6 +155,7 @@
             this.rbThin.Tag = "";
             this.rbThin.Text = "Thin";
             this.rbThin.UseVisualStyleBackColor = true;
+            this.rbThin.CheckedChanged += new System.EventHandler(this.UpdatePriceForRadioButtons);
             // 
             // grbTopping
             // 
