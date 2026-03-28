@@ -5,6 +5,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -50,12 +51,12 @@ namespace Pizzza
         }
 
 
-          enum enCheckStatus: byte {Checked=1 , UnChecked=2} // for check box tracking
+          
         private struct stDataForEachTag
         {
             public string name ;
             public float price;
-            public enCheckStatus eCheckStatus; 
+            
         }
 
        private stDataForEachTag DataForEachTag;
@@ -122,7 +123,6 @@ namespace Pizzza
                 {
                     DataForEachTag.name = NameOfEachRB[i, j];
                     DataForEachTag.price = PricesForEachRB[i, j];
-                    DataForEachTag.eCheckStatus = enCheckStatus.UnChecked; // default 
                     CB[i, j].Tag = DataForEachTag;
                 }
 
@@ -195,65 +195,25 @@ namespace Pizzza
 
         private void cb_CheckedChanged(object sender, EventArgs e)
         {
-            if(cbExtraCheese.CheckState == CheckState.Checked)MessageBox.Show("Checked");
-            else MessageBox.Show("UnChecked");
+            CheckBox CB = (CheckBox)sender;
+            stDataForEachTag DataForEachCheckBox = (stDataForEachTag)CB.Tag;
 
-            CheckBox[] CB = { cbExtraCheese, cbOnion, cbMushrooms, cbMushrooms, cbOlives, cbTomatomes, cbGreenPeppers };
-
-            for (int i=0; i<CB.Length; i++ )
+            if(CB.Checked)
             {
-                stDataForEachTag Obj =  new stDataForEachTag(); // take this 
-
-                stDataForEachTag Temp = (stDataForEachTag)CB[i].Tag;
-                Obj.price = Temp.price;
-                Obj.name = Temp.name;
-                Obj.eCheckStatus = Temp.eCheckStatus;
-
-
-
-                if (CB[i].CheckState == CheckState.Checked)
-                {
-
-                    this._TotalPrice += Obj.price;
-                    Obj.eCheckStatus = enCheckStatus.Checked;
-
-                }
-
+                this._TotalPrice += DataForEachCheckBox.price;
             }
-            
-            foreach (var item in CB)
+            else
             {
-                stDataForEachTag DataForEachCheckBox = (stDataForEachTag)item.Tag;
-
-                if (item.CheckState == CheckState.Unchecked && DataForEachCheckBox.eCheckStatus == enCheckStatus.Checked)
-                {
-
-                    this._TotalPrice -= DataForEachCheckBox.price;
-                }
+                this._TotalPrice -= DataForEachCheckBox.price;
             }
-           
+
             UpdatePriceLabel();
 
         }
 
-        private void cb_Unchecked(object sender, EventArgs e)
-        {
-           //// MessageBox.Show("UnChecked");
-           // CheckBox[] CB = { cbExtraCheese, cbOnion, cbMushrooms, cbMushrooms, cbOlives, cbTomatomes, cbGreenPeppers };
+     
 
-           // foreach (var item in CB)
-           // {
-           //     stDataForEachTag DataForEachCheckBox = (stDataForEachTag)  item.Tag;
-
-           //     if (item.CheckState == CheckState.Unchecked && DataForEachCheckBox.eCheckStatus == enCheckStatus.Checked)
-           //     {
-                   
-           //         this._TotalPrice -= DataForEachCheckBox.price;
-           //     }
-           // }
-           // UpdatePriceLabel();
-        }
-
-
+ 
+   
     }
 }

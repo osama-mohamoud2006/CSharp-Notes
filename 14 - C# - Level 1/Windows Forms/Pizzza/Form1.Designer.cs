@@ -188,7 +188,6 @@
             this.cbGreenPeppers.Text = "Green Peppers";
             this.cbGreenPeppers.UseVisualStyleBackColor = true;
             this.cbGreenPeppers.CheckedChanged += new System.EventHandler(this.cb_CheckedChanged);
-            this.cbGreenPeppers.CheckStateChanged += new System.EventHandler(this.cb_Unchecked);
             // 
             // cbOlives
             // 
@@ -201,7 +200,6 @@
             this.cbOlives.Text = "Olives";
             this.cbOlives.UseVisualStyleBackColor = true;
             this.cbOlives.CheckedChanged += new System.EventHandler(this.cb_CheckedChanged);
-            this.cbOlives.CheckStateChanged += new System.EventHandler(this.cb_Unchecked);
             // 
             // cbOnion
             // 
@@ -214,7 +212,6 @@
             this.cbOnion.Text = "Onion";
             this.cbOnion.UseVisualStyleBackColor = true;
             this.cbOnion.CheckedChanged += new System.EventHandler(this.cb_CheckedChanged);
-            this.cbOnion.CheckStateChanged += new System.EventHandler(this.cb_Unchecked);
             // 
             // cbTomatomes
             // 
@@ -227,7 +224,6 @@
             this.cbTomatomes.Text = "Tomatomes";
             this.cbTomatomes.UseVisualStyleBackColor = true;
             this.cbTomatomes.CheckedChanged += new System.EventHandler(this.cb_CheckedChanged);
-            this.cbTomatomes.CheckStateChanged += new System.EventHandler(this.cb_Unchecked);
             // 
             // cbMushrooms
             // 
@@ -240,7 +236,6 @@
             this.cbMushrooms.Text = "Mushrooms";
             this.cbMushrooms.UseVisualStyleBackColor = true;
             this.cbMushrooms.CheckedChanged += new System.EventHandler(this.cb_CheckedChanged);
-            this.cbMushrooms.CheckStateChanged += new System.EventHandler(this.cb_Unchecked);
             // 
             // cbExtraCheese
             // 
@@ -253,7 +248,6 @@
             this.cbExtraCheese.Text = "Extra Cheese";
             this.cbExtraCheese.UseVisualStyleBackColor = true;
             this.cbExtraCheese.CheckedChanged += new System.EventHandler(this.cb_CheckedChanged);
-            this.cbExtraCheese.CheckStateChanged += new System.EventHandler(this.cb_Unchecked);
             // 
             // label1
             // 
