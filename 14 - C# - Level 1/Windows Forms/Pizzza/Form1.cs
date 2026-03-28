@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -57,28 +58,28 @@ namespace Pizzza
        private stDataForEachTag DataForEachTag;
 
         /// <summary>
-        /// This Function Is Used To Assign Name,Price For Each Control Tag
+        /// The Section Of grb1,2 for radio buttons 
         /// </summary>
+        
+        // This Function Is Used To Assign Name,Price For Each Control Tag
         private void AssignTagsValuesForRadioButtons()
         {
             
-            string[] NameOfEachRB = {"Small","Medium","Large","Thin","Thick"};
-            float[] PricesForEachRB= {10,20,30,2,5};
+            string[] NameOfEachRB = {"Small","Medium","Large","Thin","Thick"}; // name of each rb control 
+            float[] PricesForEachRB= {10,20,30,2,5}; // price of each rb control 
 
-            RadioButton[] Rb = { rbSmall ,rbMeduim ,rbLarge ,rbThin , rbThick};
+            RadioButton[] Rb = { rbSmall ,rbMeduim ,rbLarge ,rbThin , rbThick}; // the radio buttons itself 
 
-            int i = 0;
+            int i = 0; // to access array 
             foreach (RadioButton item in Rb)
             {
                 DataForEachTag.name = NameOfEachRB[i];
                 DataForEachTag.price = PricesForEachRB[i];
-                Rb[i].Tag = DataForEachTag; 
-                i += 1;
+                Rb[i].Tag = DataForEachTag; // assign the struct to each  rb tag 
+                i += 1; // increment the index 
             }
+
         }
-
-
-
 
         private RadioButton TheLastRbOfSize = null; // to store the last user choice of radio buttons
 
