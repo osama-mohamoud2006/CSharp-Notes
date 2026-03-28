@@ -58,10 +58,11 @@ namespace Pizzza
        private stDataForEachTag DataForEachTag;
 
         /// <summary>
-        /// The Section Of grb1,2 for radio buttons 
+        /// The Section Of grb1,2 for radio buttons (prices for now )
         /// </summary>
         
         // This Function Is Used To Assign Name,Price For Each Control Tag
+        // it runs when form loads 
         private void AssignTagsValuesForRadioButtons()
         {
             
@@ -81,9 +82,11 @@ namespace Pizzza
 
         }
 
-        private RadioButton TheLastRbOfSize = null; // to store the last user choice of radio buttons
 
-        private void UpdatePriceForRadioButtons(object sender, EventArgs e)
+
+               // For The First Group "Radio Button Of Select Size" /// --> don't touch it //////
+        private RadioButton TheLastRbOfSize = null; // to store the last user choice of radio buttons(size)
+        private void UpdatePriceForSizesRadioButtons(object sender, EventArgs e)
         {
             if (TheLastRbOfSize != null) // get rid of the last operation price user did 
             {
@@ -92,7 +95,7 @@ namespace Pizzza
               
             }
 
-            RadioButton[] Group1OfSizes = { rbSmall, rbMeduim, rbLarge,rbThin,rbThick };
+            RadioButton[] Group1OfSizes = { rbSmall, rbMeduim, rbLarge};
 
             foreach (RadioButton RB in Group1OfSizes)
             {
@@ -108,9 +111,48 @@ namespace Pizzza
         }
 
 
+        // For The First Group "Radio Button Of Select Crust" /// --> don't touch it //////
+        private RadioButton TheLastRbOfCurstType = null; // to store the last user choice of radio buttons(crust type)
+        private void UpdatePriceForCurstTypeRadioButtons(object sender, EventArgs e)
+        {
+            if (TheLastRbOfCurstType != null) // get rid of the last operation price user did 
+            {
+                stDataForEachTag DataForRB = (stDataForEachTag)TheLastRbOfCurstType.Tag;
+                this._TotalPrice -= DataForRB.price;
+
+            }
+
+            RadioButton[] Group2OfCurstTypes = { rbThin, rbThick };
+
+            foreach (RadioButton RB2 in Group2OfCurstTypes)
+            {
+                if (RB2.Checked) // if one of radio buttons was checked,then add the price to total 
+                {
+                    stDataForEachTag DataForRB = (stDataForEachTag)RB2.Tag; // take each tag and cast to to stuct to get its price
+                    this._TotalPrice += DataForRB.price;
+                    TheLastRbOfCurstType = RB2; // stores the last operation  
+                }
+            }
+
+            UpdatePriceLabel();
+        }
 
 
+        private void cbExtraCheese_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbExtraCheese.CheckState == CheckState.Checked )
+            {
+                MessageBox.Show("Checked");
+                this._TotalPrice += 11;
+                UpdatePriceLabel();
+            }
+            if (cbExtraCheese.CheckState == CheckState.Unchecked)
+            {
+                MessageBox.Show("UNChecked");
+                this._TotalPrice -= 11;
+                UpdatePriceLabel();
+            }
 
-
+        }
     }
 }
