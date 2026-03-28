@@ -25,38 +25,25 @@ namespace Pizzza
         }
 
         // to call it after updating price (on screen on the real time) 
+        private void RestPriceWhenGoesWrong()
+        {
+            if (0xe > _TotalPrice ||0f> _TotalPrice || 0>_TotalPrice)
+            {
+                _TotalPrice = 0;
+            }
+        }
         private void UpdatePriceLabel()
         {
+            
             labPrice.Text = Convert.ToString(_TotalPrice)+"$";
         }
 
 
-        // To Disable All Controls (Later with after order)
-        private void DisableAllControls()
-        {
-            grbSummary.BackColor = Color.Transparent;
-            grbSummary.Enabled = false;
-
-            grbCrustTypes.BackColor = Color.Transparent;
-            grbCrustTypes.Enabled = false;
-
-            grbOfSizes.BackColor = Color.Transparent;
-            grbOfSizes.Enabled = false;
-
-            grbTopping.BackColor = Color.Transparent;
-            grbTopping.Enabled = false;
-
-            grbWhereToEat.BackColor = Color.Transparent;
-            grbWhereToEat.Enabled = false;
-        }
-
-
-          
         private struct stDataForEachTag
         {
             public string name ;
             public float price;
-            
+ 
         }
 
        private stDataForEachTag DataForEachTag;
@@ -130,8 +117,13 @@ namespace Pizzza
 
         }
 
+// ----------------------------------------------------------------------------------------------------------//
 
-
+        private void  SetLabelForSizeSummary(object sender) // FOR RADIO BUTTON GROUP1 
+        {
+            RadioButton SelectedOption = (RadioButton)sender;
+            labSize.Text = SelectedOption.Text; 
+        }
 
         // For The First Group "Radio Button Of Select Size" /// --> don't touch it //////
         private RadioButton TheLastRbOfSize = null; // to store the last user choice of radio buttons(size)
@@ -156,7 +148,8 @@ namespace Pizzza
                 }
             }
 
-            UpdatePriceLabel(); 
+            UpdatePriceLabel();
+            SetLabelForSizeSummary(sender);
         }
 
 
@@ -192,6 +185,7 @@ namespace Pizzza
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+   
 
         private void cb_CheckedChanged(object sender, EventArgs e)
         {
@@ -201,19 +195,45 @@ namespace Pizzza
             if(CB.Checked)
             {
                 this._TotalPrice += DataForEachCheckBox.price;
+              
+               
+               
             }
             else
             {
                 this._TotalPrice -= DataForEachCheckBox.price;
+               
+                
             }
 
+            RestPriceWhenGoesWrong();
+         
             UpdatePriceLabel();
-
+           
         }
 
-     
 
- 
-   
+
+
+        // To Disable All Controls (Later with after order)
+        private void DisableAllControls()
+        {
+            grbSummary.BackColor = Color.Transparent;
+            grbSummary.Enabled = false;
+
+            grbCrustTypes.BackColor = Color.Transparent;
+            grbCrustTypes.Enabled = false;
+
+            grbOfSizes.BackColor = Color.Transparent;
+            grbOfSizes.Enabled = false;
+
+            grbTopping.BackColor = Color.Transparent;
+            grbTopping.Enabled = false;
+
+            grbWhereToEat.BackColor = Color.Transparent;
+            grbWhereToEat.Enabled = false;
+        }
+
+      
     }
 }
