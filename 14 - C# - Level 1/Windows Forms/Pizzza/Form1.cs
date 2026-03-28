@@ -22,7 +22,7 @@ namespace Pizzza
         }
 
 
-        // to call it after updating price 
+        // to call it after updating price (on screen on the real time) 
         private void UpdatePriceLabel()
         {
             labPrice.Text = Convert.ToString(_TotalPrice)+"$";
@@ -84,7 +84,42 @@ namespace Pizzza
 
 
 
-               // For The First Group "Radio Button Of Select Size" /// --> don't touch it //////
+        private void AssignTagsValuesForCheckBoxes()
+        {
+            // Rectangle 2D array 3*2
+            string[,] NameOfEachRB = 
+             {
+                {"Extra Cheese","Onion"}  // R1
+               ,{"Mushrooms","Olives"}//R2
+               ,{"Tomatoes","Green Peppers"}//R3
+            }; 
+            
+           
+            float[,] PricesForEachRB = 
+                {
+                  {2.70f,1.60f} ,//R1
+                  {2.1f,1.4f}, //R2
+                   {1.99f,1.40f }//R3
+                  
+                 };
+
+            //RadioButton[] Rb = { rbSmall, rbMeduim, rbLarge, rbThin, rbThick }; // the radio buttons itself 
+
+            //int i = 0; // to access array 
+            //foreach (RadioButton item in Rb)
+            //{
+            //    DataForEachTag.name = NameOfEachRB[i];
+            //    DataForEachTag.price = PricesForEachRB[i];
+            //    Rb[i].Tag = DataForEachTag; // assign the struct to each  rb tag 
+            //    i += 1; // increment the index 
+            //}
+
+        }
+
+
+
+
+        // For The First Group "Radio Button Of Select Size" /// --> don't touch it //////
         private RadioButton TheLastRbOfSize = null; // to store the last user choice of radio buttons(size)
         private void UpdatePriceForSizesRadioButtons(object sender, EventArgs e)
         {
@@ -146,13 +181,18 @@ namespace Pizzza
                 this._TotalPrice += 11;
                 UpdatePriceLabel();
             }
+         
+
+        }
+
+        private void Unchecked(object sender, EventArgs e)
+        {
             if (cbExtraCheese.CheckState == CheckState.Unchecked)
             {
                 MessageBox.Show("UNChecked");
                 this._TotalPrice -= 11;
                 UpdatePriceLabel();
             }
-
         }
     }
 }

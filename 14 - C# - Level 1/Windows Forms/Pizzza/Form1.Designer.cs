@@ -243,6 +243,7 @@
             this.cbExtraCheese.Text = "Extra Cheese";
             this.cbExtraCheese.UseVisualStyleBackColor = true;
             this.cbExtraCheese.CheckedChanged += new System.EventHandler(this.cbExtraCheese_CheckedChanged);
+            this.cbExtraCheese.CheckStateChanged += new System.EventHandler(this.Unchecked);
             // 
             // label1
             // 
