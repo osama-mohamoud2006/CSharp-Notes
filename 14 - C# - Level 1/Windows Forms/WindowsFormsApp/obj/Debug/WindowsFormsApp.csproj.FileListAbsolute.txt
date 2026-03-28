@@ -8,3 +8,4 @@ E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp\obj\Debug\Windows
 E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp\obj\Debug\WindowsFormsApp.exe
 E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp\obj\Debug\WindowsFormsApp.pdb
 E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp\obj\Debug\WindowsFormsApp.Form1.resources
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp\obj\Debug\WindowsFormsApp.Form2.resources
