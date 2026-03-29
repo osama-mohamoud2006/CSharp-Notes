@@ -22,19 +22,18 @@ namespace Pizzza
             AssignTagsValuesForRadioButtons(); // for assigning values for radio controls.tag
             AssignTagsValuesForCheckBoxes(); // for assigning values for check boxes  controls.tag
 
+          
+
         }
 
         // to call it after updating price (on screen on the real time) 
-        private void RestPriceWhenGoesWrong()
+      
+        private void UpdatePriceLabel()
         {
-            if (0xe > _TotalPrice ||0f> _TotalPrice || 0>_TotalPrice)
+            if (0f > _TotalPrice || 0 > _TotalPrice)
             {
                 _TotalPrice = 0;
             }
-        }
-        private void UpdatePriceLabel()
-        {
-            
             labPrice.Text = Convert.ToString(_TotalPrice)+"$";
         }
 
@@ -122,7 +121,13 @@ namespace Pizzza
         private void  SetLabelForSizeSummary(object sender) // FOR RADIO BUTTON GROUP1 
         {
             RadioButton SelectedOption = (RadioButton)sender;
-            labSize.Text = SelectedOption.Text; 
+            labSizeSummary.Text = SelectedOption.Text; 
+        }
+
+        private void SetLabelCurstSummary(object sender) // FOR RADIO BUTTON GROUP1 
+        {
+            RadioButton SelectedOption = (RadioButton)sender;
+            labCurstSizeSummary.Text = SelectedOption.Text;
         }
 
         // For The First Group "Radio Button Of Select Size" /// --> don't touch it //////
@@ -177,15 +182,21 @@ namespace Pizzza
             }
 
             UpdatePriceLabel();
+            SetLabelCurstSummary(sender);
         }
 
+        private void rbEatin_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton where = (RadioButton)sender;
+            this.labWhereToEatSummary.Text = where.Text;
+        }
 
         /// <summary>
         ///  Check Boxes Logic 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-   
+
 
         private void cb_CheckedChanged(object sender, EventArgs e)
         {
@@ -195,45 +206,132 @@ namespace Pizzza
             if(CB.Checked)
             {
                 this._TotalPrice += DataForEachCheckBox.price;
-              
-               
-               
+
+                SetLabelForSummaryToppining(); // loop each time and check what was changed and update the text
+
             }
             else
             {
                 this._TotalPrice -= DataForEachCheckBox.price;
-               
-                
+                SetLabelForSummaryToppining(); // loop each time and check what was changed and update the text
             }
 
-            RestPriceWhenGoesWrong();
-         
+            //
             UpdatePriceLabel();
            
         }
 
-
-
-
-        // To Disable All Controls (Later with after order)
-        private void DisableAllControls()
+        private void SetLabelForSummaryToppining()
         {
-            grbSummary.BackColor = Color.Transparent;
-            grbSummary.Enabled = false;
+            labToppingsSummary.Text = "";
+            CheckBox[] Cb = {cbExtraCheese,cbOnion ,cbMushrooms ,cbOlives,cbTomatomes ,cbGreenPeppers};
 
-            grbCrustTypes.BackColor = Color.Transparent;
-            grbCrustTypes.Enabled = false;
-
-            grbOfSizes.BackColor = Color.Transparent;
-            grbOfSizes.Enabled = false;
-
-            grbTopping.BackColor = Color.Transparent;
-            grbTopping.Enabled = false;
-
-            grbWhereToEat.BackColor = Color.Transparent;
-            grbWhereToEat.Enabled = false;
+            foreach (var item in Cb)
+            {
+                if(item.Checked)
+                {
+                  
+                    labToppingsSummary.Text += item.Text + "\n";
+                }
+            }
+            if (labToppingsSummary.Text == "") this._TotalPrice = 0; // if user uncheck all check boxes, the price should be 0 for toppings
         }
 
-      
+
+        private void UnCheckAllCheckBoxes() // make all check boxes unchecked 
+        {
+            CheckBox[] Cb = { cbExtraCheese, cbOnion, cbMushrooms, cbOlives, cbTomatomes, cbGreenPeppers };
+
+            foreach (var item in Cb)
+            {
+                if (item.CheckState == CheckState.Checked) item.CheckState = CheckState.Unchecked;
+            }
+
+
+        }
+
+        private void UncheckAllRadioBtns()
+        {
+            RadioButton[] Group1OfSizes = { rbSmall, rbMeduim, rbLarge };
+            foreach (RadioButton RB in Group1OfSizes)
+            {
+                if (RB.Checked) RB.Checked = false;
+            }
+        }
+
+        private void UncheckAllRadioBtnsForCurstType()
+        {
+            RadioButton[] Group2OfCurstTypes = { rbThin, rbThick };
+            foreach (RadioButton RB2 in Group2OfCurstTypes)
+            {
+                if (RB2.Checked) RB2.Checked = false;
+            }
+        }
+
+        // To Disable All Controls (Later with after order)
+       
+        private void DisableAllControls()
+        {
+            UnCheckAllCheckBoxes(); // uncheck all check boxes
+            UncheckAllRadioBtns(); // disable group of sizes (radio buttons)
+            UncheckAllRadioBtnsForCurstType();
+
+            grbCrustTypes.Enabled = false;
+            grbCurst.Enabled = false;
+            grbOfSizes.Enabled = false;
+           // grbSizeSummary.Enabled = false;
+            grbTopping.Enabled = false;
+            grbWhereToEat.Enabled = false;
+            grbTopping.Enabled = false;
+
+            
+            this._TotalPrice = 0;
+            labSizeSummary.Text = "";
+            labToppingsSummary.Text = "";
+            labPrice.Text = "";
+            TheLastRbOfSize = null;
+            TheLastRbOfCurstType = null;
+
+        }
+
+        private void EnableAllControls()
+        {
+          
+
+            grbCrustTypes.Enabled = true;
+            grbCurst.Enabled = true;
+            grbOfSizes.Enabled = true;
+         //   grbSizeSummary.Enabled = true;
+            grbTopping.Enabled = true;
+            grbWhereToEat.Enabled = true;
+            grbTopping.Enabled = true;
+
+
+            this._TotalPrice = 0;
+            labSizeSummary.Text = "";
+            labToppingsSummary.Text = "";
+            labPrice.Text = "";
+            TheLastRbOfSize = null;
+            TheLastRbOfCurstType = null;
+
+        }
+
+        private void btnRest_Click(object sender, EventArgs e)
+        {
+            EnableAllControls();
+        }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+           DialogResult res = MessageBox.Show("Are You Sure ?", "Confirmation Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+
+            if(res == DialogResult.OK)
+            {
+                DisableAllControls();
+                MessageBox.Show("Your Order Was Done!", "Message", MessageBoxButtons.OK);
+            }
+        }
+
+     
     }
 }

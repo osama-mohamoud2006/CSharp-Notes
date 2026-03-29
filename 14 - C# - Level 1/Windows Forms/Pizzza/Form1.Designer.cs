@@ -52,16 +52,20 @@
             this.grbWhereToEat = new System.Windows.Forms.GroupBox();
             this.labPrice = new System.Windows.Forms.Label();
             this.grbSummary = new System.Windows.Forms.GroupBox();
+            this.grbCurst = new System.Windows.Forms.GroupBox();
+            this.labCurstSizeSummary = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.labToppingsSummary = new System.Windows.Forms.Label();
             this.grbSizeSummary = new System.Windows.Forms.GroupBox();
-            this.labSize = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labSizeSummary = new System.Windows.Forms.Label();
+            this.grbWhereToEatSummary = new System.Windows.Forms.Label();
+            this.labWhereToEatSummary = new System.Windows.Forms.Label();
             this.grbOfSizes.SuspendLayout();
             this.grbCrustTypes.SuspendLayout();
             this.grbTopping.SuspendLayout();
             this.grbWhereToEat.SuspendLayout();
             this.grbSummary.SuspendLayout();
+            this.grbCurst.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.grbSizeSummary.SuspendLayout();
             this.SuspendLayout();
@@ -291,6 +295,7 @@
             this.rbEatin.TabStop = true;
             this.rbEatin.Text = "Eat in";
             this.rbEatin.UseVisualStyleBackColor = false;
+            this.rbEatin.CheckedChanged += new System.EventHandler(this.rbEatin_CheckedChanged);
             // 
             // rbTakeout
             // 
@@ -306,6 +311,7 @@
             this.rbTakeout.TabStop = true;
             this.rbTakeout.Text = "Take out";
             this.rbTakeout.UseVisualStyleBackColor = false;
+            this.rbTakeout.CheckedChanged += new System.EventHandler(this.rbEatin_CheckedChanged);
             // 
             // btnOrder
             // 
@@ -321,6 +327,7 @@
             this.btnOrder.TabIndex = 8;
             this.btnOrder.Text = "Order Pizza";
             this.btnOrder.UseVisualStyleBackColor = false;
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
             // btnRest
             // 
@@ -336,6 +343,7 @@
             this.btnRest.TabIndex = 9;
             this.btnRest.Text = "Rest";
             this.btnRest.UseVisualStyleBackColor = false;
+            this.btnRest.Click += new System.EventHandler(this.btnRest_Click);
             // 
             // grbWhereToEat
             // 
@@ -365,6 +373,9 @@
             // 
             this.grbSummary.BackColor = System.Drawing.Color.Black;
             this.grbSummary.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.grbSummary.Controls.Add(this.labWhereToEatSummary);
+            this.grbSummary.Controls.Add(this.grbWhereToEatSummary);
+            this.grbSummary.Controls.Add(this.grbCurst);
             this.grbSummary.Controls.Add(this.groupBox2);
             this.grbSummary.Controls.Add(this.grbSizeSummary);
             this.grbSummary.Controls.Add(this.labPrice);
@@ -377,58 +388,89 @@
             this.grbSummary.TabStop = false;
             this.grbSummary.Text = "           Summary";
             // 
+            // grbCurst
+            // 
+            this.grbCurst.BackColor = System.Drawing.Color.Black;
+            this.grbCurst.Controls.Add(this.labCurstSizeSummary);
+            this.grbCurst.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbCurst.ForeColor = System.Drawing.Color.White;
+            this.grbCurst.Location = new System.Drawing.Point(20, 120);
+            this.grbCurst.Name = "grbCurst";
+            this.grbCurst.Size = new System.Drawing.Size(200, 45);
+            this.grbCurst.TabIndex = 2;
+            this.grbCurst.TabStop = false;
+            this.grbCurst.Text = "Curst Size";
+            // 
+            // labCurstSizeSummary
+            // 
+            this.labCurstSizeSummary.AutoSize = true;
+            this.labCurstSizeSummary.Location = new System.Drawing.Point(6, 21);
+            this.labCurstSizeSummary.Name = "labCurstSizeSummary";
+            this.labCurstSizeSummary.Size = new System.Drawing.Size(0, 18);
+            this.labCurstSizeSummary.TabIndex = 12;
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Black;
-            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.labToppingsSummary);
             this.groupBox2.Font = new System.Drawing.Font("SF Pro Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(20, 162);
+            this.groupBox2.Location = new System.Drawing.Point(20, 171);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(346, 106);
+            this.groupBox2.Size = new System.Drawing.Size(233, 197);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Toopings";
             // 
+            // labToppingsSummary
+            // 
+            this.labToppingsSummary.AutoSize = true;
+            this.labToppingsSummary.Font = new System.Drawing.Font("SF Pro Display", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labToppingsSummary.Location = new System.Drawing.Point(21, 41);
+            this.labToppingsSummary.Name = "labToppingsSummary";
+            this.labToppingsSummary.Size = new System.Drawing.Size(0, 20);
+            this.labToppingsSummary.TabIndex = 0;
+            // 
             // grbSizeSummary
             // 
-            this.grbSizeSummary.Controls.Add(this.labSize);
+            this.grbSizeSummary.Controls.Add(this.labSizeSummary);
             this.grbSizeSummary.Font = new System.Drawing.Font("SF Mono", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbSizeSummary.ForeColor = System.Drawing.Color.White;
-            this.grbSizeSummary.Location = new System.Drawing.Point(36, 89);
+            this.grbSizeSummary.Location = new System.Drawing.Point(20, 54);
             this.grbSizeSummary.Name = "grbSizeSummary";
             this.grbSizeSummary.Size = new System.Drawing.Size(200, 45);
             this.grbSizeSummary.TabIndex = 1;
             this.grbSizeSummary.TabStop = false;
             this.grbSizeSummary.Text = "size";
             // 
-            // labSize
+            // labSizeSummary
             // 
-            this.labSize.AutoSize = true;
-            this.labSize.Location = new System.Drawing.Point(6, 21);
-            this.labSize.Name = "labSize";
-            this.labSize.Size = new System.Drawing.Size(0, 18);
-            this.labSize.TabIndex = 0;
+            this.labSizeSummary.AutoSize = true;
+            this.labSizeSummary.Location = new System.Drawing.Point(6, 21);
+            this.labSizeSummary.Name = "labSizeSummary";
+            this.labSizeSummary.Size = new System.Drawing.Size(0, 18);
+            this.labSizeSummary.TabIndex = 0;
             // 
-            // groupBox1
+            // grbWhereToEatSummary
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Black;
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(727, 373);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 45);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Toopings";
+            this.grbWhereToEatSummary.BackColor = System.Drawing.Color.Transparent;
+            this.grbWhereToEatSummary.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbWhereToEatSummary.ForeColor = System.Drawing.Color.White;
+            this.grbWhereToEatSummary.Location = new System.Drawing.Point(12, 383);
+            this.grbWhereToEatSummary.Name = "grbWhereToEatSummary";
+            this.grbWhereToEatSummary.Size = new System.Drawing.Size(241, 22);
+            this.grbWhereToEatSummary.TabIndex = 5;
+            this.grbWhereToEatSummary.Text = "Where To Eat:";
             // 
-            // label3
+            // labWhereToEatSummary
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 41);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 24);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "label3";
+            this.labWhereToEatSummary.BackColor = System.Drawing.Color.Transparent;
+            this.labWhereToEatSummary.Font = new System.Drawing.Font("SF Pro Display", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labWhereToEatSummary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labWhereToEatSummary.Location = new System.Drawing.Point(151, 383);
+            this.labWhereToEatSummary.Name = "labWhereToEatSummary";
+            this.labWhereToEatSummary.Size = new System.Drawing.Size(133, 22);
+            this.labWhereToEatSummary.TabIndex = 6;
             // 
             // frmMain
             // 
@@ -436,7 +478,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1507, 562);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grbWhereToEat);
             this.Controls.Add(this.grbSummary);
             this.Controls.Add(this.btnRest);
@@ -461,6 +502,8 @@
             this.grbWhereToEat.PerformLayout();
             this.grbSummary.ResumeLayout(false);
             this.grbSummary.PerformLayout();
+            this.grbCurst.ResumeLayout(false);
+            this.grbCurst.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.grbSizeSummary.ResumeLayout(false);
@@ -496,10 +539,13 @@
         private System.Windows.Forms.Label labPrice;
         private System.Windows.Forms.GroupBox grbSummary;
         private System.Windows.Forms.GroupBox grbSizeSummary;
-        private System.Windows.Forms.Label labSize;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label labSizeSummary;
+        private System.Windows.Forms.GroupBox grbCurst;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labToppingsSummary;
+        private System.Windows.Forms.Label labCurstSizeSummary;
+        private System.Windows.Forms.Label grbWhereToEatSummary;
+        private System.Windows.Forms.Label labWhereToEatSummary;
     }
 }
 
