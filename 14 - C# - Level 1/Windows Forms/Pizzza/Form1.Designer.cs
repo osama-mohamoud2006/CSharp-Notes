@@ -366,7 +366,7 @@
             this.labPrice.BackColor = System.Drawing.Color.Transparent;
             this.labPrice.Font = new System.Drawing.Font("Showcard Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labPrice.ForeColor = System.Drawing.Color.LimeGreen;
-            this.labPrice.Location = new System.Drawing.Point(101, 441);
+            this.labPrice.Location = new System.Drawing.Point(98, 441);
             this.labPrice.Name = "labPrice";
             this.labPrice.Size = new System.Drawing.Size(77, 59);
             this.labPrice.TabIndex = 0;
@@ -387,7 +387,7 @@
             this.grbSummary.ForeColor = System.Drawing.Color.White;
             this.grbSummary.Location = new System.Drawing.Point(1113, 0);
             this.grbSummary.Name = "grbSummary";
-            this.grbSummary.Size = new System.Drawing.Size(403, 535);
+            this.grbSummary.Size = new System.Drawing.Size(297, 535);
             this.grbSummary.TabIndex = 0;
             this.grbSummary.TabStop = false;
             this.grbSummary.Text = "      Summary";
