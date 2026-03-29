@@ -47,25 +47,25 @@
             this.label2 = new System.Windows.Forms.Label();
             this.rbEatin = new System.Windows.Forms.RadioButton();
             this.rbTakeout = new System.Windows.Forms.RadioButton();
-            this.btnOrder = new System.Windows.Forms.Button();
+            this.btnORDER = new System.Windows.Forms.Button();
             this.btnRest = new System.Windows.Forms.Button();
             this.grbWhereToEat = new System.Windows.Forms.GroupBox();
             this.labPrice = new System.Windows.Forms.Label();
             this.grbSummary = new System.Windows.Forms.GroupBox();
-            this.grbCurst = new System.Windows.Forms.GroupBox();
+            this.labWhereToEatSummary = new System.Windows.Forms.Label();
+            this.grbWhereToEatSummary = new System.Windows.Forms.Label();
+            this.grbCurstSummary = new System.Windows.Forms.GroupBox();
             this.labCurstSizeSummary = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.labToppingsSummary = new System.Windows.Forms.Label();
             this.grbSizeSummary = new System.Windows.Forms.GroupBox();
             this.labSizeSummary = new System.Windows.Forms.Label();
-            this.grbWhereToEatSummary = new System.Windows.Forms.Label();
-            this.labWhereToEatSummary = new System.Windows.Forms.Label();
             this.grbOfSizes.SuspendLayout();
             this.grbCrustTypes.SuspendLayout();
             this.grbTopping.SuspendLayout();
             this.grbWhereToEat.SuspendLayout();
             this.grbSummary.SuspendLayout();
-            this.grbCurst.SuspendLayout();
+            this.grbCurstSummary.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.grbSizeSummary.SuspendLayout();
             this.SuspendLayout();
@@ -86,6 +86,8 @@
             this.grbOfSizes.TabIndex = 0;
             this.grbOfSizes.TabStop = false;
             this.grbOfSizes.Text = "Size Of Pizza";
+            this.grbOfSizes.Enter += new System.EventHandler(this.grbSize_Enter);
+            this.grbOfSizes.Leave += new System.EventHandler(this.grvSize_Leave);
             // 
             // rbLarge
             // 
@@ -313,26 +315,28 @@
             this.rbTakeout.UseVisualStyleBackColor = false;
             this.rbTakeout.CheckedChanged += new System.EventHandler(this.rbEatin_CheckedChanged);
             // 
-            // btnOrder
+            // btnORDER
             // 
-            this.btnOrder.AutoSize = true;
-            this.btnOrder.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnOrder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnOrder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrder.Font = new System.Drawing.Font("Unispace", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrder.Location = new System.Drawing.Point(727, 484);
-            this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(131, 44);
-            this.btnOrder.TabIndex = 8;
-            this.btnOrder.Text = "Order Pizza";
-            this.btnOrder.UseVisualStyleBackColor = false;
-            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
+            this.btnORDER.AutoSize = true;
+            this.btnORDER.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnORDER.Enabled = false;
+            this.btnORDER.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnORDER.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnORDER.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnORDER.Font = new System.Drawing.Font("Unispace", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnORDER.Location = new System.Drawing.Point(727, 484);
+            this.btnORDER.Name = "btnORDER";
+            this.btnORDER.Size = new System.Drawing.Size(131, 44);
+            this.btnORDER.TabIndex = 8;
+            this.btnORDER.Text = "Order Pizza";
+            this.btnORDER.UseVisualStyleBackColor = false;
+            this.btnORDER.Click += new System.EventHandler(this.btnOrder_Click);
             // 
             // btnRest
             // 
             this.btnRest.AutoSize = true;
             this.btnRest.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnRest.Enabled = false;
             this.btnRest.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnRest.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnRest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -375,7 +379,7 @@
             this.grbSummary.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.grbSummary.Controls.Add(this.labWhereToEatSummary);
             this.grbSummary.Controls.Add(this.grbWhereToEatSummary);
-            this.grbSummary.Controls.Add(this.grbCurst);
+            this.grbSummary.Controls.Add(this.grbCurstSummary);
             this.grbSummary.Controls.Add(this.groupBox2);
             this.grbSummary.Controls.Add(this.grbSizeSummary);
             this.grbSummary.Controls.Add(this.labPrice);
@@ -388,18 +392,39 @@
             this.grbSummary.TabStop = false;
             this.grbSummary.Text = "           Summary";
             // 
-            // grbCurst
+            // labWhereToEatSummary
             // 
-            this.grbCurst.BackColor = System.Drawing.Color.Black;
-            this.grbCurst.Controls.Add(this.labCurstSizeSummary);
-            this.grbCurst.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbCurst.ForeColor = System.Drawing.Color.White;
-            this.grbCurst.Location = new System.Drawing.Point(20, 120);
-            this.grbCurst.Name = "grbCurst";
-            this.grbCurst.Size = new System.Drawing.Size(200, 45);
-            this.grbCurst.TabIndex = 2;
-            this.grbCurst.TabStop = false;
-            this.grbCurst.Text = "Curst Size";
+            this.labWhereToEatSummary.BackColor = System.Drawing.Color.Transparent;
+            this.labWhereToEatSummary.Font = new System.Drawing.Font("SF Pro Display", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labWhereToEatSummary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labWhereToEatSummary.Location = new System.Drawing.Point(151, 383);
+            this.labWhereToEatSummary.Name = "labWhereToEatSummary";
+            this.labWhereToEatSummary.Size = new System.Drawing.Size(133, 22);
+            this.labWhereToEatSummary.TabIndex = 6;
+            // 
+            // grbWhereToEatSummary
+            // 
+            this.grbWhereToEatSummary.BackColor = System.Drawing.Color.Transparent;
+            this.grbWhereToEatSummary.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbWhereToEatSummary.ForeColor = System.Drawing.Color.White;
+            this.grbWhereToEatSummary.Location = new System.Drawing.Point(12, 383);
+            this.grbWhereToEatSummary.Name = "grbWhereToEatSummary";
+            this.grbWhereToEatSummary.Size = new System.Drawing.Size(241, 22);
+            this.grbWhereToEatSummary.TabIndex = 5;
+            this.grbWhereToEatSummary.Text = "Where To Eat:";
+            // 
+            // grbCurstSummary
+            // 
+            this.grbCurstSummary.BackColor = System.Drawing.Color.Black;
+            this.grbCurstSummary.Controls.Add(this.labCurstSizeSummary);
+            this.grbCurstSummary.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbCurstSummary.ForeColor = System.Drawing.Color.White;
+            this.grbCurstSummary.Location = new System.Drawing.Point(20, 120);
+            this.grbCurstSummary.Name = "grbCurstSummary";
+            this.grbCurstSummary.Size = new System.Drawing.Size(200, 45);
+            this.grbCurstSummary.TabIndex = 2;
+            this.grbCurstSummary.TabStop = false;
+            this.grbCurstSummary.Text = "Curst Size";
             // 
             // labCurstSizeSummary
             // 
@@ -451,27 +476,6 @@
             this.labSizeSummary.Size = new System.Drawing.Size(0, 18);
             this.labSizeSummary.TabIndex = 0;
             // 
-            // grbWhereToEatSummary
-            // 
-            this.grbWhereToEatSummary.BackColor = System.Drawing.Color.Transparent;
-            this.grbWhereToEatSummary.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbWhereToEatSummary.ForeColor = System.Drawing.Color.White;
-            this.grbWhereToEatSummary.Location = new System.Drawing.Point(12, 383);
-            this.grbWhereToEatSummary.Name = "grbWhereToEatSummary";
-            this.grbWhereToEatSummary.Size = new System.Drawing.Size(241, 22);
-            this.grbWhereToEatSummary.TabIndex = 5;
-            this.grbWhereToEatSummary.Text = "Where To Eat:";
-            // 
-            // labWhereToEatSummary
-            // 
-            this.labWhereToEatSummary.BackColor = System.Drawing.Color.Transparent;
-            this.labWhereToEatSummary.Font = new System.Drawing.Font("SF Pro Display", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labWhereToEatSummary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labWhereToEatSummary.Location = new System.Drawing.Point(151, 383);
-            this.labWhereToEatSummary.Name = "labWhereToEatSummary";
-            this.labWhereToEatSummary.Size = new System.Drawing.Size(133, 22);
-            this.labWhereToEatSummary.TabIndex = 6;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -481,7 +485,7 @@
             this.Controls.Add(this.grbWhereToEat);
             this.Controls.Add(this.grbSummary);
             this.Controls.Add(this.btnRest);
-            this.Controls.Add(this.btnOrder);
+            this.Controls.Add(this.btnORDER);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.grbTopping);
@@ -492,6 +496,7 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pitzzaty";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.grbOfSizes.ResumeLayout(false);
             this.grbOfSizes.PerformLayout();
             this.grbCrustTypes.ResumeLayout(false);
@@ -502,8 +507,8 @@
             this.grbWhereToEat.PerformLayout();
             this.grbSummary.ResumeLayout(false);
             this.grbSummary.PerformLayout();
-            this.grbCurst.ResumeLayout(false);
-            this.grbCurst.PerformLayout();
+            this.grbCurstSummary.ResumeLayout(false);
+            this.grbCurstSummary.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.grbSizeSummary.ResumeLayout(false);
@@ -533,14 +538,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RadioButton rbEatin;
         private System.Windows.Forms.RadioButton rbTakeout;
-        private System.Windows.Forms.Button btnOrder;
+        private System.Windows.Forms.Button btnORDER;
         private System.Windows.Forms.Button btnRest;
         private System.Windows.Forms.GroupBox grbWhereToEat;
         private System.Windows.Forms.Label labPrice;
         private System.Windows.Forms.GroupBox grbSummary;
         private System.Windows.Forms.GroupBox grbSizeSummary;
         private System.Windows.Forms.Label labSizeSummary;
-        private System.Windows.Forms.GroupBox grbCurst;
+        private System.Windows.Forms.GroupBox grbCurstSummary;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label labToppingsSummary;
         private System.Windows.Forms.Label labCurstSizeSummary;

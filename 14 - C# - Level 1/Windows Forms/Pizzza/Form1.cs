@@ -21,13 +21,16 @@ namespace Pizzza
             InitializeComponent();
             AssignTagsValuesForRadioButtons(); // for assigning values for radio controls.tag
             AssignTagsValuesForCheckBoxes(); // for assigning values for check boxes  controls.tag
+        }
 
-          
-
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            btnORDER.Enabled = false;
+            btnRest.Enabled = false;
         }
 
         // to call it after updating price (on screen on the real time) 
-      
+
         private void UpdatePriceLabel()
         {
             if (0f > _TotalPrice || 0 > _TotalPrice)
@@ -116,7 +119,20 @@ namespace Pizzza
 
         }
 
-// ----------------------------------------------------------------------------------------------------------//
+        // ----------------------------------------------------------------------------------------------------------//
+        private void grbSize_Enter(object sender, EventArgs e)
+        {
+            btnORDER.Enabled = true;
+            
+        }
+
+        private void grvSize_Leave(object sender, EventArgs e)
+        {
+            //btnORDER.Enabled = false;
+          //  btnRest.Enabled = false;
+        }
+
+
 
         private void  SetLabelForSizeSummary(object sender) // FOR RADIO BUTTON GROUP1 
         {
@@ -244,7 +260,7 @@ namespace Pizzza
 
             foreach (var item in Cb)
             {
-                if (item.CheckState == CheckState.Checked) item.CheckState = CheckState.Unchecked;
+                if (item.CheckState == CheckState.Checked) item.Checked = false;
             }
 
 
@@ -268,38 +284,52 @@ namespace Pizzza
             }
         }
 
-        // To Disable All Controls (Later with after order)
-       
-        private void DisableAllControls()
+        private void UncheckAllWhereToEat()
         {
-            UnCheckAllCheckBoxes(); // uncheck all check boxes
-            UncheckAllRadioBtns(); // disable group of sizes (radio buttons)
-            UncheckAllRadioBtnsForCurstType();
+            RadioButton[] Group2OfCurstTypes = { rbTakeout, rbEatin };
+            foreach (RadioButton RB2 in Group2OfCurstTypes)
+            {
+                if (RB2.Checked) RB2.Checked = false;
+            }
+        }
 
+        // To Disable All Controls (Later with after order)
+
+        private void DisableGroupsForOrder()
+        {
             grbCrustTypes.Enabled = false;
-            grbCurst.Enabled = false;
             grbOfSizes.Enabled = false;
-           // grbSizeSummary.Enabled = false;
             grbTopping.Enabled = false;
             grbWhereToEat.Enabled = false;
             grbTopping.Enabled = false;
 
-            
+        }
+
+        private void RestAllControls()
+        {
+
+
+            UnCheckAllCheckBoxes(); // uncheck all check boxes
+              UncheckAllRadioBtns(); // disable group of sizes (radio buttons)
+            UncheckAllRadioBtnsForCurstType();
+             UncheckAllWhereToEat();
+
+
+            // For New Order 
             this._TotalPrice = 0;
             labSizeSummary.Text = "";
             labToppingsSummary.Text = "";
             labPrice.Text = "";
             TheLastRbOfSize = null;
             TheLastRbOfCurstType = null;
+            labWhereToEatSummary.Text = "";
+            labCurstSizeSummary.Text = "";
+           
 
-        }
 
-        private void EnableAllControls()
-        {
-          
-
+            btnORDER.Enabled = true;
             grbCrustTypes.Enabled = true;
-            grbCurst.Enabled = true;
+            grbCurstSummary.Enabled = true;
             grbOfSizes.Enabled = true;
          //   grbSizeSummary.Enabled = true;
             grbTopping.Enabled = true;
@@ -318,17 +348,21 @@ namespace Pizzza
 
         private void btnRest_Click(object sender, EventArgs e)
         {
-            EnableAllControls();
+            RestAllControls();
+            btnORDER.Enabled = false;
+
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
+            btnRest.Enabled = true; 
            DialogResult res = MessageBox.Show("Are You Sure ?", "Confirmation Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
 
             if(res == DialogResult.OK)
             {
-                DisableAllControls();
+                DisableGroupsForOrder();
                 MessageBox.Show("Your Order Was Done!", "Message", MessageBoxButtons.OK);
+                btnORDER.Enabled = false;
             }
         }
 
