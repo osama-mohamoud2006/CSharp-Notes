@@ -87,7 +87,6 @@
             this.grbOfSizes.TabStop = false;
             this.grbOfSizes.Text = "Size Of Pizza";
             this.grbOfSizes.Enter += new System.EventHandler(this.grbSize_Enter);
-            this.grbOfSizes.Leave += new System.EventHandler(this.grvSize_Leave);
             // 
             // rbLarge
             // 
@@ -277,7 +276,7 @@
             // 
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(294, 362);
+            this.label2.Location = new System.Drawing.Point(296, 342);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(241, 43);
             this.label2.TabIndex = 4;
@@ -290,7 +289,7 @@
             this.rbEatin.FlatAppearance.BorderSize = 0;
             this.rbEatin.Font = new System.Drawing.Font("SF Mono", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbEatin.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.rbEatin.Location = new System.Drawing.Point(49, 29);
+            this.rbEatin.Location = new System.Drawing.Point(49, 21);
             this.rbEatin.Name = "rbEatin";
             this.rbEatin.Size = new System.Drawing.Size(117, 31);
             this.rbEatin.TabIndex = 5;
@@ -324,7 +323,7 @@
             this.btnORDER.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
             this.btnORDER.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnORDER.Font = new System.Drawing.Font("Unispace", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnORDER.Location = new System.Drawing.Point(727, 484);
+            this.btnORDER.Location = new System.Drawing.Point(605, 428);
             this.btnORDER.Name = "btnORDER";
             this.btnORDER.Size = new System.Drawing.Size(131, 44);
             this.btnORDER.TabIndex = 8;
@@ -341,7 +340,7 @@
             this.btnRest.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnRest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRest.Font = new System.Drawing.Font("Unispace", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRest.Location = new System.Drawing.Point(905, 484);
+            this.btnRest.Location = new System.Drawing.Point(792, 428);
             this.btnRest.Name = "btnRest";
             this.btnRest.Size = new System.Drawing.Size(131, 44);
             this.btnRest.TabIndex = 9;
@@ -355,7 +354,7 @@
             this.grbWhereToEat.Controls.Add(this.rbTakeout);
             this.grbWhereToEat.Controls.Add(this.rbEatin);
             this.grbWhereToEat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.grbWhereToEat.Location = new System.Drawing.Point(301, 408);
+            this.grbWhereToEat.Location = new System.Drawing.Point(303, 388);
             this.grbWhereToEat.Name = "grbWhereToEat";
             this.grbWhereToEat.Size = new System.Drawing.Size(234, 134);
             this.grbWhereToEat.TabIndex = 11;
@@ -365,11 +364,11 @@
             // 
             this.labPrice.AutoSize = true;
             this.labPrice.BackColor = System.Drawing.Color.Transparent;
-            this.labPrice.Font = new System.Drawing.Font("Showcard Gothic", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labPrice.Font = new System.Drawing.Font("Showcard Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labPrice.ForeColor = System.Drawing.Color.LimeGreen;
-            this.labPrice.Location = new System.Drawing.Point(145, 419);
+            this.labPrice.Location = new System.Drawing.Point(101, 441);
             this.labPrice.Name = "labPrice";
-            this.labPrice.Size = new System.Drawing.Size(70, 53);
+            this.labPrice.Size = new System.Drawing.Size(77, 59);
             this.labPrice.TabIndex = 0;
             this.labPrice.Text = "0$";
             // 
@@ -383,14 +382,15 @@
             this.grbSummary.Controls.Add(this.groupBox2);
             this.grbSummary.Controls.Add(this.grbSizeSummary);
             this.grbSummary.Controls.Add(this.labPrice);
+            this.grbSummary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grbSummary.Font = new System.Drawing.Font("SF Pro Display", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbSummary.ForeColor = System.Drawing.Color.White;
             this.grbSummary.Location = new System.Drawing.Point(1113, 0);
             this.grbSummary.Name = "grbSummary";
-            this.grbSummary.Size = new System.Drawing.Size(403, 499);
+            this.grbSummary.Size = new System.Drawing.Size(403, 535);
             this.grbSummary.TabIndex = 0;
             this.grbSummary.TabStop = false;
-            this.grbSummary.Text = "           Summary";
+            this.grbSummary.Text = "      Summary";
             // 
             // labWhereToEatSummary
             // 
@@ -481,7 +481,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1507, 562);
+            this.ClientSize = new System.Drawing.Size(1408, 534);
             this.Controls.Add(this.grbWhereToEat);
             this.Controls.Add(this.grbSummary);
             this.Controls.Add(this.btnRest);

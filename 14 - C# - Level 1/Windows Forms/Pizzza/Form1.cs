@@ -26,20 +26,8 @@ namespace Pizzza
         private void frmMain_Load(object sender, EventArgs e)
         {
             btnORDER.Enabled = false;
-            btnRest.Enabled = false;
+            btnRest.Enabled = true;
         }
-
-        // to call it after updating price (on screen on the real time) 
-
-        private void UpdatePriceLabel()
-        {
-            if (0f > _TotalPrice || 0 > _TotalPrice)
-            {
-                _TotalPrice = 0;
-            }
-            labPrice.Text = Convert.ToString(_TotalPrice)+"$";
-        }
-
 
         private struct stDataForEachTag
         {
@@ -48,11 +36,11 @@ namespace Pizzza
  
         }
 
-       private stDataForEachTag DataForEachTag;
+       private stDataForEachTag DataForEachTag; // instance of struct to use it as temp variable 
 
-        /// <summary>
-        /// The Section Of grb1,2 for radio buttons (prices for now )
-        /// </summary>
+       
+        /// The Section Of grb1,2 for radio buttons 
+       
         
         // This Function Is Used To Assign Name,Price For Each Control Tag (radio buttons) 
         // it runs when form loads 
@@ -67,7 +55,7 @@ namespace Pizzza
             int i = 0; // to access array 
             foreach (RadioButton item in Rb)
             {
-                DataForEachTag.name = NameOfEachRB[i];
+                //DataForEachTag.name = NameOfEachRB[i];
                 DataForEachTag.price = PricesForEachRB[i];
                 Rb[i].Tag = DataForEachTag; // assign the struct to each  rb tag 
                 i += 1; // increment the index 
@@ -110,7 +98,7 @@ namespace Pizzza
             {
                 for (int j = 0; j < NameOfEachRB.GetLength(1); j++)
                 {
-                    DataForEachTag.name = NameOfEachRB[i, j];
+                   // DataForEachTag.name = NameOfEachRB[i, j];
                     DataForEachTag.price = PricesForEachRB[i, j];
                     CB[i, j].Tag = DataForEachTag;
                 }
@@ -120,19 +108,22 @@ namespace Pizzza
         }
 
         // ----------------------------------------------------------------------------------------------------------//
+
+        // to call it after updating price (on screen on the real time) 
+        private void UpdatePriceLabel()
+        {
+            if (0f > _TotalPrice || 0 > _TotalPrice)
+            {
+                _TotalPrice = 0;
+            }
+            labPrice.Text = Convert.ToString(_TotalPrice) + "$";
+        }
+
         private void grbSize_Enter(object sender, EventArgs e)
         {
             btnORDER.Enabled = true;
             
         }
-
-        private void grvSize_Leave(object sender, EventArgs e)
-        {
-            //btnORDER.Enabled = false;
-          //  btnRest.Enabled = false;
-        }
-
-
 
         private void  SetLabelForSizeSummary(object sender) // FOR RADIO BUTTON GROUP1 
         {
@@ -145,6 +136,7 @@ namespace Pizzza
             RadioButton SelectedOption = (RadioButton)sender;
             labCurstSizeSummary.Text = SelectedOption.Text;
         }
+
 
         // For The First Group "Radio Button Of Select Size" /// --> don't touch it //////
         private RadioButton TheLastRbOfSize = null; // to store the last user choice of radio buttons(size)
@@ -207,11 +199,23 @@ namespace Pizzza
             this.labWhereToEatSummary.Text = where.Text;
         }
 
-        /// <summary>
-        ///  Check Boxes Logic 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
+        ///  Check Boxes Logic //////////////////
+        private void SetLabelForSummaryToppining()
+        {
+            labToppingsSummary.Text = "";
+            CheckBox[] Cb = { cbExtraCheese, cbOnion, cbMushrooms, cbOlives, cbTomatomes, cbGreenPeppers };
+
+            foreach (var item in Cb)
+            {
+                if (item.Checked)
+                {
+
+                    labToppingsSummary.Text += item.Text + "\n";
+                }
+            }
+            if (labToppingsSummary.Text == "") this._TotalPrice = 0; // if user uncheck all check boxes, the price should be 0 for toppings
+        }
 
 
         private void cb_CheckedChanged(object sender, EventArgs e)
@@ -237,23 +241,12 @@ namespace Pizzza
            
         }
 
-        private void SetLabelForSummaryToppining()
-        {
-            labToppingsSummary.Text = "";
-            CheckBox[] Cb = {cbExtraCheese,cbOnion ,cbMushrooms ,cbOlives,cbTomatomes ,cbGreenPeppers};
 
-            foreach (var item in Cb)
-            {
-                if(item.Checked)
-                {
-                  
-                    labToppingsSummary.Text += item.Text + "\n";
-                }
-            }
-            if (labToppingsSummary.Text == "") this._TotalPrice = 0; // if user uncheck all check boxes, the price should be 0 for toppings
-        }
-
-
+                   
+         
+              //////////////////  Un Section ////////////
+             
+                   
         private void UnCheckAllCheckBoxes() // make all check boxes unchecked 
         {
             CheckBox[] Cb = { cbExtraCheese, cbOnion, cbMushrooms, cbOlives, cbTomatomes, cbGreenPeppers };
@@ -293,7 +286,6 @@ namespace Pizzza
             }
         }
 
-        // To Disable All Controls (Later with after order)
 
         private void DisableGroupsForOrder()
         {
@@ -346,11 +338,17 @@ namespace Pizzza
 
         }
 
+
+                    // Order , Rest Buttons .............
         private void btnRest_Click(object sender, EventArgs e)
         {
-            RestAllControls();
-            btnORDER.Enabled = false;
+            DialogResult res = MessageBox.Show("Are You Sure About Resting ?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
 
+            if (res == DialogResult.Yes)
+            {
+                RestAllControls();
+                btnORDER.Enabled = false;
+            }
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
