@@ -116,7 +116,7 @@ namespace Pizzza
             {
                 _TotalPrice = 0;
             }
-            labPrice.Text = Convert.ToString(Math.Floor(_TotalPrice)) + "$";
+            labPrice.Text = Convert.ToString(Math.Ceiling(_TotalPrice)) + "$";
         }
 
         private void grbSize_Enter(object sender, EventArgs e)
