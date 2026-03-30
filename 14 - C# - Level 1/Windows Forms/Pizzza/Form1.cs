@@ -14,7 +14,7 @@ namespace Pizzza
 {
     public partial class frmMain : Form
     {
-        private float _TotalPrice=0;
+        private double _TotalPrice=0;
 
         public frmMain()
         {
@@ -112,11 +112,11 @@ namespace Pizzza
         // to call it after updating price (on screen on the real time) 
         private void UpdatePriceLabel()
         {
-            if (0f > _TotalPrice || 0 > _TotalPrice)
+            if ( 0 > _TotalPrice)
             {
                 _TotalPrice = 0;
             }
-            labPrice.Text = Convert.ToString(_TotalPrice) + "$";
+            labPrice.Text = Convert.ToString(Math.Floor(_TotalPrice)) + "$";
         }
 
         private void grbSize_Enter(object sender, EventArgs e)
@@ -214,7 +214,7 @@ namespace Pizzza
                     labToppingsSummary.Text += item.Text + "\n";
                 }
             }
-            if (labToppingsSummary.Text == "") this._TotalPrice = 0; // if user uncheck all check boxes, the price should be 0 for toppings
+          //  if (labToppingsSummary.Text == "") this._TotalPrice = 0; // if user uncheck all check boxes, the price should be 0 for toppings
         }
 
 
