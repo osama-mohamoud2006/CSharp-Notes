@@ -35,6 +35,11 @@
             this.fuiButton3 = new FastUI.FastUILibrary.Components.FuiButton();
             this.fuiButton4 = new FastUI.FastUILibrary.Components.FuiButton();
             this.button2 = new System.Windows.Forms.Button();
+            this.fuiTextBox1 = new FastUI.FastUILibrary.Components.FuiTextBox();
+            this.fuiTextBox2 = new FastUI.FastUILibrary.Components.FuiTextBox();
+            this.fuiTextBox3 = new FastUI.FastUILibrary.Components.FuiTextBox();
+            this.fuiTextBox4 = new FastUI.FastUILibrary.Components.FuiTextBox();
+            this.fuiTextBox5 = new FastUI.FastUILibrary.Components.FuiTextBox();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -43,13 +48,15 @@
             this.richTextBox1.Location = new System.Drawing.Point(183, 64);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(876, 360);
-            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
             // 
             // button1
             // 
+            this.button1.AutoSize = true;
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(235, 25);
+            this.button1.Location = new System.Drawing.Point(235, 22);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 30);
             this.button1.TabIndex = 1;
@@ -192,14 +199,175 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 30);
             this.button2.TabIndex = 6;
-            this.button2.Text = "bold";
+            this.button2.Text = "Itlaic";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // fuiTextBox1
+            // 
+            this.fuiTextBox1.AllowSpace = true;
+            this.fuiTextBox1.BackColor = System.Drawing.Color.Transparent;
+            this.fuiTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.fuiTextBox1.BorderWidth = 1F;
+            this.fuiTextBox1.CornerRadius = 10F;
+            this.fuiTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.fuiTextBox1.FastText = "";
+            this.fuiTextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.fuiTextBox1.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.fuiTextBox1.FocusFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.fuiTextBox1.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.fuiTextBox1.FontSize = 11F;
+            this.fuiTextBox1.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.fuiTextBox1.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.fuiTextBox1.InputType = FastUI.FastUILibrary.Core.FastInputType.Any;
+            this.fuiTextBox1.Location = new System.Drawing.Point(30, 104);
+            this.fuiTextBox1.MoveTextHorizontal = 6;
+            this.fuiTextBox1.MoveTextVertical = 0;
+            this.fuiTextBox1.Name = "fuiTextBox1";
+            this.fuiTextBox1.Placeholder = "Enter text...";
+            this.fuiTextBox1.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.fuiTextBox1.PlaceholderTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.fuiTextBox1.Size = new System.Drawing.Size(101, 66);
+            this.fuiTextBox1.TabIndex = 7;
+            this.fuiTextBox1.Text = "fuiTextBox1";
+            this.fuiTextBox1.TextAlignment = FastUI.FastUILibrary.Core.FastTextAlign.Left;
+            this.fuiTextBox1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.fuiTextBox1.Theme = "Apple";
+            // 
+            // fuiTextBox2
+            // 
+            this.fuiTextBox2.AllowSpace = true;
+            this.fuiTextBox2.BackColor = System.Drawing.Color.Transparent;
+            this.fuiTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.fuiTextBox2.BorderWidth = 1.2F;
+            this.fuiTextBox2.CornerRadius = 6F;
+            this.fuiTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.fuiTextBox2.FastText = "";
+            this.fuiTextBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.fuiTextBox2.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.fuiTextBox2.FocusFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.fuiTextBox2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.fuiTextBox2.FontSize = 10.5F;
+            this.fuiTextBox2.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.fuiTextBox2.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.fuiTextBox2.InputType = FastUI.FastUILibrary.Core.FastInputType.Any;
+            this.fuiTextBox2.Location = new System.Drawing.Point(30, 205);
+            this.fuiTextBox2.MoveTextHorizontal = 6;
+            this.fuiTextBox2.MoveTextVertical = 0;
+            this.fuiTextBox2.Name = "fuiTextBox2";
+            this.fuiTextBox2.Placeholder = "Enter text...";
+            this.fuiTextBox2.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.fuiTextBox2.PlaceholderTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.fuiTextBox2.Size = new System.Drawing.Size(101, 66);
+            this.fuiTextBox2.TabIndex = 8;
+            this.fuiTextBox2.Text = "fuiTextBox2";
+            this.fuiTextBox2.TextAlignment = FastUI.FastUILibrary.Core.FastTextAlign.Left;
+            this.fuiTextBox2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.fuiTextBox2.Theme = "Windows11";
+            // 
+            // fuiTextBox3
+            // 
+            this.fuiTextBox3.AllowSpace = true;
+            this.fuiTextBox3.BackColor = System.Drawing.Color.Transparent;
+            this.fuiTextBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.fuiTextBox3.BorderWidth = 1.2F;
+            this.fuiTextBox3.CornerRadius = 6F;
+            this.fuiTextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.fuiTextBox3.FastText = "";
+            this.fuiTextBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.fuiTextBox3.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.fuiTextBox3.FocusFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.fuiTextBox3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.fuiTextBox3.FontSize = 10.5F;
+            this.fuiTextBox3.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.fuiTextBox3.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.fuiTextBox3.InputType = FastUI.FastUILibrary.Core.FastInputType.Any;
+            this.fuiTextBox3.Location = new System.Drawing.Point(1091, 347);
+            this.fuiTextBox3.MoveTextHorizontal = 6;
+            this.fuiTextBox3.MoveTextVertical = 0;
+            this.fuiTextBox3.Name = "fuiTextBox3";
+            this.fuiTextBox3.Placeholder = "Enter text...";
+            this.fuiTextBox3.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.fuiTextBox3.PlaceholderTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.fuiTextBox3.Size = new System.Drawing.Size(101, 66);
+            this.fuiTextBox3.TabIndex = 9;
+            this.fuiTextBox3.Text = "fuiTextBox3";
+            this.fuiTextBox3.TextAlignment = FastUI.FastUILibrary.Core.FastTextAlign.Left;
+            this.fuiTextBox3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.fuiTextBox3.Theme = "Windows11";
+            // 
+            // fuiTextBox4
+            // 
+            this.fuiTextBox4.AllowSpace = true;
+            this.fuiTextBox4.BackColor = System.Drawing.Color.Transparent;
+            this.fuiTextBox4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.fuiTextBox4.BorderWidth = 1.2F;
+            this.fuiTextBox4.CornerRadius = 6F;
+            this.fuiTextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.fuiTextBox4.FastText = "";
+            this.fuiTextBox4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.fuiTextBox4.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.fuiTextBox4.FocusFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.fuiTextBox4.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.fuiTextBox4.FontSize = 10.5F;
+            this.fuiTextBox4.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.fuiTextBox4.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.fuiTextBox4.InputType = FastUI.FastUILibrary.Core.FastInputType.Any;
+            this.fuiTextBox4.Location = new System.Drawing.Point(1091, 95);
+            this.fuiTextBox4.MoveTextHorizontal = 6;
+            this.fuiTextBox4.MoveTextVertical = 0;
+            this.fuiTextBox4.Name = "fuiTextBox4";
+            this.fuiTextBox4.Placeholder = "Enter text...";
+            this.fuiTextBox4.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.fuiTextBox4.PlaceholderTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.fuiTextBox4.Size = new System.Drawing.Size(101, 66);
+            this.fuiTextBox4.TabIndex = 9;
+            this.fuiTextBox4.Text = "fuiTextBox3";
+            this.fuiTextBox4.TextAlignment = FastUI.FastUILibrary.Core.FastTextAlign.Left;
+            this.fuiTextBox4.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.fuiTextBox4.Theme = "Windows11";
+            // 
+            // fuiTextBox5
+            // 
+            this.fuiTextBox5.AllowSpace = true;
+            this.fuiTextBox5.BackColor = System.Drawing.Color.Transparent;
+            this.fuiTextBox5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.fuiTextBox5.BorderWidth = 1.2F;
+            this.fuiTextBox5.CornerRadius = 6F;
+            this.fuiTextBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.fuiTextBox5.FastText = "";
+            this.fuiTextBox5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.fuiTextBox5.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.fuiTextBox5.FocusFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.fuiTextBox5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.fuiTextBox5.FontSize = 10.5F;
+            this.fuiTextBox5.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.fuiTextBox5.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.fuiTextBox5.InputType = FastUI.FastUILibrary.Core.FastInputType.Any;
+            this.fuiTextBox5.Location = new System.Drawing.Point(1091, 233);
+            this.fuiTextBox5.MoveTextHorizontal = 6;
+            this.fuiTextBox5.MoveTextVertical = 0;
+            this.fuiTextBox5.Name = "fuiTextBox5";
+            this.fuiTextBox5.Placeholder = "Enter text...";
+            this.fuiTextBox5.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.fuiTextBox5.PlaceholderTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.fuiTextBox5.Size = new System.Drawing.Size(101, 66);
+            this.fuiTextBox5.TabIndex = 10;
+            this.fuiTextBox5.Text = "fuiTextBox5";
+            this.fuiTextBox5.TextAlignment = FastUI.FastUILibrary.Core.FastTextAlign.Left;
+            this.fuiTextBox5.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.fuiTextBox5.Theme = "Windows11";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1233, 450);
+            this.Controls.Add(this.fuiTextBox5);
+            this.Controls.Add(this.fuiTextBox4);
+            this.Controls.Add(this.fuiTextBox3);
+            this.Controls.Add(this.fuiTextBox2);
+            this.Controls.Add(this.fuiTextBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.fuiButton4);
             this.Controls.Add(this.fuiButton3);
@@ -209,7 +377,9 @@
             this.Controls.Add(this.richTextBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -222,6 +392,11 @@
         private FastUI.FastUILibrary.Components.FuiButton fuiButton3;
         private FastUI.FastUILibrary.Components.FuiButton fuiButton4;
         private System.Windows.Forms.Button button2;
+        private FastUI.FastUILibrary.Components.FuiTextBox fuiTextBox1;
+        private FastUI.FastUILibrary.Components.FuiTextBox fuiTextBox2;
+        private FastUI.FastUILibrary.Components.FuiTextBox fuiTextBox3;
+        private FastUI.FastUILibrary.Components.FuiTextBox fuiTextBox4;
+        private FastUI.FastUILibrary.Components.FuiTextBox fuiTextBox5;
     }
 }
 

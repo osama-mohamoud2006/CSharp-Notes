@@ -10,3 +10,5 @@ E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp5\obj\Debug\Window
 E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.pdb
 E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp5\bin\Debug\FastUI.dll
 E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp5\obj\Debug\WindowsF.E1DB6B00.Up2Date
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.Form2.resources
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.FrmExercise.resources
