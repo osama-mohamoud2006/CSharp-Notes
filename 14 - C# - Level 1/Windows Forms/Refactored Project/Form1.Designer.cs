@@ -103,15 +103,14 @@
             this.lblWhereToEat.AutoSize = true;
             this.lblWhereToEat.Location = new System.Drawing.Point(150, 246);
             this.lblWhereToEat.Name = "lblWhereToEat";
-            this.lblWhereToEat.Size = new System.Drawing.Size(62, 25);
+            this.lblWhereToEat.Size = new System.Drawing.Size(0, 25);
             this.lblWhereToEat.TabIndex = 8;
-            this.lblWhereToEat.Text = "Eat In";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(-5, 246);
+            this.label6.Location = new System.Drawing.Point(4, 246);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(151, 25);
             this.label6.TabIndex = 7;
@@ -122,9 +121,8 @@
             this.lblCrustType.AutoSize = true;
             this.lblCrustType.Location = new System.Drawing.Point(155, 209);
             this.lblCrustType.Name = "lblCrustType";
-            this.lblCrustType.Size = new System.Drawing.Size(103, 25);
+            this.lblCrustType.Size = new System.Drawing.Size(0, 25);
             this.lblCrustType.TabIndex = 6;
-            this.lblCrustType.Text = "Thin Crust";
             // 
             // label5
             // 
@@ -159,9 +157,8 @@
             this.lblSize.AutoSize = true;
             this.lblSize.Location = new System.Drawing.Point(79, 37);
             this.lblSize.Name = "lblSize";
-            this.lblSize.Size = new System.Drawing.Size(82, 25);
+            this.lblSize.Size = new System.Drawing.Size(0, 25);
             this.lblSize.TabIndex = 2;
-            this.lblSize.Text = "Meduim";
             // 
             // groupBox2
             // 
@@ -230,13 +227,11 @@
             // rbEatIn
             // 
             this.rbEatIn.AutoSize = true;
-            this.rbEatIn.Checked = true;
             this.rbEatIn.Location = new System.Drawing.Point(17, 37);
             this.rbEatIn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbEatIn.Name = "rbEatIn";
             this.rbEatIn.Size = new System.Drawing.Size(83, 29);
             this.rbEatIn.TabIndex = 0;
-            this.rbEatIn.TabStop = true;
             this.rbEatIn.Tag = "";
             this.rbEatIn.Text = "Eat In";
             this.rbEatIn.UseVisualStyleBackColor = true;
@@ -272,13 +267,11 @@
             // rbThinCrust
             // 
             this.rbThinCrust.AutoSize = true;
-            this.rbThinCrust.Checked = true;
             this.rbThinCrust.Location = new System.Drawing.Point(17, 37);
             this.rbThinCrust.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbThinCrust.Name = "rbThinCrust";
             this.rbThinCrust.Size = new System.Drawing.Size(124, 29);
             this.rbThinCrust.TabIndex = 0;
-            this.rbThinCrust.TabStop = true;
             this.rbThinCrust.Tag = "5";
             this.rbThinCrust.Text = "Thin Crust";
             this.rbThinCrust.UseVisualStyleBackColor = true;
@@ -414,13 +407,11 @@
             // rbMedium
             // 
             this.rbMedium.AutoSize = true;
-            this.rbMedium.Checked = true;
             this.rbMedium.Location = new System.Drawing.Point(40, 85);
             this.rbMedium.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbMedium.Name = "rbMedium";
             this.rbMedium.Size = new System.Drawing.Size(103, 29);
             this.rbMedium.TabIndex = 1;
-            this.rbMedium.TabStop = true;
             this.rbMedium.Tag = "30";
             this.rbMedium.Text = "Meduim";
             this.rbMedium.UseVisualStyleBackColor = true;

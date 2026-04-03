@@ -75,7 +75,6 @@ namespace Refactored_Project
             return CalcPriceOfSize()+ CalcPriceOfCurstType()+ CalcPriceOfToppings();
         }
 
-
         private void UpdatePrice()//update price on screen 
         {
             lblTotalPrice.Text = "$"+GetTotalPrice().ToString();
@@ -147,6 +146,8 @@ namespace Refactored_Project
 
             lblToppings.Text = stToppings;
         }
+
+     
 
         /// Order,Rest Section //// 
 
