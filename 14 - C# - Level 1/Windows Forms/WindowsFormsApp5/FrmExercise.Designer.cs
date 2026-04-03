@@ -33,7 +33,7 @@
             this.rbBoy = new System.Windows.Forms.RadioButton();
             this.rbGirl = new System.Windows.Forms.RadioButton();
             this.rbPen = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.rbCat = new System.Windows.Forms.RadioButton();
             this.rbBooks = new System.Windows.Forms.RadioButton();
             this.picTheViewer = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
@@ -43,7 +43,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rbBooks);
-            this.groupBox1.Controls.Add(this.radioButton4);
+            this.groupBox1.Controls.Add(this.rbCat);
             this.groupBox1.Controls.Add(this.rbPen);
             this.groupBox1.Controls.Add(this.rbGirl);
             this.groupBox1.Controls.Add(this.rbBoy);
@@ -94,17 +94,18 @@
             this.rbPen.UseVisualStyleBackColor = true;
             this.rbPen.CheckedChanged += new System.EventHandler(this.rbPen_CheckedChanged);
             // 
-            // radioButton4
+            // rbCat
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton4.Location = new System.Drawing.Point(751, 33);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(137, 24);
-            this.radioButton4.TabIndex = 3;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "radioButton4";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rbCat.AutoSize = true;
+            this.rbCat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCat.Location = new System.Drawing.Point(751, 33);
+            this.rbCat.Name = "rbCat";
+            this.rbCat.Size = new System.Drawing.Size(59, 24);
+            this.rbCat.TabIndex = 3;
+            this.rbCat.TabStop = true;
+            this.rbCat.Text = "Cat";
+            this.rbCat.UseVisualStyleBackColor = true;
+            this.rbCat.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
             // rbBooks
             // 
@@ -152,7 +153,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbBooks;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton rbCat;
         private System.Windows.Forms.RadioButton rbPen;
         private System.Windows.Forms.RadioButton rbGirl;
         private System.Windows.Forms.RadioButton rbBoy;

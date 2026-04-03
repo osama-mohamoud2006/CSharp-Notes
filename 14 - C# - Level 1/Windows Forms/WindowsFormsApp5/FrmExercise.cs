@@ -39,5 +39,10 @@ namespace WindowsFormsApp5
         {
             picTheViewer.Image = Image.FromFile(@"C:\Users\wwwhd\Downloads\PicBooks .jpg");
         }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            picTheViewer.Image = Image.FromFile(@"C:\Users\wwwhd\Downloads\closeup-shot-beautiful-ginger-domestic-kitten-sitting-white-surface.jpg");
+        }
     }
 }
