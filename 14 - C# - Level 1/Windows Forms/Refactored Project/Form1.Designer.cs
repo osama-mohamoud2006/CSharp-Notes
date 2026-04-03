@@ -82,7 +82,7 @@
             this.lblTotalPrice.AutoSize = true;
             this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalPrice.ForeColor = System.Drawing.Color.Green;
-            this.lblTotalPrice.Location = new System.Drawing.Point(114, 296);
+            this.lblTotalPrice.Location = new System.Drawing.Point(114, 371);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(98, 69);
             this.lblTotalPrice.TabIndex = 10;
@@ -92,7 +92,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(19, 258);
+            this.label7.Location = new System.Drawing.Point(19, 326);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(122, 25);
             this.label7.TabIndex = 9;
@@ -101,7 +101,7 @@
             // lblWhereToEat
             // 
             this.lblWhereToEat.AutoSize = true;
-            this.lblWhereToEat.Location = new System.Drawing.Point(121, 217);
+            this.lblWhereToEat.Location = new System.Drawing.Point(150, 246);
             this.lblWhereToEat.Name = "lblWhereToEat";
             this.lblWhereToEat.Size = new System.Drawing.Size(62, 25);
             this.lblWhereToEat.TabIndex = 8;
@@ -111,7 +111,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(19, 192);
+            this.label6.Location = new System.Drawing.Point(-5, 246);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(151, 25);
             this.label6.TabIndex = 7;
@@ -120,7 +120,7 @@
             // lblCrustType
             // 
             this.lblCrustType.AutoSize = true;
-            this.lblCrustType.Location = new System.Drawing.Point(151, 155);
+            this.lblCrustType.Location = new System.Drawing.Point(155, 209);
             this.lblCrustType.Name = "lblCrustType";
             this.lblCrustType.Size = new System.Drawing.Size(103, 25);
             this.lblCrustType.TabIndex = 6;
@@ -130,7 +130,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(10, 155);
+            this.label5.Location = new System.Drawing.Point(7, 209);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(126, 25);
             this.label5.TabIndex = 5;
@@ -138,9 +138,9 @@
             // 
             // lblToppings
             // 
-            this.lblToppings.Location = new System.Drawing.Point(63, 102);
+            this.lblToppings.Location = new System.Drawing.Point(19, 107);
             this.lblToppings.Name = "lblToppings";
-            this.lblToppings.Size = new System.Drawing.Size(265, 53);
+            this.lblToppings.Size = new System.Drawing.Size(265, 95);
             this.lblToppings.TabIndex = 4;
             this.lblToppings.Text = "No Toppings.";
             // 
@@ -180,7 +180,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(329, 422);
+            this.groupBox2.Size = new System.Drawing.Size(329, 450);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Order Summary";
@@ -225,6 +225,7 @@
             this.rbTakeOut.TabIndex = 1;
             this.rbTakeOut.Text = "Take Out";
             this.rbTakeOut.UseVisualStyleBackColor = true;
+            this.rbTakeOut.CheckedChanged += new System.EventHandler(this.UpdateEatStatus);
             // 
             // rbEatIn
             // 
@@ -239,6 +240,7 @@
             this.rbEatIn.Tag = "";
             this.rbEatIn.Text = "Eat In";
             this.rbEatIn.UseVisualStyleBackColor = true;
+            this.rbEatIn.CheckedChanged += new System.EventHandler(this.UpdateEatStatus);
             // 
             // gbWhereToEat
             // 

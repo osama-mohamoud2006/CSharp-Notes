@@ -90,11 +90,13 @@ namespace Refactored_Project
 
         private void Crust_CheckedChanged(object sender, EventArgs e)
         {
+            UpdateCurstTypeLabel(sender); // take the current checked rb txt 
             UpdatePrice();
 
         }
         private void Topping_CheckedChanged(object sender, EventArgs e)
         {
+            UpdateToopingsLabel(); // check what is checked then update the toppings label in summary section
             UpdatePrice(); // calc what you checked with other groups also
         }
 
@@ -107,10 +109,47 @@ namespace Refactored_Project
             lblSize.Text = SelectedSize.Text;
         }
 
+        private void UpdateCurstTypeLabel(object sender)
+        {
+            RadioButton SelectedCurstType = (RadioButton)sender;
+            lblCrustType.Text = SelectedCurstType.Text;
+        }
 
-                             
-                              /// Order,Rest Section //// 
-                              
+        private void UpdateEatStatus(object sender, EventArgs e)
+        {
+            RadioButton EatInOrOut = (RadioButton)sender;
+            lblWhereToEat.Text = EatInOrOut.Text;
+        }
+
+        private void UpdateToopingsLabel()
+        {
+            string stToppings = "";
+            string sep = ", ";
+            if (chkExtraChees.Checked)
+                stToppings += chkExtraChees.Text+sep;
+
+            if(chkGreenPeppers.Checked)
+                stToppings += chkGreenPeppers.Text+sep;
+
+            if(chkMushrooms.Checked)
+                stToppings += chkMushrooms.Text+sep;
+
+            if(chkOlives.Checked)
+                stToppings += chkOlives.Text+sep;
+
+            if(chkOnion.Checked)
+                stToppings += chkOnion.Text+sep;
+
+            if(chkTomatos.Checked)
+                stToppings += chkTomatos.Text+sep;
+
+            stToppings = stToppings.Substring(0, stToppings.Length - 2).Trim(); // to remove the last sep from the string
+
+            lblToppings.Text = stToppings;
+        }
+
+        /// Order,Rest Section //// 
+
         private void DisableGroups()
         {
             gbCrustType.Enabled = false;
