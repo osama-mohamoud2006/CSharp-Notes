@@ -18,7 +18,19 @@ namespace Refactored_Project
         }
 
 
-        void DisableGroups()
+        private void CalcPriceOfSize()
+        {
+
+        }
+
+
+
+
+
+
+
+
+        private void DisableGroups()
         {
             gbCrustType.Enabled = false;
             gbSize.Enabled = false;
@@ -26,7 +38,24 @@ namespace Refactored_Project
             gbWhereToEat.Enabled = false;
         }
 
-        void EnableGroups()
+        private void SetAllControlsToDefaultValues()
+        {
+            rbEatIn.Checked = true;
+           
+            rbSamll.Checked = true;    
+            rbThinCrust.Checked = true;
+
+            // toppings
+            chkExtraChees.Checked= false;
+            chkMushrooms.Checked = false;
+            chkGreenPeppers.Checked = false;
+            chkOlives.Checked = false;
+            chkOnion.Checked = false;
+            chkTomatos.Checked = false;
+
+
+        }
+        private void EnableGroups()
         {
             gbCrustType.Enabled = true;
             gbSize.Enabled = true;
@@ -36,7 +65,7 @@ namespace Refactored_Project
 
         private void btnOrderPizza_Click(object sender, EventArgs e)
         {
-            var Res = MessageBox.Show("Are you sure you want to order?", "Confirm Order", MessageBoxButtons.YesNo);
+            var Res = MessageBox.Show("Are you sure you want to order?", "Confirm Order", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (Res == DialogResult.Yes)
             {
@@ -51,14 +80,11 @@ namespace Refactored_Project
         private void btnResetForm_Click(object sender, EventArgs e)
         {
             EnableGroups();
+            SetAllControlsToDefaultValues();
             btnOrderPizza.Enabled = true;
         }
 
 
     }
-
-
-
-
 
 }
