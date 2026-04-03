@@ -18,7 +18,7 @@ namespace Refactored_Project
         }
 
 
-        private float CalcPriceOfSize()
+        private float CalcPriceOfSize()//check what was checked then return its price 
         {
             if (rbSmall.Checked) // return true if it checked
                 return Convert.ToSingle(rbSmall.Tag);
@@ -32,13 +32,13 @@ namespace Refactored_Project
             return 0;
         }
 
-        private float CalcPriceOfCurstType()
+        private float CalcPriceOfCurstType()//check what was checked then return its price 
         {
             if (rbThinCrust.Checked)
-                return Convert.ToString(rbThinCrust.Tag);
+                return Convert.ToSingle(rbThinCrust.Tag);
 
-            if(rbThinCrust.Checked)
-                return Convert.ToString(rbThinCrust.Tag);
+            if(rbThickCrust.Checked)
+                return Convert.ToSingle(rbThickCrust.Tag);
             return 0; 
         }
         
@@ -58,15 +58,21 @@ namespace Refactored_Project
             if(chkOlives.Checked)
                 total += Convert.ToSingle(chkOlives.Tag);
 
+            if(chkOnion.Checked)
+                total += Convert.ToSingle(chkOnion.Tag);
+
+            if(chkTomatos.Checked)
+                total += Convert.ToSingle(chkTomatos.Tag);
+            return total; 
         }
 
         private float GetTotalPrice() // take the price of each group then get the total of them 
         {
-            return CalcPriceOfSize()+ CalcPriceOfCurstType();
+            return CalcPriceOfSize()+ CalcPriceOfCurstType()+ CalcPriceOfToppings();
         }
 
 
-        private void UpdatePrice()
+        private void UpdatePrice()//update price on screen 
         {
             lblTotalPrice.Text = "$"+GetTotalPrice().ToString();
         }
@@ -74,6 +80,17 @@ namespace Refactored_Project
         private void Size_CheckedChanged(object sender, EventArgs e)
         {
             UpdatePrice();
+        }
+
+        private void Crust_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdatePrice();
+
+        }
+
+        private void Topping_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdatePrice(); // calc what you checked with other groups also
         }
 
         private void DisableGroups()

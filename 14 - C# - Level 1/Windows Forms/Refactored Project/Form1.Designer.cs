@@ -265,6 +265,7 @@
             this.rbThickCrust.Tag = "10";
             this.rbThickCrust.Text = "Think Crust";
             this.rbThickCrust.UseVisualStyleBackColor = true;
+            this.rbThickCrust.CheckedChanged += new System.EventHandler(this.Crust_CheckedChanged);
             // 
             // rbThinCrust
             // 
@@ -276,9 +277,10 @@
             this.rbThinCrust.Size = new System.Drawing.Size(124, 29);
             this.rbThinCrust.TabIndex = 0;
             this.rbThinCrust.TabStop = true;
-            this.rbThinCrust.Tag = "0";
+            this.rbThinCrust.Tag = "5";
             this.rbThinCrust.Text = "Thin Crust";
             this.rbThinCrust.UseVisualStyleBackColor = true;
+            this.rbThinCrust.CheckedChanged += new System.EventHandler(this.Crust_CheckedChanged);
             // 
             // gbCrustType
             // 
@@ -369,6 +371,7 @@
             this.chkExtraChees.Tag = "5";
             this.chkExtraChees.Text = "Extra Chees";
             this.chkExtraChees.UseVisualStyleBackColor = true;
+            this.chkExtraChees.CheckedChanged += new System.EventHandler(this.Topping_CheckedChanged);
             // 
             // gbToppings
             // 
