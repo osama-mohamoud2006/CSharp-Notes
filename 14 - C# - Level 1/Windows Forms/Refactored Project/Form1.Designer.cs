@@ -57,7 +57,7 @@
             this.gbToppings = new System.Windows.Forms.GroupBox();
             this.rbLarge = new System.Windows.Forms.RadioButton();
             this.rbMedium = new System.Windows.Forms.RadioButton();
-            this.rbSamll = new System.Windows.Forms.RadioButton();
+            this.rbSmall = new System.Windows.Forms.RadioButton();
             this.gbSize = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
             this.gbWhereToEat.SuspendLayout();
@@ -80,11 +80,11 @@
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 47.99999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalPrice.ForeColor = System.Drawing.Color.Green;
             this.lblTotalPrice.Location = new System.Drawing.Point(114, 296);
             this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(129, 91);
+            this.lblTotalPrice.Size = new System.Drawing.Size(98, 69);
             this.lblTotalPrice.TabIndex = 10;
             this.lblTotalPrice.Text = "$0";
             // 
@@ -399,6 +399,7 @@
             this.rbLarge.Tag = "40";
             this.rbLarge.Text = "Large";
             this.rbLarge.UseVisualStyleBackColor = true;
+            this.rbLarge.CheckedChanged += new System.EventHandler(this.Size_CheckedChanged);
             // 
             // rbMedium
             // 
@@ -413,24 +414,26 @@
             this.rbMedium.Tag = "30";
             this.rbMedium.Text = "Meduim";
             this.rbMedium.UseVisualStyleBackColor = true;
+            this.rbMedium.CheckedChanged += new System.EventHandler(this.Size_CheckedChanged);
             // 
-            // rbSamll
+            // rbSmall
             // 
-            this.rbSamll.AutoSize = true;
-            this.rbSamll.Location = new System.Drawing.Point(40, 39);
-            this.rbSamll.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.rbSamll.Name = "rbSamll";
-            this.rbSamll.Size = new System.Drawing.Size(82, 29);
-            this.rbSamll.TabIndex = 0;
-            this.rbSamll.Tag = "20";
-            this.rbSamll.Text = "Small";
-            this.rbSamll.UseVisualStyleBackColor = true;
+            this.rbSmall.AutoSize = true;
+            this.rbSmall.Location = new System.Drawing.Point(40, 39);
+            this.rbSmall.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rbSmall.Name = "rbSmall";
+            this.rbSmall.Size = new System.Drawing.Size(82, 29);
+            this.rbSmall.TabIndex = 0;
+            this.rbSmall.Tag = "20";
+            this.rbSmall.Text = "Small";
+            this.rbSmall.UseVisualStyleBackColor = true;
+            this.rbSmall.CheckedChanged += new System.EventHandler(this.Size_CheckedChanged);
             // 
             // gbSize
             // 
             this.gbSize.Controls.Add(this.rbLarge);
             this.gbSize.Controls.Add(this.rbMedium);
-            this.gbSize.Controls.Add(this.rbSamll);
+            this.gbSize.Controls.Add(this.rbSmall);
             this.gbSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.gbSize.Location = new System.Drawing.Point(44, 97);
             this.gbSize.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -502,7 +505,7 @@
         private System.Windows.Forms.GroupBox gbToppings;
         private System.Windows.Forms.RadioButton rbLarge;
         private System.Windows.Forms.RadioButton rbMedium;
-        private System.Windows.Forms.RadioButton rbSamll;
+        private System.Windows.Forms.RadioButton rbSmall;
         private System.Windows.Forms.GroupBox gbSize;
     }
 }

@@ -18,17 +18,63 @@ namespace Refactored_Project
         }
 
 
-        private void CalcPriceOfSize()
+        private float CalcPriceOfSize()
         {
+            if (rbSmall.Checked) // return true if it checked
+                return Convert.ToSingle(rbSmall.Tag);
+
+            if(rbMedium.Checked)
+                return Convert.ToSingle(rbMedium.Tag);
+           
+            if(rbLarge.Checked)
+                return Convert.ToSingle(rbLarge.Tag);
+
+            return 0;
+        }
+
+        private float CalcPriceOfCurstType()
+        {
+            if (rbThinCrust.Checked)
+                return Convert.ToString(rbThinCrust.Tag);
+
+            if(rbThinCrust.Checked)
+                return Convert.ToString(rbThinCrust.Tag);
+            return 0; 
+        }
+        
+        private float CalcPriceOfToppings() // in check box you can check more than one check box 
+        {
+            float total = 0;
+
+            if (chkExtraChees.Checked)
+                total += Convert.ToSingle(chkExtraChees.Tag);
+
+            if(chkGreenPeppers.Checked)
+                total += Convert.ToSingle(chkGreenPeppers.Tag);
+
+            if(chkMushrooms.Checked)
+                total += Convert.ToSingle(chkMushrooms.Tag);
+
+            if(chkOlives.Checked)
+                total += Convert.ToSingle(chkOlives.Tag);
 
         }
 
+        private float GetTotalPrice() // take the price of each group then get the total of them 
+        {
+            return CalcPriceOfSize()+ CalcPriceOfCurstType();
+        }
 
 
+        private void UpdatePrice()
+        {
+            lblTotalPrice.Text = "$"+GetTotalPrice().ToString();
+        }
 
-
-
-
+        private void Size_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdatePrice();
+        }
 
         private void DisableGroups()
         {
@@ -42,7 +88,7 @@ namespace Refactored_Project
         {
             rbEatIn.Checked = true;
            
-            rbSamll.Checked = true;    
+            rbSmall.Checked = true;    
             rbThinCrust.Checked = true;
 
             // toppings
@@ -84,7 +130,7 @@ namespace Refactored_Project
             btnOrderPizza.Enabled = true;
         }
 
-
+      
     }
 
 }
