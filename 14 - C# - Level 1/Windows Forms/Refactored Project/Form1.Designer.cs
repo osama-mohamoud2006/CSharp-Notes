@@ -101,7 +101,7 @@
             // lblWhereToEat
             // 
             this.lblWhereToEat.AutoSize = true;
-            this.lblWhereToEat.Location = new System.Drawing.Point(125, 206);
+            this.lblWhereToEat.Location = new System.Drawing.Point(121, 217);
             this.lblWhereToEat.Name = "lblWhereToEat";
             this.lblWhereToEat.Size = new System.Drawing.Size(62, 25);
             this.lblWhereToEat.TabIndex = 8;
@@ -111,7 +111,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(19, 181);
+            this.label6.Location = new System.Drawing.Point(19, 192);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(151, 25);
             this.label6.TabIndex = 7;

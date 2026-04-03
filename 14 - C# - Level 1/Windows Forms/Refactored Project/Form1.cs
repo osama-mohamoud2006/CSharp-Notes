@@ -81,8 +81,10 @@ namespace Refactored_Project
             lblTotalPrice.Text = "$"+GetTotalPrice().ToString();
         }
 
+
         private void Size_CheckedChanged(object sender, EventArgs e)
         {
+            UpdateSizeLabel(sender); //take the checked rb and update the size label in summary section  
             UpdatePrice();
         }
 
@@ -91,7 +93,6 @@ namespace Refactored_Project
             UpdatePrice();
 
         }
-
         private void Topping_CheckedChanged(object sender, EventArgs e)
         {
             UpdatePrice(); // calc what you checked with other groups also
@@ -100,10 +101,12 @@ namespace Refactored_Project
 
                              /// Update Summary Section ////
  
-        private void UpdateSizeLabel()
+        private void UpdateSizeLabel(object sender)
         {
-
+            RadioButton SelectedSize = (RadioButton)sender;
+            lblSize.Text = SelectedSize.Text;
         }
+
 
                              
                               /// Order,Rest Section //// 
