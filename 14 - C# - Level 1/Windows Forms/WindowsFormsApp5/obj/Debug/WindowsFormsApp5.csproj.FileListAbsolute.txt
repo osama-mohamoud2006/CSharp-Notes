@@ -1,0 +1,12 @@
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp5\bin\Debug\WindowsFormsApp5.exe.config
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp5\bin\Debug\WindowsFormsApp5.exe
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp5\bin\Debug\WindowsFormsApp5.pdb
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.csproj.AssemblyReference.cache
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.Form1.resources
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.Properties.Resources.resources
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.csproj.GenerateResource.cache
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.csproj.CoreCompileInputs.cache
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.exe
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.pdb
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp5\bin\Debug\FastUI.dll
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp5\obj\Debug\WindowsF.E1DB6B00.Up2Date

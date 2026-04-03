@@ -1,0 +1,12 @@
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp4\bin\Debug\WindowsFormsApp4.exe.config
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp4\bin\Debug\WindowsFormsApp4.exe
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp4\bin\Debug\WindowsFormsApp4.pdb
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csproj.AssemblyReference.cache
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.Form1.resources
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.Properties.Resources.resources
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csproj.GenerateResource.cache
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csproj.CoreCompileInputs.cache
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.exe
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.pdb
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp4\bin\Debug\FastUI.dll
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp4\obj\Debug\WindowsF.D9406B00.Up2Date
