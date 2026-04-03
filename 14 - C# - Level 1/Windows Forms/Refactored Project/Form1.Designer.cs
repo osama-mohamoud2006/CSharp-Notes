@@ -308,6 +308,7 @@
             this.chkGreenPeppers.Text = "Green Peppers";
             this.chkGreenPeppers.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.chkGreenPeppers.UseVisualStyleBackColor = true;
+            this.chkGreenPeppers.CheckedChanged += new System.EventHandler(this.Topping_CheckedChanged);
             // 
             // chkTomatos
             // 
@@ -321,6 +322,7 @@
             this.chkTomatos.Text = "Tomatoes";
             this.chkTomatos.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.chkTomatos.UseVisualStyleBackColor = true;
+            this.chkTomatos.CheckedChanged += new System.EventHandler(this.Topping_CheckedChanged);
             // 
             // chkOlives
             // 
@@ -334,6 +336,7 @@
             this.chkOlives.Text = "Olives";
             this.chkOlives.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.chkOlives.UseVisualStyleBackColor = true;
+            this.chkOlives.CheckedChanged += new System.EventHandler(this.Topping_CheckedChanged);
             // 
             // chkMushrooms
             // 
@@ -347,6 +350,7 @@
             this.chkMushrooms.Text = "Mushrooms";
             this.chkMushrooms.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.chkMushrooms.UseVisualStyleBackColor = true;
+            this.chkMushrooms.CheckedChanged += new System.EventHandler(this.Topping_CheckedChanged);
             // 
             // chkOnion
             // 
@@ -359,6 +363,7 @@
             this.chkOnion.Tag = "5";
             this.chkOnion.Text = "Onion";
             this.chkOnion.UseVisualStyleBackColor = true;
+            this.chkOnion.CheckedChanged += new System.EventHandler(this.Topping_CheckedChanged);
             // 
             // chkExtraChees
             // 

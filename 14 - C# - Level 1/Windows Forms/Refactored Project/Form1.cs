@@ -17,7 +17,11 @@ namespace Refactored_Project
             InitializeComponent();
         }
 
-
+         
+                        /// <summary>
+                        ///  Update Price Section 
+                        /// </summary>
+                        /// <returns>Updated Price Label </returns>
         private float CalcPriceOfSize()//check what was checked then return its price 
         {
             if (rbSmall.Checked) // return true if it checked
@@ -42,7 +46,7 @@ namespace Refactored_Project
             return 0; 
         }
         
-        private float CalcPriceOfToppings() // in check box you can check more than one check box 
+        private float CalcPriceOfToppings() // in check box you can check more than one check box,then calc what were checked
         {
             float total = 0;
 
@@ -93,6 +97,17 @@ namespace Refactored_Project
             UpdatePrice(); // calc what you checked with other groups also
         }
 
+
+                             /// Update Summary Section ////
+ 
+        private void UpdateSizeLabel()
+        {
+
+        }
+
+                             
+                              /// Order,Rest Section //// 
+                              
         private void DisableGroups()
         {
             gbCrustType.Enabled = false;
@@ -100,7 +115,6 @@ namespace Refactored_Project
             gbToppings.Enabled = false;
             gbWhereToEat.Enabled = false;
         }
-
         private void SetAllControlsToDefaultValues()
         {
             rbEatIn.Checked = true;
@@ -125,7 +139,6 @@ namespace Refactored_Project
             gbToppings.Enabled = true;
             gbWhereToEat.Enabled = true;
         }
-
         private void btnOrderPizza_Click(object sender, EventArgs e)
         {
             var Res = MessageBox.Show("Are you sure you want to order?", "Confirm Order", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
