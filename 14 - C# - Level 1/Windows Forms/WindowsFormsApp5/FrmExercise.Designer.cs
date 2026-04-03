@@ -30,12 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmExercise));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbBoy = new System.Windows.Forms.RadioButton();
-            this.rbGirl = new System.Windows.Forms.RadioButton();
-            this.rbPen = new System.Windows.Forms.RadioButton();
-            this.rbCat = new System.Windows.Forms.RadioButton();
             this.rbBooks = new System.Windows.Forms.RadioButton();
+            this.rbCat = new System.Windows.Forms.RadioButton();
+            this.rbPen = new System.Windows.Forms.RadioButton();
+            this.rbGirl = new System.Windows.Forms.RadioButton();
+            this.rbBoy = new System.Windows.Forms.RadioButton();
             this.picTheViewer = new System.Windows.Forms.PictureBox();
+            this.labIndicator = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTheViewer)).BeginInit();
             this.SuspendLayout();
@@ -55,44 +56,19 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // rbBoy
+            // rbBooks
             // 
-            this.rbBoy.AutoSize = true;
-            this.rbBoy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbBoy.Location = new System.Drawing.Point(81, 33);
-            this.rbBoy.Name = "rbBoy";
-            this.rbBoy.Size = new System.Drawing.Size(65, 26);
-            this.rbBoy.TabIndex = 0;
-            this.rbBoy.TabStop = true;
-            this.rbBoy.Text = "Boy";
-            this.rbBoy.UseVisualStyleBackColor = true;
-            this.rbBoy.CheckedChanged += new System.EventHandler(this.rbBoy_CheckedChanged);
-            // 
-            // rbGirl
-            // 
-            this.rbGirl.AutoSize = true;
-            this.rbGirl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbGirl.Location = new System.Drawing.Point(240, 33);
-            this.rbGirl.Name = "rbGirl";
-            this.rbGirl.Size = new System.Drawing.Size(61, 24);
-            this.rbGirl.TabIndex = 1;
-            this.rbGirl.TabStop = true;
-            this.rbGirl.Text = "Girl";
-            this.rbGirl.UseVisualStyleBackColor = true;
-            this.rbGirl.CheckedChanged += new System.EventHandler(this.rbGirl_CheckedChanged);
-            // 
-            // rbPen
-            // 
-            this.rbPen.AutoSize = true;
-            this.rbPen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbPen.Location = new System.Drawing.Point(409, 33);
-            this.rbPen.Name = "rbPen";
-            this.rbPen.Size = new System.Drawing.Size(62, 24);
-            this.rbPen.TabIndex = 2;
-            this.rbPen.TabStop = true;
-            this.rbPen.Text = "Pen";
-            this.rbPen.UseVisualStyleBackColor = true;
-            this.rbPen.CheckedChanged += new System.EventHandler(this.rbPen_CheckedChanged);
+            this.rbBooks.AutoSize = true;
+            this.rbBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbBooks.Location = new System.Drawing.Point(582, 33);
+            this.rbBooks.Name = "rbBooks";
+            this.rbBooks.Size = new System.Drawing.Size(82, 24);
+            this.rbBooks.TabIndex = 4;
+            this.rbBooks.TabStop = true;
+            this.rbBooks.Tag = "C:\\Users\\wwwhd\\Downloads\\PicBooks .jpg";
+            this.rbBooks.Text = "Books";
+            this.rbBooks.UseVisualStyleBackColor = true;
+            this.rbBooks.CheckedChanged += new System.EventHandler(this.UpdatePictureBox);
             // 
             // rbCat
             // 
@@ -103,22 +79,53 @@
             this.rbCat.Size = new System.Drawing.Size(59, 24);
             this.rbCat.TabIndex = 3;
             this.rbCat.TabStop = true;
+            this.rbCat.Tag = "C:\\Users\\wwwhd\\Downloads\\closeup-shot-beautiful-ginger-domestic-kitten-sitting-wh" +
+    "ite-surface.jpg";
             this.rbCat.Text = "Cat";
             this.rbCat.UseVisualStyleBackColor = true;
-            this.rbCat.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            this.rbCat.CheckedChanged += new System.EventHandler(this.UpdatePictureBox);
             // 
-            // rbBooks
+            // rbPen
             // 
-            this.rbBooks.AutoSize = true;
-            this.rbBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbBooks.Location = new System.Drawing.Point(582, 33);
-            this.rbBooks.Name = "rbBooks";
-            this.rbBooks.Size = new System.Drawing.Size(82, 24);
-            this.rbBooks.TabIndex = 4;
-            this.rbBooks.TabStop = true;
-            this.rbBooks.Text = "Books";
-            this.rbBooks.UseVisualStyleBackColor = true;
-            this.rbBooks.CheckedChanged += new System.EventHandler(this.rbBooks_CheckedChanged);
+            this.rbPen.AutoSize = true;
+            this.rbPen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbPen.Location = new System.Drawing.Point(409, 33);
+            this.rbPen.Name = "rbPen";
+            this.rbPen.Size = new System.Drawing.Size(62, 24);
+            this.rbPen.TabIndex = 2;
+            this.rbPen.TabStop = true;
+            this.rbPen.Tag = "C:\\Users\\wwwhd\\Downloads\\6d4099be-dc52-43a4-82ef-6e4bb36e436d.jpg";
+            this.rbPen.Text = "Pen";
+            this.rbPen.UseVisualStyleBackColor = true;
+            this.rbPen.CheckedChanged += new System.EventHandler(this.UpdatePictureBox);
+            // 
+            // rbGirl
+            // 
+            this.rbGirl.AutoSize = true;
+            this.rbGirl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbGirl.Location = new System.Drawing.Point(240, 33);
+            this.rbGirl.Name = "rbGirl";
+            this.rbGirl.Size = new System.Drawing.Size(61, 24);
+            this.rbGirl.TabIndex = 1;
+            this.rbGirl.TabStop = true;
+            this.rbGirl.Tag = "C:\\Users\\wwwhd\\Downloads\\picGril.jpg";
+            this.rbGirl.Text = "Girl";
+            this.rbGirl.UseVisualStyleBackColor = true;
+            this.rbGirl.CheckedChanged += new System.EventHandler(this.UpdatePictureBox);
+            // 
+            // rbBoy
+            // 
+            this.rbBoy.AutoSize = true;
+            this.rbBoy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbBoy.Location = new System.Drawing.Point(81, 33);
+            this.rbBoy.Name = "rbBoy";
+            this.rbBoy.Size = new System.Drawing.Size(65, 26);
+            this.rbBoy.TabIndex = 0;
+            this.rbBoy.TabStop = true;
+            this.rbBoy.Tag = "C:\\Users\\wwwhd\\Downloads\\38459.jpg";
+            this.rbBoy.Text = "Boy";
+            this.rbBoy.UseVisualStyleBackColor = true;
+            this.rbBoy.CheckedChanged += new System.EventHandler(this.UpdatePictureBox);
             // 
             // picTheViewer
             // 
@@ -133,11 +140,24 @@
             this.picTheViewer.TabIndex = 1;
             this.picTheViewer.TabStop = false;
             // 
+            // labIndicator
+            // 
+            this.labIndicator.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labIndicator.Font = new System.Drawing.Font("Ravie", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labIndicator.ForeColor = System.Drawing.Color.Red;
+            this.labIndicator.Location = new System.Drawing.Point(0, 0);
+            this.labIndicator.Name = "labIndicator";
+            this.labIndicator.Size = new System.Drawing.Size(1272, 47);
+            this.labIndicator.TabIndex = 0;
+            this.labIndicator.Text = "label1";
+            this.labIndicator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FrmExercise
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1272, 479);
+            this.Controls.Add(this.labIndicator);
             this.Controls.Add(this.picTheViewer);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmExercise";
@@ -158,5 +178,6 @@
         private System.Windows.Forms.RadioButton rbGirl;
         private System.Windows.Forms.RadioButton rbBoy;
         private System.Windows.Forms.PictureBox picTheViewer;
+        private System.Windows.Forms.Label labIndicator;
     }
 }
