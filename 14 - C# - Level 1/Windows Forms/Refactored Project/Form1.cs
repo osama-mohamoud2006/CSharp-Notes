@@ -17,11 +17,15 @@ namespace Refactored_Project
             InitializeComponent();
         }
 
-         
-                        /// <summary>
-                        ///  Update Price Section 
-                        /// </summary>
-                        /// <returns>Updated Price Label </returns>
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            SetAllControlsToDefaultValues();
+        }
+
+        /// <summary>
+        ///  Update Price Section 
+        /// </summary>
+        /// <returns>Updated Price Label </returns>
         private float CalcPriceOfSize()//check what was checked then return its price 
         {
             if (rbSmall.Checked) // return true if it checked
@@ -114,7 +118,7 @@ namespace Refactored_Project
             lblCrustType.Text = SelectedCurstType.Text;
         }
 
-        private void UpdateEatStatus(object sender, EventArgs e)
+        private void UpdateEatStatusLabel(object sender, EventArgs e)
         {
             RadioButton EatInOrOut = (RadioButton)sender;
             lblWhereToEat.Text = EatInOrOut.Text;
@@ -149,7 +153,7 @@ namespace Refactored_Project
 
      
 
-        /// Order,Rest Section //// 
+                                  /// Order,Rest Section //// 
 
         private void DisableGroups()
         {
@@ -191,16 +195,21 @@ namespace Refactored_Project
                 DisableGroups();
                 btnOrderPizza.Enabled = false;
                 MessageBox.Show("Your Order Has Been Confrimed","",MessageBoxButtons.OK,MessageBoxIcon.Information);
-
+                btnResetForm.Enabled = true;
             }
                
         }
 
         private void btnResetForm_Click(object sender, EventArgs e)
         {
-            EnableGroups();
-            SetAllControlsToDefaultValues();
-            btnOrderPizza.Enabled = true;
+            DialogResult res = MessageBox.Show("Are you sure you want to reset the form?", "Confirm Reset", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (res == DialogResult.Yes)
+            {
+                EnableGroups();
+                SetAllControlsToDefaultValues();
+                btnOrderPizza.Enabled = true;
+            }
         }
 
       

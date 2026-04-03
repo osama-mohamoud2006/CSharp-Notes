@@ -194,6 +194,7 @@
             // 
             // btnResetForm
             // 
+            this.btnResetForm.Enabled = false;
             this.btnResetForm.Location = new System.Drawing.Point(606, 468);
             this.btnResetForm.Name = "btnResetForm";
             this.btnResetForm.Size = new System.Drawing.Size(119, 40);
@@ -222,7 +223,7 @@
             this.rbTakeOut.TabIndex = 1;
             this.rbTakeOut.Text = "Take Out";
             this.rbTakeOut.UseVisualStyleBackColor = true;
-            this.rbTakeOut.CheckedChanged += new System.EventHandler(this.UpdateEatStatus);
+            this.rbTakeOut.CheckedChanged += new System.EventHandler(this.UpdateEatStatusLabel);
             // 
             // rbEatIn
             // 
@@ -235,7 +236,7 @@
             this.rbEatIn.Tag = "";
             this.rbEatIn.Text = "Eat In";
             this.rbEatIn.UseVisualStyleBackColor = true;
-            this.rbEatIn.CheckedChanged += new System.EventHandler(this.UpdateEatStatus);
+            this.rbEatIn.CheckedChanged += new System.EventHandler(this.UpdateEatStatusLabel);
             // 
             // gbWhereToEat
             // 
@@ -460,6 +461,7 @@
             this.Controls.Add(this.gbSize);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.gbWhereToEat.ResumeLayout(false);
