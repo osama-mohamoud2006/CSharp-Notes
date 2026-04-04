@@ -251,6 +251,7 @@
             this.btnRestart.Text = "Restart";
             this.btnRestart.TextPosition = FastUI.FastUILibrary.Core.FastTextAlign.Center;
             this.btnRestart.Theme = "GoogleMaterial";
+            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
             // 
             // label1
             // 
@@ -289,6 +290,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();

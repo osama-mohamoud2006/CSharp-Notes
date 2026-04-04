@@ -59,6 +59,7 @@ namespace TheGameForm
         {
             groupBox1.Enabled = true; // Enable the group box to allow interaction
             btnStart.Enabled = false; // Disable the start button to prevent multiple clicks
+            btnRestart.Enabled = false; // Disable the restart button until the game ends
         }
 
 
@@ -243,12 +244,7 @@ namespace TheGameForm
                 label1.Text = "Congratulations";
 
             }
-            else if (WhoWon == enCurrentPlayer.Player2)
-            {
-                labCurrentPlayer.Font = new Font(labCurrentPlayer.Font, FontStyle.Bold); // make the label font bold to emphasize the win
-                labCurrentPlayer.Text = "Player 2 Wins!";
-                label1.Text = "Congratulations";
-            }
+         
             else if (WhoWon == enCurrentPlayer.Player2)
             {
                 labCurrentPlayer.Font = new Font(labCurrentPlayer.Font, FontStyle.Bold); // make the label font bold to emphasize the draw
@@ -265,12 +261,25 @@ namespace TheGameForm
 
         }
 
+        private void btnRestart_Click(object sender, EventArgs e)
+        {
+            var res = MessageBox.Show("Are You Sure You Want Another Round?", "Restarting the game...", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) ;
+           
+            if (DialogResult.OK == res)
+            {
+                label1.Text = "Current Player";
+                labCurrentPlayer.Text = "Player1";
+                groupBox1.Enabled = true;
+                btnRestart.Enabled = false;
+                btnStart.Enabled = true;
+            }
 
+        }
 
-
-
-
-
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("Welcome To The Game! Click Start To Begin Playing", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 
 }
