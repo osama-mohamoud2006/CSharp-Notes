@@ -39,7 +39,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnStart = new FastUI.FastUILibrary.Components.FuiButton();
             this.btnRestart = new FastUI.FastUILibrary.Components.FuiButton();
             this.label1 = new System.Windows.Forms.Label();
             this.labCurrentPlayer = new System.Windows.Forms.Label();
@@ -188,45 +187,13 @@
             this.pictureBox1.Tag = "\"\"";
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
             // 
-            // btnStart
-            // 
-            this.btnStart.BackColor = System.Drawing.Color.Transparent;
-            this.btnStart.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
-            this.btnStart.BorderWidth = 0.8F;
-            this.btnStart.ControlHeight = 36;
-            this.btnStart.ControlWidth = 125;
-            this.btnStart.CornerRadius = 14F;
-            this.btnStart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStart.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
-            this.btnStart.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
-            this.btnStart.FontColor = System.Drawing.Color.White;
-            this.btnStart.FontSize = 10.5F;
-            this.btnStart.ForeColor = System.Drawing.Color.White;
-            this.btnStart.HoverBorder = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(220)))));
-            this.btnStart.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(220)))));
-            this.btnStart.HoverTextColor = System.Drawing.Color.White;
-            this.btnStart.Location = new System.Drawing.Point(103, 440);
-            this.btnStart.MoreFontSettings = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
-            this.btnStart.MoveTextHorizontal = 0;
-            this.btnStart.MoveTextVertical = 0;
-            this.btnStart.Name = "btnStart";
-            this.btnStart.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(96)))), ((int)(((byte)(185)))));
-            this.btnStart.PressDepth = 2;
-            this.btnStart.PressFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(96)))), ((int)(((byte)(185)))));
-            this.btnStart.Size = new System.Drawing.Size(125, 36);
-            this.btnStart.TabIndex = 0;
-            this.btnStart.Text = "Start";
-            this.btnStart.TextPosition = FastUI.FastUILibrary.Core.FastTextAlign.Center;
-            this.btnStart.Theme = "GoogleMaterial";
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
-            // 
             // btnRestart
             // 
             this.btnRestart.BackColor = System.Drawing.Color.Transparent;
             this.btnRestart.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
             this.btnRestart.BorderWidth = 0.8F;
-            this.btnRestart.ControlHeight = 36;
-            this.btnRestart.ControlWidth = 125;
+            this.btnRestart.ControlHeight = 73;
+            this.btnRestart.ControlWidth = 219;
             this.btnRestart.CornerRadius = 14F;
             this.btnRestart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestart.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
@@ -237,7 +204,7 @@
             this.btnRestart.HoverBorder = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(220)))));
             this.btnRestart.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(220)))));
             this.btnRestart.HoverTextColor = System.Drawing.Color.White;
-            this.btnRestart.Location = new System.Drawing.Point(334, 440);
+            this.btnRestart.Location = new System.Drawing.Point(148, 440);
             this.btnRestart.MoreFontSettings = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
             this.btnRestart.MoveTextHorizontal = 0;
             this.btnRestart.MoveTextVertical = 0;
@@ -245,7 +212,7 @@
             this.btnRestart.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(96)))), ((int)(((byte)(185)))));
             this.btnRestart.PressDepth = 2;
             this.btnRestart.PressFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(96)))), ((int)(((byte)(185)))));
-            this.btnRestart.Size = new System.Drawing.Size(125, 36);
+            this.btnRestart.Size = new System.Drawing.Size(219, 73);
             this.btnRestart.TabIndex = 9;
             this.btnRestart.Text = "Restart";
             this.btnRestart.TextPosition = FastUI.FastUILibrary.Core.FastTextAlign.Center;
@@ -270,7 +237,7 @@
             this.labCurrentPlayer.BackColor = System.Drawing.Color.Transparent;
             this.labCurrentPlayer.Font = new System.Drawing.Font("Segoe UI Black", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labCurrentPlayer.ForeColor = System.Drawing.Color.Transparent;
-            this.labCurrentPlayer.Location = new System.Drawing.Point(121, 221);
+            this.labCurrentPlayer.Location = new System.Drawing.Point(160, 221);
             this.labCurrentPlayer.Name = "labCurrentPlayer";
             this.labCurrentPlayer.Size = new System.Drawing.Size(194, 62);
             this.labCurrentPlayer.TabIndex = 11;
@@ -285,7 +252,6 @@
             this.Controls.Add(this.labCurrentPlayer);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRestart);
-            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -317,7 +283,6 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.GroupBox groupBox1;
-        private FastUI.FastUILibrary.Components.FuiButton btnStart;
         private FastUI.FastUILibrary.Components.FuiButton btnRestart;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labCurrentPlayer;

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -55,12 +56,7 @@ namespace TheGameForm
             }
         }
 
-        private void btnStart_Click(object sender, EventArgs e)
-        {
-            groupBox1.Enabled = true; // Enable the group box to allow interaction
-            btnStart.Enabled = false; // Disable the start button to prevent multiple clicks
-            btnRestart.Enabled = false; // Disable the restart button until the game ends
-        }
+    
 
 
         enum enCurrentPlayer : byte
@@ -238,18 +234,19 @@ namespace TheGameForm
         {
             groupBox1.Enabled = false; // disable the group box to prevent further interaction after the game has ended 
             btnRestart.Enabled = true; // enable the restart button to allow the user to start a new game
-            btnStart.Enabled = false; // disable the start button to prevent starting a new game while the current game is still active
         }
 
         void EndGame(enCurrentPlayer whoWon)
         {
             DisableControls();
+            label1.ForeColor = Color.DarkGreen;
+            label1.Text = "Congratulations";
 
             if (WhoWon == enCurrentPlayer.Player1)
             {
                 labCurrentPlayer.Font = new Font(labCurrentPlayer.Font, FontStyle.Bold); // make the label font bold to emphasize the win
                 labCurrentPlayer.Text = "Player 1 Wins!";
-                label1.Text = "Congratulations";
+              
 
             }
          
@@ -257,10 +254,9 @@ namespace TheGameForm
             {
                 labCurrentPlayer.Font = new Font(labCurrentPlayer.Font, FontStyle.Bold); // make the label font bold to emphasize the draw
                 labCurrentPlayer.Text = "Player 2 Wins!";
-                label1.Text = "Congratulations";
 
             }
-        
+            btnRestart.Visible = true; // Disable the restart button until the game ends
 
         }
 
@@ -268,8 +264,12 @@ namespace TheGameForm
         {
             DisableControls();
             labCurrentPlayer.Font = new Font(labCurrentPlayer.Font, FontStyle.Bold); // make the label font bold to emphasize the draw
+            labCurrentPlayer.ForeColor = Color.Yellow; // change the label color to yellow to indicate a draw   
             labCurrentPlayer.Text = "It's a Draw!";
+            label1.ForeColor = Color.DarkGreen;
             label1.Text = "Game Over";
+            btnRestart.Visible = true; // Disable the restart button until the game ends
+
         }
 
         void SetAllPictureBoxesToDefault()
@@ -295,13 +295,15 @@ namespace TheGameForm
                 labCurrentPlayer.Text = "Player1";
                 labCurrentPlayer.ForeColor=Color.White;
                 btnRestart.Enabled = false;
-                btnStart.Enabled = true;
+              
             }
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            groupBox1.Enabled = true; // Enable the group box to allow interaction
+            btnRestart.Visible = false; // Disable the restart button until the game ends
         }
     }
 
