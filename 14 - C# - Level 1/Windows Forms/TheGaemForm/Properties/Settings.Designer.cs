@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TheGaemForm.Properties
+namespace TheGameForm.Properties
 {
 
 
