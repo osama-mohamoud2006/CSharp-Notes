@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace TheGameForm
 {
-    public partial class Form1 : Form
+    public partial class CheckTheWinner : Form
     {
-        public Form1()
+        public CheckTheWinner()
         {
             InitializeComponent();
 
@@ -139,14 +139,17 @@ namespace TheGameForm
         {
             CurrentPlayerChange(sender);
 
-           // CalcTheProbOfWin(enCurrentPlayer.Player1); // check the probability of winning after each move to determine if the game has been won or is a draw
-            //CalcTheProbOfWin(enCurrentPlayer.Player2);
-
-            if (CalcTheProbOfWin(enCurrentPlayer.Player1) || CalcTheProbOfWin(enCurrentPlayer.Player2)) // if one of the players has won, or if it's a draw (which can be determined by checking if all picture boxes are filled without a winner), then end the game
+         
+            if(CheckWinner(enCurrentPlayer.Player1) == enWinningCondition.Player1win) // if Player1 wins, end the game and declare Player1 as the winner
             {
-                EndGame(WhoWon); // if there's a winner or a draw, end the game
+                EndGame(enCurrentPlayer.Player1);
             }
-            else if(Totalcounter== 9) // if all picture boxes are filled and there's no winner, it's a draw
+            else if (CheckWinner(enCurrentPlayer.Player2) == enWinningCondition.Player2win) // if Player2 wins, end the game and declare Player2 as the winner
+            {
+                EndGame(enCurrentPlayer.Player2);
+            }
+
+            else if (Totalcounter== 9) // if all picture boxes are filled and there's no winner, it's a draw
             {
                 MadeDraw();
             }
@@ -157,12 +160,17 @@ namespace TheGameForm
 
 
         /// Track The Changes On Board To Check For Win Or Draw
+        enum enWinningCondition : byte
+        {
+            none = 0,
+            Player1win = 1
+            , Player2win = 2
+        }
 
-   
 
         enCurrentPlayer WhoWon = enCurrentPlayer.none;
 
-        bool CalcTheProbOfWin(enCurrentPlayer CurrentPlayer)
+        bool GetTheWinner(enCurrentPlayer CurrentPlayer)
         {
             PictureBox[] pictureBoxes = { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9 };
 
@@ -229,6 +237,32 @@ namespace TheGameForm
             return false; // if no winning condition is met, return false to indicate that the game should continue
         }
 
+        enWinningCondition CheckWinner(enCurrentPlayer CurrentPlayer)
+        {
+
+            switch(CurrentPlayer)
+            {
+                case enCurrentPlayer.Player1:
+                    {
+                        if (GetTheWinner(CurrentPlayer))
+                        {
+                            return enWinningCondition.Player1win; // if Player1 wins, return Player1
+                        }
+                        break;
+                    }
+                case enCurrentPlayer.Player2:
+                    {
+                        if (GetTheWinner(CurrentPlayer))
+                        {
+                            return enWinningCondition.Player2win; // if Player2 wins, return Player2
+                        }
+                        break;
+                    }
+            }
+
+            return enWinningCondition.none; // if no winner is found, return none to indicate that the game should continue
+        }
+
 
         void DisableControls()
         {
@@ -280,6 +314,7 @@ namespace TheGameForm
             {
                 item.Tag = "";
                 item.Image = Image.FromFile(@"E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe2\Pics\QPixel.png");
+                item.Enabled = true; // enable the picture box to allow interaction for the new game
             }
         }
 
@@ -294,7 +329,7 @@ namespace TheGameForm
                 label1.Text = "Current Player";
                 labCurrentPlayer.Text = "Player1";
                 labCurrentPlayer.ForeColor=Color.White;
-                btnRestart.Enabled = false;
+                btnRestart.Visible = false;
               
             }
 
@@ -302,9 +337,12 @@ namespace TheGameForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            label1.ForeColor = Color.White; // Set the initial color of the label to white
             groupBox1.Enabled = true; // Enable the group box to allow interaction
             btnRestart.Visible = false; // Disable the restart button until the game ends
         }
+
+
     }
 
 }

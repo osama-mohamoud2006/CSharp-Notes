@@ -1,6 +1,6 @@
 ﻿namespace TheGameForm
 {
-    partial class Form1
+    partial class CheckTheWinner
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CheckTheWinner));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -192,8 +192,8 @@
             this.btnRestart.BackColor = System.Drawing.Color.Transparent;
             this.btnRestart.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
             this.btnRestart.BorderWidth = 0.8F;
-            this.btnRestart.ControlHeight = 73;
-            this.btnRestart.ControlWidth = 219;
+            this.btnRestart.ControlHeight = 119;
+            this.btnRestart.ControlWidth = 234;
             this.btnRestart.CornerRadius = 14F;
             this.btnRestart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestart.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
@@ -204,7 +204,7 @@
             this.btnRestart.HoverBorder = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(220)))));
             this.btnRestart.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(220)))));
             this.btnRestart.HoverTextColor = System.Drawing.Color.White;
-            this.btnRestart.Location = new System.Drawing.Point(148, 440);
+            this.btnRestart.Location = new System.Drawing.Point(148, 394);
             this.btnRestart.MoreFontSettings = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
             this.btnRestart.MoveTextHorizontal = 0;
             this.btnRestart.MoveTextVertical = 0;
@@ -212,7 +212,7 @@
             this.btnRestart.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(96)))), ((int)(((byte)(185)))));
             this.btnRestart.PressDepth = 2;
             this.btnRestart.PressFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(96)))), ((int)(((byte)(185)))));
-            this.btnRestart.Size = new System.Drawing.Size(219, 73);
+            this.btnRestart.Size = new System.Drawing.Size(234, 119);
             this.btnRestart.TabIndex = 9;
             this.btnRestart.Text = "Restart";
             this.btnRestart.TextPosition = FastUI.FastUILibrary.Core.FastTextAlign.Center;
