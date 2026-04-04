@@ -1,0 +1,12 @@
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe2\bin\Debug\Tic-Tac-Toe2.exe.config
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe2\bin\Debug\Tic-Tac-Toe2.exe
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe2\bin\Debug\Tic-Tac-Toe2.pdb
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe2\obj\Debug\Tic-Tac-Toe2.csproj.AssemblyReference.cache
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe2\obj\Debug\Tic_Tac_Toe2.Form1.resources
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe2\obj\Debug\Tic_Tac_Toe2.Properties.Resources.resources
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe2\obj\Debug\Tic-Tac-Toe2.csproj.GenerateResource.cache
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe2\obj\Debug\Tic-Tac-Toe2.csproj.CoreCompileInputs.cache
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe2\obj\Debug\Tic-Tac-Toe2.exe
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe2\obj\Debug\Tic-Tac-Toe2.pdb
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe2\bin\Debug\FastUI.dll
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe2\obj\Debug\Tic-Tac-.62D765E6.Up2Date
