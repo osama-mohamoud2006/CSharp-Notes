@@ -134,22 +134,26 @@ namespace TheGameForm
 
         }
 
-
+        int Check = 0; 
         private void pictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             CurrentPlayerChange(sender);
+            Check++;
 
-         
-            if(CheckWinner(enCurrentPlayer.Player1) == enWinningCondition.Player1win) // if Player1 wins, end the game and declare Player1 as the winner
+            if (Check == 3) //every 3 boxes check 
             {
-                EndGame(enCurrentPlayer.Player1);
+                Check = 0; // reset the check counter after checking for a winner
+                if (CheckWinner(enCurrentPlayer.Player1) == enWinningCondition.Player1win) // if Player1 wins, end the game and declare Player1 as the winner
+                {
+                    EndGame(enCurrentPlayer.Player1);
+                }
+                else if (CheckWinner(enCurrentPlayer.Player2) == enWinningCondition.Player2win) // if Player2 wins, end the game and declare Player2 as the winner
+                {
+                    EndGame(enCurrentPlayer.Player2);
+                }
+               
             }
-            else if (CheckWinner(enCurrentPlayer.Player2) == enWinningCondition.Player2win) // if Player2 wins, end the game and declare Player2 as the winner
-            {
-                EndGame(enCurrentPlayer.Player2);
-            }
-
-            else if (Totalcounter== 9) // if all picture boxes are filled and there's no winner, it's a draw
+            else if (Totalcounter == 9) // if all picture boxes are filled and there's no winner, it's a draw
             {
                 MadeDraw();
             }
@@ -211,6 +215,7 @@ namespace TheGameForm
                 }
             }
 
+            // other cases 
 
             if (pictureBoxes[1].Tag.ToString() == CurrentPlayer.ToString() && pictureBoxes[4].Tag.ToString() == CurrentPlayer.ToString()
                 && pictureBoxes[7].Tag.ToString() == CurrentPlayer.ToString())
@@ -242,21 +247,23 @@ namespace TheGameForm
 
             switch(CurrentPlayer)
             {
-                case enCurrentPlayer.Player1:
+                    case enCurrentPlayer.Player1:
                     {
                         if (GetTheWinner(CurrentPlayer))
                         {
                             return enWinningCondition.Player1win; // if Player1 wins, return Player1
                         }
-                        break;
+                        return enWinningCondition.none; 
+                       
                     }
-                case enCurrentPlayer.Player2:
+
+                    case enCurrentPlayer.Player2:
                     {
                         if (GetTheWinner(CurrentPlayer))
                         {
                             return enWinningCondition.Player2win; // if Player2 wins, return Player2
                         }
-                        break;
+                        return enWinningCondition.none; 
                     }
             }
 
@@ -273,12 +280,14 @@ namespace TheGameForm
         void EndGame(enCurrentPlayer whoWon)
         {
             DisableControls();
-            label1.ForeColor = Color.DarkGreen;
+            label1.ForeColor = Color.Gold;
             label1.Text = "Congratulations";
+            labCurrentPlayer.ForeColor = Color.GreenYellow;
 
             if (WhoWon == enCurrentPlayer.Player1)
             {
                 labCurrentPlayer.Font = new Font(labCurrentPlayer.Font, FontStyle.Bold); // make the label font bold to emphasize the win
+             
                 labCurrentPlayer.Text = "Player 1 Wins!";
               
 
@@ -302,7 +311,9 @@ namespace TheGameForm
             labCurrentPlayer.Text = "It's a Draw!";
             label1.ForeColor = Color.DarkGreen;
             label1.Text = "Game Over";
+            label1.ForeColor = Color.DarkRed;
             btnRestart.Visible = true; // Disable the restart button until the game ends
+            label1.ForeColor = Color.White;
 
         }
 
@@ -321,7 +332,7 @@ namespace TheGameForm
         private void btnRestart_Click(object sender, EventArgs e)
         {
             var res = MessageBox.Show("Are You Sure You Want Another Round?", "Restarting the game...", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) ;
-           
+            label1.ForeColor = Color.White; // Set the initial color of the label to white
             if (DialogResult.OK == res)
             {
                 SetAllPictureBoxesToDefault();
@@ -330,16 +341,20 @@ namespace TheGameForm
                 labCurrentPlayer.Text = "Player1";
                 labCurrentPlayer.ForeColor=Color.White;
                 btnRestart.Visible = false;
-              
+                this.Totalcounter = 0; // Initialize the counter to 0 at the start of the game
+                Check = 0; // reset the check counter after checking for a winner
+
             }
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.Totalcounter = 0; // Initialize the counter to 0 at the start of the game
             label1.ForeColor = Color.White; // Set the initial color of the label to white
             groupBox1.Enabled = true; // Enable the group box to allow interaction
             btnRestart.Visible = false; // Disable the restart button until the game ends
+            Check = 0; // reset the check counter after checking for a winner
         }
 
 

@@ -42,6 +42,9 @@
             this.btnRestart = new FastUI.FastUILibrary.Components.FuiButton();
             this.label1 = new System.Windows.Forms.Label();
             this.labCurrentPlayer = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -52,6 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -65,9 +69,10 @@
             this.groupBox1.Controls.Add(this.pictureBox3);
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Location = new System.Drawing.Point(701, 27);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBox1.Location = new System.Drawing.Point(720, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(375, 449);
+            this.groupBox1.Size = new System.Drawing.Size(375, 431);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             // 
@@ -192,10 +197,11 @@
             this.btnRestart.BackColor = System.Drawing.Color.Transparent;
             this.btnRestart.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
             this.btnRestart.BorderWidth = 0.8F;
-            this.btnRestart.ControlHeight = 119;
-            this.btnRestart.ControlWidth = 234;
+            this.btnRestart.ControlHeight = 106;
+            this.btnRestart.ControlWidth = 720;
             this.btnRestart.CornerRadius = 14F;
             this.btnRestart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRestart.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnRestart.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
             this.btnRestart.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
             this.btnRestart.FontColor = System.Drawing.Color.White;
@@ -204,7 +210,7 @@
             this.btnRestart.HoverBorder = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(220)))));
             this.btnRestart.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(220)))));
             this.btnRestart.HoverTextColor = System.Drawing.Color.White;
-            this.btnRestart.Location = new System.Drawing.Point(148, 394);
+            this.btnRestart.Location = new System.Drawing.Point(0, 325);
             this.btnRestart.MoreFontSettings = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
             this.btnRestart.MoveTextHorizontal = 0;
             this.btnRestart.MoveTextVertical = 0;
@@ -212,7 +218,7 @@
             this.btnRestart.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(96)))), ((int)(((byte)(185)))));
             this.btnRestart.PressDepth = 2;
             this.btnRestart.PressFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(96)))), ((int)(((byte)(185)))));
-            this.btnRestart.Size = new System.Drawing.Size(234, 119);
+            this.btnRestart.Size = new System.Drawing.Size(720, 106);
             this.btnRestart.TabIndex = 9;
             this.btnRestart.Text = "Restart";
             this.btnRestart.TextPosition = FastUI.FastUILibrary.Core.FastTextAlign.Center;
@@ -221,39 +227,75 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("SF Pro Display", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(93, 70);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(329, 56);
+            this.label1.Size = new System.Drawing.Size(720, 56);
             this.label1.TabIndex = 10;
             this.label1.Text = "Current Player";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labCurrentPlayer
             // 
-            this.labCurrentPlayer.AutoSize = true;
             this.labCurrentPlayer.BackColor = System.Drawing.Color.Transparent;
+            this.labCurrentPlayer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labCurrentPlayer.Font = new System.Drawing.Font("Segoe UI Black", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labCurrentPlayer.ForeColor = System.Drawing.Color.Transparent;
-            this.labCurrentPlayer.Location = new System.Drawing.Point(160, 221);
+            this.labCurrentPlayer.Location = new System.Drawing.Point(0, 56);
             this.labCurrentPlayer.Name = "labCurrentPlayer";
-            this.labCurrentPlayer.Size = new System.Drawing.Size(194, 62);
+            this.labCurrentPlayer.Size = new System.Drawing.Size(720, 269);
             this.labCurrentPlayer.TabIndex = 11;
             this.labCurrentPlayer.Text = "Player1";
+            this.labCurrentPlayer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Form1
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox2.ForeColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Location = new System.Drawing.Point(0, 56);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(176, 269);
+            this.groupBox2.TabIndex = 12;
+            this.groupBox2.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("MS Reference Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(16, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(121, 42);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Guide";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 97);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(143, 92);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "O is Player1 \r\n\r\nX is Player2\r\n\r\n";
+            // 
+            // CheckTheWinner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1095, 544);
+            this.ClientSize = new System.Drawing.Size(1095, 431);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.labCurrentPlayer);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
+            this.Name = "CheckTheWinner";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
@@ -266,8 +308,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -286,6 +329,9 @@
         private FastUI.FastUILibrary.Components.FuiButton btnRestart;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labCurrentPlayer;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 
