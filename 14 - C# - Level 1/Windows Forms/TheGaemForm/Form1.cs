@@ -75,8 +75,8 @@ namespace TheGameForm
         enCurrentPlayer currentPlayer = enCurrentPlayer.none;
         enCurrentPlayer prevPlayer = enCurrentPlayer.none;
 
-        byte Xcounter = 0; // counter to keep track of how many times player 2 (X) has played
-        byte Ocounter = 0; // counter to keep track of how many times player 1 (O) has played
+        byte Totalcounter = 0; // counter to keep track of how many times player 2 (X) has played
+      
 
 
         void ChangeCurrentPlayerLabelColor(enCurrentPlayer CurrentPlayer) // change the current player and update the label color accordingly
@@ -86,13 +86,14 @@ namespace TheGameForm
 
         void PictureBoxClick(enCurrentPlayer CurrentPlayer, PictureBox Currentpb)
         {
+            Totalcounter++; // increment the counter each time a picture box is clicked (indicating a move has been made)
             switch (CurrentPlayer)
             {
                 case enCurrentPlayer.Player1:
                     {//o
 
                         Currentpb.Image = Image.FromFile(@"E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe2\Pics\oPixel.png");
-                        Ocounter++; // increment the O counter for player 1
+                       
                         Currentpb.Enabled = false; // disable the picture box after it's clicked to prevent changing the image
                         Currentpb.Tag = CurrentPlayer.ToString(); // set the Tag property to identify which player made the move (useful for win/draw logic later)
                         break;
@@ -101,7 +102,7 @@ namespace TheGameForm
                 case enCurrentPlayer.Player2:
                     { //x 
                         Currentpb.Image = Image.FromFile(@"E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe2\Pics\xPixel.png");
-                        Xcounter++; // increment the X counter for player 2`
+                       
                         Currentpb.Enabled = false; // disable the picture box after it's clicked to prevent changing the image
                         Currentpb.Tag = CurrentPlayer.ToString(); // set the Tag property to identify which player made the move (useful for win/draw logic later)
 
@@ -142,14 +143,16 @@ namespace TheGameForm
         {
             CurrentPlayerChange(sender);
 
-
-
            // CalcTheProbOfWin(enCurrentPlayer.Player1); // check the probability of winning after each move to determine if the game has been won or is a draw
             //CalcTheProbOfWin(enCurrentPlayer.Player2);
 
             if (CalcTheProbOfWin(enCurrentPlayer.Player1) || CalcTheProbOfWin(enCurrentPlayer.Player2)) // if one of the players has won, or if it's a draw (which can be determined by checking if all picture boxes are filled without a winner), then end the game
             {
                 EndGame(WhoWon); // if there's a winner or a draw, end the game
+            }
+            else if(Totalcounter== 9) // if all picture boxes are filled and there's no winner, it's a draw
+            {
+                MadeDraw();
             }
 
 
@@ -231,11 +234,16 @@ namespace TheGameForm
         }
 
 
-        void EndGame(enCurrentPlayer whoWon)
+        void DisableControls()
         {
             groupBox1.Enabled = false; // disable the group box to prevent further interaction after the game has ended 
             btnRestart.Enabled = true; // enable the restart button to allow the user to start a new game
             btnStart.Enabled = false; // disable the start button to prevent starting a new game while the current game is still active
+        }
+
+        void EndGame(enCurrentPlayer whoWon)
+        {
+            DisableControls();
 
             if (WhoWon == enCurrentPlayer.Player1)
             {
@@ -252,13 +260,27 @@ namespace TheGameForm
                 label1.Text = "Congratulations";
 
             }
-            else
-            {
-                labCurrentPlayer.Font = new Font(labCurrentPlayer.Font, FontStyle.Bold); // make the label font bold to emphasize the draw
-                labCurrentPlayer.Text = "It's a Draw!";
-                label1.Text = "Try Again";
-            }
+        
 
+        }
+
+        void MadeDraw()
+        {
+            DisableControls();
+            labCurrentPlayer.Font = new Font(labCurrentPlayer.Font, FontStyle.Bold); // make the label font bold to emphasize the draw
+            labCurrentPlayer.Text = "It's a Draw!";
+            label1.Text = "Game Over";
+        }
+
+        void SetAllPictureBoxesToDefault()
+        {
+            PictureBox[] pictureBoxes = { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9 };
+
+            foreach (var item in pictureBoxes)
+            {
+                item.Tag = "";
+                item.Image = Image.FromFile(@"E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe2\Pics\QPixel.png");
+            }
         }
 
         private void btnRestart_Click(object sender, EventArgs e)
@@ -267,9 +289,11 @@ namespace TheGameForm
            
             if (DialogResult.OK == res)
             {
+                SetAllPictureBoxesToDefault();
+                groupBox1.Enabled = true;
                 label1.Text = "Current Player";
                 labCurrentPlayer.Text = "Player1";
-                groupBox1.Enabled = true;
+                labCurrentPlayer.ForeColor=Color.White;
                 btnRestart.Enabled = false;
                 btnStart.Enabled = true;
             }
@@ -278,7 +302,6 @@ namespace TheGameForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Welcome To The Game! Click Start To Begin Playing", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 

@@ -66,7 +66,6 @@
             this.groupBox1.Controls.Add(this.pictureBox3);
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Enabled = false;
             this.groupBox1.Location = new System.Drawing.Point(701, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(375, 449);
