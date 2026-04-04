@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tic_Tac_Toe2.Properties;
 
 namespace Tic_Tac_Toe2
 {
@@ -15,6 +16,20 @@ namespace Tic_Tac_Toe2
         public Form1()
         {
             InitializeComponent();
+            DefaultPictureBoxSettings();
+        }
+
+        void DefaultPictureBoxSettings()
+        {
+            // Set default properties for all picture boxes
+            PictureBox[] pictureBoxes =  { pictureBox1, pictureBox2, pictureBox3, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9, pictureBox10 };
+            foreach (var pb in pictureBoxes)
+            {
+
+                pb.Image = Resources.Question;
+
+                pb.BackColor = Color.Red; 
+            }
         }
 
         // Call the position update whenever the form loads
@@ -94,6 +109,16 @@ namespace Tic_Tac_Toe2
         {
             PictureBox pb = (PictureBox)sender;
             pb.BackColor = Color.Yellow;
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            grbMainGame.Enabled = true;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            DefaultPictureBoxSettings();
         }
     }
 }

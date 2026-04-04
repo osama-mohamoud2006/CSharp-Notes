@@ -38,7 +38,10 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.fuiButton1 = new FastUI.FastUILibrary.Components.FuiButton();
+            this.btnStart = new FastUI.FastUILibrary.Components.FuiButton();
+            this.grbMainGame = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labCurreentPlayer = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -48,13 +51,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            this.grbMainGame.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.White;
-            this.pictureBox3.Image = global::Tic_Tac_Toe2.Properties.Resources.images;
-            this.pictureBox3.Location = new System.Drawing.Point(932, 340);
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(46, 321);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(118, 135);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -64,9 +68,9 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.Image = global::Tic_Tac_Toe2.Properties.Resources.images;
-            this.pictureBox2.Location = new System.Drawing.Point(942, 33);
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::Tic_Tac_Toe2.Properties.Resources.Question;
+            this.pictureBox2.Location = new System.Drawing.Point(541, 68);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(118, 135);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -76,9 +80,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Image = global::Tic_Tac_Toe2.Properties.Resources.images;
-            this.pictureBox1.Location = new System.Drawing.Point(932, 174);
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(46, 167);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(118, 135);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -88,9 +92,9 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.White;
-            this.pictureBox5.Image = global::Tic_Tac_Toe2.Properties.Resources.images;
-            this.pictureBox5.Location = new System.Drawing.Point(1086, 340);
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(212, 321);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(118, 135);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -100,9 +104,9 @@
             // 
             // pictureBox6
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.White;
-            this.pictureBox6.Image = global::Tic_Tac_Toe2.Properties.Resources.images;
-            this.pictureBox6.Location = new System.Drawing.Point(1250, 340);
+            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(364, 320);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(118, 135);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -112,9 +116,9 @@
             // 
             // pictureBox7
             // 
-            this.pictureBox7.BackColor = System.Drawing.Color.White;
-            this.pictureBox7.Image = global::Tic_Tac_Toe2.Properties.Resources.images;
-            this.pictureBox7.Location = new System.Drawing.Point(1250, 184);
+            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(212, 167);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(118, 135);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -124,9 +128,9 @@
             // 
             // pictureBox8
             // 
-            this.pictureBox8.BackColor = System.Drawing.Color.White;
-            this.pictureBox8.Image = global::Tic_Tac_Toe2.Properties.Resources.images;
-            this.pictureBox8.Location = new System.Drawing.Point(1086, 174);
+            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(364, 179);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(118, 135);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -136,9 +140,9 @@
             // 
             // pictureBox9
             // 
-            this.pictureBox9.BackColor = System.Drawing.Color.White;
-            this.pictureBox9.Image = global::Tic_Tac_Toe2.Properties.Resources.images;
-            this.pictureBox9.Location = new System.Drawing.Point(1108, 33);
+            this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Location = new System.Drawing.Point(212, 14);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(118, 135);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -148,9 +152,9 @@
             // 
             // pictureBox10
             // 
-            this.pictureBox10.BackColor = System.Drawing.Color.White;
-            this.pictureBox10.Image = global::Tic_Tac_Toe2.Properties.Resources.images;
-            this.pictureBox10.Location = new System.Drawing.Point(1260, 43);
+            this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
+            this.pictureBox10.Location = new System.Drawing.Point(364, 21);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(118, 135);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -158,56 +162,94 @@
             this.pictureBox10.TabStop = false;
             this.pictureBox10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxes_MouseDown);
             // 
-            // fuiButton1
+            // btnStart
             // 
-            this.fuiButton1.BackColor = System.Drawing.Color.Transparent;
-            this.fuiButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
-            this.fuiButton1.BorderWidth = 0.8F;
-            this.fuiButton1.ControlHeight = 36;
-            this.fuiButton1.ControlWidth = 125;
-            this.fuiButton1.CornerRadius = 14F;
-            this.fuiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.fuiButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
-            this.fuiButton1.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
-            this.fuiButton1.FontColor = System.Drawing.Color.White;
-            this.fuiButton1.FontSize = 10.5F;
-            this.fuiButton1.ForeColor = System.Drawing.Color.White;
-            this.fuiButton1.HoverBorder = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(220)))));
-            this.fuiButton1.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(220)))));
-            this.fuiButton1.HoverTextColor = System.Drawing.Color.White;
-            this.fuiButton1.Location = new System.Drawing.Point(98, 405);
-            this.fuiButton1.MoreFontSettings = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
-            this.fuiButton1.MoveTextHorizontal = 0;
-            this.fuiButton1.MoveTextVertical = 0;
-            this.fuiButton1.Name = "fuiButton1";
-            this.fuiButton1.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(96)))), ((int)(((byte)(185)))));
-            this.fuiButton1.PressDepth = 2;
-            this.fuiButton1.PressFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(96)))), ((int)(((byte)(185)))));
-            this.fuiButton1.Size = new System.Drawing.Size(125, 36);
-            this.fuiButton1.TabIndex = 10;
-            this.fuiButton1.Text = "fuiButton1";
-            this.fuiButton1.TextPosition = FastUI.FastUILibrary.Core.FastTextAlign.Center;
-            this.fuiButton1.Theme = "GoogleMaterial";
+            this.btnStart.BackColor = System.Drawing.Color.Transparent;
+            this.btnStart.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
+            this.btnStart.BorderWidth = 0.8F;
+            this.btnStart.ControlHeight = 36;
+            this.btnStart.ControlWidth = 125;
+            this.btnStart.CornerRadius = 14F;
+            this.btnStart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStart.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
+            this.btnStart.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
+            this.btnStart.FontColor = System.Drawing.Color.White;
+            this.btnStart.FontSize = 10.5F;
+            this.btnStart.ForeColor = System.Drawing.Color.White;
+            this.btnStart.HoverBorder = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(220)))));
+            this.btnStart.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(220)))));
+            this.btnStart.HoverTextColor = System.Drawing.Color.White;
+            this.btnStart.Location = new System.Drawing.Point(98, 405);
+            this.btnStart.MoreFontSettings = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
+            this.btnStart.MoveTextHorizontal = 0;
+            this.btnStart.MoveTextVertical = 0;
+            this.btnStart.Name = "btnStart";
+            this.btnStart.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(96)))), ((int)(((byte)(185)))));
+            this.btnStart.PressDepth = 2;
+            this.btnStart.PressFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(96)))), ((int)(((byte)(185)))));
+            this.btnStart.Size = new System.Drawing.Size(125, 36);
+            this.btnStart.TabIndex = 10;
+            this.btnStart.Text = "Start";
+            this.btnStart.TextPosition = FastUI.FastUILibrary.Core.FastTextAlign.Center;
+            this.btnStart.Theme = "GoogleMaterial";
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
+            // grbMainGame
+            // 
+            this.grbMainGame.BackColor = System.Drawing.Color.Transparent;
+            this.grbMainGame.Controls.Add(this.pictureBox10);
+            this.grbMainGame.Controls.Add(this.pictureBox9);
+            this.grbMainGame.Controls.Add(this.pictureBox8);
+            this.grbMainGame.Controls.Add(this.pictureBox7);
+            this.grbMainGame.Controls.Add(this.pictureBox6);
+            this.grbMainGame.Controls.Add(this.pictureBox5);
+            this.grbMainGame.Controls.Add(this.pictureBox3);
+            this.grbMainGame.Controls.Add(this.pictureBox1);
+            this.grbMainGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.grbMainGame.Location = new System.Drawing.Point(896, 3);
+            this.grbMainGame.Name = "grbMainGame";
+            this.grbMainGame.Size = new System.Drawing.Size(536, 514);
+            this.grbMainGame.TabIndex = 11;
+            this.grbMainGame.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Rockwell", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(92, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(339, 53);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Current Player";
+            // 
+            // labCurreentPlayer
+            // 
+            this.labCurreentPlayer.AutoSize = true;
+            this.labCurreentPlayer.BackColor = System.Drawing.Color.Transparent;
+            this.labCurreentPlayer.Font = new System.Drawing.Font("SF Mono", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labCurreentPlayer.ForeColor = System.Drawing.Color.Transparent;
+            this.labCurreentPlayer.Location = new System.Drawing.Point(130, 104);
+            this.labCurreentPlayer.Name = "labCurreentPlayer";
+            this.labCurreentPlayer.Size = new System.Drawing.Size(220, 48);
+            this.labCurreentPlayer.TabIndex = 13;
+            this.labCurreentPlayer.Text = "Player 1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1444, 517);
-            this.Controls.Add(this.fuiButton1);
-            this.Controls.Add(this.pictureBox10);
-            this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.labCurreentPlayer);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.grbMainGame);
+            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -218,7 +260,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            this.grbMainGame.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -233,7 +277,10 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox10;
-        private FastUI.FastUILibrary.Components.FuiButton fuiButton1;
+        private FastUI.FastUILibrary.Components.FuiButton btnStart;
+        private System.Windows.Forms.GroupBox grbMainGame;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labCurreentPlayer;
     }
 }
 
