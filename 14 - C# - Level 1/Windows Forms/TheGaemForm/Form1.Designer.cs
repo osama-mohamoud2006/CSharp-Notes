@@ -83,8 +83,8 @@
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 7;
             this.pictureBox9.TabStop = false;
+            this.pictureBox9.Tag = "\"\"";
             this.pictureBox9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
-
             // 
             // pictureBox8
             // 
@@ -96,8 +96,8 @@
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 6;
             this.pictureBox8.TabStop = false;
+            this.pictureBox8.Tag = "\"\"";
             this.pictureBox8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
-
             // 
             // pictureBox5
             // 
@@ -109,8 +109,8 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 5;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Tag = "\"\"";
             this.pictureBox5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
-
             // 
             // pictureBox6
             // 
@@ -122,8 +122,8 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 4;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Tag = "\"\"";
             this.pictureBox6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
-
             // 
             // pictureBox7
             // 
@@ -135,8 +135,8 @@
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 3;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.Tag = "\"\"";
             this.pictureBox7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
-
             // 
             // pictureBox4
             // 
@@ -148,8 +148,8 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Tag = "\"\"";
             this.pictureBox4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
-
             // 
             // pictureBox3
             // 
@@ -161,8 +161,8 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Tag = "\"\"";
             this.pictureBox3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
-
             // 
             // pictureBox2
             // 
@@ -174,8 +174,8 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Tag = "\"\"";
             this.pictureBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
-
             // 
             // pictureBox1
             // 
@@ -186,8 +186,8 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Tag = "\"\"";
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
-
             // 
             // btnStart
             // 
@@ -270,7 +270,7 @@
             this.labCurrentPlayer.BackColor = System.Drawing.Color.Transparent;
             this.labCurrentPlayer.Font = new System.Drawing.Font("Segoe UI Black", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labCurrentPlayer.ForeColor = System.Drawing.Color.Transparent;
-            this.labCurrentPlayer.Location = new System.Drawing.Point(160, 222);
+            this.labCurrentPlayer.Location = new System.Drawing.Point(121, 221);
             this.labCurrentPlayer.Name = "labCurrentPlayer";
             this.labCurrentPlayer.Size = new System.Drawing.Size(194, 62);
             this.labCurrentPlayer.TabIndex = 11;

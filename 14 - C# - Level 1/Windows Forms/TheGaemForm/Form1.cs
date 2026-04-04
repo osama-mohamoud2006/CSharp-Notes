@@ -141,9 +141,16 @@ namespace TheGameForm
         {
             CurrentPlayerChange(sender);
 
+          
 
             CalcTheProbOfWin(enCurrentPlayer.Player1); // check the probability of winning after each move to determine if the game has been won or is a draw
             CalcTheProbOfWin(enCurrentPlayer.Player2);
+
+            if (WhoWon != enCurrentPlayer.none)
+            {
+                EndGame(); // if there's a winner or a draw, end the game
+            }
+
         }
 
 
@@ -159,22 +166,86 @@ namespace TheGameForm
 
         }
 
-        enWhoWon WhoWon = enWhoWon.none;
+        enCurrentPlayer WhoWon = enCurrentPlayer.none;
 
         void CalcTheProbOfWin(enCurrentPlayer CurrentPlayer)
         {
             PictureBox[] pictureBoxes = { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9 };
 
-            foreach (var item in pictureBoxes)
+            // Check  (1,...,...)
+            if (pictureBoxes[0].Tag.ToString() == CurrentPlayer.ToString())
             {
-                if(item.Tag.ToString() == CurrentPlayer.ToString() )
+                if(pictureBoxes[3].Tag.ToString()== CurrentPlayer.ToString() && pictureBoxes[6].Tag.ToString() == CurrentPlayer.ToString() )
                 {
+                    WhoWon = CurrentPlayer;
+                    return; 
+                }
+                else if (pictureBoxes[1].Tag.ToString() == CurrentPlayer.ToString() && pictureBoxes[2].Tag.ToString() == CurrentPlayer.ToString())
+                {
+                    WhoWon = CurrentPlayer;
+                    return; 
+                }
+                else if (pictureBoxes[4].Tag.ToString() == CurrentPlayer.ToString() && pictureBoxes[8].Tag.ToString() == CurrentPlayer.ToString())
+                {
+                    WhoWon = CurrentPlayer;
+                    return;
+                }
 
+            }
+
+            // Check (3,...,...)
+            if (pictureBoxes[2].Tag.ToString() == CurrentPlayer.ToString())
+            {
+                if (pictureBoxes[5].Tag.ToString() == CurrentPlayer.ToString() && pictureBoxes[8].Tag.ToString() == CurrentPlayer.ToString())
+                {
+                    WhoWon = CurrentPlayer;
+                    return;
+                }
+
+                else if(pictureBoxes[4].Tag.ToString() == CurrentPlayer.ToString() && pictureBoxes[6].Tag.ToString() == CurrentPlayer.ToString())
+                {
+                    WhoWon = CurrentPlayer;
+                    return;
                 }
             }
 
 
+            if(pictureBoxes[1].Tag.ToString() == CurrentPlayer.ToString() && pictureBoxes[4].Tag.ToString() == CurrentPlayer.ToString()
+                && pictureBoxes[7].Tag.ToString() == CurrentPlayer.ToString() )
+            {
+
+                WhoWon = CurrentPlayer;
+                return;
+            }
+
+            if( pictureBoxes[3].Tag.ToString() == CurrentPlayer.ToString() && (pictureBoxes[4].Tag.ToString() == CurrentPlayer.ToString() ) && pictureBoxes[5].Tag.ToString() == CurrentPlayer.ToString())
+            {
+
+                WhoWon = CurrentPlayer;
+                return;
+            }
+
+            if (pictureBoxes[6].Tag.ToString() == CurrentPlayer.ToString() && pictureBoxes[7].Tag.ToString() == CurrentPlayer.ToString() && pictureBoxes[8].Tag.ToString() == CurrentPlayer.ToString())
+            {
+                WhoWon = CurrentPlayer;
+                return;
+            }
         }
 
+        void EndGame()
+        {
+            groupBox1.Enabled = false; // disable the group box to prevent further interaction after the game has ended 
+            btnRestart.Enabled = true; // enable the restart button to allow the user to start a new game
+            btnStart.Enabled = false; // disable the start button to prevent starting a new game while the current game is still active
+
+            if (WhoWon == enCurrentPlayer.Player1)
+            {
+                labCurrentPlayer.Font = new Font(labCurrentPlayer.Font,FontStyle.Bold); // make the label font bold to emphasize the win
+                labCurrentPlayer.Text = "Player 1 Wins!";
+                label1.Text = "Congratulations";
+
+            }
+
+        }
     }
 }
