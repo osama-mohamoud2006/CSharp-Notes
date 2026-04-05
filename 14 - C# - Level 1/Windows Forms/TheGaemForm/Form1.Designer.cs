@@ -1,6 +1,6 @@
 ﻿namespace TheGameForm
 {
-    partial class CheckTheWinner
+    partial class TheGame
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CheckTheWinner));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TheGame));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -43,8 +43,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labCurrentPlayer = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -197,7 +197,7 @@
             this.btnRestart.BackColor = System.Drawing.Color.Transparent;
             this.btnRestart.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
             this.btnRestart.BorderWidth = 0.8F;
-            this.btnRestart.ControlHeight = 106;
+            this.btnRestart.ControlHeight = 36;
             this.btnRestart.ControlWidth = 720;
             this.btnRestart.CornerRadius = 14F;
             this.btnRestart.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -210,7 +210,7 @@
             this.btnRestart.HoverBorder = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(220)))));
             this.btnRestart.HoverFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(220)))));
             this.btnRestart.HoverTextColor = System.Drawing.Color.White;
-            this.btnRestart.Location = new System.Drawing.Point(0, 325);
+            this.btnRestart.Location = new System.Drawing.Point(0, 395);
             this.btnRestart.MoreFontSettings = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
             this.btnRestart.MoveTextHorizontal = 0;
             this.btnRestart.MoveTextVertical = 0;
@@ -218,7 +218,7 @@
             this.btnRestart.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(96)))), ((int)(((byte)(185)))));
             this.btnRestart.PressDepth = 2;
             this.btnRestart.PressFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(96)))), ((int)(((byte)(185)))));
-            this.btnRestart.Size = new System.Drawing.Size(720, 106);
+            this.btnRestart.Size = new System.Drawing.Size(720, 36);
             this.btnRestart.TabIndex = 9;
             this.btnRestart.Text = "Restart";
             this.btnRestart.TextPosition = FastUI.FastUILibrary.Core.FastTextAlign.Center;
@@ -246,7 +246,7 @@
             this.labCurrentPlayer.ForeColor = System.Drawing.Color.Transparent;
             this.labCurrentPlayer.Location = new System.Drawing.Point(0, 56);
             this.labCurrentPlayer.Name = "labCurrentPlayer";
-            this.labCurrentPlayer.Size = new System.Drawing.Size(720, 269);
+            this.labCurrentPlayer.Size = new System.Drawing.Size(720, 339);
             this.labCurrentPlayer.TabIndex = 11;
             this.labCurrentPlayer.Text = "Player1";
             this.labCurrentPlayer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -260,19 +260,9 @@
             this.groupBox2.ForeColor = System.Drawing.Color.Transparent;
             this.groupBox2.Location = new System.Drawing.Point(0, 56);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(176, 269);
+            this.groupBox2.Size = new System.Drawing.Size(176, 339);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("MS Reference Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 42);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Guide";
             // 
             // label3
             // 
@@ -284,7 +274,17 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "O is Player1 \r\n\r\nX is Player2\r\n\r\n";
             // 
-            // CheckTheWinner
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("MS Reference Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(16, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(119, 40);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Guide";
+            // 
+            // TheGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -295,7 +295,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.groupBox1);
-            this.Name = "CheckTheWinner";
+            this.Name = "TheGame";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);

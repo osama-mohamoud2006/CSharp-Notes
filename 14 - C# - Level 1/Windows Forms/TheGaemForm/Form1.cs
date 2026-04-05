@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace TheGameForm
 {
-    public partial class CheckTheWinner : Form
+    public partial class TheGame : Form
     {
-        public CheckTheWinner()
+        public TheGame()
         {
             InitializeComponent();
 
@@ -138,11 +138,7 @@ namespace TheGameForm
         private void pictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             CurrentPlayerChange(sender);
-            Check++;
-
-            if (Check == 3) //every 3 boxes check 
-            {
-                Check = 0; // reset the check counter after checking for a winner
+            
                 if (CheckWinner(enCurrentPlayer.Player1) == enWinningCondition.Player1win) // if Player1 wins, end the game and declare Player1 as the winner
                 {
                     EndGame(enCurrentPlayer.Player1);
@@ -152,7 +148,7 @@ namespace TheGameForm
                     EndGame(enCurrentPlayer.Player2);
                 }
                
-            }
+            
             else if (Totalcounter == 9) // if all picture boxes are filled and there's no winner, it's a draw
             {
                 MadeDraw();
@@ -357,7 +353,7 @@ namespace TheGameForm
             Check = 0; // reset the check counter after checking for a winner
         }
 
-
+    
     }
 
 }

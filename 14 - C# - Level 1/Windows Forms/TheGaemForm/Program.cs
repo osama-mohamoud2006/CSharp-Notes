@@ -16,7 +16,7 @@ namespace TheGameForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CheckTheWinner());
+            Application.Run(new TheGame());
         }
     }
 }

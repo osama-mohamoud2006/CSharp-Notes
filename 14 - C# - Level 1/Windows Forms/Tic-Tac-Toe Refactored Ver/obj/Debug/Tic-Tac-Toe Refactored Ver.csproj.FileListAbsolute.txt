@@ -1,0 +1,10 @@
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe Refactored Ver\bin\Debug\Tic-Tac-Toe Refactored Ver.exe.config
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe Refactored Ver\bin\Debug\Tic-Tac-Toe Refactored Ver.exe
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe Refactored Ver\bin\Debug\Tic-Tac-Toe Refactored Ver.pdb
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe Refactored Ver\obj\Debug\Tic-Tac-Toe Refactored Ver.csproj.AssemblyReference.cache
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe Refactored Ver\obj\Debug\Tic_Tac_Toe_Refactored_Ver.Form1.resources
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe Refactored Ver\obj\Debug\Tic_Tac_Toe_Refactored_Ver.Properties.Resources.resources
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe Refactored Ver\obj\Debug\Tic-Tac-Toe Refactored Ver.csproj.GenerateResource.cache
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe Refactored Ver\obj\Debug\Tic-Tac-Toe Refactored Ver.csproj.CoreCompileInputs.cache
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe Refactored Ver\obj\Debug\Tic-Tac-Toe Refactored Ver.exe
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Tic-Tac-Toe Refactored Ver\obj\Debug\Tic-Tac-Toe Refactored Ver.pdb

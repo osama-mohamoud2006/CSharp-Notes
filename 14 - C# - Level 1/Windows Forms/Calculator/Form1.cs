@@ -543,7 +543,7 @@ namespace Calculator
         private void Sub_Click(object sender, EventArgs e)
         {
             EnableAllButtonsAfterAns();
-            enCurrentOperation = Core.enOperation.Add;
+            enCurrentOperation = Core.enOperation.Sub;
             Screen.Text += "-";
 
 
