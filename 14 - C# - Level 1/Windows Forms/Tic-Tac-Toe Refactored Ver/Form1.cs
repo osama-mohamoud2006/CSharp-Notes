@@ -172,50 +172,65 @@ namespace Tic_Tac_Toe_Refactored_Ver
             {
 
             ChangeBackColors(btn);
-            
 
+            if (btn.Tag.ToString() == "?")
+            {
                 switch (PlayerTurn)
                 {
                     // Game will start with player 1  --> x
                     case enPlayer.Player1:
-                      {
+                        {
                             lblTurn.Text = enPlayer.Player1.ToString(); // change the current player label --> player1
                             btn.Tag = "X";
-                           btn.Image = Properties.Resources.X;
-                           PlayerTurn = enPlayer.Player2; // change the player turn to player 2 -- > for the next turn
+                            btn.Image = Properties.Resources.X;
+                            PlayerTurn = enPlayer.Player2; // change the player turn to player 2 -- > for the next turn
 
                             bool res = DetermineTheWinnerFromSelectedBtns();
 
                             if (res) EndGame(enWinner.Player1);
-                           
-                        GameStatus.PlayCount++;
-                        Draw(); // check if the game is draw or not after each player select a button
-                        break;
+
+                            GameStatus.PlayCount++;
+                            // Draw(); // check if the game is draw or not after each player select a button
+                            break;
                         }
 
                     case enPlayer.Player2:
-                      {
+                        {
                             lblTurn.Text = enPlayer.Player2.ToString(); // change the current player label --> player2
-                              btn.Tag = "O";
+                            btn.Tag = "O";
                             btn.Image = Properties.Resources.O;
-                           PlayerTurn = enPlayer.Player1; // change the player turn to player 1 -- > for the next turn
+                            PlayerTurn = enPlayer.Player1; // change the player turn to player 1 -- > for the next turn
                             bool res = DetermineTheWinnerFromSelectedBtns();
                             if (res) EndGame(enWinner.Player2);
-                         
-                           GameStatus.PlayCount++;
-                           Draw(); // check if the game is draw or not after each player select a button
-                           break;
-                        }
-                }
 
+                            GameStatus.PlayCount++;
+                            //Draw(); // check if the game is draw or not after each player select a button
+                            break;
+
+
+                        }
+
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("You Cann't Choose The Same Button Again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            Draw();
 
             }
         
+
+   
+ 
 
         private void button_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
             ChangeImage(btn);
+            
         }
 
 
