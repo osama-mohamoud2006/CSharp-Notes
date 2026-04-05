@@ -77,30 +77,126 @@ namespace Tic_Tac_Toe_Refactored_Ver
         }
 
 
-        void DetermineTheWinnerFromSelectedBtns()
+        bool DetermineTheWinnerFromSelectedBtns() // check the winner after each player select a button
         {
             if (CheckWinnerOrNot(button1, button4, button7)) //1
-                return;
+                return true;
 
-            if (CheckWinnerOrNot(button2, button5, button7))
-                return;
+            if (CheckWinnerOrNot(button2, button5, button8))//2
+                return true;
+
+            if (CheckWinnerOrNot(button3, button6, button9))//3
+                return true;
+
+            if (CheckWinnerOrNot(button1, button2, button3))//4
+                return true;
+
+            if (CheckWinnerOrNot(button4, button5, button6))//5
+                return true;
+
+            if (CheckWinnerOrNot(button7, button8, button9))//6
+                return true;
+
+            if (CheckWinnerOrNot(button1, button5, button9))//7
+                return true;
+
+            if (CheckWinnerOrNot(button3, button5, button7))
+                return true ;
+
+            return false;
         }
 
-
-        void ChangeImage(Button btn)
+        void DisableAllBtns()
         {
-            switch(PlayerTurn)
-            {
-                // Game will start with player 1  --> x
-                case enPlayer.Player1:
-                    {
-                        lblTurn.Text = PlayerTurn.ToString(); // change the current player label 
-                        btn.Tag = "X";
+            Button[] btns = {button1,button2,button3,button4,button5,button6,button7,button8,button9 };
 
+            foreach (var item in btns)
+            {
+                item.Tag = "?";
+                item.Enabled= false;    
+            }
+        }
+
+        void EndGame(enWinner Winner)
+        {
+            switch (Winner)
+            {
+                case enWinner.Player1:
+                    {
+                        MessageBox.Show("Player 1 is the winner");
+                        DisableAllBtns();
+                        lblTurn.Text = "Game Over";
+                        lblTurn.ForeColor = Color.Red;
+                        lblWinner.Text = "Player 1";
+                        break;
+                    }
+
+                case enWinner.Player2:
+                    {
+                        MessageBox.Show("Player 2 is the winner");
+                        DisableAllBtns();
+                        lblTurn.Text = "Game Over";
+                        lblTurn.ForeColor = Color.Red;
+                        lblWinner.Text = "Player 2";
+                        break;
+                    }
+
+                case enWinner.Draw:
+                    {
+                        MessageBox.Show("Game is Draw");
+                        DisableAllBtns();
+                        lblTurn.Text = "Game Over";
+                        lblTurn.ForeColor = Color.Yellow;
+                        lblWinner.Text = "Draw";
                         break;
                     }
             }
+
         }
+
+
+           
+            void ChangeImage(Button btn)
+            {
+                if (GameStatus.PlayCount == 9)
+                {
+                  EndGame(enWinner.Draw);
+                   return;
+                }
+
+                switch (PlayerTurn)
+                {
+                    // Game will start with player 1  --> x
+                    case enPlayer.Player1:
+                      {
+                            lblTurn.Text = PlayerTurn.ToString(); // change the current player label --> player1
+                            btn.Tag = "X";
+                           btn.Image = Properties.Resources.X;
+                        PlayerTurn = enPlayer.Player2; // change the player turn to player 2 -- > for the next turn
+
+                            bool res = DetermineTheWinnerFromSelectedBtns();
+
+                            if (res) EndGame(enWinner.Player1);
+                        GameStatus.PlayCount++;
+                            break;
+                        }
+
+                    case enPlayer.Player2:
+                      {
+                            lblTurn.Text = PlayerTurn.ToString(); // change the current player label --> player2
+                              btn.Tag = "O";
+                            btn.Image = Properties.Resources.O;
+                        PlayerTurn = enPlayer.Player1; // change the player turn to player 1 -- > for the next turn
+                            bool res = DetermineTheWinnerFromSelectedBtns();
+                            if (res) EndGame(enWinner.Player2);
+                        GameStatus.PlayCount++;
+                        break;
+                        }
+                }
+
+
+            }
+        
 
         private void button_Click(object sender, EventArgs e)
         {
