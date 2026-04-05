@@ -143,7 +143,7 @@ namespace Tic_Tac_Toe_Refactored_Ver
 
                 case enWinner.Draw:
                     {
-                        MessageBox.Show("Game is Draw");
+                        MessageBox.Show("Game is Draw","RES",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                         DisableAllBtns();
                         lblTurn.Text = "Game Over";
                         lblTurn.ForeColor = Color.Yellow;
