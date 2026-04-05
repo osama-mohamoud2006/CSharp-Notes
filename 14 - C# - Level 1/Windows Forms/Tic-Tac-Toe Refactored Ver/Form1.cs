@@ -123,7 +123,7 @@ namespace Tic_Tac_Toe_Refactored_Ver
             {
                 case enWinner.Player1:
                     {
-                        MessageBox.Show("Player 1 is the winner","The Winner!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        MessageBox.Show("Player 1 is the winner","The Winner!",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                         DisableAllBtns();
                         lblTurn.Text = "Game Over";
                         lblTurn.ForeColor = Color.Red;
@@ -133,7 +133,7 @@ namespace Tic_Tac_Toe_Refactored_Ver
 
                 case enWinner.Player2:
                     {
-                        MessageBox.Show("Player 2 is the winner", "The Winner!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Player 2 is the winner", "The Winner!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         DisableAllBtns();
                         lblTurn.Text = "Game Over";
                         lblTurn.ForeColor = Color.Red;
