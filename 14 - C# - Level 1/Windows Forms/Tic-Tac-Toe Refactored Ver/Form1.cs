@@ -159,15 +159,20 @@ namespace Tic_Tac_Toe_Refactored_Ver
             btn.BackColor = Color.Yellow;
         }
 
+        void Draw()
+        {
+            if (GameStatus.PlayCount == 9)
+            {
+                EndGame(enWinner.Draw);
+                return;
+            }
+        }
            
           void ChangeImage(Button btn)
             {
+
             ChangeBackColors(btn);
-                if (GameStatus.PlayCount == 9)
-                {
-                  EndGame(enWinner.Draw);
-                   return;
-                }
+            
 
                 switch (PlayerTurn)
                 {
@@ -182,8 +187,10 @@ namespace Tic_Tac_Toe_Refactored_Ver
                             bool res = DetermineTheWinnerFromSelectedBtns();
 
                             if (res) EndGame(enWinner.Player1);
+                           
                         GameStatus.PlayCount++;
-                            break;
+                        Draw(); // check if the game is draw or not after each player select a button
+                        break;
                         }
 
                     case enPlayer.Player2:
@@ -191,11 +198,13 @@ namespace Tic_Tac_Toe_Refactored_Ver
                             lblTurn.Text = enPlayer.Player2.ToString(); // change the current player label --> player2
                               btn.Tag = "O";
                             btn.Image = Properties.Resources.O;
-                        PlayerTurn = enPlayer.Player1; // change the player turn to player 1 -- > for the next turn
+                           PlayerTurn = enPlayer.Player1; // change the player turn to player 1 -- > for the next turn
                             bool res = DetermineTheWinnerFromSelectedBtns();
                             if (res) EndGame(enWinner.Player2);
-                        GameStatus.PlayCount++;
-                        break;
+                         
+                           GameStatus.PlayCount++;
+                           Draw(); // check if the game is draw or not after each player select a button
+                           break;
                         }
                 }
 
@@ -229,6 +238,7 @@ namespace Tic_Tac_Toe_Refactored_Ver
         {
             RestToDefault();
             PlayerTurn = enPlayer.Player1;
+            GameStatus.PlayCount = 0;
         }
 
 
