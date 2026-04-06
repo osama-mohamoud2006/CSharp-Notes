@@ -70,7 +70,7 @@
             // 
             this.maskedTextBox4.BeepOnError = true;
             this.maskedTextBox4.Location = new System.Drawing.Point(414, 390);
-            this.maskedTextBox4.Mask = "G\\M\\A\\I\\L\\:\\ AAAAA\\@\\ AAAAAAAAA";
+            this.maskedTextBox4.Mask = "G\\M\\A\\I\\L\\:\\ aaaaaaaa\\@\\ aaaaaaaa";
             this.maskedTextBox4.Name = "maskedTextBox4";
             this.maskedTextBox4.Size = new System.Drawing.Size(270, 22);
             this.maskedTextBox4.TabIndex = 3;

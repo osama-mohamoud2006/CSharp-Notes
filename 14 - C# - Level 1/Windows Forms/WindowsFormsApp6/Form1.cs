@@ -55,6 +55,11 @@ namespace WindowsFormsApp6
         {
             if (maskedTextBox4.MaskFull || maskedTextBox4.MaskCompleted)
                 MessageBox.Show(maskedTextBox4.Text);
+
+            if(maskedTextBox1.MaskCompleted && maskedTextBox2.MaskCompleted && maskedTextBox3.MaskCompleted && maskedTextBox4.MaskCompleted)
+            {
+                MessageBox.Show(maskedTextBox1.Text + "\n" + maskedTextBox2.Text + "\n" + maskedTextBox3.Text + "\n" + maskedTextBox4.Text);
+            }
         }
     }
 }
