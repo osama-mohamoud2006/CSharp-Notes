@@ -41,7 +41,7 @@ namespace WindowsFormsApp6
 
         private void maskedTextBox3_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            if(maskedTextBox3.MaskFull)
+            if(maskedTextBox3.MaskFull || maskedTextBox3.MaskCompleted)
             MessageBox.Show(maskedTextBox3.Text); 
         }
     }
