@@ -48,7 +48,7 @@
             "aloal",
             "a",
             "aa"});
-            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.comboBox2.BackColor = System.Drawing.SystemColors.Highlight;
             this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.System;
