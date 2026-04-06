@@ -159,14 +159,7 @@ namespace Tic_Tac_Toe_Refactored_Ver
             btn.BackColor = Color.Yellow;
         }
 
-        void Draw()
-        {
-            if (GameStatus.PlayCount == 9)
-            {
-                EndGame(enWinner.Draw);
-                return;
-            }
-        }
+      
            
           void ChangeImage(Button btn)
             {
@@ -175,6 +168,7 @@ namespace Tic_Tac_Toe_Refactored_Ver
 
             if (btn.Tag.ToString() == "?")
             {
+                GameStatus.PlayCount++;
                 switch (PlayerTurn)
                 {
                     // Game will start with player 1  --> x
@@ -187,9 +181,14 @@ namespace Tic_Tac_Toe_Refactored_Ver
 
                             bool res = DetermineTheWinnerFromSelectedBtns();
 
-                            if (res) EndGame(enWinner.Player1);
-
-                            GameStatus.PlayCount++;
+                            if (res)
+                            {
+                                GameStatus.Winner = enWinner.Player1;
+                                GameStatus.PlayCount = 0;
+                                EndGame(GameStatus.Winner);
+                                
+                            }
+                           
                             // Draw(); // check if the game is draw or not after each player select a button
                             break;
                         }
@@ -201,9 +200,16 @@ namespace Tic_Tac_Toe_Refactored_Ver
                             btn.Image = Properties.Resources.O;
                             PlayerTurn = enPlayer.Player1; // change the player turn to player 1 -- > for the next turn
                             bool res = DetermineTheWinnerFromSelectedBtns();
-                            if (res) EndGame(enWinner.Player2);
+                            
+                            if (res)
+                            {
+                                GameStatus.Winner = enWinner.Player2;
+                                GameStatus.PlayCount = 0; 
+                                EndGame(GameStatus.Winner);
+                                
+                            }
 
-                            GameStatus.PlayCount++;
+                           // GameStatus.PlayCount++;
                             //Draw(); // check if the game is draw or not after each player select a button
                             break;
 
@@ -215,12 +221,18 @@ namespace Tic_Tac_Toe_Refactored_Ver
 
             else
             {
-                MessageBox.Show("You Cann't Choose The Same Button Again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
+                MessageBox.Show("You Cannot Choose The Same Button Again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            Draw();
-
+            if (GameStatus.PlayCount == 9 )
+            {
+                GameStatus.Winner = enWinner.Draw;
+                EndGame(enWinner.Draw);
+                return;
             }
+
+        }
         
 
    
@@ -254,6 +266,7 @@ namespace Tic_Tac_Toe_Refactored_Ver
             RestToDefault();
             PlayerTurn = enPlayer.Player1;
             GameStatus.PlayCount = 0;
+
         }
 
 

@@ -8,3 +8,4 @@ E:\projects\C#\14 - C# - Level 1\Windows Forms\Drawing\obj\Debug\Drawing.csproj.
 E:\projects\C#\14 - C# - Level 1\Windows Forms\Drawing\obj\Debug\Drawing.csproj.CoreCompileInputs.cache
 E:\projects\C#\14 - C# - Level 1\Windows Forms\Drawing\obj\Debug\Drawing.exe
 E:\projects\C#\14 - C# - Level 1\Windows Forms\Drawing\obj\Debug\Drawing.pdb
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Drawing\obj\Debug\Drawing.Form2.resources
