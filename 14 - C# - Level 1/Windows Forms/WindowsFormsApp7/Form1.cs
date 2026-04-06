@@ -41,7 +41,7 @@ namespace WindowsFormsApp7
             MessageBox.Show("Added: "+ "New Item");
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // change the selected item by text 
         {
             comboBox2.Text="mona";
         }

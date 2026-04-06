@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp7.Properties;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace WindowsFormsApp7
 {
@@ -42,25 +43,32 @@ namespace WindowsFormsApp7
             }
 
         }
+        //*
+        //
+        //book
+//        boy
+//        girl
+//لابوبو       
 
-        void ChangePhoto(int index)
+        //*/
+        void ChangePhoto(string item)
         {
-            switch (index)
+            switch (item.ToLower())
             {
-                case 0:
+                case "book":
 
                     pictureBox1.Image = Resources.PicBooks_;
                     break;
 
-                case 1:
+                case "boy":
                     pictureBox1.Image = Resources._38459;
                     break;
 
-                case 2:
+                case "girl":
                     pictureBox1.Image = Resources.picGril;
                     break;
 
-                case 3:
+                case "لابوبو":
                     pictureBox1.Image = Resources.X;
                     break;
 
@@ -95,11 +103,47 @@ namespace WindowsFormsApp7
 
             }
         }
+
+
+        void ChangeLabel(string  item)
+        {
+            switch (item.ToLower())
+            {
+                case "book":
+                    label1.Text = "books";
+                    label1.ForeColor = Color.PowderBlue;
+                    break;
+
+
+                case "boy":
+                    label1.Text = "boy";
+                    label1.ForeColor = Color.GreenYellow;
+                    break;
+
+                case "girl":
+                    label1.Text = "girl";
+                    label1.ForeColor = Color.HotPink;
+                    break;
+
+                case "لابوبو":
+                    label1.Text = "لا بوبو عمك";
+                    label1.ForeColor = Color.Goldenrod;
+                    break;
+
+            }
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox comboBox = (ComboBox)sender;
-            ChangePhoto(comboBox.SelectedIndex);
-            ChangeLabel(comboBox.SelectedIndex);
+            ChangePhoto(comboBox.SelectedItem.ToString()); // the current selected item of combo box
+            ChangeLabel(comboBox.SelectedItem.ToString());
+
+            
+            foreach (var item in comboBox.Items) // all items of combo box 
+            {
+                
+            }
         }
     }
 }
