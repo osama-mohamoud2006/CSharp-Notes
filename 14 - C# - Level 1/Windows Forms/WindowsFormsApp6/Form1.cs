@@ -44,5 +44,17 @@ namespace WindowsFormsApp6
             if(maskedTextBox3.MaskFull || maskedTextBox3.MaskCompleted)
             MessageBox.Show(maskedTextBox3.Text); 
         }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            if (maskedTextBox1.MaskFull || maskedTextBox1.MaskCompleted)
+                MessageBox.Show(maskedTextBox1.Text);
+        }
+
+        private void maskedTextBox4_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            if (maskedTextBox4.MaskFull || maskedTextBox4.MaskCompleted)
+                MessageBox.Show(maskedTextBox4.Text);
+        }
     }
 }

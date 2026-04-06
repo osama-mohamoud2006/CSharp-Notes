@@ -38,16 +38,17 @@
             // 
             this.maskedTextBox1.BeepOnError = true;
             this.maskedTextBox1.Location = new System.Drawing.Point(420, 111);
-            this.maskedTextBox1.Mask = "90:00";
+            this.maskedTextBox1.Mask = "\\N\\a\\me:\\ aaaaaaaaaaaaaaaaa";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(258, 22);
             this.maskedTextBox1.TabIndex = 0;
             this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
             // maskedTextBox2
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(420, 186);
-            this.maskedTextBox2.Mask = "\\Enter\\Your\\N\\a\\m\\e\\:\\ AAAAAAAAAA";
+            this.maskedTextBox2.Location = new System.Drawing.Point(414, 186);
+            this.maskedTextBox2.Mask = "\\A\\G\\E\\: 999";
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(270, 22);
             this.maskedTextBox2.TabIndex = 0;
@@ -57,8 +58,8 @@
             // maskedTextBox3
             // 
             this.maskedTextBox3.BeepOnError = true;
-            this.maskedTextBox3.Location = new System.Drawing.Point(420, 275);
-            this.maskedTextBox3.Mask = "00/00/9999999999999";
+            this.maskedTextBox3.Location = new System.Drawing.Point(414, 275);
+            this.maskedTextBox3.Mask = "B\\i\\r\\t\\h\\D\\a\\t\\e\\:\\ 00/00/0000";
             this.maskedTextBox3.Name = "maskedTextBox3";
             this.maskedTextBox3.Size = new System.Drawing.Size(270, 22);
             this.maskedTextBox3.TabIndex = 2;
@@ -68,12 +69,13 @@
             // maskedTextBox4
             // 
             this.maskedTextBox4.BeepOnError = true;
-            this.maskedTextBox4.Location = new System.Drawing.Point(430, 390);
-            this.maskedTextBox4.Mask = "99999  $";
+            this.maskedTextBox4.Location = new System.Drawing.Point(414, 390);
+            this.maskedTextBox4.Mask = "G\\M\\A\\I\\L\\:\\ AAAAA\\@\\ AAAAAAAAA";
             this.maskedTextBox4.Name = "maskedTextBox4";
             this.maskedTextBox4.Size = new System.Drawing.Size(270, 22);
             this.maskedTextBox4.TabIndex = 3;
             this.maskedTextBox4.TabStop = false;
+            this.maskedTextBox4.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox4_MaskInputRejected);
             // 
             // Form1
             // 
