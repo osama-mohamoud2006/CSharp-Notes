@@ -32,6 +32,7 @@
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // maskedTextBox1
@@ -77,11 +78,22 @@
             this.maskedTextBox4.TabStop = false;
             this.maskedTextBox4.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox4_MaskInputRejected);
             // 
+            // maskedTextBox5
+            // 
+            this.maskedTextBox5.BeepOnError = true;
+            this.maskedTextBox5.Location = new System.Drawing.Point(720, 275);
+            this.maskedTextBox5.Mask = "\\+\\966\\ 99999999999999999999999";
+            this.maskedTextBox5.Name = "maskedTextBox5";
+            this.maskedTextBox5.Size = new System.Drawing.Size(270, 22);
+            this.maskedTextBox5.TabIndex = 4;
+            this.maskedTextBox5.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1208, 525);
+            this.Controls.Add(this.maskedTextBox5);
             this.Controls.Add(this.maskedTextBox4);
             this.Controls.Add(this.maskedTextBox3);
             this.Controls.Add(this.maskedTextBox2);
@@ -100,6 +112,7 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.MaskedTextBox maskedTextBox3;
         private System.Windows.Forms.MaskedTextBox maskedTextBox4;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox5;
     }
 }
 
