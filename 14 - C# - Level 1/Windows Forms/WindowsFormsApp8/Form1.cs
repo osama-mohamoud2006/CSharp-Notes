@@ -73,7 +73,7 @@ namespace WindowsFormsApp8
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox item = (ComboBox)sender;
-            ChangeLinkLabel(item.ToString()); // change the link text
+            ChangeLinkLabel(item.SelectedItem.ToString()); // change the link text
         }
 
         private void comboBox1_MouseEnter(object sender, EventArgs e)
