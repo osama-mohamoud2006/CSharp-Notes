@@ -90,7 +90,8 @@ namespace WindowsFormsApp8
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            LinkLabel website = (LinkLabel)sender;
+            ChangeLink(website.Text); 
         }
 
 
