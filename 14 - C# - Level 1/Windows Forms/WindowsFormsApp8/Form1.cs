@@ -49,6 +49,27 @@ namespace WindowsFormsApp8
 
         }
 
+
+        void ChangeLink(string item)
+        {
+            switch (item.ToLower())
+            {
+                case "github":
+                    System.Diagnostics.Process.Start("www.GitHub.com");
+                    break;
+
+                case "instagram":
+                    System.Diagnostics.Process.Start("www.instagram.com");
+
+                    break;
+
+                case "email":
+                    System.Diagnostics.Process.Start("www.email.com");
+                    break;
+
+            }
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox item = (ComboBox)sender;
