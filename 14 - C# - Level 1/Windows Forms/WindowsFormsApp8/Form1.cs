@@ -17,17 +17,26 @@ namespace WindowsFormsApp8
             InitializeComponent();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("www.google.com");
-
-            if (linkLabel1.LinkVisited)
-                MessageBox.Show("You have visited the link");
-        }
+    
 
         private void Form1_Load(object sender, EventArgs e)
         {
             linkLabel1.LinkVisited = false; 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Properties.Resources.cat;
+        }
+
+        private void Form1_Enter(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Properties.Resources.gojo_satoru;
         }
     }
 }
