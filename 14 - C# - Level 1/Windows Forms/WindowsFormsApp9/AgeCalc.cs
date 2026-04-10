@@ -23,21 +23,24 @@ namespace WindowsFormsApp9
         }
 
         DateTime SelectedPicker;
-        ComboBox CurrentOption;
+        ComboBox CurrentOption=null;
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
             SelectedPicker = dateTimePicker1.Value;
-            UpdateLabel(Sitem: CurrentOption.SelectedItem.ToString()); // to update after changing
+           if(null!=CurrentOption) UpdateLabel(Sitem: CurrentOption.SelectedItem.ToString()); // to update after changing
          
         }
 
 
         void UpdateLabel(string Sitem)
         {
+
+            if (String.IsNullOrEmpty(Sitem)) return;
             DateTime dt = DateTime.Now;
             TimeSpan sp = dt - (SelectedPicker); // the diff between now and per date 
 
+          
             switch (Sitem)
             {
                 case "Get Your Age in Days":

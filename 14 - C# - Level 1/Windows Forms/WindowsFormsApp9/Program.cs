@@ -16,7 +16,7 @@ namespace WindowsFormsApp9
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AgeCalc());
+            Application.Run(new MonthCalnder());
         }
     }
 }
