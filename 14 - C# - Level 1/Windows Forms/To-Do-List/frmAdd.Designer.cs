@@ -28,19 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbInput = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtDeadLine = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.tbInput = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // tbInput
-            // 
-            this.tbInput.Location = new System.Drawing.Point(174, 121);
-            this.tbInput.Name = "tbInput";
-            this.tbInput.Size = new System.Drawing.Size(406, 44);
-            this.tbInput.TabIndex = 0;
-            this.tbInput.Text = "";
             // 
             // label1
             // 
@@ -57,8 +50,10 @@
             this.dtDeadLine.Font = new System.Drawing.Font("SF Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtDeadLine.Location = new System.Drawing.Point(174, 269);
             this.dtDeadLine.Name = "dtDeadLine";
+            this.dtDeadLine.ShowUpDown = true;
             this.dtDeadLine.Size = new System.Drawing.Size(406, 31);
-            this.dtDeadLine.TabIndex = 2;
+            this.dtDeadLine.TabIndex = 1;
+            this.dtDeadLine.UseWaitCursor = true;
             // 
             // label2
             // 
@@ -70,16 +65,39 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Enter Task Dead line:";
             // 
+            // btnOK
+            // 
+            this.btnOK.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnOK.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOK.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOK.Location = new System.Drawing.Point(258, 352);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(239, 52);
+            this.btnOK.TabIndex = 2;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = false;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            // 
+            // tbInput
+            // 
+            this.tbInput.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbInput.Location = new System.Drawing.Point(174, 143);
+            this.tbInput.Name = "tbInput";
+            this.tbInput.Size = new System.Drawing.Size(401, 40);
+            this.tbInput.TabIndex = 0;
+            // 
             // frmAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tbInput);
+            this.Controls.Add(this.btnOK);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dtDeadLine);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbInput);
             this.Name = "frmAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAdd";
@@ -91,8 +109,9 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.RichTextBox tbInput;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.DateTimePicker dtDeadLine;
+        private System.Windows.Forms.Button btnOK;
+        public System.Windows.Forms.TextBox tbInput;
     }
 }

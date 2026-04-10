@@ -21,5 +21,10 @@ namespace To_Do_List
         {
             dtDeadLine.MinDate = DateTime.Now; 
         }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

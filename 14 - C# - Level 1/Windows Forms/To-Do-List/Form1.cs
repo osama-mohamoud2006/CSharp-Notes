@@ -17,25 +17,33 @@ namespace To_Do_List
             InitializeComponent();
         }
 
-        private struct Info
+        private struct stInfo
         {
             public string NameOfTask;
             public string DeadLine;
             public string CreatedWhen;
         }
 
-        Info Task;
+        stInfo Task;
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void Add_Click(object sender, EventArgs e)
         {
             frmAdd InputForm = new frmAdd();
             InputForm.ShowDialog();
 
             Task.NameOfTask =InputForm.tbInput.Text; // the user input (from input form)
+            Task.CreatedWhen = DateTime.Now.ToString(); // record the date of creation 
+            Task.DeadLine = InputForm.dtDeadLine.Value.ToString("dd/MM/yyy"); // the dead line from add form
 
+            AddTask(Task); // add the task 
         }
 
       
+        void AddTask(stInfo Task)
+        {
+            Tasks.Items.Add(Task);
+            Tasks.Items[0] = "v";
+        }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {

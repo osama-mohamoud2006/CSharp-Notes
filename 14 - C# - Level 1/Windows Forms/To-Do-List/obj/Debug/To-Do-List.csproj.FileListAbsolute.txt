@@ -1,0 +1,11 @@
+E:\projects\C#\14 - C# - Level 1\Windows Forms\To-Do-List\bin\Debug\To-Do-List.exe.config
+E:\projects\C#\14 - C# - Level 1\Windows Forms\To-Do-List\bin\Debug\To-Do-List.exe
+E:\projects\C#\14 - C# - Level 1\Windows Forms\To-Do-List\bin\Debug\To-Do-List.pdb
+E:\projects\C#\14 - C# - Level 1\Windows Forms\To-Do-List\obj\Debug\To-Do-List.csproj.AssemblyReference.cache
+E:\projects\C#\14 - C# - Level 1\Windows Forms\To-Do-List\obj\Debug\To_Do_List.Form1.resources
+E:\projects\C#\14 - C# - Level 1\Windows Forms\To-Do-List\obj\Debug\To_Do_List.frmAdd.resources
+E:\projects\C#\14 - C# - Level 1\Windows Forms\To-Do-List\obj\Debug\To_Do_List.Properties.Resources.resources
+E:\projects\C#\14 - C# - Level 1\Windows Forms\To-Do-List\obj\Debug\To-Do-List.csproj.GenerateResource.cache
+E:\projects\C#\14 - C# - Level 1\Windows Forms\To-Do-List\obj\Debug\To-Do-List.csproj.CoreCompileInputs.cache
+E:\projects\C#\14 - C# - Level 1\Windows Forms\To-Do-List\obj\Debug\To-Do-List.exe
+E:\projects\C#\14 - C# - Level 1\Windows Forms\To-Do-List\obj\Debug\To-Do-List.pdb

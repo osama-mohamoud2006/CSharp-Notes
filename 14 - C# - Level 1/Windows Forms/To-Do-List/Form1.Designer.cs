@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.Tasks = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -40,21 +40,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).BeginInit();
             this.SuspendLayout();
             // 
-            // checkedListBox1
+            // Tasks
             // 
-            this.checkedListBox1.BackColor = System.Drawing.Color.LightGray;
-            this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkedListBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.checkedListBox1.Font = new System.Drawing.Font("Unispace", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListBox1.ForeColor = System.Drawing.Color.Black;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.Tasks.BackColor = System.Drawing.Color.LightGray;
+            this.Tasks.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Tasks.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Tasks.Font = new System.Drawing.Font("Unispace", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tasks.ForeColor = System.Drawing.Color.Black;
+            this.Tasks.FormattingEnabled = true;
+            this.Tasks.Items.AddRange(new object[] {
             "item test"});
-            this.checkedListBox1.Location = new System.Drawing.Point(0, 0);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(566, 574);
-            this.checkedListBox1.TabIndex = 0;
-            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+            this.Tasks.Location = new System.Drawing.Point(0, 0);
+            this.Tasks.Name = "Tasks";
+            this.Tasks.Size = new System.Drawing.Size(566, 574);
+            this.Tasks.TabIndex = 0;
+            this.Tasks.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -64,7 +64,7 @@
             this.label1.ForeColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(587, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 63);
+            this.label1.Size = new System.Drawing.Size(107, 61);
             this.label1.TabIndex = 2;
             this.label1.Text = "Add";
             // 
@@ -112,7 +112,7 @@
             this.pbAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbAdd.TabIndex = 1;
             this.pbAdd.TabStop = false;
-            this.pbAdd.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pbAdd.Click += new System.EventHandler(this.Add_Click);
             // 
             // label2
             // 
@@ -122,7 +122,7 @@
             this.label2.ForeColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(595, 391);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 63);
+            this.label2.Size = new System.Drawing.Size(103, 61);
             this.label2.TabIndex = 6;
             this.label2.Text = "Info";
             // 
@@ -138,7 +138,7 @@
             this.Controls.Add(this.pbRemove);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbAdd);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.Tasks);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -151,7 +151,7 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox Tasks;
         private System.Windows.Forms.PictureBox pbAdd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label;
