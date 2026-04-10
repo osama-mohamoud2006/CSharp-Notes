@@ -22,6 +22,7 @@ namespace WindowsFormsApp9
 
             label1.Text = "Start Date: " +Environment.NewLine +monthCalendar1.SelectionStart.ToString("d/MM/yyy");
             label2.Text = "End Date: " + Environment.NewLine + monthCalendar1.SelectionEnd.ToString("d/MM/yyy");
+            label3.Text = "Num Of Days: " + (monthCalendar1.SelectionRange.End - monthCalendar1.SelectionRange.Start).ToString().Substring(0,1);
         }
 
         private void MonthCalnder_Load(object sender, EventArgs e)
@@ -32,7 +33,7 @@ namespace WindowsFormsApp9
 
         private void button1_Click(object sender, EventArgs e)
         {
-            monthCalendar1
+           MessageBox.Show (monthCalendar1.SelectionRange.Start.ToString("dd/MMM/yyy"));
         }
     }
 }
