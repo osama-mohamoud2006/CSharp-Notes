@@ -31,11 +31,11 @@
             this.Tasks = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbInfo = new System.Windows.Forms.PictureBox();
             this.pbRemove = new System.Windows.Forms.PictureBox();
             this.pbAdd = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRemove)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).BeginInit();
             this.SuspendLayout();
@@ -48,12 +48,11 @@
             this.Tasks.Font = new System.Drawing.Font("Unispace", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tasks.ForeColor = System.Drawing.Color.Black;
             this.Tasks.FormattingEnabled = true;
-            this.Tasks.Items.AddRange(new object[] {
-            "item test"});
             this.Tasks.Location = new System.Drawing.Point(0, 0);
             this.Tasks.Name = "Tasks";
             this.Tasks.Size = new System.Drawing.Size(566, 574);
             this.Tasks.TabIndex = 0;
+            this.Tasks.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.Tasks_ItemCheck);
             this.Tasks.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // label1
@@ -80,16 +79,17 @@
             this.label.TabIndex = 4;
             this.label.Text = "Remove";
             // 
-            // pictureBox1
+            // pbInfo
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::To_Do_List.Properties.Resources.info;
-            this.pictureBox1.Location = new System.Drawing.Point(738, 382);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 84);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.pbInfo.BackColor = System.Drawing.Color.Transparent;
+            this.pbInfo.Image = global::To_Do_List.Properties.Resources.info;
+            this.pbInfo.Location = new System.Drawing.Point(738, 382);
+            this.pbInfo.Name = "pbInfo";
+            this.pbInfo.Size = new System.Drawing.Size(120, 84);
+            this.pbInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbInfo.TabIndex = 5;
+            this.pbInfo.TabStop = false;
+            this.pbInfo.Click += new System.EventHandler(this.Info_Click);
             // 
             // pbRemove
             // 
@@ -101,6 +101,7 @@
             this.pbRemove.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbRemove.TabIndex = 3;
             this.pbRemove.TabStop = false;
+            this.pbRemove.Click += new System.EventHandler(this.pbRemove_Click);
             // 
             // pbAdd
             // 
@@ -133,7 +134,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(895, 574);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbInfo);
             this.Controls.Add(this.label);
             this.Controls.Add(this.pbRemove);
             this.Controls.Add(this.label1);
@@ -141,7 +142,7 @@
             this.Controls.Add(this.Tasks);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRemove)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).EndInit();
             this.ResumeLayout(false);
@@ -156,7 +157,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.PictureBox pbRemove;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbInfo;
         private System.Windows.Forms.Label label2;
     }
 }

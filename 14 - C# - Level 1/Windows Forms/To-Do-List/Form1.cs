@@ -22,32 +22,78 @@ namespace To_Do_List
             public string NameOfTask;
             public string DeadLine;
             public string CreatedWhen;
+            public bool IsDone;
+
+            public override string ToString()
+            {
+                return NameOfTask;
+            }
         }
 
-        stInfo Task;
+        stInfo InfoTask;
 
         private void Add_Click(object sender, EventArgs e)
         {
             frmAdd InputForm = new frmAdd();
             InputForm.ShowDialog();
 
-            Task.NameOfTask =InputForm.tbInput.Text; // the user input (from input form)
-            Task.CreatedWhen = DateTime.Now.ToString(); // record the date of creation 
-            Task.DeadLine = InputForm.dtDeadLine.Value.ToString("dd/MM/yyy"); // the dead line from add form
+            InfoTask.NameOfTask =InputForm.tbInput.Text; // the user input (from input form)
+            InfoTask.CreatedWhen = DateTime.Now.ToString(); // record the date of creation 
+            InfoTask.DeadLine = InputForm.dtDeadLine.Value.ToString("dd/MM/yyy"); // the dead line from add form
 
-            AddTask(Task); // add the task 
+            AddTask(InfoTask); // add the task 
         }
 
-      
-        void AddTask(stInfo Task)
+       
+        void AddTask(stInfo InfoTask)
         {
-            Tasks.Items.Add(Task);
-            Tasks.Items[0] = "v";
+            //Tasks.Tag= InfoTask; //store info in tag 
+
+            Tasks.Items.Add( InfoTask);
+            
         }
 
+        stInfo CurrentSelected; // the current selected task (struct)
+        int index;
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            CheckedListBox selected  = (CheckedListBox)sender;
+          
+             index = selected.SelectedIndex;
+           if(index!=-1) CurrentSelected = (stInfo)selected.Items[index]; // take the selected index 
+        }
+
+        private void Info_Click(object sender, EventArgs e)
+        {
+            stInfo s = CurrentSelected;
+            MessageBox.Show($"The Name Of Task : {s.NameOfTask}\n\n" +
+                $"The Creation Time : {s.CreatedWhen}\n\n" +
+                $"The Deadline : {s.DeadLine}");
+        }
+
+        private void pbRemove_Click(object sender, EventArgs e)
+        {
+          if(Tasks.Items.Count > 0)  Tasks.Items.RemoveAt(index); // remove task from screen (the selected index)
+            Tasks.Focus();
+        }
+
+        private void Tasks_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            CheckedListBox currentTask = sender as CheckedListBox;
+
+
+            if (index!=-1)
+            {
+                // Will Strikeout all
+                Tasks.Font = new Font(Tasks.Font, FontStyle.Strikeout); // strike out the task when it's done
+
+                foreach (var item in Tasks.Items)
+                {
+                    
+                }
+            }
            
+
         }
     }
 }
