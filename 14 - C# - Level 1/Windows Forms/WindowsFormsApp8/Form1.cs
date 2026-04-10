@@ -21,7 +21,8 @@ namespace WindowsFormsApp8
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            linkLabel1.LinkVisited = false; 
+            linkLabel1.LinkVisited = false;
+            comboBox1.SelectedItem = "Github";
         }
 
 
@@ -73,7 +74,7 @@ namespace WindowsFormsApp8
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox item = (ComboBox)sender;
-            ChangeLinkLabel(item.SelectedItem.ToString()); // change the link text
+            ChangeLinkLabel(item.SelectedItem.ToString()); // change the link text according to selected item 
         }
 
         private void comboBox1_MouseEnter(object sender, EventArgs e)
@@ -91,7 +92,8 @@ namespace WindowsFormsApp8
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             LinkLabel website = (LinkLabel)sender;
-            ChangeLink(website.Text); 
+            ChangeLink(website.Text);
+            linkLabel1.LinkVisited = true;
         }
 
 
