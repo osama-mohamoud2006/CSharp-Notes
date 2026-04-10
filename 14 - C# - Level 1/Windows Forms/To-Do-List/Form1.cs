@@ -74,7 +74,7 @@ namespace To_Do_List
         private void pbRemove_Click(object sender, EventArgs e)
         {
           if(Tasks.Items.Count > 0)  Tasks.Items.RemoveAt(index); // remove task from screen (the selected index)
-            Tasks.Focus();
+           
         }
 
         private void Tasks_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -82,20 +82,6 @@ namespace To_Do_List
             CheckedListBox currentTask = sender as CheckedListBox;
 
 
-            if (index!=-1)
-            {
-                // Will Strikeout all
-                Tasks.Font = new Font(Tasks.Font, FontStyle.Strikeout); // strike out the task when it's done
-
-                foreach (var item in Tasks.Items)
-                {
-                   if( item. == CheckState.Unchecked )
-                    {
-
-                    }
-                }
-            }
-           
 
         }
     }
