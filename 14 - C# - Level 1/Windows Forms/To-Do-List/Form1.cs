@@ -93,19 +93,6 @@ namespace To_Do_List
             return res;
         }
 
-        private string RemoveUnstrikeOutString(string str)
-        {
-            char[] c = str.ToCharArray();
-            string res = "";
-
-            foreach (var item in c)
-            {
-                res  = res.Replace("\u0336",""); // to strike out text 
-            }
-
-            return res;
-        }
-
         private void Tasks_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             CheckedListBox currentTask = sender as CheckedListBox;
@@ -123,7 +110,7 @@ namespace To_Do_List
             }
             else
             {
-                temp.NameOfTask = RemoveUnstrikeOutString(temp.NameOfTask);
+                temp.NameOfTask =temp.OgNameOfTask; // return the Original before edit 
                 temp.IsDone = false;
                 currentTask.Items[currentTask.SelectedIndex] = temp;
             }
