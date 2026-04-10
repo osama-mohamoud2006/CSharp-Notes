@@ -20,7 +20,7 @@ namespace To_Do_List
         private struct stInfo
         {
             public string NameOfTask;
-            public string OgNameOfTask;
+            public string OgNameOfTask; // var to store the original string before editing (useless only 1 use case)
             public string DeadLine;
             public string CreatedWhen;
             public bool IsDone;
@@ -29,6 +29,7 @@ namespace To_Do_List
             {
                 return NameOfTask;
             }
+
         }
 
         stInfo InfoTask;
@@ -50,7 +51,7 @@ namespace To_Do_List
         {
             //Tasks.Tag= InfoTask; //store info in tag 
 
-            Tasks.Items.Add( InfoTask);
+            Tasks.Items.Add(InfoTask);
             
         }
 
@@ -108,7 +109,7 @@ namespace To_Do_List
                 temp.IsDone = true;
                 currentTask.Items[currentTask.SelectedIndex] = temp;
             }
-            else
+            else // checked  --> Unchecked 
             {
                 temp.NameOfTask =temp.OgNameOfTask; // return the Original before edit 
                 temp.IsDone = false;
@@ -119,4 +120,6 @@ namespace To_Do_List
 
         }
     }
+
+
 }
