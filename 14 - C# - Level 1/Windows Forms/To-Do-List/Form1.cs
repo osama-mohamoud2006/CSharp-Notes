@@ -19,18 +19,20 @@ namespace To_Do_List
 
         private struct Info
         {
-            string NameOfTask;
-            string DeadLine;
-            string CreatedWhen;
+            public string NameOfTask;
+            public string DeadLine;
+            public string CreatedWhen;
         }
 
         Info Task;
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             frmAdd InputForm = new frmAdd();
             InputForm.ShowDialog();
 
-            InputForm.tbInput.Text=""; // the user input 
+            Task.NameOfTask =InputForm.tbInput.Text; // the user input (from input form)
+
         }
 
       
