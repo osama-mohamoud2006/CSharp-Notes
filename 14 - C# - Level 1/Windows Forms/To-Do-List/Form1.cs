@@ -20,6 +20,7 @@ namespace To_Do_List
         private struct stInfo
         {
             public string NameOfTask;
+            public string OgNameOfTask;
             public string DeadLine;
             public string CreatedWhen;
             public bool IsDone;
@@ -77,11 +78,57 @@ namespace To_Do_List
            
         }
 
+        private string UnstrikeOutString(string str)
+        {
+            
+
+            char [] c =  str.ToCharArray();
+            string res = "";
+            
+            foreach (var item in c)
+            {
+                res+= item +"\u0336"; // to strike out text 
+            }
+
+            return res;
+        }
+
+        private string RemoveUnstrikeOutString(string str)
+        {
+            char[] c = str.ToCharArray();
+            string res = "";
+
+            foreach (var item in c)
+            {
+                res  = res.Replace("\u0336",""); // to strike out text 
+            }
+
+            return res;
+        }
+
         private void Tasks_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             CheckedListBox currentTask = sender as CheckedListBox;
 
+           
 
+            stInfo temp = (stInfo)currentTask.Items[currentTask.SelectedIndex];
+
+            if (!temp.IsDone) // isn't checked  --> checked 
+            {
+                temp.OgNameOfTask = temp.NameOfTask; // store the original text 
+                temp.NameOfTask = UnstrikeOutString(temp.NameOfTask); // UnstrickenOut it 
+                temp.IsDone = true;
+                currentTask.Items[currentTask.SelectedIndex] = temp;
+            }
+            else
+            {
+                temp.NameOfTask = RemoveUnstrikeOutString(temp.NameOfTask);
+                temp.IsDone = false;
+                currentTask.Items[currentTask.SelectedIndex] = temp;
+            }
+
+            Tasks.Refresh();
 
         }
     }
