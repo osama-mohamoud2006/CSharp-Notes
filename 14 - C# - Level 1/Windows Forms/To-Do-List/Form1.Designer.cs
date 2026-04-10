@@ -53,7 +53,7 @@
             this.Tasks.Size = new System.Drawing.Size(566, 574);
             this.Tasks.TabIndex = 0;
             this.Tasks.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.Tasks_ItemCheck);
-            this.Tasks.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+            this.Tasks.SelectedIndexChanged += new System.EventHandler(this.checkedListBox_Tasks_SelectedIndexChanged);
             // 
             // label1
             // 

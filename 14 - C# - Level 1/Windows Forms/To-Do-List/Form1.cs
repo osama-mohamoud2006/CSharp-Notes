@@ -55,9 +55,14 @@ namespace To_Do_List
             
         }
 
+
+        /*
+         * The Index Change At runtime(by user-According To Selected Item) --> take this index to get the current item,remove or whatever
+         */
+
         stInfo CurrentSelected; // the current selected task (struct)
         int index;
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void checkedListBox_Tasks_SelectedIndexChanged(object sender, EventArgs e)
         {
             CheckedListBox selected  = (CheckedListBox)sender;
           
@@ -65,9 +70,22 @@ namespace To_Do_List
            if(index!=-1) CurrentSelected = (stInfo)selected.Items[index]; // take the selected index 
         }
 
+        private bool NoThingOnListWaring()
+        {
+             if(Tasks.Items.Count==0)
+            {
+                MessageBox.Show("List Is Empty !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            return false;
+        }
+
         private void Info_Click(object sender, EventArgs e)
         {
-            stInfo s = CurrentSelected;
+
+            if (NoThingOnListWaring()) return; 
+
+            stInfo s = CurrentSelected; // the current selected item in the list 
             MessageBox.Show($"The Name Of Task : {s.NameOfTask}\n\n" +
                 $"The Creation Time : {s.CreatedWhen}\n\n" +
                 $"The Deadline : {s.DeadLine}");
@@ -75,7 +93,9 @@ namespace To_Do_List
 
         private void pbRemove_Click(object sender, EventArgs e)
         {
-          if(Tasks.Items.Count > 0)  Tasks.Items.RemoveAt(index); // remove task from screen (the selected index)
+            if (NoThingOnListWaring()) return;
+
+          if (Tasks.Items.Count > 0 && index!=-1)  Tasks.Items.RemoveAt(index); // remove task from screen (the selected index)
            
         }
 
