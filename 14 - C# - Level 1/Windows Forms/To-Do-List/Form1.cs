@@ -89,7 +89,10 @@ namespace To_Do_List
 
                 foreach (var item in Tasks.Items)
                 {
-                    
+                   if( item. == CheckState.Unchecked )
+                    {
+
+                    }
                 }
             }
            
