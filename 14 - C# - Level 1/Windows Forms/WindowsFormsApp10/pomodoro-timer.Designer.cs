@@ -58,6 +58,7 @@
             this.labMin.Size = new System.Drawing.Size(47, 54);
             this.labMin.TabIndex = 2;
             this.labMin.Text = "0";
+            this.labMin.Click += new System.EventHandler(this.labMin_Click);
             // 
             // label3
             // 
@@ -131,6 +132,7 @@
             this.Controls.Add(this.labSec);
             this.Name = "pomodoro_timer";
             this.Text = "pomodoro_timer";
+            this.Load += new System.EventHandler(this.pomodoro_timer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

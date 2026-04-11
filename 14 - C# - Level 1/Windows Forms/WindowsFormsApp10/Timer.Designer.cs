@@ -38,9 +38,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.UpDownSec = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labHour = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.UpDownHour = new System.Windows.Forms.NumericUpDown();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownSec)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownHour)).BeginInit();
@@ -81,7 +82,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 1000;
+            this.timer1.Interval = 6;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // UpDownMin
@@ -95,7 +96,9 @@
             this.UpDownMin.Name = "UpDownMin";
             this.UpDownMin.Size = new System.Drawing.Size(66, 28);
             this.UpDownMin.TabIndex = 7;
+            this.UpDownMin.Tag = "Min";
             this.UpDownMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.UpDownMin.ValueChanged += new System.EventHandler(this.UpDown_ValueChanged);
             // 
             // label
             // 
@@ -128,7 +131,9 @@
             this.UpDownSec.Name = "UpDownSec";
             this.UpDownSec.Size = new System.Drawing.Size(66, 28);
             this.UpDownSec.TabIndex = 10;
+            this.UpDownSec.Tag = "Sec";
             this.UpDownSec.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.UpDownSec.ValueChanged += new System.EventHandler(this.UpDown_ValueChanged);
             // 
             // label2
             // 
@@ -141,16 +146,16 @@
             this.label2.TabIndex = 11;
             this.label2.Text = ":";
             // 
-            // label4
+            // labHour
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Rockwell", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(295, 202);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 53);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "00";
+            this.labHour.AutoSize = true;
+            this.labHour.Font = new System.Drawing.Font("Rockwell", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labHour.Location = new System.Drawing.Point(295, 202);
+            this.labHour.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labHour.Name = "labHour";
+            this.labHour.Size = new System.Drawing.Size(71, 53);
+            this.labHour.TabIndex = 12;
+            this.labHour.Text = "00";
             // 
             // label5
             // 
@@ -173,17 +178,30 @@
             this.UpDownHour.Name = "UpDownHour";
             this.UpDownHour.Size = new System.Drawing.Size(66, 28);
             this.UpDownHour.TabIndex = 14;
+            this.UpDownHour.Tag = "Hour";
             this.UpDownHour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.UpDownHour.ValueChanged += new System.EventHandler(this.UpDownHour_ValueChanged);
+            this.UpDownHour.ValueChanged += new System.EventHandler(this.UpDown_ValueChanged);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("SF Mono", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(336, 430);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(346, 61);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Start";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Start_Click);
             // 
             // Timer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 507);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.UpDownHour);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labHour);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.UpDownSec);
             this.Controls.Add(this.label1);
@@ -214,8 +232,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown UpDownSec;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labHour;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown UpDownHour;
+        private System.Windows.Forms.Button button1;
     }
 }

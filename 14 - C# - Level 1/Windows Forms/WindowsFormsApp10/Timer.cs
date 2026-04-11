@@ -26,7 +26,7 @@ namespace WindowsFormsApp10
             public int Min ;
             public int Sec; 
         }
-        stTime Time;
+        stTime Time; // the time assigned by user 
        
 
         void UpdateTimeLabel(Label NameOfLabel , int value)
@@ -34,15 +34,98 @@ namespace WindowsFormsApp10
             NameOfLabel.Text = value.ToString();
         }
 
+
+        private void HandelHour()
+        {
+            if(Time.Min==0)
+            {
+               _= (Time.Hour!=0) ? Time.Hour-- : Time.Hour=0;
+            }
+        }
+
         // Timer To Decrement Until Reaches 0 
+        // this event is firing each 1 sec by timer control 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (Time.Sec == 0 && Time.Min == 0 && Time.Hour == 0)
+            {
+                timer1.Enabled = false;
+                labSec.Text = "0";
+                MessageBox.Show("Your Timer Has Finished ", "Message", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+                return;
+            }
+
+            if (Time.Sec != 0)
+            {
+               
+                UpdateTimeLabel(labSec, Time.Sec); // update the label
+                Time.Sec--; // decrement the seconds 
+            }
+            else // 60 Sec Has Passed 
+            {
+            
+                Time.Min--;
+                HandelHour();
+
+                Time.Sec = 59;
+                UpdateTimeLabel(labMin, Time.Sec); // update the label --> 59 
+                UpdateTimeLabel(labMin, Time.Min); // update the label 
+                Time.Sec--;
+            }
+
+            // 1 Min = 60000 Ms = 60 Sec
+
+           
 
         }
 
-        private void UpDownHour_ValueChanged(object sender, EventArgs e)
+
+        private void SetTimer(string UpDownCounter , int value )
         {
+            switch(UpDownCounter)
+            {
+                case "Hour":
+                    UpdateTimeLabel(labHour, value); // update the label
+                    Time.Hour = value;
+                    break;
+
+
+                case "Min":
+                    UpdateTimeLabel(labMin, value); // update the label
+                    Time.Min = value;
+                    break;
+
+                case "Sec":
+                    UpdateTimeLabel(labSec, value); // update the label
+                    Time.Sec = value;
+                    break;
+
+
+            }
+        }
+
+
+        private void UpDown_ValueChanged(object sender, EventArgs e)
+        {
+            NumericUpDown ud = sender as NumericUpDown;
+            SetTimer(ud.Tag.ToString(), Convert.ToInt32(ud.Value) );
+        }
+
+        private void Start_Click(object sender, EventArgs e)
+        {
+            if (Time.Sec == 0 && Time.Min == 0 && Time.Hour == 0)
+            {
+                MessageBox.Show("Timer Cannot Start", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                timer1.Enabled = true;
+            }
 
         }
+
+
     }
 }

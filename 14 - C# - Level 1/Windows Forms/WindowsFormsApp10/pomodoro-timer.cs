@@ -76,5 +76,15 @@ namespace WindowsFormsApp10
         {
             timer1.Enabled = false;
         }
+
+        private void pomodoro_timer_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labMin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
