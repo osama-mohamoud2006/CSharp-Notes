@@ -97,14 +97,10 @@ namespace WindowsFormsApp10
             
             if (Time.Min!=0) Time.Min--;
 
-
-               if(Time.Sec!=0) Time.Sec--;
-
                 Time.Sec = 59;
+
                 UpdateTimeLabel(labSec, Time.Sec); // update the label --> 59 
                 UpdateTimeLabel(labMin, Time.Min); // update the label 
-
-                            
             }
 
             // 1 Min = 60000 Ms = 60 Sec
