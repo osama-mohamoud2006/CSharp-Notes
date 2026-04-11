@@ -28,9 +28,30 @@ namespace Windows_Power
 
         //int PassedTime = 0; 
 
+        public frmMain ObjfrmMain; // reference to the main form to update its label
+
+        private void UpdateMainFormLabel(Label NameOfLabel, int value)
+        {
+            switch(NameOfLabel.Tag.ToString())
+            {
+                case "labHour":
+                    ObjfrmMain.labHour.Text = NameOfLabel.Text;
+                    break;
+
+                    case "labMin":
+                    ObjfrmMain.labMin.Text = NameOfLabel.Text;
+                    break;
+
+                    case "labSec":
+                     ObjfrmMain.labSec.Text = NameOfLabel.Text;
+                    break;
+            }
+        }
+
         private void UpdateTimeLabel(Label NameOfLabel, int value)
         {
             NameOfLabel.Text = value.ToString();
+            UpdateMainFormLabel(NameOfLabel, value) ;
         }
 
 
@@ -144,10 +165,10 @@ namespace Windows_Power
             }
             else
             {
-                timer1.Enabled = true;
-                UpDownHour.Enabled = false;
-                UpDownMin.Enabled = false;
-                UpDownSec.Enabled = false;
+               // timer1.Enabled = true;
+               // UpDownHour.Enabled = false;
+                //UpDownMin.Enabled = false;
+                //UpDownSec.Enabled = false;
           
                 //btnStop.Enabled = true;
 
@@ -163,7 +184,7 @@ namespace Windows_Power
 
         public void RestTimer()
         {
-
+            
             RestUpDown();
             Time.Hour = 0;
             Time.Min = 0;
@@ -181,5 +202,12 @@ namespace Windows_Power
             this.Start(); // start the timer 
             this.Hide();
         }
+
+        private void btnRest_Click(object sender, EventArgs e)
+        {
+            RestTimer();
+        }
+
+
     }
 }

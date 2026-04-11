@@ -43,6 +43,7 @@
             this.label = new System.Windows.Forms.Label();
             this.UpDownMin = new System.Windows.Forms.NumericUpDown();
             this.btnOk = new System.Windows.Forms.Button();
+            this.btnRest = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownHour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownSec)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownMin)).BeginInit();
@@ -58,12 +59,14 @@
             resources.ApplyResources(this.labMin, "labMin");
             this.labMin.ForeColor = System.Drawing.Color.Black;
             this.labMin.Name = "labMin";
+            this.labMin.Tag = "labMin";
             // 
             // labSec
             // 
             resources.ApplyResources(this.labSec, "labSec");
             this.labSec.ForeColor = System.Drawing.Color.Black;
             this.labSec.Name = "labSec";
+            this.labSec.Tag = "labSec";
             // 
             // timer1
             // 
@@ -93,6 +96,7 @@
             resources.ApplyResources(this.labHour, "labHour");
             this.labHour.ForeColor = System.Drawing.Color.Black;
             this.labHour.Name = "labHour";
+            this.labHour.Tag = "labHour";
             // 
             // label2
             // 
@@ -137,10 +141,22 @@
             // 
             // btnOk
             // 
+            this.btnOk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             resources.ApplyResources(this.btnOk, "btnOk");
             this.btnOk.Name = "btnOk";
-            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.UseVisualStyleBackColor = false;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
+            // btnRest
+            // 
+            this.btnRest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnRest.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnRest.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            resources.ApplyResources(this.btnRest, "btnRest");
+            this.btnRest.ForeColor = System.Drawing.Color.Black;
+            this.btnRest.Name = "btnRest";
+            this.btnRest.UseVisualStyleBackColor = false;
+            this.btnRest.Click += new System.EventHandler(this.btnRest_Click);
             // 
             // frmTimer
             // 
@@ -151,6 +167,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.labMin);
             this.Controls.Add(this.labSec);
+            this.Controls.Add(this.btnRest);
             this.Controls.Add(this.UpDownHour);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.labHour);
@@ -184,6 +201,7 @@
         public System.Windows.Forms.Label labMin;
         public System.Windows.Forms.Label labSec;
         private System.Windows.Forms.Button btnOk;
+        private System.Windows.Forms.Button btnRest;
     }
 }
 

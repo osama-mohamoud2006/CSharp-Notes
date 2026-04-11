@@ -80,31 +80,31 @@ namespace Windows_Power
             
             Timer.ShowDialog();
 
-            // copy value
-            this.labHour.Text = Timer.labHour.Text;
-            this.labMin.Text = Timer.labMin.Text;
-            this.labSec.Text = Timer.labSec.Text;
+            Timer.ObjfrmMain = this; // To Link The Main Form With Timer Form To Update Its Label
+            //// copy value
+            //this.labHour.Text = Timer.labHour.Text;
+            //this.labMin.Text = Timer.labMin.Text;
+            //this.labSec.Text = Timer.labSec.Text;
 
-            // Link Them 
-            Timer.labHour = this.labHour;
-            Timer.labMin = this.labMin;
-            Timer.labSec = this.labSec;
+            //// Link Them 
+            //Timer.labHour = this.labHour;
+            //Timer.labMin = this.labMin;
+            //Timer.labSec = this.labSec;
 
             btnStop.Visible = true;
+            
 
         }
 
         private void btnStop_Click(object sender, EventArgs e)
         {
             Timer.TimerStop();
+            btnStop.Visible = false;
         }
 
-        private void btnRest_Click(object sender, EventArgs e)
-        {
-            Timer.RestTimer();
-            Timer.ShowDialog();// show the timer form again to set new timer 
 
-        }
+     
+   
 
        
 
