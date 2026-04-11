@@ -18,6 +18,9 @@ namespace Windows_Power
             InitializeComponent();
         }
 
+        frmTimer Timer = new frmTimer(); // Timer Form 
+
+
         private void pbInfo_Click(object sender, EventArgs e)
         {
             MessageBox.Show("This Program Is Made To Manage Your Computer Power State\n" +
@@ -74,15 +77,36 @@ namespace Windows_Power
 
         private void CallTimerFormButton_Click(object sender, EventArgs e)
         {
-            frmTimer Timer = new frmTimer();
+            
             Timer.ShowDialog();
 
+            // copy value
+            this.labHour.Text = Timer.labHour.Text;
+            this.labMin.Text = Timer.labMin.Text;
+            this.labSec.Text = Timer.labSec.Text;
+
+            // Link Them 
             Timer.labHour = this.labHour;
             Timer.labMin = this.labMin;
-            Timer.labSec = this.labSec; 
+            Timer.labSec = this.labSec;
+
+            btnStop.Visible = true;
+
         }
 
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            Timer.TimerStop();
+        }
 
+        private void btnRest_Click(object sender, EventArgs e)
+        {
+            Timer.RestTimer();
+            Timer.ShowDialog();// show the timer form again to set new timer 
+
+        }
+
+       
 
     }
 }

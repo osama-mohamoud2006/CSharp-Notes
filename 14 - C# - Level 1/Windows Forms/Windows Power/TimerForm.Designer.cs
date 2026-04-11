@@ -34,8 +34,6 @@
             this.labMin = new System.Windows.Forms.Label();
             this.labSec = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnRest = new System.Windows.Forms.Button();
-            this.btnStop = new System.Windows.Forms.Button();
             this.UpDownHour = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.labHour = new System.Windows.Forms.Label();
@@ -71,27 +69,6 @@
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // btnRest
-            // 
-            this.btnRest.BackColor = System.Drawing.Color.Transparent;
-            this.btnRest.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnRest.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            resources.ApplyResources(this.btnRest, "btnRest");
-            this.btnRest.ForeColor = System.Drawing.Color.Black;
-            this.btnRest.Name = "btnRest";
-            this.btnRest.UseVisualStyleBackColor = false;
-            this.btnRest.Click += new System.EventHandler(this.btnRest_Click);
-            // 
-            // btnStop
-            // 
-            resources.ApplyResources(this.btnStop, "btnStop");
-            this.btnStop.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnStop.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnStop.ForeColor = System.Drawing.Color.Black;
-            this.btnStop.Name = "btnStop";
-            this.btnStop.UseVisualStyleBackColor = true;
-            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // UpDownHour
             // 
@@ -174,8 +151,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.labMin);
             this.Controls.Add(this.labSec);
-            this.Controls.Add(this.btnRest);
-            this.Controls.Add(this.btnStop);
             this.Controls.Add(this.UpDownHour);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.labHour);
@@ -198,8 +173,6 @@
 
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button btnRest;
-        private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.NumericUpDown UpDownHour;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;

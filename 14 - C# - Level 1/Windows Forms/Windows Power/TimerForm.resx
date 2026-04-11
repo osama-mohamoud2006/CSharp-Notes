@@ -222,69 +222,6 @@
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="btnRest.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnRest.Font" type="System.Drawing.Font, System.Drawing">
-    <value>SF Mono, 16.2pt, style=Bold</value>
-  </data>
-  <data name="btnRest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>523, 334</value>
-  </data>
-  <data name="btnRest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 49</value>
-  </data>
-  <data name="btnRest.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="btnRest.Text" xml:space="preserve">
-    <value>Rest</value>
-  </data>
-  <data name="&gt;&gt;btnRest.Name" xml:space="preserve">
-    <value>btnRest</value>
-  </data>
-  <data name="&gt;&gt;btnRest.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnRest.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnRest.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="btnStop.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnStop.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnStop.Font" type="System.Drawing.Font, System.Drawing">
-    <value>SF Mono, 16.2pt, style=Bold</value>
-  </data>
-  <data name="btnStop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>332, 334</value>
-  </data>
-  <data name="btnStop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 49</value>
-  </data>
-  <data name="btnStop.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="btnStop.Text" xml:space="preserve">
-    <value>Stop</value>
-  </data>
-  <data name="&gt;&gt;btnStop.Name" xml:space="preserve">
-    <value>btnStop</value>
-  </data>
-  <data name="&gt;&gt;btnStop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnStop.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnStop.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="UpDownHour.Location" type="System.Drawing.Point, System.Drawing">
     <value>170, 268</value>
   </data>
@@ -307,7 +244,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;UpDownHour.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -337,7 +274,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="labHour.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -370,7 +307,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labHour.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -403,7 +340,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="UpDownSec.Location" type="System.Drawing.Point, System.Drawing">
     <value>545, 268</value>
@@ -427,7 +364,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;UpDownSec.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>8</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -457,7 +394,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>9</value>
   </data>
   <data name="label.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -487,7 +424,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>10</value>
   </data>
   <data name="UpDownMin.Location" type="System.Drawing.Point, System.Drawing">
     <value>354, 268</value>
@@ -511,7 +448,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;UpDownMin.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>11</value>
   </data>
   <data name="btnOk.Location" type="System.Drawing.Point, System.Drawing">
     <value>138, 352</value>

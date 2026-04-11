@@ -38,6 +38,8 @@
             this.labSec = new System.Windows.Forms.Label();
             this.labHour = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnStop = new System.Windows.Forms.Button();
+            this.btnRest = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbInfo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -165,6 +167,40 @@
             this.label2.TabIndex = 30;
             this.label2.Text = ":";
             // 
+            // btnStop
+            // 
+            this.btnStop.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnStop.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStop.Font = new System.Drawing.Font("SF Mono", 16.2F, System.Drawing.FontStyle.Bold);
+            this.btnStop.ForeColor = System.Drawing.Color.Black;
+            this.btnStop.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnStop.Location = new System.Drawing.Point(200, 368);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(111, 49);
+            this.btnStop.TabIndex = 32;
+            this.btnStop.Text = "Stop";
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Visible = false;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
+            // btnRest
+            // 
+            this.btnRest.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnRest.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnRest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRest.Font = new System.Drawing.Font("SF Mono", 16.2F, System.Drawing.FontStyle.Bold);
+            this.btnRest.ForeColor = System.Drawing.Color.Black;
+            this.btnRest.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnRest.Location = new System.Drawing.Point(420, 368);
+            this.btnRest.Name = "btnRest";
+            this.btnRest.Size = new System.Drawing.Size(111, 49);
+            this.btnRest.TabIndex = 33;
+            this.btnRest.Text = "Rest";
+            this.btnRest.UseVisualStyleBackColor = true;
+            this.btnRest.Visible = false;
+            this.btnRest.Click += new System.EventHandler(this.btnRest_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -172,6 +208,8 @@
             this.BackgroundImage = global::Windows_Power.Properties.Resources.App_Background_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(772, 484);
+            this.Controls.Add(this.btnRest);
+            this.Controls.Add(this.btnStop);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.labMin);
             this.Controls.Add(this.labSec);
@@ -204,5 +242,7 @@
         private System.Windows.Forms.Label labSec;
         private System.Windows.Forms.Label labHour;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.Button btnRest;
     }
 }

@@ -149,26 +149,26 @@ namespace Windows_Power
                 UpDownMin.Enabled = false;
                 UpDownSec.Enabled = false;
           
-                btnStop.Enabled = true;
+                //btnStop.Enabled = true;
 
             }
 
         }
-        private void btnStop_Click(object sender, EventArgs e)
+        public void TimerStop()
         {
             timer1.Enabled = false;
           
-            btnStop.Enabled = false;
+            //btnStop.Enabled = false;
         }
 
-        private void btnRest_Click(object sender, EventArgs e)
+        public void RestTimer()
         {
 
             RestUpDown();
             Time.Hour = 0;
             Time.Min = 0;
             Time.Sec = 0;
-            btnStop.Enabled = false;
+            //btnStop.Enabled = false;
          
             UpdateTimeLabel(labHour, 0); // update the label
             UpdateTimeLabel(labMin, 0); // update the label
