@@ -7,3 +7,8 @@ E:\projects\C#\14 - C# - Level 1\Windows Forms\Windows Power\obj\Debug\Windows P
 E:\projects\C#\14 - C# - Level 1\Windows Forms\Windows Power\obj\Debug\Windows Power.csproj.CoreCompileInputs.cache
 E:\projects\C#\14 - C# - Level 1\Windows Forms\Windows Power\obj\Debug\Windows Power.exe
 E:\projects\C#\14 - C# - Level 1\Windows Forms\Windows Power\obj\Debug\Windows Power.pdb
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Windows Power\bin\Debug\yo-NG\Windows Power.resources.dll
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Windows Power\obj\Debug\yo-NG\Windows Power.resources.dll
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Windows Power\obj\Debug\Windows_Power.frmMain.resources
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Windows Power\obj\Debug\Windows_Power.frmTimer.resources
+E:\projects\C#\14 - C# - Level 1\Windows Forms\Windows Power\obj\Debug\Windows_Power.frmTimer.yo-NG.resources
