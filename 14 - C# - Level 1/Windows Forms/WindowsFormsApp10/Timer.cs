@@ -51,6 +51,10 @@ namespace WindowsFormsApp10
             if (Time.Sec == 0 && Time.Min == 0 && Time.Hour == 0)
             {
                 timer1.Enabled = false;
+                btnStart.Enabled = true;
+                UpDownHour.Enabled = true;
+                UpDownMin.Enabled = true;
+                UpDownSec.Enabled = true;
                 RestUpDown();
                 labSec.Text = "0";
                 MessageBox.Show("Your Timer Has Finished ", "Message", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -140,19 +144,44 @@ namespace WindowsFormsApp10
             if (Time.Sec == 0 && Time.Min == 0 && Time.Hour == 0)
             {
                 MessageBox.Show("Timer Cannot Start", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                UpDownHour.Enabled = true;
+                UpDownMin.Enabled = true;
+                UpDownSec.Enabled = true;
 
             }
             else
             {
                 timer1.Enabled = true;
-                
+                UpDownHour.Enabled = false;
+                UpDownMin.Enabled = false;
+                UpDownSec.Enabled = false;
+                btnStart.Enabled = false;
+                btnStop.Enabled = true;
+
             }
 
         }
 
-        private void HourTimer_Tick(object sender, EventArgs e)
+        private void btnStop_Click(object sender, EventArgs e)
         {
-          
+            timer1.Enabled = false;
+            btnStart.Enabled = true;
+            btnStop.Enabled = false;
+        }
+
+     
+
+        private void btnRest_Click(object sender, EventArgs e)
+        {
+            RestUpDown();
+            Time.Hour = 0;
+            Time.Min = 0;
+            Time.Sec = 0;
+            btnStop.Enabled = false;
+            btnStart.Enabled = true;
+            UpdateTimeLabel(labHour, 0); // update the label
+            UpdateTimeLabel(labMin, 0); // update the label
+            UpdateTimeLabel(labSec, 0); // update the label
 
         }
     }
