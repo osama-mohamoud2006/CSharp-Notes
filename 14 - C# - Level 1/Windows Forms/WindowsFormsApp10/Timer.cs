@@ -29,7 +29,7 @@ namespace WindowsFormsApp10
         }
         stTime Time; // the time assigned by user 
 
-        int PassedTime = 0; 
+        //int PassedTime = 0; 
 
         void UpdateTimeLabel(Label NameOfLabel , int value)
         {
@@ -57,31 +57,36 @@ namespace WindowsFormsApp10
                 UpDownSec.Enabled = true;
                 RestUpDown();
                 labSec.Text = "0";
+                labMin.Text = "0";
+                labHour.Text = "0";
+
                 MessageBox.Show("Your Timer Has Finished ", "Message", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 
                 return;
             }
 
-            if(Time.Min==59)
-            {
-                Time.Hour--;
-                UpdateTimeLabel(labHour, Time.Hour);
+            //if(Time.Min==59)
+            //{
+            //    Time.Hour--;
+            //    UpdateTimeLabel(labHour, Time.Hour);
 
+            //}
+
+            if (Time.Min == 0 && Time.Hour != 0 && Time.Sec==0 )
+            {
+                UpdateTimeLabel(labHour, Time.Hour);
+                UpdateTimeLabel(labMin, Time.Min);
+
+                Time.Min = 59;
+                Time.Hour--;
             }
 
-            if(Time.Min==0 && Time.Hour!=0)
-            {
-                Time.Hour--;
-                Time.Min = 59; 
-                UpdateTimeLabel(labHour, Time.Hour);
-            }
-          
 
             if (Time.Sec != 0)
             {
-               
-                UpdateTimeLabel(labSec, Time.Sec); // update the label
                 Time.Sec--; // decrement the seconds 
+                UpdateTimeLabel(labSec, Time.Sec); // update the label
+              
             }
             else // 60 Sec Has Passed 
             {
@@ -90,20 +95,22 @@ namespace WindowsFormsApp10
              
 
                 Time.Sec = 59;
-                UpdateTimeLabel(labMin, Time.Sec); // update the label --> 59 
+                UpdateTimeLabel(labSec, Time.Sec); // update the label --> 59 
                 UpdateTimeLabel(labMin, Time.Min); // update the label 
-                Time.Sec--;
+
+                Time.Sec--;               
             }
 
             // 1 Min = 60000 Ms = 60 Sec
 
-            PassedTime++; // 1m = 60 
-            if(PassedTime>=3600) // 1h has passed
-            {
-                Time.Hour--;
-                UpdateTimeLabel(labHour, Time.Hour);
+            //PassedTime++; // 1m = 60 
+            //if(PassedTime==3600) // 1h has passed
+            //{
+            //    if(Time.Hour!=0) Time.Hour--;
+            //    UpdateTimeLabel(labHour, Time.Hour);
+            //    PassedTime = 0;
 
-            }
+            //}
 
         }
 
