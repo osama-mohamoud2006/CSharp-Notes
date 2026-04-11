@@ -170,6 +170,7 @@ namespace WindowsFormsApp10
 
         private void btnRest_Click(object sender, EventArgs e)
         {
+           
             RestUpDown();
             Time.Hour = 0;
             Time.Min = 0;
@@ -182,7 +183,7 @@ namespace WindowsFormsApp10
         
         }
        
-
+       
       
     }
 }
