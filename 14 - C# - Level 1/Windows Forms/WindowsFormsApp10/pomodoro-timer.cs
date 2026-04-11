@@ -51,8 +51,9 @@ namespace WindowsFormsApp10
         {
             if(MinCounter==25)
             {
+                timer1.Enabled = false;
                 MessageBox.Show("The Focus Session Has Finished","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                timer1.Enabled = false; 
+               
             }
         }
 

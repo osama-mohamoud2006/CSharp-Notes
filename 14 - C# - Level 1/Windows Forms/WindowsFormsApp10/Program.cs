@@ -16,7 +16,7 @@ namespace WindowsFormsApp10
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new pomodoro_timer());
+            Application.Run(new Timer());
         }
     }
 }

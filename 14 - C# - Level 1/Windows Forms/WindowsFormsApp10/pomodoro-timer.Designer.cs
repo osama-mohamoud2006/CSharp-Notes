@@ -43,7 +43,7 @@
             // 
             this.labSec.AutoSize = true;
             this.labSec.Font = new System.Drawing.Font("Rockwell", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labSec.Location = new System.Drawing.Point(374, 180);
+            this.labSec.Location = new System.Drawing.Point(510, 180);
             this.labSec.Name = "labSec";
             this.labSec.Size = new System.Drawing.Size(47, 54);
             this.labSec.TabIndex = 1;
@@ -53,7 +53,7 @@
             // 
             this.labMin.AutoSize = true;
             this.labMin.Font = new System.Drawing.Font("Rockwell", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labMin.Location = new System.Drawing.Point(500, 180);
+            this.labMin.Location = new System.Drawing.Point(337, 180);
             this.labMin.Name = "labMin";
             this.labMin.Size = new System.Drawing.Size(47, 54);
             this.labMin.TabIndex = 2;
@@ -71,6 +71,7 @@
             // 
             // timer1
             // 
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // label1
