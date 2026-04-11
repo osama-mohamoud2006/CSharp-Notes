@@ -89,7 +89,7 @@
             this.btnSetTimer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnSetTimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSetTimer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSetTimer.Location = new System.Drawing.Point(200, 362);
+            this.btnSetTimer.Location = new System.Drawing.Point(200, 292);
             this.btnSetTimer.Name = "btnSetTimer";
             this.btnSetTimer.Size = new System.Drawing.Size(331, 43);
             this.btnSetTimer.TabIndex = 3;
@@ -103,7 +103,7 @@
             this.label3.Enabled = false;
             this.label3.Font = new System.Drawing.Font("Rockwell", 25.8F, System.Drawing.FontStyle.Bold);
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(459, 270);
+            this.label3.Location = new System.Drawing.Point(459, 200);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 53);
@@ -117,7 +117,7 @@
             this.labMin.Font = new System.Drawing.Font("Rockwell", 25.8F, System.Drawing.FontStyle.Bold);
             this.labMin.ForeColor = System.Drawing.Color.Black;
             this.labMin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labMin.Location = new System.Drawing.Point(341, 270);
+            this.labMin.Location = new System.Drawing.Point(341, 200);
             this.labMin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labMin.Name = "labMin";
             this.labMin.Size = new System.Drawing.Size(71, 53);
@@ -131,7 +131,7 @@
             this.labSec.Font = new System.Drawing.Font("Rockwell", 25.8F, System.Drawing.FontStyle.Bold);
             this.labSec.ForeColor = System.Drawing.Color.Black;
             this.labSec.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labSec.Location = new System.Drawing.Point(532, 270);
+            this.labSec.Location = new System.Drawing.Point(532, 200);
             this.labSec.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labSec.Name = "labSec";
             this.labSec.Size = new System.Drawing.Size(71, 53);
@@ -145,7 +145,7 @@
             this.labHour.Font = new System.Drawing.Font("Rockwell", 25.8F, System.Drawing.FontStyle.Bold);
             this.labHour.ForeColor = System.Drawing.Color.Black;
             this.labHour.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labHour.Location = new System.Drawing.Point(157, 270);
+            this.labHour.Location = new System.Drawing.Point(157, 200);
             this.labHour.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labHour.Name = "labHour";
             this.labHour.Size = new System.Drawing.Size(71, 53);
@@ -158,7 +158,7 @@
             this.label2.Enabled = false;
             this.label2.Font = new System.Drawing.Font("Rockwell", 25.8F, System.Drawing.FontStyle.Bold);
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(249, 270);
+            this.label2.Location = new System.Drawing.Point(249, 200);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 53);

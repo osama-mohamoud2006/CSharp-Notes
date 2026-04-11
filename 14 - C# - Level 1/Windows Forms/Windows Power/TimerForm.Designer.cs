@@ -36,7 +36,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnRest = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
-            this.btnStart = new System.Windows.Forms.Button();
             this.UpDownHour = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.labHour = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
             this.UpDownMin = new System.Windows.Forms.NumericUpDown();
+            this.btnOk = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownHour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownSec)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownMin)).BeginInit();
@@ -92,16 +92,6 @@
             this.btnStop.Name = "btnStop";
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
-            // 
-            // btnStart
-            // 
-            this.btnStart.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnStart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            resources.ApplyResources(this.btnStart, "btnStart");
-            this.btnStart.ForeColor = System.Drawing.Color.Black;
-            this.btnStart.Name = "btnStart";
-            this.btnStart.UseVisualStyleBackColor = true;
-            this.btnStart.Click += new System.EventHandler(this.Start_Click);
             // 
             // UpDownHour
             // 
@@ -168,17 +158,24 @@
             this.UpDownMin.Tag = "Min";
             this.UpDownMin.ValueChanged += new System.EventHandler(this.UpDown_ValueChanged);
             // 
-            // frmWindowsPower
+            // btnOk
+            // 
+            resources.ApplyResources(this.btnOk, "btnOk");
+            this.btnOk.Name = "btnOk";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
+            // frmTimer
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::Windows_Power.Properties.Resources.App_Background_;
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.labMin);
             this.Controls.Add(this.labSec);
             this.Controls.Add(this.btnRest);
             this.Controls.Add(this.btnStop);
-            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.UpDownHour);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.labHour);
@@ -188,7 +185,7 @@
             this.Controls.Add(this.label);
             this.Controls.Add(this.UpDownMin);
             this.ForeColor = System.Drawing.Color.Black;
-            this.Name = "frmWindowsPower";
+            this.Name = "frmTimer";
             ((System.ComponentModel.ISupportInitialize)(this.UpDownHour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownSec)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownMin)).EndInit();
@@ -200,20 +197,20 @@
         #endregion
 
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label labMin;
-        private System.Windows.Forms.Label labSec;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnRest;
         private System.Windows.Forms.Button btnStop;
-        private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.NumericUpDown UpDownHour;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label labHour;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown UpDownSec;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.NumericUpDown UpDownMin;
+        public System.Windows.Forms.Label labHour;
+        public System.Windows.Forms.Label labMin;
+        public System.Windows.Forms.Label labSec;
+        private System.Windows.Forms.Button btnOk;
     }
 }
 

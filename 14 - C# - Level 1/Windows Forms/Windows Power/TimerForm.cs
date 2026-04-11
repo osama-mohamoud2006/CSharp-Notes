@@ -39,7 +39,7 @@ namespace Windows_Power
             if (Time.Sec == 0 && Time.Min == 0 && Time.Hour == 0)
             {
                 timer1.Enabled = false;
-                btnStart.Enabled = true;
+             
                 UpDownHour.Enabled = true;
                 UpDownMin.Enabled = true;
                 UpDownSec.Enabled = true;
@@ -131,7 +131,8 @@ namespace Windows_Power
             SetTimer(ud.Tag.ToString(), Convert.ToInt32(ud.Value));
         }
 
-        private void Start_Click(object sender, EventArgs e)
+        // the start of Timer 
+        public void Start()
         {
             if (Time.Sec == 0 && Time.Min == 0 && Time.Hour == 0)
             {
@@ -147,7 +148,7 @@ namespace Windows_Power
                 UpDownHour.Enabled = false;
                 UpDownMin.Enabled = false;
                 UpDownSec.Enabled = false;
-                btnStart.Enabled = false;
+          
                 btnStop.Enabled = true;
 
             }
@@ -156,7 +157,7 @@ namespace Windows_Power
         private void btnStop_Click(object sender, EventArgs e)
         {
             timer1.Enabled = false;
-            btnStart.Enabled = true;
+          
             btnStop.Enabled = false;
         }
 
@@ -168,15 +169,17 @@ namespace Windows_Power
             Time.Min = 0;
             Time.Sec = 0;
             btnStop.Enabled = false;
-            btnStart.Enabled = true;
+         
             UpdateTimeLabel(labHour, 0); // update the label
             UpdateTimeLabel(labMin, 0); // update the label
             UpdateTimeLabel(labSec, 0); // update the label
 
         }
 
-
-
-
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            this.Start(); // start the timer 
+            this.Hide();
+        }
     }
 }

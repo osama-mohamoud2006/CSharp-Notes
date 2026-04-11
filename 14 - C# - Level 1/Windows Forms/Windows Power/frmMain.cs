@@ -49,18 +49,22 @@ namespace Windows_Power
 
         }
 
+        private void EnableScreenComp()
+        {
+            labMin.Enabled = true;
+            labSec.Enabled = true;
+            labHour.Enabled = true;
+            btnSetTimer.Enabled = true;
+        }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             System.Windows.Forms.ComboBox cb = (System.Windows.Forms.ComboBox)sender;
 
-            labMin.Enabled = true;
-            labSec.Enabled = true;
-            labHour.Enabled = true;
-            btnSetTimer.Enabled = true;
-
             SetPowerState(cb.SelectedItem.ToString());
+
+            EnableScreenComp(); // To Enable set timer Control 
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -72,6 +76,13 @@ namespace Windows_Power
         {
             frmTimer Timer = new frmTimer();
             Timer.ShowDialog();
+
+            Timer.labHour = this.labHour;
+            Timer.labMin = this.labMin;
+            Timer.labSec = this.labSec; 
         }
+
+
+
     }
 }
