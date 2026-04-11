@@ -65,12 +65,7 @@ namespace WindowsFormsApp10
                 return;
             }
 
-            //if(Time.Min==59)
-            //{
-            //    Time.Hour--;
-            //    UpdateTimeLabel(labHour, Time.Hour);
-
-            //}
+           
 
             if (Time.Min == 0 && Time.Hour != 0 && Time.Sec==0 )
             {
@@ -105,14 +100,7 @@ namespace WindowsFormsApp10
 
             // 1 Min = 60000 Ms = 60 Sec
 
-            //PassedTime++; // 1m = 60 
-            //if(PassedTime==3600) // 1h has passed
-            //{
-            //    if(Time.Hour!=0) Time.Hour--;
-            //    UpdateTimeLabel(labHour, Time.Hour);
-            //    PassedTime = 0;
-
-            //}
+            
 
         }
 

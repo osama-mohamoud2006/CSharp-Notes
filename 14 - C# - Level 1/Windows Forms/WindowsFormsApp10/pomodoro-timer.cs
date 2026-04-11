@@ -43,7 +43,7 @@ namespace WindowsFormsApp10
 
             }
 
-            if (SecCounter >= 59) SecCounter = 0; // sec can n't exceed 59
+            if (SecCounter == 59) SecCounter = 0; // sec can n't exceed 59
             CheckIfTimerFinished();
         }
 
