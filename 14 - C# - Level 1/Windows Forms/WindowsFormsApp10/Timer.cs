@@ -179,7 +179,10 @@ namespace WindowsFormsApp10
             UpdateTimeLabel(labHour, 0); // update the label
             UpdateTimeLabel(labMin, 0); // update the label
             UpdateTimeLabel(labSec, 0); // update the label
-
+        
         }
+       
+
+      
     }
 }

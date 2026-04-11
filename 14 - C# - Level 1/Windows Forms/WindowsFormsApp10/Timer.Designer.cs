@@ -252,6 +252,7 @@
             this.Name = "Timer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Timer App";
+     
             ((System.ComponentModel.ISupportInitialize)(this.UpDownMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownSec)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownHour)).EndInit();
