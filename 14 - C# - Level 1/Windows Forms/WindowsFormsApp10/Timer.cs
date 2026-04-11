@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace WindowsFormsApp10
 {
@@ -27,7 +28,8 @@ namespace WindowsFormsApp10
             public int Sec; 
         }
         stTime Time; // the time assigned by user 
-       
+
+        int PassedTime = 0; 
 
         void UpdateTimeLabel(Label NameOfLabel , int value)
         {
@@ -35,12 +37,11 @@ namespace WindowsFormsApp10
         }
 
 
-        private void HandelHour()
+        private void RestUpDown()
         {
-            if(Time.Min==0)
-            {
-               _= (Time.Hour!=0) ? Time.Hour-- : Time.Hour=0;
-            }
+            UpDownHour.Value = 0;
+            UpDownMin.Value = 0;
+            UpDownSec.Value = 0;
         }
 
         // Timer To Decrement Until Reaches 0 
@@ -50,11 +51,27 @@ namespace WindowsFormsApp10
             if (Time.Sec == 0 && Time.Min == 0 && Time.Hour == 0)
             {
                 timer1.Enabled = false;
+                RestUpDown();
                 labSec.Text = "0";
                 MessageBox.Show("Your Timer Has Finished ", "Message", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 
                 return;
             }
+
+            if(Time.Min==59)
+            {
+                Time.Hour--;
+                UpdateTimeLabel(labHour, Time.Hour);
+
+            }
+
+            if(Time.Min==0 && Time.Hour!=0)
+            {
+                Time.Hour--;
+                Time.Min = 59; 
+                UpdateTimeLabel(labHour, Time.Hour);
+            }
+          
 
             if (Time.Sec != 0)
             {
@@ -65,8 +82,8 @@ namespace WindowsFormsApp10
             else // 60 Sec Has Passed 
             {
             
-                Time.Min--;
-                HandelHour();
+            if (Time.Min!=0) Time.Min--;
+             
 
                 Time.Sec = 59;
                 UpdateTimeLabel(labMin, Time.Sec); // update the label --> 59 
@@ -76,7 +93,13 @@ namespace WindowsFormsApp10
 
             // 1 Min = 60000 Ms = 60 Sec
 
-           
+            PassedTime++; // 1m = 60 
+            if(PassedTime>=3600) // 1h has passed
+            {
+                Time.Hour--;
+                UpdateTimeLabel(labHour, Time.Hour);
+
+            }
 
         }
 
@@ -122,10 +145,15 @@ namespace WindowsFormsApp10
             else
             {
                 timer1.Enabled = true;
+                
             }
 
         }
 
+        private void HourTimer_Tick(object sender, EventArgs e)
+        {
+          
 
+        }
     }
 }
