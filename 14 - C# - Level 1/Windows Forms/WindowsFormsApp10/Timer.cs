@@ -80,7 +80,9 @@ namespace WindowsFormsApp10
 
                 UpdateTimeLabel(labHour, Time.Hour);
                 UpdateTimeLabel(labMin, Time.Min);
-               
+                UpdateTimeLabel(labSec, Time.Sec);
+
+                return; 
             }
 
 
