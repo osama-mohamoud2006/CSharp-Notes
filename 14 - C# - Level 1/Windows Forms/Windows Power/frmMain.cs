@@ -160,8 +160,10 @@ namespace Windows_Power
                 btnStop.Enabled= false;
                 btnSetTimer.Enabled = true;
 
-                DoPowerChange(); // change the power state according to user selection in combo box
+                // if the user press rest button and the timer is running we don't want to change the power state
+                if (Timer.ChangePowerState) DoPowerChange(); // change the power state(false) doesn't change the power state because the user press rest button of timer 
 
+                Timer.ChangePowerState=true; // reset the rest button click state for the next time
                 return;
             }
 
