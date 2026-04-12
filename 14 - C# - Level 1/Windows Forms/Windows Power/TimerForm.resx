@@ -153,70 +153,70 @@
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="labMin.AutoSize" type="System.Boolean, mscorlib">
+  <data name="labTMin.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="labMin.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="labTMin.Font" type="System.Drawing.Font, System.Drawing">
     <value>Rockwell, 25.8pt, style=Bold</value>
   </data>
-  <data name="labMin.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="labTMin.Location" type="System.Drawing.Point, System.Drawing">
     <value>352, 150</value>
   </data>
-  <data name="labMin.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="labTMin.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
   </data>
-  <data name="labMin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 53</value>
+  <data name="labTMin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 53</value>
   </data>
-  <data name="labMin.TabIndex" type="System.Int32, mscorlib">
+  <data name="labTMin.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
-  <data name="labMin.Text" xml:space="preserve">
-    <value>00</value>
+  <data name="labTMin.Text" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;labMin.Name" xml:space="preserve">
-    <value>labMin</value>
+  <data name="&gt;&gt;labTMin.Name" xml:space="preserve">
+    <value>labTMin</value>
   </data>
-  <data name="&gt;&gt;labMin.Type" xml:space="preserve">
+  <data name="&gt;&gt;labTMin.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labMin.Parent" xml:space="preserve">
+  <data name="&gt;&gt;labTMin.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;labMin.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;labTMin.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="labSec.AutoSize" type="System.Boolean, mscorlib">
+  <data name="labTSec.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="labSec.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="labTSec.Font" type="System.Drawing.Font, System.Drawing">
     <value>Rockwell, 25.8pt, style=Bold</value>
   </data>
-  <data name="labSec.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="labTSec.Location" type="System.Drawing.Point, System.Drawing">
     <value>543, 150</value>
   </data>
-  <data name="labSec.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="labTSec.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
   </data>
-  <data name="labSec.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 53</value>
+  <data name="labTSec.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 53</value>
   </data>
-  <data name="labSec.TabIndex" type="System.Int32, mscorlib">
+  <data name="labTSec.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
-  <data name="labSec.Text" xml:space="preserve">
-    <value>00</value>
+  <data name="labTSec.Text" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;labSec.Name" xml:space="preserve">
-    <value>labSec</value>
+  <data name="&gt;&gt;labTSec.Name" xml:space="preserve">
+    <value>labTSec</value>
   </data>
-  <data name="&gt;&gt;labSec.Type" xml:space="preserve">
+  <data name="&gt;&gt;labTSec.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labSec.Parent" xml:space="preserve">
+  <data name="&gt;&gt;labTSec.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;labSec.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;labTSec.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -276,37 +276,37 @@
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="labHour.AutoSize" type="System.Boolean, mscorlib">
+  <data name="labTHour.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="labHour.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="labTHour.Font" type="System.Drawing.Font, System.Drawing">
     <value>Rockwell, 25.8pt, style=Bold</value>
   </data>
-  <data name="labHour.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="labTHour.Location" type="System.Drawing.Point, System.Drawing">
     <value>168, 150</value>
   </data>
-  <data name="labHour.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="labTHour.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
   </data>
-  <data name="labHour.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 53</value>
+  <data name="labTHour.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 53</value>
   </data>
-  <data name="labHour.TabIndex" type="System.Int32, mscorlib">
+  <data name="labTHour.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
   </data>
-  <data name="labHour.Text" xml:space="preserve">
-    <value>00</value>
+  <data name="labTHour.Text" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;labHour.Name" xml:space="preserve">
-    <value>labHour</value>
+  <data name="&gt;&gt;labTHour.Name" xml:space="preserve">
+    <value>labTHour</value>
   </data>
-  <data name="&gt;&gt;labHour.Type" xml:space="preserve">
+  <data name="&gt;&gt;labTHour.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labHour.Parent" xml:space="preserve">
+  <data name="&gt;&gt;labTHour.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;labHour.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;labTHour.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">

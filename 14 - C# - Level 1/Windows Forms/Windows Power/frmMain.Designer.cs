@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pbInfo = new System.Windows.Forms.PictureBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -39,6 +40,7 @@
             this.labHour = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnStop = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbInfo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,7 +176,7 @@
             this.btnStop.Font = new System.Drawing.Font("SF Mono", 16.2F, System.Drawing.FontStyle.Bold);
             this.btnStop.ForeColor = System.Drawing.Color.Black;
             this.btnStop.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnStop.Location = new System.Drawing.Point(301, 384);
+            this.btnStop.Location = new System.Drawing.Point(310, 384);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(111, 49);
             this.btnStop.TabIndex = 32;
@@ -182,6 +184,11 @@
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Visible = false;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmMain
             // 
@@ -224,5 +231,6 @@
         public System.Windows.Forms.Label labHour;
         public System.Windows.Forms.Label labMin;
         public System.Windows.Forms.Label labSec;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static Windows_Power.frmTimer;
 
 namespace Windows_Power
 {
@@ -16,10 +17,13 @@ namespace Windows_Power
         public frmMain()
         {
             InitializeComponent();
+
+           
         }
 
         frmTimer Timer = new frmTimer(); // Timer Form 
-
+    
+    
 
         private void pbInfo_Click(object sender, EventArgs e)
         {
@@ -80,19 +84,9 @@ namespace Windows_Power
             
             Timer.ShowDialog();
 
-            Timer.ObjfrmMain = this; // To Link The Main Form With Timer Form To Update Its Label
-            //// copy value
-            //this.labHour.Text = Timer.labHour.Text;
-            //this.labMin.Text = Timer.labMin.Text;
-            //this.labSec.Text = Timer.labSec.Text;
-
-            //// Link Them 
-            //Timer.labHour = this.labHour;
-            //Timer.labMin = this.labMin;
-            //Timer.labSec = this.labSec;
-
             btnStop.Visible = true;
-            
+            btnSetTimer.Enabled = false;
+            timer1.Enabled = true;
 
         }
 
@@ -100,13 +94,82 @@ namespace Windows_Power
         {
             Timer.TimerStop();
             btnStop.Visible = false;
+            timer1.Enabled = false;
+            btnSetTimer.Enabled = true;
         }
 
+        // Sorry for dirty code but in my level this is the best I can do :D (this timer handles the timer in both 2 forms)
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (Timer.TheTimeOfTimer.Sec == 0 && Timer.TheTimeOfTimer.Min == 0 && Timer.TheTimeOfTimer.Hour == 0)
+            {
+                timer1.Enabled = false;
 
-     
-   
+                Timer.UpDownHour.Enabled = true;
+                Timer.UpDownMin.Enabled = true;
+                Timer.UpDownSec.Enabled = true;
 
-       
+                Timer.RestUpDown();
+
+                Timer.labTSec.Text = "0";
+                Timer.labTMin.Text = "0";
+                Timer.labTHour.Text = "0";
+
+                this.labHour.Text = "0";    
+                this.labMin.Text = "0";
+                this.labSec.Text = "0";
+
+               
+
+                return;
+            }
+
+
+
+            if (Timer.TheTimeOfTimer.Min == 0 && Timer.TheTimeOfTimer.Hour != 0 && Timer.TheTimeOfTimer.Sec == 0)
+            {
+                Timer.TheTimeOfTimer.Min = 59;
+                Timer.TheTimeOfTimer.Sec = 59;
+
+               
+
+                Timer.TheTimeOfTimer.Hour--;
+
+                Timer.UpdateTimeLabel(Timer.labTHour, Timer.TheTimeOfTimer.Hour);
+                Timer.UpdateTimeLabel(Timer.labTMin, Timer.TheTimeOfTimer.Min);
+                Timer.UpdateTimeLabel(Timer.labTSec, Timer.TheTimeOfTimer.Sec);
+
+                this.labHour.Text = Timer.TheTimeOfTimer.Hour.ToString();
+                this.labMin.Text = Timer.TheTimeOfTimer.Min.ToString();
+                this.labHour.Text = Timer.TheTimeOfTimer.Hour.ToString();
+
+
+                return;
+            }
+
+
+            if (Timer.TheTimeOfTimer.Sec != 0)
+            {
+                Timer.TheTimeOfTimer.Sec--; // decrement the seconds 
+                this.labSec.Text = Timer.TheTimeOfTimer.Sec.ToString();
+                Timer.UpdateTimeLabel(Timer.labTSec, Timer.TheTimeOfTimer.Sec); // update the label
+
+            }
+            else  // 60 Sec Has Passed 
+            {
+
+                if (Timer.TheTimeOfTimer.Min != 0) Timer.TheTimeOfTimer.Min--;
+
+                Timer.TheTimeOfTimer.Sec = 59;
+                this.labSec.Text = Timer.TheTimeOfTimer.Sec.ToString();
+                this.labMin.Text = Timer.TheTimeOfTimer.Min.ToString();
+                Timer.UpdateTimeLabel(Timer.labTSec, Timer.TheTimeOfTimer.Sec); // update the label --> 59 
+                Timer.UpdateTimeLabel(Timer.labTMin, Timer.TheTimeOfTimer.Min); // update the label 
+            }
+
+            // 1 Min = 60000 Ms = 60 Sec
+        }
+
 
     }
 }

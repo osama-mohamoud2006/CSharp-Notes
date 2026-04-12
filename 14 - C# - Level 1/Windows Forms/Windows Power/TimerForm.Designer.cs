@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTimer));
             this.label3 = new System.Windows.Forms.Label();
-            this.labMin = new System.Windows.Forms.Label();
-            this.labSec = new System.Windows.Forms.Label();
+            this.labTMin = new System.Windows.Forms.Label();
+            this.labTSec = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.UpDownHour = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
-            this.labHour = new System.Windows.Forms.Label();
+            this.labTHour = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.UpDownSec = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,19 +54,19 @@
             resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
             // 
-            // labMin
+            // labTMin
             // 
-            resources.ApplyResources(this.labMin, "labMin");
-            this.labMin.ForeColor = System.Drawing.Color.Black;
-            this.labMin.Name = "labMin";
-            this.labMin.Tag = "labMin";
+            resources.ApplyResources(this.labTMin, "labTMin");
+            this.labTMin.ForeColor = System.Drawing.Color.Black;
+            this.labTMin.Name = "labTMin";
+            this.labTMin.Tag = "0";
             // 
-            // labSec
+            // labTSec
             // 
-            resources.ApplyResources(this.labSec, "labSec");
-            this.labSec.ForeColor = System.Drawing.Color.Black;
-            this.labSec.Name = "labSec";
-            this.labSec.Tag = "labSec";
+            resources.ApplyResources(this.labTSec, "labTSec");
+            this.labTSec.ForeColor = System.Drawing.Color.Black;
+            this.labTSec.Name = "labTSec";
+            this.labTSec.Tag = "0";
             // 
             // timer1
             // 
@@ -91,12 +91,12 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Name = "label5";
             // 
-            // labHour
+            // labTHour
             // 
-            resources.ApplyResources(this.labHour, "labHour");
-            this.labHour.ForeColor = System.Drawing.Color.Black;
-            this.labHour.Name = "labHour";
-            this.labHour.Tag = "labHour";
+            resources.ApplyResources(this.labTHour, "labTHour");
+            this.labTHour.ForeColor = System.Drawing.Color.Black;
+            this.labTHour.Name = "labTHour";
+            this.labTHour.Tag = "0";
             // 
             // label2
             // 
@@ -165,12 +165,12 @@
             resources.ApplyResources(this, "$this");
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.labMin);
-            this.Controls.Add(this.labSec);
+            this.Controls.Add(this.labTMin);
+            this.Controls.Add(this.labTSec);
             this.Controls.Add(this.btnRest);
             this.Controls.Add(this.UpDownHour);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.labHour);
+            this.Controls.Add(this.labTHour);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.UpDownSec);
             this.Controls.Add(this.label1);
@@ -190,18 +190,18 @@
 
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.NumericUpDown UpDownHour;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown UpDownSec;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label;
-        private System.Windows.Forms.NumericUpDown UpDownMin;
-        public System.Windows.Forms.Label labHour;
-        public System.Windows.Forms.Label labMin;
-        public System.Windows.Forms.Label labSec;
+        public System.Windows.Forms.Label labTHour;
+        public System.Windows.Forms.Label labTMin;
+        public System.Windows.Forms.Label labTSec;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnRest;
+        public System.Windows.Forms.NumericUpDown UpDownMin;
+        public System.Windows.Forms.NumericUpDown UpDownHour;
+        public System.Windows.Forms.NumericUpDown UpDownSec;
     }
 }
 

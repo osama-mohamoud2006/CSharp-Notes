@@ -24,90 +24,68 @@ namespace Windows_Power
             public int Sec;
         }
 
-        stTime Time; // the time assigned by user 
+        public stTime TheTimeOfTimer; // the time assigned by user 
 
-        //int PassedTime = 0; 
-
-        public frmMain ObjfrmMain; // reference to the main form to update its label
-
-        private void UpdateMainFormLabel(Label NameOfLabel, int value)
-        {
-            switch(NameOfLabel.Tag.ToString())
-            {
-                case "labHour":
-                    ObjfrmMain.labHour.Text = NameOfLabel.Text;
-                    break;
-
-                    case "labMin":
-                    ObjfrmMain.labMin.Text = NameOfLabel.Text;
-                    break;
-
-                    case "labSec":
-                     ObjfrmMain.labSec.Text = NameOfLabel.Text;
-                    break;
-            }
-        }
-
-        private void UpdateTimeLabel(Label NameOfLabel, int value)
+        public void UpdateTimeLabel(Label NameOfLabel, int value)
         {
             NameOfLabel.Text = value.ToString();
-            UpdateMainFormLabel(NameOfLabel, value) ;
+            NameOfLabel.Tag = value; 
         }
 
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (Time.Sec == 0 && Time.Min == 0 && Time.Hour == 0)
-            {
-                timer1.Enabled = false;
+            //if (TheTimeOfTimer.Sec == 0 && TheTimeOfTimer.Min == 0 && TheTimeOfTimer.Hour == 0)
+            //{
+            //    timer1.Enabled = false;
              
-                UpDownHour.Enabled = true;
-                UpDownMin.Enabled = true;
-                UpDownSec.Enabled = true;
-                RestUpDown();
-                labSec.Text = "0";
-                labMin.Text = "0";
-                labHour.Text = "0";
+            //    UpDownHour.Enabled = true;
+            //    UpDownMin.Enabled = true;
+            //    UpDownSec.Enabled = true;
+            //    RestUpDown();
+            //    labTSec.Text = "0";
+            //    labTMin.Text = "0";
+            //    labTHour.Text = "0";
 
-                MessageBox.Show("Your Timer Has Finished ", "Message", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            //    MessageBox.Show("Your Timer Has Finished ", "Message", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 
-                return;
-            }
-
-
-
-            if (Time.Min == 0 && Time.Hour != 0 && Time.Sec == 0)
-            {
-                Time.Min = 59;
-                Time.Sec = 59;
-                Time.Hour--;
-
-                UpdateTimeLabel(labHour, Time.Hour);
-                UpdateTimeLabel(labMin, Time.Min);
-                UpdateTimeLabel(labSec, Time.Sec);
-
-                return;
-            }
+            //    return;
+            //}
 
 
-            if (Time.Sec != 0)
-            {
-                Time.Sec--; // decrement the seconds 
-                UpdateTimeLabel(labSec, Time.Sec); // update the label
 
-            }
-            else  // 60 Sec Has Passed 
-            {
+            //if (TheTimeOfTimer.Min == 0 && TheTimeOfTimer.Hour != 0 && TheTimeOfTimer.Sec == 0)
+            //{
+            //    TheTimeOfTimer.Min = 59;
+            //    TheTimeOfTimer.Sec = 59;
+            //    TheTimeOfTimer.Hour--;
 
-                if (Time.Min != 0) Time.Min--;
+            //    UpdateTimeLabel(labTHour, TheTimeOfTimer.Hour);
+            //    UpdateTimeLabel(labTMin, TheTimeOfTimer.Min);
+            //    UpdateTimeLabel(labTSec, TheTimeOfTimer.Sec);
 
-                Time.Sec = 59;
+            //    return;
+            //}
 
-                UpdateTimeLabel(labSec, Time.Sec); // update the label --> 59 
-                UpdateTimeLabel(labMin, Time.Min); // update the label 
-            }
 
-            // 1 Min = 60000 Ms = 60 Sec
+            //if (TheTimeOfTimer.Sec != 0)
+            //{
+            //    TheTimeOfTimer.Sec--; // decrement the seconds 
+            //    UpdateTimeLabel(labTSec, TheTimeOfTimer.Sec); // update the label
+
+            //}
+            //else  // 60 Sec Has Passed 
+            //{
+
+            //    if (TheTimeOfTimer.Min != 0) TheTimeOfTimer.Min--;
+
+            //    TheTimeOfTimer.Sec = 59;
+
+            //    UpdateTimeLabel(labTSec, TheTimeOfTimer.Sec); // update the label --> 59 
+            //    UpdateTimeLabel(labTMin, TheTimeOfTimer.Min); // update the label 
+            //}
+
+            //// 1 Min = 60000 Ms = 60 Sec
 
 
 
@@ -115,7 +93,7 @@ namespace Windows_Power
 
 
 
-        private void RestUpDown()
+        public void RestUpDown()
         {
             UpDownHour.Value = 0;
             UpDownMin.Value = 0;
@@ -127,19 +105,19 @@ namespace Windows_Power
             switch (UpDownCounter)
             {
                 case "Hour":
-                    UpdateTimeLabel(labHour, value); // update the label
-                    Time.Hour = value;
+                    UpdateTimeLabel(labTHour, value); // update the label
+                    TheTimeOfTimer.Hour = value;
                     break;
 
 
                 case "Min":
-                    UpdateTimeLabel(labMin, value); // update the label
-                    Time.Min = value;
+                    UpdateTimeLabel(labTMin, value); // update the label
+                    TheTimeOfTimer.Min = value;
                     break;
 
                 case "Sec":
-                    UpdateTimeLabel(labSec, value); // update the label
-                    Time.Sec = value;
+                    UpdateTimeLabel(labTSec, value); // update the label
+                    TheTimeOfTimer.Sec = value;
                     break;
 
 
@@ -155,9 +133,9 @@ namespace Windows_Power
         // the start of Timer 
         public void Start()
         {
-            if (Time.Sec == 0 && Time.Min == 0 && Time.Hour == 0)
+            if (TheTimeOfTimer.Sec == 0 && TheTimeOfTimer.Min == 0 && TheTimeOfTimer.Hour == 0)
             {
-                MessageBox.Show("Timer Cannot Start", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Timer Cannot Start", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 UpDownHour.Enabled = true;
                 UpDownMin.Enabled = true;
                 UpDownSec.Enabled = true;
@@ -186,14 +164,14 @@ namespace Windows_Power
         {
             
             RestUpDown();
-            Time.Hour = 0;
-            Time.Min = 0;
-            Time.Sec = 0;
+            TheTimeOfTimer.Hour = 0;
+            TheTimeOfTimer.Min = 0;
+            TheTimeOfTimer.Sec = 0;
             //btnStop.Enabled = false;
          
-            UpdateTimeLabel(labHour, 0); // update the label
-            UpdateTimeLabel(labMin, 0); // update the label
-            UpdateTimeLabel(labSec, 0); // update the label
+            UpdateTimeLabel(labTHour, 0); // update the label
+            UpdateTimeLabel(labTMin, 0); // update the label
+            UpdateTimeLabel(labTSec, 0); // update the label
 
         }
 
