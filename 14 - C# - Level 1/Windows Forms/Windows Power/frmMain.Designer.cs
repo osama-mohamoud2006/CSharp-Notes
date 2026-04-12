@@ -41,6 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnStop = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.notifyBeforeChange = new System.Windows.Forms.NotifyIcon(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbInfo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -190,6 +191,12 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // notifyBeforeChange
+            // 
+            this.notifyBeforeChange.Text = "notifyBeforeChange";
+            this.notifyBeforeChange.Visible = true;
+            this.notifyBeforeChange.BalloonTipClicked += new System.EventHandler(this.notifyBeforeChange_BalloonTipClicked);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -232,5 +239,6 @@
         public System.Windows.Forms.Label labMin;
         public System.Windows.Forms.Label labSec;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.NotifyIcon notifyBeforeChange;
     }
 }

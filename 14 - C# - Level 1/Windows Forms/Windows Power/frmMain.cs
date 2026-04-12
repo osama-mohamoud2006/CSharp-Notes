@@ -22,8 +22,8 @@ namespace Windows_Power
         }
 
         frmTimer Timer = new frmTimer(); // Timer Form 
-    
-    
+         PowerCore core ; // Power Core Class To Handle Power State Change
+
 
         private void pbInfo_Click(object sender, EventArgs e)
         {
@@ -32,7 +32,7 @@ namespace Windows_Power
         }
 
 
-        public enum enPowerState :byte{ enShutDown=1,enReboot=2 , enSleep=3 }
+        public enum enPowerState :byte{ ShutDown=1,Reboot=2 , Sleep=3 }
 
         enPowerState PowerState;
        
@@ -42,15 +42,15 @@ namespace Windows_Power
            switch(SelectedOption.ToLower())
             {
                 case "shutdown":
-                    PowerState = enPowerState.enShutDown;
+                    PowerState = enPowerState.ShutDown;
                     break;
 
                 case "reboot":
-                    PowerState = enPowerState.enReboot;
+                    PowerState = enPowerState.Reboot;
                     break;
 
                 case "sleep":
-                    PowerState = enPowerState.enSleep;
+                    PowerState = enPowerState.Sleep;
                     break;
             }
 
@@ -98,9 +98,46 @@ namespace Windows_Power
             btnSetTimer.Enabled = true;
         }
 
+        // This Function To Show Notification Before 30 Sec Of Power State Change To Notify User And Give Him The Chance To Stop The Timer If He Wants To
+        void NotifIcon()
+        {
+            notifyBeforeChange.Icon = SystemIcons.Warning;  
+            notifyBeforeChange.BalloonTipTitle = $"Your Device Will {PowerState.ToString()} Soon !";
+            notifyBeforeChange.BalloonTipText= $"Click On This Notification To Stop The Timer If You Want To !";
+            notifyBeforeChange.BalloonTipIcon= ToolTipIcon.Warning;
+
+            notifyBeforeChange.ShowBalloonTip (30000); // Show Notification Before 30 Sec Of Power State Change
+        }
+
+
+        // According to user selection in combo box this function will call the specific method in PowerCore Class To Do The Operation
+        private void DoPowerChange()
+        {
+            switch (PowerState)
+            {
+                case enPowerState.ShutDown:
+                    PowerCore.ShutDown();
+                    break;
+                case enPowerState.Reboot:
+                    PowerCore.Reboot();
+                    break;
+                case enPowerState.Sleep:
+                    PowerCore.Sleep();
+                    break;
+            }
+        }
+
+
         // Sorry for dirty code but in my level this is the best I can do :D (this timer handles the timer in both 2 forms)
         private void timer1_Tick(object sender, EventArgs e)
         {
+            // Notify User Before 30 sec 
+            if (Timer.TheTimeOfTimer.Sec >= 30)
+            {
+                NotifIcon();
+            }
+
+            // the timer has finished and we need to do the power change operation and reset the timer form and labels in main form
             if (Timer.TheTimeOfTimer.Sec == 0 && Timer.TheTimeOfTimer.Min == 0 && Timer.TheTimeOfTimer.Hour == 0)
             {
                 timer1.Enabled = false;
@@ -119,7 +156,7 @@ namespace Windows_Power
                 this.labMin.Text = "0";
                 this.labSec.Text = "0";
 
-               
+                DoPowerChange(); // change the power state according to user selection in combo box
 
                 return;
             }
@@ -170,6 +207,10 @@ namespace Windows_Power
             // 1 Min = 60000 Ms = 60 Sec
         }
 
+        private void notifyBeforeChange_BalloonTipClicked(object sender, EventArgs e)
+        {
+            btnStop_Click(sender, e); // call stop button click event to stop the timer and prevent power state change
+        }
 
     }
 }
