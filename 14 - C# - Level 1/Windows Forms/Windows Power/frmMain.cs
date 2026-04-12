@@ -85,6 +85,7 @@ namespace Windows_Power
             Timer.ShowDialog();
 
             btnStop.Visible = true;
+            btnStop.Enabled=true;
             btnSetTimer.Enabled = false;
             timer1.Enabled = true;
 
@@ -132,7 +133,7 @@ namespace Windows_Power
         private void timer1_Tick(object sender, EventArgs e)
         {
             // Notify User Before 30 sec 
-            if (Timer.TheTimeOfTimer.Sec >= 30)
+            if (Timer.TheTimeOfTimer.Sec == 30)
             {
                 NotifIcon();
             }
@@ -155,6 +156,9 @@ namespace Windows_Power
                 this.labHour.Text = "0";    
                 this.labMin.Text = "0";
                 this.labSec.Text = "0";
+
+                btnStop.Enabled= false;
+                btnSetTimer.Enabled = true;
 
                 DoPowerChange(); // change the power state according to user selection in combo box
 
