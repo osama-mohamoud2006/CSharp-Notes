@@ -133,13 +133,13 @@ namespace Windows_Power
         private void timer1_Tick(object sender, EventArgs e)
         {
             // Notify User Before 30 sec 
-            if (Timer.TheTimeOfTimer.Sec == 30)
+            if (Timer.TheTimeOfTimer.Sec == 30 && Timer.TheTimeOfTimer.Hour==0 && Timer.TheTimeOfTimer.Min==0)
             {
                 NotifIcon();
             }
 
             // the timer has finished and we need to do the power change operation and reset the timer form and labels in main form
-            if (Timer.TheTimeOfTimer.Sec == 0 && Timer.TheTimeOfTimer.Min == 0 && Timer.TheTimeOfTimer.Hour == 0)
+            if (Timer.TheTimeOfTimer.Sec == 0 &&  Timer.TheTimeOfTimer.Min == 0 && Timer.TheTimeOfTimer.Hour == 0)
             {
                 timer1.Enabled = false;
 
