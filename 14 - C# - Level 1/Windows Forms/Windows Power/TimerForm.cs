@@ -181,7 +181,7 @@ namespace Windows_Power
             this.Hide();
         }
 
-        public bool ChangePowerState = false; // to avoid change power state when the user press rest button and the timer is running
+        public bool ChangePowerState = true; // to avoid change power state when the user press rest button and the timer is running
         private void btnRest_Click(object sender, EventArgs e)
         {
             ChangePowerState = false; // if rest is clicked don't change power state 
