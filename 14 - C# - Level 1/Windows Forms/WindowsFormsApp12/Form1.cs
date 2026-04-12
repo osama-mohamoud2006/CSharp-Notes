@@ -52,18 +52,38 @@ namespace WindowsFormsApp12
         private void treeView1_Click(object sender, EventArgs e) // Node 
         {
             this.BackColor = Color.AliceBlue;
-            //  MessageBox.Show("Node Clicked") ;
+           ///  MessageBox.Show("Node Clicked") ;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
+            if(treeView1.SelectedNode!=null)
+            MessageBox.Show(treeView1.SelectedNode.Text + " The Current Selected Node") ;
         }
 
+    
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e) // Child 
         {
-            if(treeView1.SelectedNode.Nodes!=null) // The Child Of The Current Selected Node
-                MessageBox.Show(treeView1.SelectedNode.Nodes.Text );
+            //if (treeView1.SelectedNode.Nodes != null) // The Child Of The Current Selected Node
+            //    MessageBox.Show(treeView1.SelectedNode.Nodes[0].Text);\
+
+            //MessageBox.Show(treeView1.SelectedNode.Text);
+            this.BackColor = Color.Red; 
+        }
+
+        private void treeView1_AfterCheck(object sender, TreeViewEventArgs e)
+        {
+            MessageBox.Show(treeView1.SelectedNode.Text + " Checked");
+        }
+
+        private void treeView1_AfterCollapse(object sender, TreeViewEventArgs e)
+        {
+            MessageBox.Show(treeView1.SelectedNode.Text + " Collapsed");
+        }
+
+        private void treeView1_AfterExpand(object sender, TreeViewEventArgs e)
+        {
+            MessageBox.Show(treeView1.SelectedNode.Text + " Expanded"); 
         }
     }
 }
