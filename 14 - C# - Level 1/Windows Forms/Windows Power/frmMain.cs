@@ -182,7 +182,7 @@ namespace Windows_Power
                 Timer.UpdateTimeLabel(Timer.labTMin, Timer.TheTimeOfTimer.Min);
                 Timer.UpdateTimeLabel(Timer.labTSec, Timer.TheTimeOfTimer.Sec);
 
-                this.labHour.Text = Timer.TheTimeOfTimer.Hour.ToString();
+                this.labSec.Text = Timer.TheTimeOfTimer.Sec.ToString();
                 this.labMin.Text = Timer.TheTimeOfTimer.Min.ToString();
                 this.labHour.Text = Timer.TheTimeOfTimer.Hour.ToString();
 
@@ -210,6 +210,9 @@ namespace Windows_Power
                 Timer.UpdateTimeLabel(Timer.labTMin, Timer.TheTimeOfTimer.Min); // update the label 
             }
 
+            this.labHour.Text = Timer.TheTimeOfTimer.Hour.ToString();
+            this.labMin.Text  = Timer.TheTimeOfTimer.Min.ToString();
+            this.labSec.Text  = Timer.TheTimeOfTimer.Sec.ToString();
             // 1 Min = 60000 Ms = 60 Sec
         }
 
