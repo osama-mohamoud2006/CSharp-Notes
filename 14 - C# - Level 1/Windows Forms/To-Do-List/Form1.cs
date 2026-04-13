@@ -50,29 +50,6 @@ namespace To_Do_List
            
         }
 
-        //int ValueToAddEachTimeToProgressBar = 0; // to determine what the progress bar should add each time 
-        //private void UpdateValueToAddEachTimeToProgressBar()
-        //{
-        //    if(Tasks.Items.Count!=0)
-        //    ValueToAddEachTimeToProgressBar = (100 / Tasks.Items.Count);
-
-        //    progressBar1.Refresh();
-        //}
-
-
-        //private void AddToProgress()
-        //{
-        //    if (progressBar1.Value + ValueToAddEachTimeToProgressBar <= progressBar1.Maximum)
-        //    {
-        //        progressBar1.Value += (ValueToAddEachTimeToProgressBar);
-        //        labProgress.Text = progressBar1.Value.ToString();
-        //    }
-        //    else // if the addition will > max to avoid value exceeds max 
-        //    {
-        //        progressBar1.Value = progressBar1.Maximum;
-        //    }
-
-        //}
 
         private void UpdateProgress()
         {
@@ -99,41 +76,9 @@ namespace To_Do_List
                 }
 
 
-                //else
-                //{
-                //    if (progressBar1.Value - TheValOfEachTask >= 0)
-                //    {
-
-                //        progressBar1.Value -= TheValOfEachTask;
-                //        labProgress.Text = progressBar1.Value.ToString() + "%";
-                //    }
-                //    else if (0 > (progressBar1.Value - TheValOfEachTask))
-                //    {
-                //        progressBar1.Value = progressBar1.Minimum;
-                //        labProgress.Text = "0%";
-                //    }
-                //}
-
             }
 
         }
-
-
-        //private void RemoveFromProgress()
-        //{
-            //if (progressBar1.Value - ValueToAddEachTimeToProgressBar >= 0)
-            //{
-              
-            //    progressBar1.Value -= ValueToAddEachTimeToProgressBar;
-            //    labProgress.Text = progressBar1.Value.ToString();
-            //}
-            //else if (0 > (progressBar1.Value - ValueToAddEachTimeToProgressBar))
-            //{
-            //    progressBar1.Value = progressBar1.Minimum;
-            //    labProgress.Text = "0%";
-            //}
-//}
-
 
 
         void AddTask(stInfo InfoTask)
@@ -193,7 +138,6 @@ namespace To_Do_List
 
                 UpdateProgress();
 
-
             }
         }
 
@@ -215,8 +159,6 @@ namespace To_Do_List
         private void Tasks_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             CheckedListBox currentTask = sender as CheckedListBox;
-
-           
 
             stInfo temp = (stInfo)currentTask.Items[currentTask.SelectedIndex];
 
