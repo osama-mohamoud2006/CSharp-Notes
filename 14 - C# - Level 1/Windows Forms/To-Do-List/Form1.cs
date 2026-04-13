@@ -44,15 +44,23 @@ namespace To_Do_List
             InfoTask.DeadLine = InputForm.dtDeadLine.Value.ToString("dd/MM/yyy"); // the dead line from add form
 
             AddTask(InfoTask); // add the task 
+             
+           
         }
 
+        float ValueToAddEachTimeToProgressBar = 0.0; // to determine what the progress bar should add each time 
+        private void UpdateMaxProgressBar()
+        {
+            progressBar1.Maximum = Tasks.Items.Count; 
+        }
        
         void AddTask(stInfo InfoTask)
         {
             //Tasks.Tag= InfoTask; //store info in tag 
 
             Tasks.Items.Add(InfoTask);
-            
+
+            UpdateMaxProgressBar();
         }
 
 
@@ -96,7 +104,8 @@ namespace To_Do_List
             if (NoThingOnListWaring()) return;
 
           if (Tasks.Items.Count > 0 && index!=-1)  Tasks.Items.RemoveAt(index); // remove task from screen (the selected index)
-           
+
+            UpdateMaxProgressBar();
         }
 
         private string UnstrikeOutString(string str)

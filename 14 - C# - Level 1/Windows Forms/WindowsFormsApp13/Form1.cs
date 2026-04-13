@@ -20,6 +20,7 @@ namespace WindowsFormsApp13
             progressBar1.Minimum = 0; 
             progressBar1.Maximum = 100;
             progressBar1.Value = 0;
+            timer1.Enabled = true; 
 
         }
 
@@ -50,12 +51,12 @@ namespace WindowsFormsApp13
         private void button4_Click(object sender, EventArgs e)
         {
             progressBar1.Minimum = 0;
-            progressBar1.Style = ProgressBarStyle.Marquee;
+          
             for (int i = 1; i<= 10; i++ )
             {
                 if (progressBar1.Value < progressBar1.Maximum)
                 {
-                   // Thread.Sleep(500);
+                   Thread.Sleep(1000);
                     progressBar1.Value += 10;
                     
                     label1.Text = ((((float)progressBar1.Value / progressBar1.Maximum) * 100).ToString()) + "%";
@@ -71,6 +72,13 @@ namespace WindowsFormsApp13
         private void timer1_Tick(object sender, EventArgs e)
         {
 
+            if (progressBar1.Value < progressBar1.Maximum)
+            {
+                progressBar1.Value += 10;
+                label1.Text = ((((float)progressBar1.Value / progressBar1.Maximum) * 100).ToString()) + "%";
+
+            }
+            else timer1.Enabled = false;
         }
     }
 }
