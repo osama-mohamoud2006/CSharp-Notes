@@ -36,7 +36,7 @@
             this.pbAdd = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labProgress = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRemove)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).BeginInit();
@@ -136,17 +136,17 @@
             this.progressBar1.Size = new System.Drawing.Size(321, 51);
             this.progressBar1.TabIndex = 7;
             // 
-            // label3
+            // labProgress
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(713, 540);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 16);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "100%";
+            this.labProgress.AutoSize = true;
+            this.labProgress.BackColor = System.Drawing.Color.White;
+            this.labProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labProgress.ForeColor = System.Drawing.Color.Black;
+            this.labProgress.Location = new System.Drawing.Point(711, 540);
+            this.labProgress.Name = "labProgress";
+            this.labProgress.Size = new System.Drawing.Size(44, 16);
+            this.labProgress.TabIndex = 8;
+            this.labProgress.Text = "100%";
             // 
             // Form1
             // 
@@ -154,7 +154,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(895, 574);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labProgress);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pbInfo);
@@ -183,7 +183,7 @@
         private System.Windows.Forms.PictureBox pbInfo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labProgress;
     }
 }
 
