@@ -76,12 +76,32 @@ namespace WindowsFormsApp13
 
         // Text Changed Events For masking the entered data in the labels
    
-        sbyte GetAgeFromDateOfBirth(string text)
+        string GetAgeFromDateOfBirth(string text) //10
         {
-            string[] date = text.Split('/'); // 1/8/2006
+            if(String.IsNullOrEmpty(text))
+            {
+                return "0";
+            }
+            string[] date = text.Split('/'); // 2006/8/1
 
+            //MessageBox.Show(date.Length.ToString());
 
-            DateTime DateOfBirth = new DateTime("1/5/2004");
+            if (date.Length == 3)
+            {
+                if (!(String.IsNullOrEmpty(date[0]) || String.IsNullOrEmpty(date[1]) || String.IsNullOrEmpty(date[2])) )
+                {
+
+                    DateTime DateOfBirth = new DateTime(Convert.ToInt32(date[2]), Convert.ToInt32(date[1]), Convert.ToInt32(date[0])); // convert it to date
+
+                    TimeSpan diff = DateTime.Now - DateOfBirth;
+
+                    return Math.Floor(diff.TotalDays/365).ToString();
+                }
+
+                else return "0";
+            }
+
+             return "0";
         }
 
 
@@ -104,7 +124,9 @@ namespace WindowsFormsApp13
             }
             else if (tbDateOfBirth == tb)
             {
-                MessageBox.Show(tbDateOfBirth.Text);
+               // MessageBox.Show(tbDateOfBirth.Text.Length.ToString());
+                lblAge.Text = GetAgeFromDateOfBirth(tbDateOfBirth.Text);
+                
             }
 
         }

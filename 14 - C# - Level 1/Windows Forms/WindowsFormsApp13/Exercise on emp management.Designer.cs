@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "3amk"}, 2, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Exercise_on_emp_management));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -76,6 +76,7 @@
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.tbEmail = new System.Windows.Forms.MaskedTextBox();
+            this.lblAge = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Avater)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -88,6 +89,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblAge);
             this.groupBox1.Controls.Add(this.lblId);
             this.groupBox1.Controls.Add(this.lblPhone);
             this.groupBox1.Controls.Add(this.lblEmail);
@@ -214,7 +216,7 @@
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem2});
             this.listView1.LargeImageList = this.BigimageList;
             this.listView1.Location = new System.Drawing.Point(0, 288);
             this.listView1.Name = "listView1";
@@ -531,6 +533,15 @@
             this.tbEmail.TabIndex = 14;
             this.tbEmail.TextChanged += new System.EventHandler(this.MaskTb_TextChanged);
             // 
+            // lblAge
+            // 
+            this.lblAge.AutoSize = true;
+            this.lblAge.Location = new System.Drawing.Point(292, 170);
+            this.lblAge.Name = "lblAge";
+            this.lblAge.Size = new System.Drawing.Size(15, 16);
+            this.lblAge.TabIndex = 10;
+            this.lblAge.Text = "0";
+            // 
             // Exercise_on_emp_management
             // 
             this.AcceptButton = this.btnAdd;
@@ -607,5 +618,6 @@
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.MaskedTextBox tbId;
         private System.Windows.Forms.MaskedTextBox tbEmail;
+        private System.Windows.Forms.Label lblAge;
     }
 }
