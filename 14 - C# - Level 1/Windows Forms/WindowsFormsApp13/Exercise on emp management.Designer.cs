@@ -363,7 +363,7 @@
             0,
             0});
             this.UpDownTo.Name = "UpDownTo";
-            this.UpDownTo.Size = new System.Drawing.Size(47, 27);
+            this.UpDownTo.Size = new System.Drawing.Size(55, 27);
             this.UpDownTo.TabIndex = 1;
             // 
             // UpDownFrom
@@ -465,6 +465,7 @@
             this.tbName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbName.Location = new System.Drawing.Point(171, 26);
+            this.tbName.MaxLength = 20;
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(285, 32);
             this.tbName.TabIndex = 0;

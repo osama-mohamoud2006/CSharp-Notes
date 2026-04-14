@@ -49,6 +49,16 @@ namespace WindowsFormsApp13
             return 2;
         }
         
+
+        void RestLabels()
+        {
+            lblPerson.Text = "person";
+             lblEmail.Text = "     @     ";
+            lblPhone.Text = "+204";
+            lblId.Text = "23453";
+            lblAge.Text = "0";
+        }
+
         void RestUserInputs()
         {
             tbDateOfBirth.Clear();
@@ -60,6 +70,9 @@ namespace WindowsFormsApp13
             if (rbMale.Checked) rbMale.Checked = false;
             UpDownFrom.Value = 0;
             UpDownTo.Value = 0;
+
+            Avater.Image = Resources.user;
+            RestLabels();
         }
 
         bool CanAdd()
