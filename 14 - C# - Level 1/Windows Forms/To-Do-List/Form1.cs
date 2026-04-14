@@ -75,6 +75,11 @@ namespace To_Do_List
                     }
                 }
 
+                if(progressBar1.Value==99) // to avoid the case of having 1% left because of the integer division (100/3=33) for example
+                {
+                    progressBar1.Value = 100;
+                    labProgress.Text = progressBar1.Value.ToString() + "%";
+                }
 
             }
 
