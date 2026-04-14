@@ -173,7 +173,42 @@ namespace WindowsFormsApp13
 
         }
 
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            if (listView1.Items.Count > 0 && listView1.SelectedItems != null && listView1.SelectedItems.Count > 0)
+            {
+                listView1.Items.Remove(listView1.SelectedItems[0]);
+            }
+            else
+            {
+                MessageBox.Show("There Are No Items To Remove Or You Didn't Select An Item ! ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+            ComboBox combo = sender as ComboBox;
+            switch (combo.SelectedItem.ToString())
+            {
+                case "Details":
+                    listView1.View = View.Details;
+                    break;
+
+                case "Large Icons":
+                    listView1.View= View.LargeIcon;
+                    break;
+
+                   case "List":
+                    listView1.View = View.List;
+                    break;
+
+                case "Small Icons":
+                    listView1.View = View.SmallIcon;
+                    break;
+
+            }
+        }
 
 
     }

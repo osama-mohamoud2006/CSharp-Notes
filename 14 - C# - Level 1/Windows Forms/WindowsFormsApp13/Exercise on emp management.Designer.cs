@@ -33,6 +33,7 @@
             "3amk"}, 2, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Exercise_on_emp_management));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblAge = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@
             this.BigimageList = new System.Windows.Forms.ImageList(this.components);
             this.SmallimageList = new System.Windows.Forms.ImageList(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tbEmail = new System.Windows.Forms.MaskedTextBox();
             this.tbId = new System.Windows.Forms.MaskedTextBox();
             this.tbPhone = new System.Windows.Forms.MaskedTextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -75,8 +77,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.tbEmail = new System.Windows.Forms.MaskedTextBox();
-            this.lblAge = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Avater)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -107,6 +107,15 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Person Data";
+            // 
+            // lblAge
+            // 
+            this.lblAge.AutoSize = true;
+            this.lblAge.Location = new System.Drawing.Point(292, 170);
+            this.lblAge.Name = "lblAge";
+            this.lblAge.Size = new System.Drawing.Size(15, 16);
+            this.lblAge.TabIndex = 10;
+            this.lblAge.Text = "0";
             // 
             // lblId
             // 
@@ -293,6 +302,15 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Employee Data";
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.Location = new System.Drawing.Point(178, 86);
+            this.tbEmail.Mask = "Laaaaaaaaa \\@\\ aaaaaaa";
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(285, 27);
+            this.tbEmail.TabIndex = 14;
+            this.tbEmail.TextChanged += new System.EventHandler(this.MaskTb_TextChanged);
             // 
             // tbId
             // 
@@ -497,15 +515,18 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Details",
             "Large Icons",
+            "Small Icons",
             "List"});
             this.comboBox1.Location = new System.Drawing.Point(532, 29);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(125, 24);
             this.comboBox1.TabIndex = 2;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnRemove
             // 
@@ -520,6 +541,7 @@
             this.btnRemove.TabIndex = 1;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnAdd
             // 
@@ -534,24 +556,6 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // tbEmail
-            // 
-            this.tbEmail.Location = new System.Drawing.Point(178, 86);
-            this.tbEmail.Mask = "Laaaaaaaaa \\@\\ aaaaaaa";
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(285, 27);
-            this.tbEmail.TabIndex = 14;
-            this.tbEmail.TextChanged += new System.EventHandler(this.MaskTb_TextChanged);
-            // 
-            // lblAge
-            // 
-            this.lblAge.AutoSize = true;
-            this.lblAge.Location = new System.Drawing.Point(292, 170);
-            this.lblAge.Name = "lblAge";
-            this.lblAge.Size = new System.Drawing.Size(15, 16);
-            this.lblAge.TabIndex = 10;
-            this.lblAge.Text = "0";
             // 
             // Exercise_on_emp_management
             // 
