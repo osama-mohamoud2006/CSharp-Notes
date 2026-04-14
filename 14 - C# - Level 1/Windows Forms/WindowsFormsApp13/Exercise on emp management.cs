@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp13.Properties;
 
 namespace WindowsFormsApp13
 {
@@ -15,29 +16,66 @@ namespace WindowsFormsApp13
         public Exercise_on_emp_management()
         {
             InitializeComponent();
+            listView1.Items.Add("3mak");
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+    
+        char GetGender()
         {
-
+            if(rbMale.Checked)
+            {
+                Avater.Image = Resources.boy;
+                return 'M';
+            }
+            else if (rbFemale.Checked)
+            {
+                Avater.Image = Resources.girl;
+                return 'F';
+            }
+            return ' ';
         }
+   
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        bool CannotAdd()
+        bool CanAdd()
         {
             return (String.IsNullOrEmpty(tbEmail.Text) || String.IsNullOrEmpty(tbId.Text) ||
                 String.IsNullOrEmpty(tbName.Text) || String.IsNullOrEmpty(tbPhone.Text)) ? false : true;
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (CannotAdd())
+            if (!CanAdd())
             {
+                MessageBox.Show("You Can n't Add There Are Empty Fields! ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return; 
             }
+
+            ListViewItem item = new ListViewItem(tbName.Text); // add name as the main item \
+
+
+            item.SubItems.Add(tbEmail.Text) ;
+            item.SubItems.Add(""); // age 
+            item.SubItems.Add(tbId.Text);
+            item.SubItems.Add(tbPhone.Text);
+            item.SubItems.Add(GetGender().ToString());
+
+            listView1.Items.Add(item);
+        }
+
+
+        private void WhatWasFilledInTb(RichTextBox tb)
+        {
+            switch (tb.Tag.ToString())
+            {
+                case "EnteredName":
+                    lblPerson.Text = tb.Text;
+                    break;
+            }
+        }
+
+        private void Textbox_TextChanged(object sender, EventArgs e)
+        {
+            RichTextBox tb = sender as RichTextBox;
+            WhatWasFilledInTb(tb);
         }
     }
 }
