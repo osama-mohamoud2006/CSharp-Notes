@@ -29,10 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "3amk"}, 2, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Exercise_on_emp_management));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblId = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblPerson = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,8 +53,8 @@
             this.BigimageList = new System.Windows.Forms.ImageList(this.components);
             this.SmallimageList = new System.Windows.Forms.ImageList(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tbId = new System.Windows.Forms.MaskedTextBox();
             this.tbPhone = new System.Windows.Forms.MaskedTextBox();
-            this.tbId = new System.Windows.Forms.RichTextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -72,7 +76,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.lblPerson = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Avater)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -85,6 +88,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblId);
+            this.groupBox1.Controls.Add(this.lblPhone);
+            this.groupBox1.Controls.Add(this.lblEmail);
             this.groupBox1.Controls.Add(this.lblPerson);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label4);
@@ -99,6 +105,43 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Person Data";
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(292, 211);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(55, 16);
+            this.lblId.TabIndex = 9;
+            this.lblId.Tag = "lblId";
+            this.lblId.Text = "245166";
+            // 
+            // lblPhone
+            // 
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Location = new System.Drawing.Point(288, 135);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(63, 16);
+            this.lblPhone.TabIndex = 8;
+            this.lblPhone.Text = "+202303";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(273, 94);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(93, 16);
+            this.lblEmail.TabIndex = 7;
+            this.lblEmail.Text = "email@.com";
+            // 
+            // lblPerson
+            // 
+            this.lblPerson.AutoSize = true;
+            this.lblPerson.Location = new System.Drawing.Point(292, 49);
+            this.lblPerson.Name = "lblPerson";
+            this.lblPerson.Size = new System.Drawing.Size(55, 16);
+            this.lblPerson.TabIndex = 6;
+            this.lblPerson.Text = "person";
             // 
             // label12
             // 
@@ -171,7 +214,7 @@
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem1});
             this.listView1.LargeImageList = this.BigimageList;
             this.listView1.Location = new System.Drawing.Point(0, 282);
             this.listView1.Name = "listView1";
@@ -229,8 +272,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.tbPhone);
             this.groupBox2.Controls.Add(this.tbId);
+            this.groupBox2.Controls.Add(this.tbPhone);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.Gender);
@@ -249,6 +292,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Employee Data";
             // 
+            // tbId
+            // 
+            this.tbId.Location = new System.Drawing.Point(171, 179);
+            this.tbId.Mask = "0000000";
+            this.tbId.Name = "tbId";
+            this.tbId.Size = new System.Drawing.Size(260, 27);
+            this.tbId.TabIndex = 13;
+            this.tbId.Tag = "EnteredId";
+            this.tbId.TextChanged += new System.EventHandler(this.MaskTb_TextChanged);
+            // 
             // tbPhone
             // 
             this.tbPhone.Location = new System.Drawing.Point(171, 135);
@@ -256,17 +309,8 @@
             this.tbPhone.Name = "tbPhone";
             this.tbPhone.Size = new System.Drawing.Size(260, 27);
             this.tbPhone.TabIndex = 12;
-            // 
-            // tbId
-            // 
-            this.tbId.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbId.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbId.Location = new System.Drawing.Point(171, 179);
-            this.tbId.Name = "tbId";
-            this.tbId.Size = new System.Drawing.Size(285, 32);
-            this.tbId.TabIndex = 11;
-            this.tbId.Text = "";
-            this.tbId.TextChanged += new System.EventHandler(this.Textbox_TextChanged);
+            this.tbPhone.Tag = "EnteredPhone";
+            this.tbPhone.TextChanged += new System.EventHandler(this.MaskTb_TextChanged);
             // 
             // label13
             // 
@@ -344,6 +388,7 @@
             this.rbFemale.TabStop = true;
             this.rbFemale.Text = "Female";
             this.rbFemale.UseVisualStyleBackColor = true;
+            this.rbFemale.CheckedChanged += new System.EventHandler(this.rbGender_CheckedChanged);
             // 
             // rbMale
             // 
@@ -355,6 +400,7 @@
             this.rbMale.TabStop = true;
             this.rbMale.Text = "Male";
             this.rbMale.UseVisualStyleBackColor = true;
+            this.rbMale.CheckedChanged += new System.EventHandler(this.rbGender_CheckedChanged);
             // 
             // maskedTextBox1
             // 
@@ -408,6 +454,7 @@
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(302, 32);
             this.tbEmail.TabIndex = 1;
+            this.tbEmail.Tag = "EnteredEmail";
             this.tbEmail.Text = "";
             this.tbEmail.TextChanged += new System.EventHandler(this.Textbox_TextChanged);
             // 
@@ -484,15 +531,6 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // lblPerson
-            // 
-            this.lblPerson.AutoSize = true;
-            this.lblPerson.Location = new System.Drawing.Point(292, 49);
-            this.lblPerson.Name = "lblPerson";
-            this.lblPerson.Size = new System.Drawing.Size(55, 16);
-            this.lblPerson.TabIndex = 6;
-            this.lblPerson.Text = "person";
-            // 
             // Exercise_on_emp_management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -557,12 +595,15 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.RichTextBox tbId;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ColumnHeader column_Id;
         private System.Windows.Forms.ColumnHeader ColumnPhone;
         private System.Windows.Forms.ColumnHeader ColumnGender;
         private System.Windows.Forms.MaskedTextBox tbPhone;
         private System.Windows.Forms.Label lblPerson;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblPhone;
+        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.MaskedTextBox tbId;
     }
 }

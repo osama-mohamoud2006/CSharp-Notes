@@ -64,11 +64,23 @@ namespace WindowsFormsApp13
 
         private void WhatWasFilledInTb(RichTextBox tb)
         {
+           if(tb.Tag==null || tb==null)
+            {
+                return;
+            }
+
             switch (tb.Tag.ToString())
             {
                 case "EnteredName":
                     lblPerson.Text = tb.Text;
                     break;
+
+                case "EnteredEmail":
+                    lblEmail.Text = tb.Text;
+                    break;
+
+         
+
             }
         }
 
@@ -77,5 +89,30 @@ namespace WindowsFormsApp13
             RichTextBox tb = sender as RichTextBox;
             WhatWasFilledInTb(tb);
         }
+
+        private void rbGender_CheckedChanged(object sender, EventArgs e)
+        {
+            GetGender();
+        }
+
+        // Text Changed Events For masking the entered data in the labels
+   
+        private void MaskTb_TextChanged(object sender, EventArgs e)
+        {
+            MaskedTextBox tb = sender as MaskedTextBox;
+
+            if (tbPhone == tb)
+            {
+                lblPhone.Text = tbPhone.Text;
+            }
+
+            else if (tbId == tb)
+            {
+                lblId.Text = tbId.Text;
+            }
+
+        }
+
+     
     }
 }
