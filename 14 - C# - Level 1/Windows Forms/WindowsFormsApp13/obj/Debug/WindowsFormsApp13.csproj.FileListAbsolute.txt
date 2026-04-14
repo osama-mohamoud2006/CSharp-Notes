@@ -1,11 +1,12 @@
-E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp13\bin\Debug\WindowsFormsApp13.exe.config
-E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp13\bin\Debug\WindowsFormsApp13.exe
-E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp13\bin\Debug\WindowsFormsApp13.pdb
 E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp13\obj\Debug\WindowsFormsApp13.csproj.AssemblyReference.cache
 E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp13\obj\Debug\WindowsFormsApp13.Form1.resources
 E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp13\obj\Debug\WindowsFormsApp13.Properties.Resources.resources
 E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp13\obj\Debug\WindowsFormsApp13.csproj.GenerateResource.cache
 E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp13\obj\Debug\WindowsFormsApp13.csproj.CoreCompileInputs.cache
-E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp13\obj\Debug\WindowsFormsApp13.exe
-E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp13\obj\Debug\WindowsFormsApp13.pdb
 E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp13\obj\Debug\WindowsFormsApp13.Form2.resources
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp13\obj\Debug\WindowsFormsApp13.Exercise_on_emp_management.resources
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp13\bin\Debug\NA.exe.config
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp13\bin\Debug\NA.exe
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp13\bin\Debug\NA.pdb
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp13\obj\Debug\NA.exe
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp13\obj\Debug\NA.pdb

@@ -35,6 +35,12 @@ namespace WindowsFormsApp13
 
         private void listView1_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
+            var temp = listView1.Items[0];
+
+            foreach (var item in listView1.Items)
+            {
+                e.Item.Checked = true; 
+            }
 
         }
 
@@ -91,7 +97,7 @@ namespace WindowsFormsApp13
         private void Clicked(object sender, EventArgs e)
         {
 
-            MessageBox.Show("clicked on item ");
+            MessageBox.Show("clicked on item "+listView1.SelectedIndices);
         }
     }
 }

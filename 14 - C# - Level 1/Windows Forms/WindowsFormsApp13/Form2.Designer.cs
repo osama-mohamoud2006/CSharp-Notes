@@ -57,6 +57,7 @@
             // 
             this.listView1.BackColor = System.Drawing.Color.DarkGray;
             this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listView1.CheckBoxes = true;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.items_col,
             this.columnHeader1});
