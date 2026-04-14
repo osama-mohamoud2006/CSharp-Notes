@@ -35,12 +35,38 @@ namespace WindowsFormsApp13
             return ' ';
         }
    
+        int IndexOfImageAccordingToUserChoice()
+        {
+            if (rbMale.Checked)
+            {
+                return 0;
+            }
+            else if (rbFemale.Checked)
+            {
+                Avater.Image = Resources.girl;
+                return 1;
+            }
+            return 2;
+        }
+        
+        void RestUserInputs()
+        {
+            tbDateOfBirth.Clear();
+            tbEmail.Clear();
+            tbId.Clear();
+            tbName.Clear();
+            tbPhone.Clear();
+            if (rbFemale.Checked) rbFemale.Checked = false;
+            if (rbMale.Checked) rbMale.Checked = false;
+            UpDownFrom.Value = 0;
+            UpDownTo.Value = 0;
+        }
 
         bool CanAdd()
         {
-            return (String.IsNullOrEmpty(tbEmail.Text) || String.IsNullOrEmpty(tbId.Text) ||
-                String.IsNullOrEmpty(tbName.Text) || String.IsNullOrEmpty(tbPhone.Text)
-                || (GetGender() == ' ')  || String.IsNullOrEmpty(tbDateOfBirth.Text) ) ? false : true;
+            return (!tbEmail.MaskCompleted || !tbId.MaskCompleted ||
+                String.IsNullOrEmpty(tbName.Text) || !tbPhone.MaskCompleted
+                || (GetGender() == ' ')  || !tbDateOfBirth.MaskCompleted  ) ? false : true;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -55,12 +81,15 @@ namespace WindowsFormsApp13
 
 
             item.SubItems.Add(tbEmail.Text) ;
-            item.SubItems.Add(""); // age 
+            item.SubItems.Add(GetAgeFromDateOfBirth(tbDateOfBirth.Text)); // age 
             item.SubItems.Add(tbId.Text);
             item.SubItems.Add(tbPhone.Text);
             item.SubItems.Add(GetGender().ToString());
+            item.ImageIndex= IndexOfImageAccordingToUserChoice();
 
             listView1.Items.Add(item);
+
+            RestUserInputs();
         }
 
 
@@ -84,7 +113,7 @@ namespace WindowsFormsApp13
             }
             string[] date = text.Split('/'); // 2006/8/1
 
-            //MessageBox.Show(date.Length.ToString());
+      
 
             if (date.Length == 3)
             {
@@ -124,7 +153,7 @@ namespace WindowsFormsApp13
             }
             else if (tbDateOfBirth == tb)
             {
-               // MessageBox.Show(tbDateOfBirth.Text.Length.ToString());
+               
                 lblAge.Text = GetAgeFromDateOfBirth(tbDateOfBirth.Text);
                 
             }

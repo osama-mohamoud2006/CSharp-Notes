@@ -59,8 +59,8 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.UpDownTo = new System.Windows.Forms.NumericUpDown();
+            this.UpDownFrom = new System.Windows.Forms.NumericUpDown();
             this.Gender = new System.Windows.Forms.GroupBox();
             this.rbFemale = new System.Windows.Forms.RadioButton();
             this.rbMale = new System.Windows.Forms.RadioButton();
@@ -81,8 +81,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Avater)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UpDownTo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UpDownFrom)).BeginInit();
             this.Gender.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
@@ -327,8 +327,8 @@
             // 
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.numericUpDown2);
-            this.groupBox3.Controls.Add(this.numericUpDown1);
+            this.groupBox3.Controls.Add(this.UpDownTo);
+            this.groupBox3.Controls.Add(this.UpDownFrom);
             this.groupBox3.Location = new System.Drawing.Point(513, 81);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(367, 61);
@@ -354,19 +354,29 @@
             this.label9.TabIndex = 2;
             this.label9.Text = "From";
             // 
-            // numericUpDown2
+            // UpDownTo
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(238, 27);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(47, 27);
-            this.numericUpDown2.TabIndex = 1;
+            this.UpDownTo.Location = new System.Drawing.Point(238, 27);
+            this.UpDownTo.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.UpDownTo.Name = "UpDownTo";
+            this.UpDownTo.Size = new System.Drawing.Size(47, 27);
+            this.UpDownTo.TabIndex = 1;
             // 
-            // numericUpDown1
+            // UpDownFrom
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(87, 27);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(63, 27);
-            this.numericUpDown1.TabIndex = 0;
+            this.UpDownFrom.Location = new System.Drawing.Point(87, 27);
+            this.UpDownFrom.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.UpDownFrom.Name = "UpDownFrom";
+            this.UpDownFrom.Size = new System.Drawing.Size(63, 27);
+            this.UpDownFrom.TabIndex = 0;
             // 
             // Gender
             // 
@@ -478,7 +488,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(323, 24);
+            this.label11.Location = new System.Drawing.Point(429, 21);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(80, 32);
             this.label11.TabIndex = 3;
@@ -491,7 +501,7 @@
             "Details",
             "Large Icons",
             "List"});
-            this.comboBox1.Location = new System.Drawing.Point(422, 29);
+            this.comboBox1.Location = new System.Drawing.Point(532, 29);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(125, 24);
             this.comboBox1.TabIndex = 2;
@@ -505,7 +515,7 @@
             this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemove.Location = new System.Drawing.Point(155, 10);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(125, 53);
+            this.btnRemove.Size = new System.Drawing.Size(155, 53);
             this.btnRemove.TabIndex = 1;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = false;
@@ -562,8 +572,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UpDownTo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UpDownFrom)).EndInit();
             this.Gender.ResumeLayout(false);
             this.Gender.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -597,8 +607,8 @@
         private System.Windows.Forms.RadioButton rbMale;
         private System.Windows.Forms.RadioButton rbFemale;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown UpDownTo;
+        private System.Windows.Forms.NumericUpDown UpDownFrom;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox4;
