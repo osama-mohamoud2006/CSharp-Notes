@@ -16,7 +16,7 @@ namespace WindowsFormsApp13
         public Exercise_on_emp_management()
         {
             InitializeComponent();
-            listView1.Items.Add("3mak");
+           
         }
 
     
