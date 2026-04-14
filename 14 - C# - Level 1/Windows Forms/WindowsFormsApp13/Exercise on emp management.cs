@@ -39,8 +39,10 @@ namespace WindowsFormsApp13
         bool CanAdd()
         {
             return (String.IsNullOrEmpty(tbEmail.Text) || String.IsNullOrEmpty(tbId.Text) ||
-                String.IsNullOrEmpty(tbName.Text) || String.IsNullOrEmpty(tbPhone.Text)) ? false : true;
+                String.IsNullOrEmpty(tbName.Text) || String.IsNullOrEmpty(tbPhone.Text)
+                || (GetGender() == ' ')  || String.IsNullOrEmpty(tbDateOfBirth.Text) ) ? false : true;
         }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (!CanAdd())
@@ -62,32 +64,9 @@ namespace WindowsFormsApp13
         }
 
 
-        private void WhatWasFilledInTb(RichTextBox tb)
-        {
-           if(tb.Tag==null || tb==null)
-            {
-                return;
-            }
-
-            switch (tb.Tag.ToString())
-            {
-                case "EnteredName":
-                    lblPerson.Text = tb.Text;
-                    break;
-
-                case "EnteredEmail":
-                    lblEmail.Text = tb.Text;
-                    break;
-
-         
-
-            }
-        }
-
         private void Textbox_TextChanged(object sender, EventArgs e)
         {
-            RichTextBox tb = sender as RichTextBox;
-            WhatWasFilledInTb(tb);
+            lblPerson.Text = tbName.Text;
         }
 
         private void rbGender_CheckedChanged(object sender, EventArgs e)
@@ -97,6 +76,15 @@ namespace WindowsFormsApp13
 
         // Text Changed Events For masking the entered data in the labels
    
+        sbyte GetAgeFromDateOfBirth(string text)
+        {
+            string[] date = text.Split('/'); // 1/8/2006
+
+
+            DateTime DateOfBirth = new DateTime("1/5/2004");
+        }
+
+
         private void MaskTb_TextChanged(object sender, EventArgs e)
         {
             MaskedTextBox tb = sender as MaskedTextBox;
@@ -110,9 +98,19 @@ namespace WindowsFormsApp13
             {
                 lblId.Text = tbId.Text;
             }
+            else if(tbEmail == tb)
+            {
+                lblEmail.Text = tbEmail.Text;
+            }
+            else if (tbDateOfBirth == tb)
+            {
+                MessageBox.Show(tbDateOfBirth.Text);
+            }
 
         }
 
-     
+
+
+
     }
 }
