@@ -24,6 +24,12 @@ namespace To_Do_List
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            if(String.IsNullOrEmpty(tbInput.Text))
+            {
+                MessageBox.Show("Please enter a task name.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else 
             this.Close();
         }
     }

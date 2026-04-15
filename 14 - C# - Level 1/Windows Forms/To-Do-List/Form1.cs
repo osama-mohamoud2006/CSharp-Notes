@@ -45,6 +45,12 @@ namespace To_Do_List
             InfoTask.CreatedWhen = DateTime.Now.ToString(); // record the date of creation 
             InfoTask.DeadLine = InputForm.dtDeadLine.Value.ToString("dd/MM/yyy"); // the dead line from add form
 
+            if(string.IsNullOrEmpty(InfoTask.NameOfTask)) // if the user didn't input anything 
+            {
+                MessageBox.Show("Please Enter A Task Name !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
             AddTask(InfoTask); // add the task 
              
            
