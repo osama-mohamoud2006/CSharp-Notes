@@ -160,6 +160,7 @@
             // 
             // frmTimer
             // 
+            this.AcceptButton = this.btnOk;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::Windows_Power.Properties.Resources.App_Background_;
             resources.ApplyResources(this, "$this");

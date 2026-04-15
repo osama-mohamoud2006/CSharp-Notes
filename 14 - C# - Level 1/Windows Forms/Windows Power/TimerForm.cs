@@ -156,8 +156,8 @@ namespace Windows_Power
         public void TimerStop()
         {
             timer1.Enabled = false;
-          
-            //btnStop.Enabled = false;
+
+            
         }
 
         public void RestTimer()
@@ -182,10 +182,14 @@ namespace Windows_Power
         }
 
         public bool ChangePowerState = true; // to avoid change power state when the user press rest button and the timer is running
+        
+        
         private void btnRest_Click(object sender, EventArgs e)
         {
             ChangePowerState = false; // if rest is clicked don't change power state 
+
             RestTimer();
+
         }
 
 

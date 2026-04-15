@@ -171,6 +171,7 @@
             // 
             // btnStop
             // 
+            this.btnStop.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnStop.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnStop.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -199,10 +200,12 @@
             // 
             // frmMain
             // 
+            this.AcceptButton = this.btnSetTimer;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Windows_Power.Properties.Resources.App_Background_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CancelButton = this.btnStop;
             this.ClientSize = new System.Drawing.Size(772, 484);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.label3);
@@ -234,11 +237,11 @@
         private System.Windows.Forms.Button btnSetTimer;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnStop;
         public System.Windows.Forms.Label labHour;
         public System.Windows.Forms.Label labMin;
         public System.Windows.Forms.Label labSec;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.NotifyIcon notifyBeforeChange;
+        public System.Windows.Forms.Button btnStop;
     }
 }

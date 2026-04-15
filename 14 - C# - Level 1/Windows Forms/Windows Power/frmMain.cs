@@ -79,13 +79,13 @@ namespace Windows_Power
             comboBox1.BackColor = Color.Wheat;
         }
 
-        private void CallTimerFormButton_Click(object sender, EventArgs e)
+        private void CallTimerFormButton_Click(object sender, EventArgs e) // call set timer form to set the timer and start it
         {
             
             Timer.ShowDialog();
 
-            btnStop.Visible = true;
-            btnStop.Enabled=true;
+            //btnStop.Visible = true;
+            btnStop.Visible=true; /// --->>>>>>>>>>
             btnSetTimer.Enabled = false;
             timer1.Enabled = true;
 
@@ -93,10 +93,12 @@ namespace Windows_Power
 
         private void btnStop_Click(object sender, EventArgs e)
         {
-            Timer.TimerStop();
-            btnStop.Visible = false;
             timer1.Enabled = false;
+            Timer.TimerStop(); // disable the timer of timer form (useless as i have moved the logic of timer here)
+            btnStop.Visible = false;
             btnSetTimer.Enabled = true;
+
+            
         }
 
         // This Function To Show Notification Before 30 Sec Of Power State Change To Notify User And Give Him The Chance To Stop The Timer If He Wants To
@@ -157,7 +159,7 @@ namespace Windows_Power
                 this.labMin.Text = "0";
                 this.labSec.Text = "0";
 
-                btnStop.Enabled= false;
+                btnStop.Visible = false; // --->>>>>>> 
                 btnSetTimer.Enabled = true;
 
                 // if the user press rest button and the timer is running we don't want to change the power state
