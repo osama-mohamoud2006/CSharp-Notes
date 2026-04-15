@@ -10,3 +10,4 @@ E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp13\bin\Debug\NA.ex
 E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp13\bin\Debug\NA.pdb
 E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp13\obj\Debug\NA.exe
 E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp13\obj\Debug\NA.pdb
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp13\obj\Debug\WindowsFormsApp13.ErrorProvider.resources

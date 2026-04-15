@@ -16,7 +16,8 @@ namespace WindowsFormsApp13
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Exercise_on_emp_management());
+            //  Application.Run(new Exercise_on_emp_management());
+            Application.Run(new ErrorProvider());
         }
     }
 }

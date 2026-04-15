@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ErrorProvider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorProvider.Designer.cs">
+      <DependentUpon>ErrorProvider.cs</DependentUpon>
+    </Compile>
     <Compile Include="Exercise on emp management.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ErrorProvider.resx">
+      <DependentUpon>ErrorProvider.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Exercise on emp management.resx">
       <DependentUpon>Exercise on emp management.cs</DependentUpon>
     </EmbeddedResource>
