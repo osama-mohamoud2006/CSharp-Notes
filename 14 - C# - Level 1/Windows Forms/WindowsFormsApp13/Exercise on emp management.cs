@@ -166,7 +166,7 @@ namespace WindowsFormsApp13
             }
             else if (tbDateOfBirth == tb)
             {
-               
+               if(tbDateOfBirth.MaskCompleted)
                 lblAge.Text = GetAgeFromDateOfBirth(tbDateOfBirth.Text);
                 
             }

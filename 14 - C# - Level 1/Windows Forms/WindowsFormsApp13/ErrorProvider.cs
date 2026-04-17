@@ -19,27 +19,40 @@ namespace WindowsFormsApp13
 
         private void ErrorProvider_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //DialogResult result = MessageBox.Show("متأكد عايز تقفل؟", "Confirm", MessageBoxButtons.YesNo);
+         
+            //var res = MessageBox.Show("Are you sure you want to close the form?", "Confirm Close", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            //if (result == DialogResult.No)
+            //if(res == DialogResult.Yes)
             //{
-            //    e.Cancel = true; // يمنع القفل
+            //    this.Hide();
             //}
+
         }
 
-        private void ErrorProvider_FormClosed(object sender, FormClosedEventArgs e)
+        private void ErrorProvider_FormClosed(object sender, FormClosedEventArgs e) // خلاص الفورم اتقفل 
         {
-          //  MessageBox.Show("Form is closed");
+            //MessageBox.Show("Form is closed");
+            //Exercise_on_emp_management temp = new Exercise_on_emp_management();
+            //    temp.ShowDialog();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        // this event is firing before the control loses its focus 
         private void textBox1_Validating(object sender, CancelEventArgs e)
         {
+            if (String.IsNullOrEmpty(textBox1.Text))
+            {
+                e.Cancel = true; // user can n't leave the text box
+                errorProvider1.SetError(textBox1, "Validating Was Failed");
+            }
+            else
+            {
+                e.Cancel = false;// user can leave the text box 
+            }
 
         }
+
+     
+
+
     }
 }
