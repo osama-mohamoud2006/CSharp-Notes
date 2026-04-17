@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "3amk"}, 2, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Exercise_on_emp_management));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -77,6 +77,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Avater)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -85,6 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.UpDownFrom)).BeginInit();
             this.Gender.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -225,7 +227,7 @@
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem1});
             this.listView1.LargeImageList = this.BigimageList;
             this.listView1.Location = new System.Drawing.Point(0, 288);
             this.listView1.Name = "listView1";
@@ -311,6 +313,7 @@
             this.tbEmail.Size = new System.Drawing.Size(285, 27);
             this.tbEmail.TabIndex = 14;
             this.tbEmail.TextChanged += new System.EventHandler(this.MaskTb_TextChanged);
+            this.tbEmail.Validating += new System.ComponentModel.CancelEventHandler(this.MaskTb_Validating);
             // 
             // tbId
             // 
@@ -321,6 +324,7 @@
             this.tbId.TabIndex = 13;
             this.tbId.Tag = "EnteredId";
             this.tbId.TextChanged += new System.EventHandler(this.MaskTb_TextChanged);
+            this.tbId.Validating += new System.ComponentModel.CancelEventHandler(this.MaskTb_Validating);
             // 
             // tbPhone
             // 
@@ -331,6 +335,7 @@
             this.tbPhone.TabIndex = 12;
             this.tbPhone.Tag = "EnteredPhone";
             this.tbPhone.TextChanged += new System.EventHandler(this.MaskTb_TextChanged);
+            this.tbPhone.Validating += new System.ComponentModel.CancelEventHandler(this.MaskTb_Validating);
             // 
             // label13
             // 
@@ -441,6 +446,7 @@
             this.tbDateOfBirth.TabIndex = 7;
             this.tbDateOfBirth.ValidatingType = typeof(System.DateTime);
             this.tbDateOfBirth.TextChanged += new System.EventHandler(this.MaskTb_TextChanged);
+            this.tbDateOfBirth.Validating += new System.ComponentModel.CancelEventHandler(this.MaskTb_Validating);
             // 
             // label8
             // 
@@ -557,6 +563,10 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Exercise_on_emp_management
             // 
             this.AcceptButton = this.btnAdd;
@@ -583,6 +593,7 @@
             this.Gender.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -634,5 +645,6 @@
         private System.Windows.Forms.MaskedTextBox tbId;
         private System.Windows.Forms.MaskedTextBox tbEmail;
         private System.Windows.Forms.Label lblAge;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

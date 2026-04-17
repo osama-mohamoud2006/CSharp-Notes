@@ -210,6 +210,14 @@ namespace WindowsFormsApp13
             }
         }
 
-
+        private void MaskTb_Validating(object sender, CancelEventArgs e)
+        {
+            MaskedTextBox temp = sender as MaskedTextBox;
+            if (temp.MaskCompleted)
+            {
+                e.Cancel = true; // prevent user from leaving the control 
+                errorProvider1.SetError(sender as MaskedTextBox, "Invalid Input"); // enable the error provider to the sent masked text box 
+            }
+        }
     }
 }

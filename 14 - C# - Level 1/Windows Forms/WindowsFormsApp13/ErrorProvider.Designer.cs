@@ -38,6 +38,7 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +69,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(342, 24);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
+            this.richTextBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             // 
             // label2
             // 
@@ -82,10 +84,11 @@
             // maskedTextBox1
             // 
             this.maskedTextBox1.Location = new System.Drawing.Point(291, 229);
-            this.maskedTextBox1.Mask = "aaaaaaaaa";
+            this.maskedTextBox1.Mask = "LLLLLLLLLLL";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(342, 24);
             this.maskedTextBox1.TabIndex = 4;
+            this.maskedTextBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             // 
             // label3
             // 
@@ -100,9 +103,20 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(291, 297);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(342, 24);
             this.numericUpDown1.TabIndex = 6;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             // 
             // label4
             // 
@@ -118,11 +132,22 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(470, 379);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(296, 102);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Validating += new System.ComponentModel.CancelEventHandler(this.button1_Validating);
+            // 
             // ErrorProvider
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 506);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label3);
@@ -137,6 +162,7 @@
             this.Text = "ErrorProvider";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ErrorProvider_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ErrorProvider_FormClosed);
+            this.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
@@ -155,5 +181,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button button1;
     }
 }

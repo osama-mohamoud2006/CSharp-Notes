@@ -39,20 +39,60 @@ namespace WindowsFormsApp13
         // this event is firing before the control loses its focus 
         private void textBox1_Validating(object sender, CancelEventArgs e)
         {
-            if (String.IsNullOrEmpty(textBox1.Text))
+            if (sender == sender as TextBox)
             {
-                e.Cancel = true; // user can n't leave the text box
-                errorProvider1.SetError(textBox1, "Validating Was Failed");
-            }
-            else
-            {
-                e.Cancel = false;// user can leave the text box 
+
+                if (String.IsNullOrEmpty(textBox1.Text))
+                {
+                    e.Cancel = true; // user can n't leave the text box
+                    errorProvider1.SetError(textBox1, "Validating Was Failed"); // to make the error provider enabled 
+                }
+                else
+                {
+                    e.Cancel = false;// user can leave the text box 
+                    errorProvider1.SetError(textBox1, ""); // to disable the error provider  
+
+                }
+
             }
 
+            else if (sender == sender as MaskedTextBox)
+            {
+                if (!maskedTextBox1.MaskCompleted)
+                {
+                    e.Cancel = true; // prevent the user from escaping the control
+                    errorProvider1.SetError(maskedTextBox1, "Make Isn't Filled With Required Fields!");
+
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider1.SetError(maskedTextBox1, "");
+                }
+            }
+
+            else if (sender == sender as RichTextBox)
+            {
+                if (String.IsNullOrEmpty(richTextBox1.Text))
+                {
+                    e.Cancel = true;
+                    errorProvider1.SetError(richTextBox1, "Empty Or Null!");
+
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider1.SetError(richTextBox1, "");
+                }
+            }
+
+
+       
         }
 
-     
-
-
+        private void button1_Validating(object sender, CancelEventArgs e)
+        {
+            if (button1.Text != "A") errorProvider1.SetError(button1, "empty"); else errorProvider1.SetError(button1, "");
+        }
     }
 }
