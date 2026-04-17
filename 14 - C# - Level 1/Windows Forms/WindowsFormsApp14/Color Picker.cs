@@ -25,12 +25,11 @@ namespace WindowsFormsApp14
         }
 
 
-        private int ValueOfTrackBar()
-
+   
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-           
-
+            this.BackColor = SetCustomColor(trackBar1.Value, trackBar2.Value, trackBar3.Value);
+            label1.Text = trackBar1.Value.ToString() + "," + trackBar2.Value.ToString() + "," + trackBar3.Value.ToString();
         }
     }
 }
