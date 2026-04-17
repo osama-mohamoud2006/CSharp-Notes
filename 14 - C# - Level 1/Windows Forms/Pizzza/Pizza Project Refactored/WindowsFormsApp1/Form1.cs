@@ -74,16 +74,15 @@ namespace Refactored_Project
             return total; 
         }
 
-        int  CountOfPizza = 1; 
+       
         private void UpDownCountOfPizza_ValueChanged(object sender, EventArgs e)
         {
-             CountOfPizza = Convert.ToInt32(UpDownCountOfPizza.Value);
             UpdatePrice();
         }
 
         private float GetTotalPrice() // take the price of each group then get the total of them 
         {
-            return ( CalcPriceOfSize()+ CalcPriceOfCurstType()+ CalcPriceOfToppings() ) * CountOfPizza;
+            return ( CalcPriceOfSize()+ CalcPriceOfCurstType()+ CalcPriceOfToppings() ) * Convert.ToInt32(UpDownCountOfPizza.Value);
         }
 
         private void UpdatePrice()//update price on screen 
@@ -184,6 +183,7 @@ namespace Refactored_Project
             chkOnion.Checked = false;
             chkTomatos.Checked = false;
 
+            UpDownCountOfPizza.Value = 1;
 
         }
         private void EnableGroups()
