@@ -74,9 +74,16 @@ namespace Refactored_Project
             return total; 
         }
 
+        int  CountOfPizza = 1; 
+        private void UpDownCountOfPizza_ValueChanged(object sender, EventArgs e)
+        {
+             CountOfPizza = Convert.ToInt32(UpDownCountOfPizza.Value);
+            UpdatePrice();
+        }
+
         private float GetTotalPrice() // take the price of each group then get the total of them 
         {
-            return CalcPriceOfSize()+ CalcPriceOfCurstType()+ CalcPriceOfToppings();
+            return ( CalcPriceOfSize()+ CalcPriceOfCurstType()+ CalcPriceOfToppings() ) * CountOfPizza;
         }
 
         private void UpdatePrice()//update price on screen 
@@ -213,7 +220,7 @@ namespace Refactored_Project
             }
         }
 
-      
+     
     }
 
 }

@@ -59,11 +59,14 @@
             this.rbMedium = new System.Windows.Forms.RadioButton();
             this.rbSmall = new System.Windows.Forms.RadioButton();
             this.gbSize = new System.Windows.Forms.GroupBox();
+            this.UpDownCountOfPizza = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.gbWhereToEat.SuspendLayout();
             this.gbCrustType.SuspendLayout();
             this.gbToppings.SuspendLayout();
             this.gbSize.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UpDownCountOfPizza)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -446,11 +449,47 @@
             this.gbSize.TabStop = false;
             this.gbSize.Text = "Size";
             // 
+            // UpDownCountOfPizza
+            // 
+            this.UpDownCountOfPizza.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.UpDownCountOfPizza.Location = new System.Drawing.Point(32, 525);
+            this.UpDownCountOfPizza.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.UpDownCountOfPizza.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.UpDownCountOfPizza.Name = "UpDownCountOfPizza";
+            this.UpDownCountOfPizza.Size = new System.Drawing.Size(260, 22);
+            this.UpDownCountOfPizza.TabIndex = 16;
+            this.UpDownCountOfPizza.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.UpDownCountOfPizza.ValueChanged += new System.EventHandler(this.UpDownCountOfPizza_ValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(29, 492);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(135, 22);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Num Of Pizza";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1216, 561);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.UpDownCountOfPizza);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnResetForm);
@@ -472,6 +511,7 @@
             this.gbToppings.PerformLayout();
             this.gbSize.ResumeLayout(false);
             this.gbSize.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UpDownCountOfPizza)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -510,6 +550,8 @@
         private System.Windows.Forms.RadioButton rbMedium;
         private System.Windows.Forms.RadioButton rbSmall;
         private System.Windows.Forms.GroupBox gbSize;
+        private System.Windows.Forms.NumericUpDown UpDownCountOfPizza;
+        private System.Windows.Forms.Label label3;
     }
 }
 
