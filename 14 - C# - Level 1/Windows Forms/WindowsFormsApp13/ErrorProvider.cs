@@ -17,16 +17,9 @@ namespace WindowsFormsApp13
             InitializeComponent();
         }
 
-        private void ErrorProvider_FormClosing(object sender, FormClosingEventArgs e)
+        private void _FormClosing(object sender, FormClosingEventArgs e)
         {
-         
-            //var res = MessageBox.Show("Are you sure you want to close the form?", "Confirm Close", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            //if(res == DialogResult.Yes)
-            //{
-            //    this.Hide();
-            //}
-
+            e.Cancel = false; 
         }
 
         private void ErrorProvider_FormClosed(object sender, FormClosedEventArgs e) // خلاص الفورم اتقفل 
@@ -92,7 +85,23 @@ namespace WindowsFormsApp13
 
         private void button1_Validating(object sender, CancelEventArgs e)
         {
-            if (button1.Text != "A") errorProvider1.SetError(button1, "empty"); else errorProvider1.SetError(button1, "");
+            if(String.IsNullOrEmpty(textBox1.Text))
+            {
+                e.Cancel = true; // prevent user from closiong the form or escape the control 
+                errorProvider1.SetError(textBox1, "You cann't Use The button before filling the text box");
+                errorProvider1.SetError(button1, "You cann't Use The button before filling the text box");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(textBox1, "");
+                errorProvider1.SetError(button1, "");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

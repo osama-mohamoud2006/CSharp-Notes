@@ -130,16 +130,18 @@
             // 
             // errorProvider1
             // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
             this.errorProvider1.ContainerControl = this;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(470, 379);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(296, 102);
+            this.button1.Size = new System.Drawing.Size(222, 86);
             this.button1.TabIndex = 8;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button1.Validating += new System.ComponentModel.CancelEventHandler(this.button1_Validating);
             // 
             // ErrorProvider
@@ -160,7 +162,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "ErrorProvider";
             this.Text = "ErrorProvider";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ErrorProvider_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this._FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ErrorProvider_FormClosed);
             this.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
