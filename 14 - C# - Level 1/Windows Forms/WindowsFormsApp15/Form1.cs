@@ -40,7 +40,7 @@ namespace WindowsFormsApp15
             }
             else
             {
-                e.Cancel = false; // to avoid user leave the control 
+                e.Cancel = false; // to allow user to leave the control 
                 errorProvider1.SetError(temp, "");
             }
         }
@@ -120,6 +120,10 @@ namespace WindowsFormsApp15
         {
             ListViewItem item = new ListViewItem(tbName.Text);
 
+            Random rnd = new Random();
+           int index  =  rnd.Next(0,1);
+
+            item.ImageIndex = index;
             item.SubItems.Add(labAge.Text);
 
             item.SubItems.Add(MaskedTbSalary.Text);
@@ -130,7 +134,21 @@ namespace WindowsFormsApp15
         private void tbName_Validating(object sender, CancelEventArgs e)
         {
             textBox1_Validating(sender, e); // for validating 
+            
+            if(!e.Cancel) // validated 
+            {
+                btnAdd.Enabled = true;  // enable add button 
+            }
+        }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if(!String.IsNullOrEmpty(tbName.Text) &&  MaskedTbSalary.MaskCompleted)
+            {
+                AddNewPersonToList();
+                MessageBox.Show("Added Successfully!");
+            }
+           
         }
     }
 }
