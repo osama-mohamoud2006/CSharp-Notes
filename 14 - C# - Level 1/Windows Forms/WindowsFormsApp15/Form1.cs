@@ -114,5 +114,12 @@ namespace WindowsFormsApp15
         {
             labAge.Text = (DateTime.Now.Year - dateTimePicker1.Value.Year).ToString();
         }
+
+
+        void AddNewPersonToList()
+        {
+            ListViewItem item = new ListViewItem();
+        }
+
     }
 }

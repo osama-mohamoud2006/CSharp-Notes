@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("item", 1);
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            "item"}, 1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Login = new System.Windows.Forms.TabPage();
@@ -46,7 +47,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -57,6 +58,8 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.ColName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ColAge = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ColSalary = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.Login.SuspendLayout();
             this.Manage.SuspendLayout();
@@ -187,7 +190,7 @@
             this.Manage.Controls.Add(this.label7);
             this.Manage.Controls.Add(this.label6);
             this.Manage.Controls.Add(this.label5);
-            this.Manage.Controls.Add(this.textBox2);
+            this.Manage.Controls.Add(this.tbName);
             this.Manage.Controls.Add(this.btnAdd);
             this.Manage.Controls.Add(this.dateTimePicker1);
             this.Manage.Location = new System.Drawing.Point(29, 4);
@@ -228,13 +231,13 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // tbName
             // 
-            this.textBox2.Location = new System.Drawing.Point(241, 54);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(275, 27);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
+            this.tbName.Location = new System.Drawing.Point(241, 54);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(275, 27);
+            this.tbName.TabIndex = 2;
+            this.tbName.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             // 
             // label5
             // 
@@ -296,11 +299,13 @@
             // 
             this.listView1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ColName});
+            this.ColName,
+            this.ColAge,
+            this.ColSalary});
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem2});
             this.listView1.LargeImageList = this.imageList2;
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
@@ -327,6 +332,16 @@
             // ColName
             // 
             this.ColName.Text = "Name";
+            this.ColName.Width = 121;
+            // 
+            // ColAge
+            // 
+            this.ColAge.Text = "Age";
+            // 
+            // ColSalary
+            // 
+            this.ColSalary.Text = "Salary";
+            this.ColSalary.Width = 108;
             // 
             // Form1
             // 
@@ -365,7 +380,7 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -376,6 +391,8 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ImageList imageList2;
         private System.Windows.Forms.ColumnHeader ColName;
+        private System.Windows.Forms.ColumnHeader ColAge;
+        private System.Windows.Forms.ColumnHeader ColSalary;
     }
 }
 
