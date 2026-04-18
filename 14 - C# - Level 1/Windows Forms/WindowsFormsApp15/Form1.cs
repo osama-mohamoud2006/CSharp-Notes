@@ -131,6 +131,7 @@ namespace WindowsFormsApp15
             listView1.Items.Add(item);
         }
 
+     
         private void tbName_Validating(object sender, CancelEventArgs e)
         {
             textBox1_Validating(sender, e); // for validating 
@@ -139,14 +140,19 @@ namespace WindowsFormsApp15
             {
                 btnAdd.Enabled = true;  // enable add button 
             }
+
+           
         }
 
+   
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if(!String.IsNullOrEmpty(tbName.Text) &&  MaskedTbSalary.MaskCompleted)
             {
                 AddNewPersonToList();
                 MessageBox.Show("Added Successfully!");
+            
+                btnAdd.Enabled = false; // disable add button until next validation
             }
            
         }
