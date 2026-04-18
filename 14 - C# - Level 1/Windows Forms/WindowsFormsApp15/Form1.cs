@@ -21,6 +21,7 @@ namespace WindowsFormsApp15
             InitializeComponent();
             tabControl1.TabPages[1].Enabled = false;
             tabControl1.TabPages[2].Enabled = false;
+            dateTimePicker1.MaxDate = DateTime.Now; // to avoid user select future date
         }
 
         bool CheckPassAndEmail()
@@ -80,6 +81,8 @@ namespace WindowsFormsApp15
                 {
                     tabControl1.TabPages[1].Enabled = true;
                     tabControl1.TabPages[2].Enabled = true;
+                    MessageBox.Show("Login Success!");
+
                 }
                 else
                 {
@@ -91,6 +94,25 @@ namespace WindowsFormsApp15
         private void btnLogin_Click(object sender, EventArgs e)
         {
             MaskPass_Validated(sender, e); // call this event as they behaves the same 
+        }
+
+        private void maskedTextBox1_Validating_1(object sender, CancelEventArgs e)
+        {
+            if(!maskedTextBox1.MaskCompleted)
+            {
+               e.Cancel = true;
+                errorProvider1.SetError(maskedTextBox1, "Fill The Password With 6 Chars");
+            }
+            else 
+            {   
+                e.Cancel = false;
+                errorProvider1.SetError(maskedTextBox1, "");
+            }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            labAge.Text = (DateTime.Now.Year - dateTimePicker1.Value.Year).ToString();
         }
     }
 }
