@@ -150,5 +150,33 @@ namespace WindowsFormsApp15
             }
            
         }
+
+        private void radioButtonView_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbSmall.Checked)
+            {
+
+                listView1.View = View.SmallIcon;
+            }
+            if (rbList.Checked)
+            {
+                listView1.View = View.List;
+            }
+            if (rbLarge.Checked)
+            {
+              listView1.View = View.LargeIcon;
+            } 
+
+            if(rbDetails.Checked)
+            {
+                listView1.View = View.Details;
+            }
+            if(rbTile.Checked)
+            {
+                listView1.View = View.Tile;
+            }
+        }
+
+  
     }
 }

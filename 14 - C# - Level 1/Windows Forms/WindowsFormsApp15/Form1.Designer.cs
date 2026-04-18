@@ -43,27 +43,34 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Manage = new System.Windows.Forms.TabPage();
-            this.List = new System.Windows.Forms.TabPage();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.tbName = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.MaskedTbSalary = new System.Windows.Forms.MaskedTextBox();
-            this.lab = new System.Windows.Forms.Label();
             this.labAge = new System.Windows.Forms.Label();
+            this.lab = new System.Windows.Forms.Label();
+            this.MaskedTbSalary = new System.Windows.Forms.MaskedTextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbName = new System.Windows.Forms.TextBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.List = new System.Windows.Forms.TabPage();
+            this.grbView = new System.Windows.Forms.GroupBox();
+            this.rbSmall = new System.Windows.Forms.RadioButton();
+            this.rbTile = new System.Windows.Forms.RadioButton();
+            this.rbList = new System.Windows.Forms.RadioButton();
+            this.rbDetails = new System.Windows.Forms.RadioButton();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.ColName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColAge = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColSalary = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.rbLarge = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.Login.SuspendLayout();
             this.Manage.SuspendLayout();
             this.List.SuspendLayout();
+            this.grbView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -199,28 +206,69 @@
             this.Manage.TabIndex = 5;
             this.Manage.Text = "Manage";
             // 
-            // List
+            // labAge
             // 
-            this.List.BackColor = System.Drawing.Color.Tan;
-            this.List.Controls.Add(this.listView1);
-            this.List.Location = new System.Drawing.Point(29, 4);
-            this.List.Name = "List";
-            this.List.Size = new System.Drawing.Size(767, 442);
-            this.List.TabIndex = 6;
-            this.List.Text = "List";
+            this.labAge.AutoSize = true;
+            this.labAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labAge.Location = new System.Drawing.Point(217, 257);
+            this.labAge.Name = "labAge";
+            this.labAge.Size = new System.Drawing.Size(34, 25);
+            this.labAge.TabIndex = 9;
+            this.labAge.Text = "20";
             // 
-            // errorProvider1
+            // lab
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.lab.AutoSize = true;
+            this.lab.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lab.Location = new System.Drawing.Point(124, 251);
+            this.lab.Name = "lab";
+            this.lab.Size = new System.Drawing.Size(77, 32);
+            this.lab.TabIndex = 8;
+            this.lab.Text = "Age:";
             // 
-            // dateTimePicker1
+            // MaskedTbSalary
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(241, 126);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(275, 27);
-            this.dateTimePicker1.TabIndex = 0;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.MaskedTbSalary.Location = new System.Drawing.Point(241, 187);
+            this.MaskedTbSalary.Mask = "00999\\$\\";
+            this.MaskedTbSalary.Name = "MaskedTbSalary";
+            this.MaskedTbSalary.Size = new System.Drawing.Size(271, 27);
+            this.MaskedTbSalary.TabIndex = 7;
+            this.MaskedTbSalary.Validating += new System.ComponentModel.CancelEventHandler(this.maskedTextBox1_Validating_1);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(126, 196);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(62, 20);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Salary";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(96, 131);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(122, 20);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Date Of Birth";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(129, 62);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(57, 20);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Name";
+            // 
+            // tbName
+            // 
+            this.tbName.Location = new System.Drawing.Point(241, 54);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(275, 27);
+            this.tbName.TabIndex = 2;
+            this.tbName.Validating += new System.ComponentModel.CancelEventHandler(this.tbName_Validating);
             // 
             // btnAdd
             // 
@@ -233,69 +281,89 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // tbName
+            // dateTimePicker1
             // 
-            this.tbName.Location = new System.Drawing.Point(241, 54);
-            this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(275, 27);
-            this.tbName.TabIndex = 2;
-            this.tbName.Validating += new System.ComponentModel.CancelEventHandler(this.tbName_Validating);
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(241, 126);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(275, 27);
+            this.dateTimePicker1.TabIndex = 0;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // label5
+            // List
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(129, 62);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 20);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Name";
+            this.List.BackColor = System.Drawing.Color.Transparent;
+            this.List.Controls.Add(this.grbView);
+            this.List.Controls.Add(this.listView1);
+            this.List.Location = new System.Drawing.Point(29, 4);
+            this.List.Name = "List";
+            this.List.Size = new System.Drawing.Size(767, 442);
+            this.List.TabIndex = 6;
+            this.List.Text = "List";
             // 
-            // label6
+            // grbView
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(96, 131);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(122, 20);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Date Of Birth";
+            this.grbView.BackColor = System.Drawing.Color.MistyRose;
+            this.grbView.Controls.Add(this.rbLarge);
+            this.grbView.Controls.Add(this.rbSmall);
+            this.grbView.Controls.Add(this.rbTile);
+            this.grbView.Controls.Add(this.rbList);
+            this.grbView.Controls.Add(this.rbDetails);
+            this.grbView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grbView.Location = new System.Drawing.Point(0, 0);
+            this.grbView.Name = "grbView";
+            this.grbView.Size = new System.Drawing.Size(767, 72);
+            this.grbView.TabIndex = 1;
+            this.grbView.TabStop = false;
+            this.grbView.Text = "View";
             // 
-            // label7
+            // rbSmall
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(126, 196);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 20);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Salary";
+            this.rbSmall.AutoSize = true;
+            this.rbSmall.Location = new System.Drawing.Point(545, 26);
+            this.rbSmall.Name = "rbSmall";
+            this.rbSmall.Size = new System.Drawing.Size(128, 24);
+            this.rbSmall.TabIndex = 3;
+            this.rbSmall.TabStop = true;
+            this.rbSmall.Text = "Small Icons";
+            this.rbSmall.UseVisualStyleBackColor = true;
+            this.rbSmall.CheckedChanged += new System.EventHandler(this.radioButtonView_CheckedChanged);
             // 
-            // MaskedTbSalary
+            // rbTile
             // 
-            this.MaskedTbSalary.Location = new System.Drawing.Point(241, 187);
-            this.MaskedTbSalary.Mask = "00999\\$\\";
-            this.MaskedTbSalary.Name = "MaskedTbSalary";
-            this.MaskedTbSalary.Size = new System.Drawing.Size(271, 27);
-            this.MaskedTbSalary.TabIndex = 7;
-            this.MaskedTbSalary.Validating += new System.ComponentModel.CancelEventHandler(this.maskedTextBox1_Validating_1);
+            this.rbTile.AutoSize = true;
+            this.rbTile.Location = new System.Drawing.Point(261, 26);
+            this.rbTile.Name = "rbTile";
+            this.rbTile.Size = new System.Drawing.Size(61, 24);
+            this.rbTile.TabIndex = 2;
+            this.rbTile.TabStop = true;
+            this.rbTile.Text = "Tile";
+            this.rbTile.UseVisualStyleBackColor = true;
+            this.rbTile.CheckedChanged += new System.EventHandler(this.radioButtonView_CheckedChanged);
             // 
-            // lab
+            // rbList
             // 
-            this.lab.AutoSize = true;
-            this.lab.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lab.Location = new System.Drawing.Point(124, 251);
-            this.lab.Name = "lab";
-            this.lab.Size = new System.Drawing.Size(77, 32);
-            this.lab.TabIndex = 8;
-            this.lab.Text = "Age:";
+            this.rbList.AutoSize = true;
+            this.rbList.Location = new System.Drawing.Point(152, 26);
+            this.rbList.Name = "rbList";
+            this.rbList.Size = new System.Drawing.Size(62, 24);
+            this.rbList.TabIndex = 1;
+            this.rbList.TabStop = true;
+            this.rbList.Text = "List";
+            this.rbList.UseVisualStyleBackColor = true;
+            this.rbList.CheckedChanged += new System.EventHandler(this.radioButtonView_CheckedChanged);
             // 
-            // labAge
+            // rbDetails
             // 
-            this.labAge.AutoSize = true;
-            this.labAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labAge.Location = new System.Drawing.Point(217, 257);
-            this.labAge.Name = "labAge";
-            this.labAge.Size = new System.Drawing.Size(34, 25);
-            this.labAge.TabIndex = 9;
-            this.labAge.Text = "20";
+            this.rbDetails.AutoSize = true;
+            this.rbDetails.Location = new System.Drawing.Point(15, 26);
+            this.rbDetails.Name = "rbDetails";
+            this.rbDetails.Size = new System.Drawing.Size(90, 24);
+            this.rbDetails.TabIndex = 0;
+            this.rbDetails.TabStop = true;
+            this.rbDetails.Text = "Details";
+            this.rbDetails.UseVisualStyleBackColor = true;
+            this.rbDetails.CheckedChanged += new System.EventHandler(this.radioButtonView_CheckedChanged);
             // 
             // listView1
             // 
@@ -304,32 +372,18 @@
             this.ColName,
             this.ColAge,
             this.ColSalary});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
             this.listView1.LargeImageList = this.imageList2;
-            this.listView1.Location = new System.Drawing.Point(0, 0);
+            this.listView1.Location = new System.Drawing.Point(0, 78);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(767, 442);
+            this.listView1.Size = new System.Drawing.Size(767, 364);
             this.listView1.SmallImageList = this.imageList1;
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "black-cat.ico");
-            this.imageList1.Images.SetKeyName(1, "gojo satoru.jpg");
-            // 
-            // imageList2
-            // 
-            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
-            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList2.Images.SetKeyName(0, "black-cat.ico");
-            this.imageList2.Images.SetKeyName(1, "gojo satoru.jpg");
             // 
             // ColName
             // 
@@ -344,6 +398,35 @@
             // 
             this.ColSalary.Text = "Salary";
             this.ColSalary.Width = 108;
+            // 
+            // imageList2
+            // 
+            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList2.Images.SetKeyName(0, "black-cat.ico");
+            this.imageList2.Images.SetKeyName(1, "gojo satoru.jpg");
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "black-cat.ico");
+            this.imageList1.Images.SetKeyName(1, "gojo satoru.jpg");
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // rbLarge
+            // 
+            this.rbLarge.AutoSize = true;
+            this.rbLarge.Location = new System.Drawing.Point(369, 26);
+            this.rbLarge.Name = "rbLarge";
+            this.rbLarge.Size = new System.Drawing.Size(129, 24);
+            this.rbLarge.TabIndex = 4;
+            this.rbLarge.TabStop = true;
+            this.rbLarge.Text = "Large Icons";
+            this.rbLarge.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -360,6 +443,8 @@
             this.Manage.ResumeLayout(false);
             this.Manage.PerformLayout();
             this.List.ResumeLayout(false);
+            this.grbView.ResumeLayout(false);
+            this.grbView.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -395,6 +480,12 @@
         private System.Windows.Forms.ColumnHeader ColName;
         private System.Windows.Forms.ColumnHeader ColAge;
         private System.Windows.Forms.ColumnHeader ColSalary;
+        private System.Windows.Forms.GroupBox grbView;
+        private System.Windows.Forms.RadioButton rbSmall;
+        private System.Windows.Forms.RadioButton rbTile;
+        private System.Windows.Forms.RadioButton rbList;
+        private System.Windows.Forms.RadioButton rbDetails;
+        private System.Windows.Forms.RadioButton rbLarge;
     }
 }
 
