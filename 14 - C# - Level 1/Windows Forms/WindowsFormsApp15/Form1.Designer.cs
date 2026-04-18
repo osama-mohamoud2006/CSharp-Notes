@@ -35,14 +35,17 @@
             this.List = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbEmail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.MaskPass = new System.Windows.Forms.MaskedTextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.Login.SuspendLayout();
+            this.Manage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,11 +68,12 @@
             // Login
             // 
             this.Login.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Login.Controls.Add(this.maskedTextBox1);
+            this.Login.Controls.Add(this.btnLogin);
+            this.Login.Controls.Add(this.MaskPass);
             this.Login.Controls.Add(this.label4);
             this.Login.Controls.Add(this.label3);
             this.Login.Controls.Add(this.label2);
-            this.Login.Controls.Add(this.textBox3);
+            this.Login.Controls.Add(this.tbEmail);
             this.Login.Controls.Add(this.textBox1);
             this.Login.Controls.Add(this.label1);
             this.Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -83,6 +87,7 @@
             // 
             // Manage
             // 
+            this.Manage.Controls.Add(this.button1);
             this.Manage.Location = new System.Drawing.Point(29, 4);
             this.Manage.Name = "Manage";
             this.Manage.Size = new System.Drawing.Size(767, 442);
@@ -115,13 +120,16 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(245, 30);
             this.textBox1.TabIndex = 1;
+            this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             // 
-            // textBox3
+            // tbEmail
             // 
-            this.textBox3.Location = new System.Drawing.Point(245, 260);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(245, 30);
-            this.textBox3.TabIndex = 3;
+            this.tbEmail.Location = new System.Drawing.Point(245, 260);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(245, 30);
+            this.tbEmail.TabIndex = 3;
+            this.tbEmail.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
+            this.tbEmail.Validated += new System.EventHandler(this.MaskPass_Validated);
             // 
             // label2
             // 
@@ -150,17 +158,38 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Email";
             // 
-            // maskedTextBox1
+            // MaskPass
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(245, 209);
-            this.maskedTextBox1.Mask = "000000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(245, 30);
-            this.maskedTextBox1.TabIndex = 7;
+            this.MaskPass.Location = new System.Drawing.Point(245, 209);
+            this.MaskPass.Mask = "000000";
+            this.MaskPass.Name = "MaskPass";
+            this.MaskPass.Size = new System.Drawing.Size(245, 30);
+            this.MaskPass.TabIndex = 7;
+            this.MaskPass.Validating += new System.ComponentModel.CancelEventHandler(this.maskedTextBox1_Validating);
+            this.MaskPass.Validated += new System.EventHandler(this.MaskPass_Validated);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(276, 206);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(216, 94);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.Location = new System.Drawing.Point(221, 342);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(293, 57);
+            this.btnLogin.TabIndex = 8;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // Form1
             // 
@@ -170,9 +199,11 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.Login.ResumeLayout(false);
             this.Login.PerformLayout();
+            this.Manage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -185,13 +216,15 @@
         private System.Windows.Forms.TabPage Manage;
         private System.Windows.Forms.TabPage List;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox MaskPass;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLogin;
     }
 }
 

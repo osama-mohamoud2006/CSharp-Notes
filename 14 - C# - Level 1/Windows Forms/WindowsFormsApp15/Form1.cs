@@ -12,13 +12,85 @@ namespace WindowsFormsApp15
 {
     public partial class Form1 : Form
     {
+        // Hard Coded Pass And Email For Testing only !!
+        string Pass = "123456";
+        string email = "123@test.com"; 
+
         public Form1()
         {
             InitializeComponent();
+            tabControl1.TabPages[1].Enabled = false;
+            tabControl1.TabPages[2].Enabled = false;
+        }
+
+        bool CheckPassAndEmail()
+        {
+            return (MaskPass.Text == Pass && tbEmail.Text == email); // return true
         }
 
 
+        private void textBox1_Validating(object sender, CancelEventArgs e)
+        {
+            var temp = sender as TextBox;
+            if(String.IsNullOrEmpty(temp.Text))
+            {
+                e.Cancel = true; // to avoid user leave the control 
+                errorProvider1.SetError(temp, "Empty Or Null Text Box!");
+            }
+            else
+            {
+                e.Cancel = false; // to avoid user leave the control 
+                errorProvider1.SetError(temp, "");
+            }
+        }
 
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+            var res = MessageBox.Show("Are You Sure You Want To Leave", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if(res == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            else // yes 
+            {
+                e.Cancel = false;
+            }
+        }
 
+        private void maskedTextBox1_Validating(object sender, CancelEventArgs e)
+        {
+            if(!MaskPass.MaskCompleted)
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(MaskPass, "Fill The Password With 6 Chars");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(MaskPass, "");
+            }
+        }
+
+        private void MaskPass_Validated(object sender, EventArgs e)
+        {
+            if (MaskPass.MaskCompleted && !String.IsNullOrEmpty(tbEmail.Text))
+            {
+                if (CheckPassAndEmail()) // if they are correct 
+                {
+                    tabControl1.TabPages[1].Enabled = true;
+                    tabControl1.TabPages[2].Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Wrong Pass Or Email", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            MaskPass_Validated(sender, e); // call this event as they behaves the same 
+        }
     }
 }
