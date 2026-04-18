@@ -51,7 +51,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.MaskedTbSalary = new System.Windows.Forms.MaskedTextBox();
             this.lab = new System.Windows.Forms.Label();
             this.labAge = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -186,7 +186,7 @@
             this.Manage.BackColor = System.Drawing.Color.LightGray;
             this.Manage.Controls.Add(this.labAge);
             this.Manage.Controls.Add(this.lab);
-            this.Manage.Controls.Add(this.maskedTextBox1);
+            this.Manage.Controls.Add(this.MaskedTbSalary);
             this.Manage.Controls.Add(this.label7);
             this.Manage.Controls.Add(this.label6);
             this.Manage.Controls.Add(this.label5);
@@ -224,6 +224,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Enabled = false;
             this.btnAdd.Location = new System.Drawing.Point(236, 316);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(276, 60);
@@ -237,7 +238,7 @@
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(275, 27);
             this.tbName.TabIndex = 2;
-            this.tbName.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
+            this.tbName.Validating += new System.ComponentModel.CancelEventHandler(this.tbName_Validating);
             // 
             // label5
             // 
@@ -266,14 +267,14 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Salary";
             // 
-            // maskedTextBox1
+            // MaskedTbSalary
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(241, 187);
-            this.maskedTextBox1.Mask = "00999\\$\\";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(271, 27);
-            this.maskedTextBox1.TabIndex = 7;
-            this.maskedTextBox1.Validating += new System.ComponentModel.CancelEventHandler(this.maskedTextBox1_Validating_1);
+            this.MaskedTbSalary.Location = new System.Drawing.Point(241, 187);
+            this.MaskedTbSalary.Mask = "00999\\$\\";
+            this.MaskedTbSalary.Name = "MaskedTbSalary";
+            this.MaskedTbSalary.Size = new System.Drawing.Size(271, 27);
+            this.MaskedTbSalary.TabIndex = 7;
+            this.MaskedTbSalary.Validating += new System.ComponentModel.CancelEventHandler(this.maskedTextBox1_Validating_1);
             // 
             // lab
             // 
@@ -384,7 +385,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox MaskedTbSalary;
         private System.Windows.Forms.Label lab;
         private System.Windows.Forms.Label labAge;
         private System.Windows.Forms.ListView listView1;

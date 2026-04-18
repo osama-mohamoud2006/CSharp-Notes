@@ -98,15 +98,15 @@ namespace WindowsFormsApp15
 
         private void maskedTextBox1_Validating_1(object sender, CancelEventArgs e)
         {
-            if(!maskedTextBox1.MaskCompleted)
+            if(!MaskedTbSalary.MaskCompleted)
             {
                e.Cancel = true;
-                errorProvider1.SetError(maskedTextBox1, "Fill The Password With 6 Chars");
+                errorProvider1.SetError(MaskedTbSalary, "Fill The Password With 6 Chars");
             }
             else 
             {   
                 e.Cancel = false;
-                errorProvider1.SetError(maskedTextBox1, "");
+                errorProvider1.SetError(MaskedTbSalary, "");
             }
         }
 
@@ -118,8 +118,19 @@ namespace WindowsFormsApp15
 
         void AddNewPersonToList()
         {
-            ListViewItem item = new ListViewItem();
+            ListViewItem item = new ListViewItem(tbName.Text);
+
+            item.SubItems.Add(labAge.Text);
+
+            item.SubItems.Add(MaskedTbSalary.Text);
+
+            listView1.Items.Add(item);
         }
 
+        private void tbName_Validating(object sender, CancelEventArgs e)
+        {
+            textBox1_Validating(sender, e); // for validating 
+
+        }
     }
 }
