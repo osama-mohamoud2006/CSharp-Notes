@@ -16,5 +16,25 @@ namespace WindowsFormsApp15
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(colorDialog1.ShowDialog()== DialogResult.OK)
+            {
+                this.BackColor = colorDialog1.Color;
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.textBox1.BackColor = colorDialog1.Color;
+                this.textBox2.BackColor = colorDialog1.Color;
+                this.textBox3.BackColor = colorDialog1.Color;
+                this.textBox4.BackColor = colorDialog1.Color;
+            }
+        }
     }
 }
