@@ -10,26 +10,22 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp15
 {
-    public partial class Form2 : Form
+    public partial class Form3 : Form
     {
-        public Form2()
+        public Form3()
         {
             InitializeComponent();
         }
 
-        private void radioButton10_CheckedChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+         
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void panel1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void radioButton17_CheckedChanged(object sender, EventArgs e)
-        {
-            panel1.Enabled= radioButton17.Checked;
+            Panel TheSelectedPanel
         }
     }
 }

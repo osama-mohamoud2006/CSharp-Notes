@@ -8,3 +8,5 @@ E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp15\obj\Debug\Windo
 E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.csproj.CoreCompileInputs.cache
 E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.exe
 E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.pdb
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.Form2.resources
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.Form3.resources
