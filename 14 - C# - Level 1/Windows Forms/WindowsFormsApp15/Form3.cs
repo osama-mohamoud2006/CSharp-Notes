@@ -25,7 +25,13 @@ namespace WindowsFormsApp15
 
         private void panel1_Click(object sender, EventArgs e)
         {
-            Panel TheSelectedPanel
+            Panel TheSelectedPanel = sender as Panel;
+
+            if(colorDialog1.ShowDialog()==DialogResult.OK)
+            {
+                TheSelectedPanel.BackColor = colorDialog1.Color;
+            }
+
         }
     }
 }
