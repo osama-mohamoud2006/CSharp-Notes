@@ -46,6 +46,7 @@ namespace WindowsFormsApp15
 
         private void fontDialog1_Apply(object sender, EventArgs e)
         {
+            MessageBox.Show("APPLYING");
             label1.Font = fontDialog1.Font; // change the font of label 
             label1.ForeColor = fontDialog1.Color; // change the label text color
             
