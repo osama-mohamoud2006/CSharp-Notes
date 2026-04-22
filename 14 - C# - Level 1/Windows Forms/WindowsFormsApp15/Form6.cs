@@ -16,5 +16,19 @@ namespace WindowsFormsApp15
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.InitialDirectory = @"E:\"; // to make the file save dialog starts with specific dir 
+            saveFileDialog1.DefaultExt = "png"; // to set the default file extension 
+            saveFileDialog1.Title = "Hello World"; // to set the title of file save dialog 
+
+            saveFileDialog1.Filter = "text(*.text)|*.text|png(*.png)|*.png"; // to set specific file filtering according to its type (text|*.fileExt)
+
+            if (saveFileDialog1.ShowDialog()==DialogResult.OK)
+            {
+                MessageBox.Show(saveFileDialog1.FileName);
+            }
+        }
     }
 }
