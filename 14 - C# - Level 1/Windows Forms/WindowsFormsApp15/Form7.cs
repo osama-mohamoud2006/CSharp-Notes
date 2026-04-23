@@ -20,7 +20,7 @@ namespace WindowsFormsApp15
 
         private void button1_Click(object sender, EventArgs e)
         {
-            openFileDialog1.InitialDirectory = @"E:\"; // to set the default dir for the dialog 
+            openFileDialog1.InitialDirectory = @"C:\"; // to set the default dir for the dialog 
             openFileDialog1.DefaultExt = "png"; // to set the default file extension of dialog
             openFileDialog1.Title = "Open....."; // set the title for open dialog window
             openFileDialog1.Filter = "Png(*.png)|*.png|Jpg(*.jpg)|*.jpg"; // to set the file extension selections 
