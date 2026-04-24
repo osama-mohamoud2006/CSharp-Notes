@@ -48,22 +48,22 @@ namespace WindowsFormsApp15
             string[] AllowedExt = { ".png", ".jpg" };
 
 
-             if (Res==DialogResult.OK && index<openFileDialog1.FileNames.Length)
-             {
-                
-                    if (AllowedExt.Contains(Path.GetExtension(openFileDialog1.FileName.ToLower()))) // to check if the file extension is in the allowed extensions array
-                    {
+            if (Res == DialogResult.OK && index < openFileDialog1.FileNames.Length)
+            {
 
-                        pictureBox1.Image = Image.FromFile(openFileDialog1.FileNames[index]);
-                   
-                    }
-                    else
-                        MessageBox.Show("Wrong Extension", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (AllowedExt.Contains(Path.GetExtension(openFileDialog1.FileName.ToLower()))) // to check if the file extension is in the allowed extensions array
+                {
 
-                   index++;
+                    pictureBox1.Image = Image.FromFile(openFileDialog1.FileNames[index]);
+
+                }
+                else
+                    MessageBox.Show("Wrong Extension", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                index++;
             }
-        else
-            timer1.Enabled = false;
+            else
+                index = 0;
 
 
         }
