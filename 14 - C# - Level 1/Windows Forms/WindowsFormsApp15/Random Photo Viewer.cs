@@ -79,7 +79,9 @@ namespace WindowsFormsApp15
 
         private void btnStop_Click(object sender, EventArgs e)
         {
-            timer1.Enabled = false; 
+            timer1.Enabled = false;
+            btnStop.Visible = false;
+            btnContinue.Visible = true; // to enable the user to continue the show again 
         }
 
         private void btnRest_Click(object sender, EventArgs e)
@@ -90,12 +92,20 @@ namespace WindowsFormsApp15
             btnStop.Enabled = false;
             UpdateNumOfPhotosLabel(0);
             numericUpDown1.Value = 100;
+            timer1.Enabled = false;
 
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
            timer1.Interval= Convert.ToInt32(numericUpDown1.Value); // change the timer interval according to the num Up Down 
+        }
+
+        private void btnContinue_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+            btnContinue.Visible = false;
+            btnStop.Visible = true;
         }
     }
 }
