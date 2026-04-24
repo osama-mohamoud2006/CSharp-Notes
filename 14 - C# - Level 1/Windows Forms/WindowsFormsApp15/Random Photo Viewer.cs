@@ -36,9 +36,15 @@ namespace WindowsFormsApp15
             }
         }
 
+        void UpdateNumOfPhotosLabel(int value)
+        {
+            labNumOfPhotos.Text = value.ToString();
+        }
+
         private void btnBrowse_Click(object sender, EventArgs e)
         {
             BrowseForPhotos();
+            UpdateNumOfPhotosLabel(openFileDialog1.FileNames.Length);
             this.btnBrowse.Enabled = false;
             btnRest.Enabled = true;
             btnStop.Enabled = true; 
@@ -64,11 +70,32 @@ namespace WindowsFormsApp15
                     Index++; // Move to the next file 
                 }
             }
-            else if(Index> openFileDialog1.FileNames.Length)
+            else if(Index> openFileDialog1.FileNames.Length-1)
             {
                 Index = 0; // rest the index 
             }
 
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = false; 
+        }
+
+        private void btnRest_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = null; //remove the current photo 
+            btnRest.Enabled = false;
+            btnBrowse.Enabled = true;
+            btnStop.Enabled = false;
+            UpdateNumOfPhotosLabel(0);
+            numericUpDown1.Value = 100;
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+           timer1.Interval= Convert.ToInt32(numericUpDown1.Value); // change the timer interval according to the num Up Down 
         }
     }
 }
