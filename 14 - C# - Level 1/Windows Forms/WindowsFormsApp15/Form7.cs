@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -31,21 +32,27 @@ namespace WindowsFormsApp15
 
             openFileDialog1.FileName = "Photo.png";//to set the default opening file 
 
-            //openFileDialog1.Multiselect = true; // to allow the user to selects more than one file to open 
+            openFileDialog1.Multiselect = true; // to allow the user to selects more than one file to open 
 
             string[] AllowedExt = { ".png",".jpg"};
 
 
             if (openFileDialog1.ShowDialog()==DialogResult.OK)
             {
-                //To Avoid the user to select file with wrong extension (if you set the filter index to 3 it will show all files but you want to allow only png and jpg)
-                if (AllowedExt.Contains(Path.GetExtension(openFileDialog1.FileName.ToLower()))) // to check if the file extension is in the allowed extensions array
+                foreach(var FileName in openFileDialog1.FileNames)
                 {
-                    MessageBox.Show(openFileDialog1.FileName);
-                    pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+
+                    if (AllowedExt.Contains(Path.GetExtension(openFileDialog1.FileName.ToLower()))) // to check if the file extension is in the allowed extensions array
+                    {
+                        //MessageBox.Show(openFileDialog1.FileName);
+                        pictureBox1.Image = Image.FromFile(FileName);
+                        Thread.Sleep(2000);
+                    }
+                    else
+                        MessageBox.Show("Wrong Extension", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
-                else
-                    MessageBox.Show("Wrong Extension","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+          
                 
             }
         }
