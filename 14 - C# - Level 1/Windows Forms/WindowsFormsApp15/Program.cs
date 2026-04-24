@@ -16,7 +16,7 @@ namespace WindowsFormsApp15
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Random_Photo_Viewer());
+            Application.Run(new Form8());
         }
     }
 }

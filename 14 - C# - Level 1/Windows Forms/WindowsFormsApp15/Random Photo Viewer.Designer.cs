@@ -58,9 +58,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnBrowse);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(649, 0);
+            this.panel1.Location = new System.Drawing.Point(658, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(151, 450);
+            this.panel1.Size = new System.Drawing.Size(157, 428);
             this.panel1.TabIndex = 0;
             // 
             // btnContinue
@@ -128,11 +128,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("SF Mono", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("SF Mono", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(20, 117);
+            this.label2.Location = new System.Drawing.Point(3, 116);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 18);
+            this.label2.Size = new System.Drawing.Size(152, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Num Of Photos";
             // 
@@ -155,6 +155,7 @@
             0,
             0});
             this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.ReadOnly = true;
             this.numericUpDown1.Size = new System.Drawing.Size(122, 23);
             this.numericUpDown1.TabIndex = 2;
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -170,7 +171,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("SF Mono", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(12, 27);
+            this.label1.Location = new System.Drawing.Point(4, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 20);
             this.label1.TabIndex = 1;
@@ -199,7 +200,7 @@
             this.pictureBox1.Image = global::WindowsFormsApp15.Properties.Resources.gojo_satoru;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(655, 450);
+            this.pictureBox1.Size = new System.Drawing.Size(655, 428);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -217,7 +218,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(815, 428);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("SF Mono", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

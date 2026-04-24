@@ -62,12 +62,18 @@ namespace WindowsFormsApp15
         {
             if (openFileDialog1.FileNames.Length == 0) return;
 
-            if(OpenedBrowseFileDialog && Index<openFileDialog1.FileNames.Length) // use index to get photos from arr of files
+            if(OpenedBrowseFileDialog && Index<openFileDialog1.FileNames.Length && Index!=-1) // use index to get photos from arr of files
             {
                 if (CheckFileExt(openFileDialog1.FileNames[Index])) // get the file name by index After Checking it is Valid File Or Not
                 {
                     pictureBox1.Image = Image.FromFile(openFileDialog1.FileNames[Index]); // view the image 
                     Index++; // Move to the next file 
+                }
+                else
+                {
+                    btnStop_Click(sender, e);
+                    MessageBox.Show("Invalid Photo", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+      
                 }
             }
             else if(Index> openFileDialog1.FileNames.Length-1)
