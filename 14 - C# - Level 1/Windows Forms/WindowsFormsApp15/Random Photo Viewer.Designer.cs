@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBrowse = new System.Windows.Forms.Button();
@@ -37,6 +38,8 @@
             this.labNumOfPhotos = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnRest = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnStop = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -45,6 +48,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.btnStop);
             this.panel1.Controls.Add(this.btnRest);
             this.panel1.Controls.Add(this.labNumOfPhotos);
             this.panel1.Controls.Add(this.label2);
@@ -76,9 +80,9 @@
             this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBrowse.Font = new System.Drawing.Font("SF Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBrowse.ForeColor = System.Drawing.Color.Transparent;
-            this.btnBrowse.Location = new System.Drawing.Point(17, 296);
+            this.btnBrowse.Location = new System.Drawing.Point(21, 230);
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(120, 61);
+            this.btnBrowse.Size = new System.Drawing.Size(118, 50);
             this.btnBrowse.TabIndex = 0;
             this.btnBrowse.Text = "Browse";
             this.btnBrowse.UseVisualStyleBackColor = true;
@@ -129,7 +133,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("SF Mono", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(15, 137);
+            this.label2.Location = new System.Drawing.Point(14, 117);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 18);
             this.label2.TabIndex = 3;
@@ -139,9 +143,9 @@
             // 
             this.labNumOfPhotos.Font = new System.Drawing.Font("SF Mono", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labNumOfPhotos.ForeColor = System.Drawing.Color.Transparent;
-            this.labNumOfPhotos.Location = new System.Drawing.Point(36, 179);
+            this.labNumOfPhotos.Location = new System.Drawing.Point(35, 149);
             this.labNumOfPhotos.Name = "labNumOfPhotos";
-            this.labNumOfPhotos.Size = new System.Drawing.Size(80, 94);
+            this.labNumOfPhotos.Size = new System.Drawing.Size(80, 78);
             this.labNumOfPhotos.TabIndex = 4;
             this.labNumOfPhotos.Text = "0";
             this.labNumOfPhotos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -159,12 +163,32 @@
             this.btnRest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRest.Font = new System.Drawing.Font("SF Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRest.ForeColor = System.Drawing.Color.Transparent;
-            this.btnRest.Location = new System.Drawing.Point(17, 377);
+            this.btnRest.Location = new System.Drawing.Point(21, 370);
             this.btnRest.Name = "btnRest";
-            this.btnRest.Size = new System.Drawing.Size(120, 61);
+            this.btnRest.Size = new System.Drawing.Size(118, 50);
             this.btnRest.TabIndex = 5;
             this.btnRest.Text = "Rest";
             this.btnRest.UseVisualStyleBackColor = true;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnStop
+            // 
+            this.btnStop.Enabled = false;
+            this.btnStop.FlatAppearance.BorderSize = 2;
+            this.btnStop.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnStop.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStop.Font = new System.Drawing.Font("SF Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStop.ForeColor = System.Drawing.Color.Transparent;
+            this.btnStop.Location = new System.Drawing.Point(21, 300);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(118, 50);
+            this.btnStop.TabIndex = 6;
+            this.btnStop.Text = "Stop";
+            this.btnStop.UseVisualStyleBackColor = true;
             // 
             // Random_Photo_Viewer
             // 
@@ -196,5 +220,7 @@
         private System.Windows.Forms.Label labNumOfPhotos;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnRest;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnStop;
     }
 }

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+
 
 namespace WindowsFormsApp15
 {
@@ -27,7 +29,8 @@ namespace WindowsFormsApp15
 
             if(openFileDialog1.ShowDialog()==DialogResult.OK)
             {
-                OpenedBrowseFileDialog = true; 
+                OpenedBrowseFileDialog = true;
+                timer1.Enabled = true;
             }
         }
 
@@ -39,5 +42,19 @@ namespace WindowsFormsApp15
         }
 
 
+        bool CheckFileExt(string FileName)
+        {
+            string[] AllowedExt = { "jpg", "png" };
+            return AllowedExt.Contains(Path.GetExtension(FileName.ToLower()));
+        }
+
+        int Index = 0;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(OpenedBrowseFileDialog && Index<openFileDialog1.FileNames.Length)
+            {
+
+            }
+        }
     }
 }
