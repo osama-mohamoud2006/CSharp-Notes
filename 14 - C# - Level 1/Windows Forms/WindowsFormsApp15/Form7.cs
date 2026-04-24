@@ -19,6 +19,7 @@ namespace WindowsFormsApp15
             InitializeComponent();
         }
 
+        DialogResult Res; 
         private void button1_Click(object sender, EventArgs e)
         {
             openFileDialog1.InitialDirectory = @"C:\"; // to set the default dir for the dialog 
@@ -26,6 +27,7 @@ namespace WindowsFormsApp15
             openFileDialog1.Title = "Open....."; // set the title for open dialog window
             openFileDialog1.Filter = "Png(*.png)|*.png|Jpg(*.jpg)|*.jpg"; // to set the file extension selections 
 
+           
             // to select the default filter (it starts from 1 not 0 and
             // if you have set index larger than actual filter you have it will back to the last available index)
             openFileDialog1.FilterIndex = 3;
@@ -34,27 +36,40 @@ namespace WindowsFormsApp15
 
             openFileDialog1.Multiselect = true; // to allow the user to selects more than one file to open 
 
-            string[] AllowedExt = { ".png",".jpg"};
+            Res = openFileDialog1.ShowDialog();
+            timer1.Enabled = true;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
 
 
-            if (openFileDialog1.ShowDialog()==DialogResult.OK)
-            {
-                foreach(var FileName in openFileDialog1.FileNames)
-                {
+            int index = 0;
+            
+            string[] AllowedExt = { ".png", ".jpg" };
 
+
+             if (Res==DialogResult.OK && index<openFileDialog1.FileNames.Length)
+             {
+                
                     if (AllowedExt.Contains(Path.GetExtension(openFileDialog1.FileName.ToLower()))) // to check if the file extension is in the allowed extensions array
                     {
-                        //MessageBox.Show(openFileDialog1.FileName);
-                        pictureBox1.Image = Image.FromFile(FileName);
-                        Thread.Sleep(2000);
+
+                        pictureBox1.Image = Image.FromFile(openFileDialog1.FileNames[index]);
+                    index++;
                     }
                     else
                         MessageBox.Show("Wrong Extension", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                }
-          
-                
             }
+        else
+            timer1.Enabled = false;
+
+
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }
