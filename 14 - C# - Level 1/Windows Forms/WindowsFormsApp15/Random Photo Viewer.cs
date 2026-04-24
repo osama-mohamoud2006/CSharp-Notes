@@ -25,9 +25,11 @@ namespace WindowsFormsApp15
         {
             openFileDialog1.Multiselect = true;
             openFileDialog1.DefaultExt = "png";
-            openFileDialog1.Filter = "png(*.png)|.*png|jpg(.*jpg)|.*jpg";
+            openFileDialog1.FileName = "Photo.png";
+            openFileDialog1.Title = "Select Photo(s)....."; 
+            openFileDialog1.Filter = "Png(*.png)|*.png|Jpg(*.jpg)|*.jpg";
 
-            if(openFileDialog1.ShowDialog()==DialogResult.OK)
+            if (openFileDialog1.ShowDialog()==DialogResult.OK) // if the selection was done 
             {
                 OpenedBrowseFileDialog = true;
                 timer1.Enabled = true;
@@ -39,22 +41,34 @@ namespace WindowsFormsApp15
             BrowseForPhotos();
             this.btnBrowse.Enabled = false;
             btnRest.Enabled = true;
+            btnStop.Enabled = true; 
         }
 
 
         bool CheckFileExt(string FileName)
         {
-            string[] AllowedExt = { "jpg", "png" };
-            return AllowedExt.Contains(Path.GetExtension(FileName.ToLower()));
+            string[] AllowedExt = { ".jpg", ".png" };
+            return AllowedExt.Contains(Path.GetExtension(FileName.ToLower())); // check if the path ext file contains the allowed ext by check if it is available in arr or not 
         }
 
         int Index = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(OpenedBrowseFileDialog && Index<openFileDialog1.FileNames.Length)
-            {
+            if (openFileDialog1.FileNames.Length == 0) return;
 
+            if(OpenedBrowseFileDialog && Index<openFileDialog1.FileNames.Length) // use index to get photos from arr of files
+            {
+                if (CheckFileExt(openFileDialog1.FileNames[Index])) // get the file name by index After Checking it is Valid File Or Not
+                {
+                    pictureBox1.Image = Image.FromFile(openFileDialog1.FileNames[Index]); // view the image 
+                    Index++; // Move to the next file 
+                }
             }
+            else if(Index> openFileDialog1.FileNames.Length)
+            {
+                Index = 0; // rest the index 
+            }
+
         }
     }
 }

@@ -14,3 +14,4 @@ E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp15\obj\Debug\Windo
 E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.Form5.resources
 E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.Form6.resources
 E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.Form7.resources
+E:\projects\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.Random_Photo_Viewer.resources
