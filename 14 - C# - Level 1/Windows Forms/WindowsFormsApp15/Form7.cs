@@ -40,12 +40,11 @@ namespace WindowsFormsApp15
             timer1.Enabled = true;
         }
 
+
+        int index = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-
-            int index = 0;
-            
             string[] AllowedExt = { ".png", ".jpg" };
 
 
@@ -56,10 +55,12 @@ namespace WindowsFormsApp15
                     {
 
                         pictureBox1.Image = Image.FromFile(openFileDialog1.FileNames[index]);
-                    index++;
+                   
                     }
                     else
                         MessageBox.Show("Wrong Extension", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                   index++;
             }
         else
             timer1.Enabled = false;
