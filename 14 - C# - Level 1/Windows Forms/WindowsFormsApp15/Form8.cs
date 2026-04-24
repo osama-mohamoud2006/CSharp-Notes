@@ -30,7 +30,7 @@ namespace WindowsFormsApp15
 
             if ( folderBrowserDialog1.ShowDialog()==DialogResult.OK )
             {
-                //MessageBox.Show(folderBrowserDialog1.SelectedPath);
+                MessageBox.Show(folderBrowserDialog1.SelectedPath); // to show the selected path to the user after he selected it
             }
             else
             {
