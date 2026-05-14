@@ -16,5 +16,59 @@ namespace WindowsFormsApp16
         {
             InitializeComponent();
         }
+
+        private void TestMenuStrip_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show("Menu Clicked!");
+        }
+
+
+        void SwitchColor(string NameOfItem)
+        {
+            switch (NameOfItem.ToLower())
+            {
+                case "red":
+                    this.BackColor = Color.Red;
+                    break;
+
+                case "blue":
+                    this.BackColor = Color.Blue;
+                    break;
+
+                case "green":
+                    this.BackColor= Color.Green;
+                    break;
+
+                case "purble":
+                    this.BackColor=Color.Purple;
+                    break;
+
+                case "default":
+                    this.BackColor = Color.White;
+                    break;
+
+            }
+        }
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            
+            var item = sender as ToolStripMenuItem;
+            if (item != null)
+            {
+                MessageBox.Show(item.Text);
+                SwitchColor(item.Text);
+            }
+        }
+
+        private void redToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void blueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var item = sender as ToolStripMenuItem;
+            SwitchColor(item.Text);
+        }
     }
 }
