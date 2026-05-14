@@ -70,5 +70,29 @@ namespace WindowsFormsApp16
             var item = sender as ToolStripMenuItem;
             SwitchColor(item.Text);
         }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("sub of item `1`"); 
+        }
+
+        private void labelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var item = sender as ToolStripMenuItem;
+            label2.Text = item.Text; 
+        }
+
+        string Res;
+        private void hiToolStripMenuItem_CheckStateChanged(object sender, EventArgs e)
+        {
+            var item = sender as ToolStripMenuItem;
+            Res += item.Text;
+            label2.Text = Res;
+        }
     }
 }
