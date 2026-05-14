@@ -32,12 +32,12 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.changeColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeFoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.button1 = new System.Windows.Forms.Button();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +48,9 @@
             this.changeFoToolStripMenuItem,
             this.toolStripMenuItem2});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(148, 70);
+            this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
+            this.contextMenuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip1_ItemClicked);
             // 
             // changeColorToolStripMenuItem
             // 
@@ -66,12 +68,6 @@
             this.changeFoToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.changeFoToolStripMenuItem.Text = "Change Font";
             this.changeFoToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(147, 22);
-            this.toolStripMenuItem2.Text = " ";
             // 
             // textBox1
             // 
@@ -102,9 +98,16 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(262, 65);
             this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
+            this.button1.Text = "Disable Color On Context Menu";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button1.MouseHover += new System.EventHandler(this.Control_MouseHover);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Text = " ";
             // 
             // Form4
             // 
@@ -131,7 +134,7 @@
         private System.Windows.Forms.ToolStripMenuItem changeFoToolStripMenuItem;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.FontDialog fontDialog1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }
 }
