@@ -1,0 +1,11 @@
+D:\Self-Study\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp16\bin\Debug\WindowsFormsApp16.exe.config
+D:\Self-Study\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp16\bin\Debug\WindowsFormsApp16.exe
+D:\Self-Study\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp16\bin\Debug\WindowsFormsApp16.pdb
+D:\Self-Study\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp16\obj\Debug\WindowsFormsApp16.csproj.AssemblyReference.cache
+D:\Self-Study\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp16\obj\Debug\WindowsFormsApp16.Form1.resources
+D:\Self-Study\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp16\obj\Debug\WindowsFormsApp16.Form2.resources
+D:\Self-Study\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp16\obj\Debug\WindowsFormsApp16.Properties.Resources.resources
+D:\Self-Study\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp16\obj\Debug\WindowsFormsApp16.csproj.GenerateResource.cache
+D:\Self-Study\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp16\obj\Debug\WindowsFormsApp16.csproj.CoreCompileInputs.cache
+D:\Self-Study\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp16\obj\Debug\WindowsFormsApp16.exe
+D:\Self-Study\C#\14 - C# - Level 1\Windows Forms\WindowsFormsApp16\obj\Debug\WindowsFormsApp16.pdb

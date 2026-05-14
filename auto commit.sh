@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # === Parameters ===
-project_dir="E:/projects/C#"
+project_dir="D:\Self-Study\C#"
 repo_url="https://github.com/osama-mohamoud2006/CSharp-Notes.git"
 
 # === Go to project directory ===
